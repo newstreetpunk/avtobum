@@ -40,7 +40,10 @@ body
 	position: relative
 	line-height: 1.6
 	font-weight: 300
+	height: 4000px
+	background-color: darken(#fff, 1.5)
 	font-family: $default-font
+	//font-family: 'PT Sans Caption', sans-serif;
 	overflow-x: hidden
 	color: $text
 	input, textarea
@@ -52,10 +55,34 @@ body
 			border-color: green
 .fwm
 	font-weight: 500
+.phone
+	display: block
+	font-size: 20px
+	font-weight: bold
+.select-cust
+	padding-left: 21px
+	border: none
+	background-image: url(../img/loc.png)
+	background-repeat: no-repeat
+	background-position: left center
+	text-transform: uppercase
+	color: $accent
+	letter-spacing: 1px
+	font-size: 18px
+	font-weight: 300
+	option
+		text-transform: uppercase
+		font-size: 18px
+		font-weight: 300
 
 //HEADER
 
 .header
+	background-color: #fff
+	position: fixed
+	width: 100%
+	top: 0
+	z-index: 10
 	&-wrap
 		display: flex
 		justify-content: space-between
@@ -85,30 +112,13 @@ body
 			display: flex
 			justify-content: space-between
 			align-items: center
+		&--free
+			margin-right: 40px
 		&--free,
 		&--callback
-			margin-right: 40px
 			.phone
 				margin-bottom: 5px
 
-.phone
-	display: block
-	font-size: 20px
-	font-weight: bold
-.select-cust
-	padding-left: 21px
-	border: none
-	background-image: url(../img/loc.png)
-	background-repeat: no-repeat
-	background-position: left center
-	text-transform: uppercase
-	color: $accent
-	letter-spacing: 1px
-	font-size: 18px
-	font-weight: 300
-	option
-		text-transform: uppercase
-		font-size: 18px
 
 
 //HEADER END

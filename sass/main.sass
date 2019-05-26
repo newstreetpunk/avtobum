@@ -40,8 +40,8 @@ body
 	position: relative
 	line-height: 1.6
 	font-weight: 300
+	//padding-top: 150px
 	height: 4000px
-	background-color: darken(#fff, 1.5)
 	font-family: $default-font
 	//font-family: 'PT Sans Caption', sans-serif;
 	overflow-x: hidden
@@ -61,21 +61,61 @@ body
 	font-weight: bold
 .select-cust
 	padding-left: 21px
+	padding-right: 20px
 	border: none
-	background-image: url(../img/loc.png)
-	background-repeat: no-repeat
-	background-position: left center
+	background: url(../img/loc.png) left center no-repeat, url(../img/arrow-down.png) right 10px center no-repeat
 	text-transform: uppercase
 	color: $accent
 	letter-spacing: 1px
 	font-size: 18px
 	font-weight: 300
+	appearance: none
+	cursor: pointer
 	option
 		text-transform: uppercase
 		font-size: 18px
 		font-weight: 300
+		color: $text2
+button
+	border: none
+	background-color: transparent
+.toggle-btn
+	width: 50px
+	height: 50px
+	cursor: pointer
+	display: none
+	background-color: $accent
+	span
+		width: 30px
+		height: 2px
+		background-color: #fff
+		display: block
+		margin: 4.5px auto
+		position: relative
+		transition: all .2s ease-in-out
+	&.active
+		span:first-child
+			transform: rotate(-45deg)
+			top: 4px
+		span:last-child
+			transform: rotate(45deg)
+			top: -1px
+		span:nth-child(2)
+			display: none
 
 //HEADER
+
+//MAIN
+.content
+	//height: 90vh
+	background: url(../img/main-bg.png)
+	background-size: cover
+	background-position: center
+	width: 100%
+	text-align: center
+	padding-top: 20%
+	padding-bottom: 17.9%
+
 
 .header
 	background-color: #fff
@@ -113,12 +153,12 @@ body
 			display: flex
 			justify-content: space-between
 			align-items: center
-		&--free
-			margin-right: 40px
-		&--free,
 		&--callback
+			margin-left: 40px
 			.phone
 				margin-bottom: 5px
+			.popup
+				cursor: pointer
 
 
 

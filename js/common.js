@@ -19,12 +19,17 @@ window.onscroll = function() {
 $(function(){
 	//удаление атрибута 'style'
 	$(window).scroll(function(){
-		if($(this).scrollTop() > 100){
+		if($(this).scrollTop() > 50){
 			$('.header').attr('style')
 		}else{
 			$('.header').removeAttr('style');
 		}
 	});
 	//
+
+	//Мобильное меню
+	$('.toggle-btn').click(function(){
+		$(this).toggleClass('active');
+	});
 
 }, jQuery);

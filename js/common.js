@@ -31,5 +31,13 @@ $(function(){
 	$('.toggle-btn').click(function(){
 		$(this).toggleClass('active');
 	});
+	//
+
+	// Слайдер Акции
+	$('.stock__slider').slick({
+		infinite: true,
+		slidesToShow: 2,
+		slidesToScroll: 2
+	});
 
 }, jQuery);

@@ -213,14 +213,35 @@ section
 //STOCK
 .stock
 	position: relative
-	top: -250px
+	top: -14.5vmax	
 	&__slider
 		display: flex
 		justify-content: space-between
 		&-slide
 			img
-				width: 93%
+				width: 90%
 				margin: 0 auto
+		.next,
+		.prev
+			background: url(../img/arrow.svg)
+			background-repeat: no-repeat
+			width: 30px
+			height: 50px
+			position: absolute
+			top: 50%
+			transform: translateY(-50%)
+			left: 0
+			z-index: 1
+			cursor: pointer
+			transition: all .2s
+			opacity: .8
+			&:hover
+				opacity: 1
+		.next
+			left: auto
+			right: 0
+			transform: rotate(180deg)
+			margin-top: -25px
 //STOCK END
 
 

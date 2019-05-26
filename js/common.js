@@ -5,7 +5,7 @@ window.onscroll = function() {
   var currentScrollPos = window.pageYOffset;
   if (prevScrollpos > currentScrollPos) {
     document.getElementById("header").setAttribute(
-   "style", "top: 0; box-shadow: 0 3px 40px rgba(0,0,0,.1);");
+   "style", "top: 0; box-shadow: 0 3px 40px rgba(0,0,0,.2);");
   } else {
     document.getElementById("header").setAttribute(
    "style", "top: -150px; box-shadow: 0 3px 30px transparent;");

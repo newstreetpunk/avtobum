@@ -3,8 +3,7 @@
 
 /*==========  Desktop First  ==========*/
 
-// ≥1600px
-+media-breakpoint-down(xl)
+@media (max-width: 1600px)
 	.header
 		&__menu
 			display: none
@@ -16,6 +15,11 @@
 
 // ≥1200px
 +media-breakpoint-down(lg)
+	.content__block-item select
+		font-size: 20px
+	.content__block button
+		font-size: 20px
+		bottom: auto
 
 // ≥992px
 +media-breakpoint-down(md)

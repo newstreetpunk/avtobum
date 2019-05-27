@@ -51,15 +51,6 @@ body
 			border-color: red
 		&:required:valid
 			border-color: green
-.car-bg
-	background: url(../img/footer_ford.png) right bottom no-repeat
-	background-size: contain
-	width: 100%
-	height: 800px
-	position: absolute
-	right: 0
-	bottom: 0
-	z-index: 10
 .fwm
 	font-weight: 500
 .phone
@@ -133,6 +124,7 @@ section
 	top: 0
 	z-index: 10
 	transition: all .3s ease-in-out
+	z-index: 100
 	&-wrap
 		display: flex
 		justify-content: space-between
@@ -300,6 +292,7 @@ section
 			cursor: pointer
 			transition: all .2s
 			opacity: .8
+			z-index: 11
 			&:hover
 				opacity: 1
 		.next
@@ -315,6 +308,19 @@ section
 	color: #fff
 	margin-top: 30px
 	font-size: 18px
+	position: relative
+	z-index: 10
+	&:after
+		content: ''
+		display: block
+		background: url(../img/footer_ford.png) right bottom no-repeat
+		background-size: contain
+		width: 100%
+		height: 800px
+		position: absolute
+		right: 0
+		bottom: 0
+		z-index: -1
 	.select-cust
 		background: url(../img/loc-white.png) left center no-repeat,url(../img/arrow-down-white.png) right 10px center no-repeat
 		color: #fff

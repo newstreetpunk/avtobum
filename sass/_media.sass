@@ -4,14 +4,23 @@
 /*==========  Desktop First  ==========*/
 
 @media (max-width: 1600px)
-	.header
-		&__menu
-			display: none
-		&__phone
-			&--callback
-				padding-right: 30px
-	.toggle-btn
-		display: block
+	.header__logo-wrap
+		width: 20%
+	.header__logo-text
+		font-size: 14px
+	.header__menu ul li a
+		font-size: 14px
+	.select-cust
+		font-size: 14px
+	.select-cust option
+		font-size: 14px
+	.header__phone--callback
+		margin-left: 20px
+		font-size: 14px
+	.header__phone--callback .phone
+		margin-bottom: 0
+	.phone
+		font-size: 16px
 	.footer
 		font-size: 16px
 	.footer-logo-text
@@ -24,6 +33,30 @@
 
 // ≥1200px
 +media-breakpoint-down(lg)
+	.header__logo-wrap
+		width: 30%
+	.header
+		&__menu
+			display: none
+			position: absolute
+			background-color: #fff
+			height: 80px
+			top: 100%
+			width: 100%
+			left: 0
+			border-top: 1px solid #efe8e8
+			z-index: -1
+		&__phone
+			&--callback
+				padding-right: 30px
+	.header__menu ul
+		height: 100%
+		justify-content: center
+		align-items: center
+		z-index: -1
+		box-shadow: 10px 10px 20px rgba(0,0,0,.1)
+	.toggle-btn
+		display: block
 	.content__block-item select
 		font-size: 20px
 	.content__block button

@@ -30,7 +30,26 @@ $(function(){
 	//Мобильное меню
 	$('.toggle-btn').click(function(){
 		$(this).toggleClass('active');
+		$('.header__menu').slideToggle(200);
 	});
+	function resizeW(){
+		if($(window).width() < 1200){
+			$('.header__menu').hide();
+			$('.header__menu:hidden') || $('.toggle-btn').hasClass('active')
+			$('.toggle-btn').hasClass('active') || $('.header__menu:visible')
+				$('.header__menu ul li a').click(function(){
+					$('.header__menu').slideUp(200);
+					$('.toggle-btn').removeClass('active')
+				});
+			$('.toggle-btn').removeClass('active');
+		}else{
+			$('.header__menu').show();
+		}	
+	};
+	resizeW();
+	$(window).resize(resizeW);
+	
+	
 	//
 
 	// Слайдеры

@@ -11,7 +11,8 @@
 
 *
 	box-sizing: border-box
-
+p
+	margin-bottom: 0
 img
 	max-width: 100%
 	height: auto
@@ -39,8 +40,6 @@ body
 	position: relative
 	line-height: 1.6
 	font-weight: 300
-	//padding-top: 150px
-	height: 4000px
 	font-family: $default-font
 	//font-family: 'PT Sans Caption', sans-serif;
 	overflow-x: hidden
@@ -300,6 +299,10 @@ section
 	color: #fff
 	margin-top: 4%
 	font-size: 18px
+	.select-cust
+		background: url(../img/loc-white.png) left center no-repeat,url(../img/arrow-down-white.png) right 10px center no-repeat
+		color: #fff
+		margin-left: 5px
 	a
 		color: #fff
 		opacity: .7
@@ -307,6 +310,7 @@ section
 			opacity: 1
 	&-logo
 		a
+			opacity: 1
 			svg
 				fill: #fff
 		&-text
@@ -322,6 +326,7 @@ section
 					font-size: 18px
 					padding-bottom: 16px
 					display: inline-block
+					padding-left: 100px
 	.work-time
 		font-size: 18px
 		&-title
@@ -340,8 +345,9 @@ section
 		height: 100%
 		text-align: right
 		.social
+			display: flex
+			justify-content: space-between
 			a
-				margin-left: 30px
 				&:first-child
 					margin-left: 0
 		&-phone
@@ -349,6 +355,11 @@ section
 			a
 				display: block
 				margin-bottom: 5px
+				white-space: nowrap
+	p
+		font-size: 14px
+		opacity: .7
+		margin-top: 50px
 
 
 @import "media" // Always at the end

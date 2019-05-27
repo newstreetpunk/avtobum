@@ -33,7 +33,7 @@ $(function(){
 	});
 	//
 
-	// Слайдер Акции
+	// Слайдеры
 	$('.stock__slider').slick({
 		infinite: true,
 		slidesToShow: 2,
@@ -50,5 +50,15 @@ $(function(){
       	}
     	}]
 	});
+
+	$('.partners-slider').slick({
+		infinite: true,
+		slidesToShow: 5,
+		slidesToScroll: 1,
+		autoplay: true,
+		nextArrow: '<butoon class="next"></button>',
+		prevArrow: '<butoon class="prev"></button>'
+	});
+
 
 }, jQuery);

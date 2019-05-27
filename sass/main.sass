@@ -262,6 +262,38 @@ section
 
 //ABOUT END
 
+//PARTNERS
+.partners
+	&-slider
+		.slick-track
+			display: flex
+			align-items: center
+			img
+				width: 70%
+				margin: 0 auto
+		.next,
+		.prev
+			background: url(../img/arrow.svg)
+			background-repeat: no-repeat
+			width: 30px
+			height: 50px
+			position: absolute
+			top: 50%
+			transform: translateY(-50%)
+			left: 0
+			z-index: 1
+			cursor: pointer
+			transition: all .2s
+			opacity: .8
+			&:hover
+				opacity: 1
+		.next
+			left: auto
+			right: 0
+			transform: rotate(180deg)
+			margin-top: -25px
+//PARTNERS END
+
 
 
 @import "media" // Always at the end

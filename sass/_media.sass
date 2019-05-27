@@ -5,7 +5,7 @@
 
 @media (max-width: 1600px)
 	.header__logo-wrap
-		width: 20%
+		max-width: 20%
 	.header__logo-text
 		font-size: 14px
 	.header__menu ul li a
@@ -34,7 +34,7 @@
 // ≥1200px
 +media-breakpoint-down(lg)
 	.header__logo-wrap
-		width: 30%
+		max-width: 30%
 	.header
 		&__menu
 			display: none
@@ -108,6 +108,26 @@
 
 // ≥768px
 +media-breakpoint-down(sm)
+	.header
+		.select-cust
+			display: none
+	.header__menu
+		height: calc(100vh - 120px)
+	.header__menu ul
+		flex-direction: column
+	.header__menu ul li
+		margin-right: 0
+		width: 100%
+		text-align: center
+	.header__menu ul li a
+		display: block
+		padding: 5px 0
+		font-size: 16px
+		font-weight: 500
+	.header__phone--callback
+		margin-left: 0
+	.phone
+		font-size: 14px
 	.footer-logo a svg
 		max-width: 400px
 		width: 100%
@@ -139,6 +159,23 @@
 		margin-right: 10px
 // ≥576px
 +media-breakpoint-down(xs)
+	.header-wrap
+		min-height: 120px
+	.header__phone--callback
+		display: none
+	.phone
+		font-size: 12px
+	.header__phone--callback
+		font-size: 12px
+	.header__logo-wrap
+		max-width: 55%
+	.header__logo-text
+		font-size: 12px
+	.header__menu ul .phone
+		display: block
+		font-size: 16px
+		margin-top: 20px
+		color: $accent
 
 
 /*==========  Mobile First  ==========*/

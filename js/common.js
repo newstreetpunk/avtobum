@@ -17,6 +17,7 @@ window.onscroll = function() {
 
 
 $(function(){
+	
 	//удаление атрибута 'style'
 	$(window).scroll(function(){
 		if($(this).scrollTop() > 50){
@@ -42,14 +43,13 @@ $(function(){
 					$('.toggle-btn').removeClass('active')
 				});
 			$('.toggle-btn').removeClass('active');
+			$('html').removeAttr('style');
 		}else{
 			$('.header__menu').show();
 		}	
 	};
 	resizeW();
 	$(window).resize(resizeW);
-	
-	
 	//
 
 	// Слайдеры

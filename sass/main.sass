@@ -110,7 +110,7 @@ section
 		text-transform: uppercase
 		font-weight: 500
 		font-size: 26px
-		margin-bottom: 3%
+		margin: 25px 0 10px;
 .clearfix
 	&:after
 		clear: both
@@ -251,10 +251,13 @@ section
 	font-size: initial
 	line-height: 1.65
 	margin-bottom: 10%
-	ul
+	ul, ol
 		padding: 30px 0 30px 20px
 		li
 			list-style-type: disc
+	ol
+		li
+			list-style-type: decimal
 	.car-service 
 		.car-service__caption
 			color: $orange
@@ -280,6 +283,15 @@ section
 		font-weight: bold
 		text-transform: uppercase
 		color: #fff !important
+.doc-link
+	// display: flex
+	&__item
+		margin-bottom: 25px
+		text-align: center
+		img
+		.name
+			font-size: 20px
+			padding: 10px 0
 // TEXT END
 
 //STOCK
@@ -292,8 +304,7 @@ section
 			.short_name
 				font-weight: 400
 			.show_more
-				a
-					color: $orange
+				color: $orange
 			.short_name,
 			.short_desc,
 			.show_more,

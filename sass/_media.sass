@@ -4,7 +4,7 @@
 /*==========  Desktop First  ==========*/
 
 // Extra Large devices (desktops, less than 1600px)
-@media (max-width: 1600px)
+@media (max-width: 1591.98px)
 	.header__logo-wrap
 		max-width: 20%
 	.header__logo-text
@@ -91,8 +91,6 @@
 		height: 45px
 	section .container
 		padding: 0 15px
-	.about
-		padding-left: 0
 
 
 // Medium devices (tablets, less than 992px)
@@ -186,10 +184,6 @@
 		margin-top: 0
 	section h2
 		font-size: 24px
-	.about
-		padding-left: 0
-		padding-top: 10%
-		padding-bottom: 23%
 	.about-text
 		font-size: 16px
 	.stock__slider-slide .short_name,
@@ -223,9 +217,22 @@
 
 // Small devices (landscape phones, 576px and up)
 +media-breakpoint-up(sm)
+	.about
+		&:before
+			background-size: 768px
+			background-position: right
+		&:after
+			background-size: 110%
+			background-position: 590% 0
 
 // Medium devices (tablets, 768px and up)
 +media-breakpoint-up(md)
+	.about
+		padding-top: 10%
+		margin-bottom: 10%
+	.about-text
+		padding-left: 10%
+
 
 // Large devices (desktops, 992px and up)
 +media-breakpoint-up(lg)
@@ -234,6 +241,13 @@
 
 // Extra large devices (large desktops, 1200px and up)
 +media-breakpoint-up(xl)
+	.about-text
+		max-width: 80%
+
+@media (min-width: 1600px)
+	.about
+		&:before
+			background-size: 50%;
 
 
 /*==========  Using the minimum and maximum breakpoint widths  ==========*/

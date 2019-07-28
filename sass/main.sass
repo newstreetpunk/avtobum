@@ -41,7 +41,7 @@ body
 	line-height: 1.6
 	font-weight: 300
 	font-family: $default-font
-	//font-family: 'PT Sans Caption', sans-serif;
+	//font-family: 'PT Sans Caption', sans-serif
 	overflow-x: hidden
 	color: $text
 	input, textarea
@@ -234,7 +234,8 @@ section
 		content: ''
 		display: block
 		background: center center no-repeat url(../img/logo_infinity-0.svg) 
-		background-size: 320px
+		background-size: 704px
+		background-position-x: calc(50% + 176px)
 		width: 100%
 		height: 100%
 		position: absolute
@@ -288,39 +289,39 @@ section
 //ABOUT
 .about
 	position: relative
-	margin-top: 5.8%
-	padding-top: 16%
-	padding-bottom: 28.2%
-	padding-left: 285px
+	padding-top: 20%
+	padding-bottom: 33%
+	margin-bottom: 30%
 	&-text
 		max-width: 850px
 		width: 100%
 		font-size: 24px
 		line-height: 1.65
-		padding-bottom: 6rem
 	&:before
 		content: ''
 		display: block
-		background: center bottom / contain no-repeat url(../img/info_people-768-t.jpg)
+		background: center bottom / cover no-repeat url(../img/info_people-768-t.jpg)
 		position: absolute
 		width: 100%
 		height: 100%
 		z-index: -5
 		opacity: 0.5
 		left: 50%
-		top: 50%
+		top: 90%
 		transform: translate(-50%, -50%)
 	&:after
 		content: ''
 		display: block
-		background: center center no-repeat url(../img/logo_infinity-0.svg)
-		background-size: 320px
+		background: top center no-repeat url(../img/logo_infinity-0.svg)
+		background-size: 200%
+		background-position: 150% 0
+		top: 20%
 		width: 100%
 		height: 100%
 		position: absolute
 		z-index: -1
-		// transform: scale(2) translate(-58%,-30%);
-		opacity: 0.5
+		// transform: scale(2) translate(-58%,-30%)
+		opacity: 0.2
 
 //ABOUT END
 

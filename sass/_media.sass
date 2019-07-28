@@ -3,6 +3,7 @@
 
 /*==========  Desktop First  ==========*/
 
+// Extra Large devices (desktops, less than 1600px)
 @media (max-width: 1600px)
 	.header__logo-wrap
 		max-width: 20%
@@ -17,7 +18,6 @@
 	.content__block-item select option
 		font-size: 22px
 	.content__block button
-		bottom: -9vw
 		font-size: 23px
 	.select-cust
 		font-size: 14px
@@ -40,10 +40,10 @@
 		width: 50px
 		height: 50px
 
-// ≥1200px
+// Large devices (desktops, less than 1200px)
 +media-breakpoint-down(lg)
 	.header__logo-wrap
-		max-width: 30%
+		max-width: 42%
 	.header
 		&__menu
 			display: none
@@ -95,7 +95,7 @@
 		padding-left: 0
 
 
-// ≥992px
+// Medium devices (tablets, less than 992px)
 +media-breakpoint-down(md)
 	.content__block-item select option
 		font-size: 18px
@@ -127,7 +127,7 @@
 	.footer-callback-phone
 		font-size: 14px
 
-// ≥768px
+// Small devices (landscape phones, less than 768px)
 +media-breakpoint-down(sm)
 	.partners-slider .next, .partners-slider .prev
 		z-index: 1
@@ -192,17 +192,16 @@
 		padding-bottom: 23%
 	.about-text
 		font-size: 16px
+	.stock__slider-slide .short_name,
+	.stock__slider-slide .short_desc,
+	.stock__slider-slide .show_more,
 	.stock__slider-slide img
 		width: 85%
-// ≥576px
+
+// Extra small devices (portrait phones, less than 576px)
 +media-breakpoint-down(xs)
-	.content
-		padding-top: 175px
-		min-height: 535px
-	.content__block button
-		bottom: -80px
 	.header-wrap
-		min-height: 120px
+		min-height: 90px
 	.header__phone--callback
 		display: none
 	.phone
@@ -210,7 +209,7 @@
 	.header__phone--callback
 		font-size: 12px
 	.header__logo-wrap
-		max-width: 55%
+		max-width: 65%
 	.header__logo-text
 		font-size: 12px
 	.header__menu ul .phone
@@ -222,14 +221,35 @@
 
 /*==========  Mobile First  ==========*/
 
-// ≤576px
+// Small devices (landscape phones, 576px and up)
 +media-breakpoint-up(sm)
 
-// ≤768px
+// Medium devices (tablets, 768px and up)
 +media-breakpoint-up(md)
 
-// ≤992px
+// Large devices (desktops, 992px and up)
 +media-breakpoint-up(lg)
+	.content
+		height: 570px
 
-// ≤1200px
+// Extra large devices (large desktops, 1200px and up)
 +media-breakpoint-up(xl)
+
+
+/*==========  Using the minimum and maximum breakpoint widths  ==========*/
+
+// Extra small devices (portrait phones, less than 576px)
++media-breakpoint-only(xs)
+
+// Small devices (landscape phones, 576px and up)
++media-breakpoint-only(sm)
+
+// Medium devices (tablets, 768px and up)
++media-breakpoint-only(md)
+
+// Large devices (desktops, 992px and up)
++media-breakpoint-only(lg)
+
+// Extra large devices (large desktops, 1200px and up)
++media-breakpoint-only(xl)
+

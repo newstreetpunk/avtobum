@@ -270,6 +270,11 @@ section
 		font-size: inherit
 		line-height: 200%
 		margin-top: 25px
+	.prajs
+		font-size: 14px
+		table
+			p
+				margin: 0
 .questions
 	width: 40%
 	min-width: 290px
@@ -413,6 +418,8 @@ section
 			margin-top: -25px
 //PARTNERS END
 
+
+// FOOTER
 .footer
 	padding: 60px 0 50px
 	background-color: #363636
@@ -493,6 +500,61 @@ section
 		font-size: 14px
 		opacity: .7
 		margin-top: 50px
+// FOOTER END
+
+// FIXED-TABLE
+
+//colors
+$color_celeste_approx: #ccc
+$color_gallery_approx: #eee
+
+//@extend-elements
+//original selectors
+//.fixed-table-container th, .fixed-table-container td
+.extend_1 
+	border-right: 1px solid $color_celeste_approx
+	border-bottom: 1px solid $color_celeste_approx
+	padding: 8px
+	text-align: left
+	vertical-align: top
+	white-space: nowrap !important
+
+.fixed-table-container 
+	height: 300px
+	//If you use compass, instead of the line below you could use + box-sizing($bs)
+	box-sizing: border-box
+	border: 1px solid $color_celeste_approx
+	margin-bottom: 40px
+	table 
+		border-collapse: collapse
+		width: 100%
+
+	th 
+		@extend .extend_1
+		background: $color_gallery_approx
+		font-size: 12px
+		line-height: 16px
+		padding-top: 10px
+		padding-bottom: 10px
+		&:last-child 
+			border-right: 0
+
+
+	td 
+		@extend .extend_1
+		&:first-child 
+			background: $color_gallery_approx
+
+		&:last-child 
+			border-right: 0
+
+
+	tr:last-child td 
+		border-bottom: 0
+
+// FIXED-TABLE END
+
+
 
 
 //Avtopark

@@ -1,0 +1,829 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+
+	<meta charset="utf-8">
+	<!-- <base href="/"> -->
+
+	<title>Avtobum</title>
+	<meta name="description" content="">
+
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	
+	<!-- Template Basic Images Start -->
+	<meta property="og:image" content="path/to/image.jpg">
+	<link rel="icon" href="img/favicon/favicon.ico">
+	<link rel="apple-touch-icon" sizes="180x180" href="img/favicon/apple-touch-icon-180x180.png">
+	<!-- Template Basic Images End -->
+	
+	<!-- Custom Browsers Color Start -->
+	<meta name="theme-color" content="#fff">
+	<!-- Custom Browsers Color End -->
+	<link href="https://fonts.googleapis.com/css?family=PT+Sans+Caption:400,700&display=swap&subset=cyrillic" rel="stylesheet">
+
+
+	<link rel="stylesheet" href="css/main.css">
+
+</head>
+
+<body>
+	
+	
+	<!-- HEADER -->
+	<header class="header" id="header">
+		<div class="container">
+			<div class="header-wrap">
+				<div class="header__logo-wrap">
+					<a href="index.html"><img src="img/header-logo.svg" alt="Boomerang Auto"></a>
+					<span class="header__logo-text">Прокат автомобилей</span>
+				</div>
+				<nav class="header__menu">
+					<ul>
+						<li><a href="arenda-mashin.html">Автопарк</a></li>
+						<li><a href="mashiny-na-prokat.html">Условия аренды</a></li>
+						<li><a href="avtoservis.html">Автосервис</a></li>
+						<li><a href="prajs.html">Прайс</a></li>
+						<li><a href="avtoprokat.html">О нас</a></li>
+						<li><a href="kontakty.html">Контакты</a></li>
+						<a href="tel:88005500851" class="phone">8 (800) 550-08-51</a>
+					</ul>
+					
+				</nav>
+				<div class="header__phone-wrap">
+					<!-- <div class="header__phone--free">
+						<span class="header__phone--text">по России</span>
+						<a href="tel:88005500851" class="phone">8 (800) 550-08-51</a>
+						<a href="mailto:info@avtobum63.ru" class="email fwm">info@avtobum63.ru</a>
+					</div> -->
+					<select id="select-cust" class="select-cust">
+						<option value="Самара">Самара</option>
+						<option value="Москва">Москва</option>
+						<option value="Пермь">Пермь</option>
+					</select>
+					<div class="header__phone--callback">
+						<a href="tel:88005500851" class="phone">8 (800) 550-08-51</a>
+						<span class="popup fwm">Обратный звонок</span>
+					</div>
+					<button class="toggle-btn">
+						<span></span>
+						<span></span>
+						<span></span>
+					</button>
+				</div>
+			</div>
+		</div>
+	</header>
+	<!-- /HEADER -->
+
+	<!-- MAIN -->
+	<main class="content">
+		<div class="content__block">
+			<form action="#">
+				<div class="content__block-loc content__block-item">
+					<img src="img/emblem.png" alt="ALT">
+					<div class="content__block--city content__block--mid">Город</div>
+					<select id="select-cust" class="select-cust">
+						<option value="Самара">Самара</option>
+						<option value="Чебоксары">Чебоксары</option>
+						<option value="Уфа">Уфа</option>
+					</select>
+				</div>
+				<!-- 
+				<div class="content__block-term content__block-item">
+					<div class="content__block--mid">Срок аренды</div>
+					<select id="select-cust" class="select-cust">
+						<option value="">17.04.19 - 18.04.19</option>
+					</select>
+				</div>
+				<div class="content__block-type content__block-item">
+					<div class="content__block--mid">Тип автомобиля</div>
+					<select id="select-cust" class="select-cust">
+						<option value="Хетчбэк">Хетчбэк</option>
+						<option value="Седан">Седан</option>
+						<option value="Минивен">Минивен</option>
+					</select>
+				</div>
+				 -->
+				<button>Подобрать авто</button>
+			</form>
+		</div>
+	</main>
+	<!-- /MAIN -->
+
+
+	<!-- TEXT -->
+	<section class="text">
+	    <div class="container prajs">
+	        <h1></h1>
+	        <table class="color price-table samara" style="display: none;">
+	            <tbody>
+	                <tr>
+	                    <td colspan="10" style="text-align: center; font-size: 60%; color: #ffffff;">
+	                        <h1>Средний тариф проката (суточный оплаченный пробег до 300 км)</h1>
+	                    </td>
+	                </tr>
+	                <tr>
+	                    <td rowspan="2">Марка/Модель</td>
+	                    <td rowspan="2">Опции</td>
+	                    <td colspan="7" style="text-align: center;">
+	                        <h2><span style="font-size: 65%;">Стоимость аренды в сутки, руб</span></h2>
+	                    </td>
+	                    <td rowspan="2" width="10%">
+	                        <p align="center">Залог</p>
+	                    </td>
+	                </tr>
+	                <tr>
+	                    <td> <p align="center" style="min-width: 69px;">1 час **</p>
+	                    </td>
+	                    <td> <p align="center">1-3 суток</p>
+	                    </td>
+	                    <td> <p align="center">4-6 суток</p>
+	                    </td>
+	                    <td> <p align="center">7-15 суток</p>
+	                    </td>
+	                    <td> <p align="center">16-30 суток</p>
+	                    </td>
+	                    <td> <p align="center">от 30 дней</p>
+	                    </td>
+	                    <td> <p align="center">Защита<br>при ДТП<sup style="color: #ff0000;">***</sup></p>
+	                    </td>
+	                </tr>
+	                <tr>
+	                    <td>Daewoo Matiz</td> <td> <i title="Коробка механическая" class="icon manual"></i>
+	                    </td>
+	                    <td>90</td> <td>1100</td> <td>1000</td> <td>900</td> <td>800</td> <td>750</td> <td>500</td> <td>6000</td> </tr>
+	                <tr>
+	                    <td>ВАЗ 2114</td> <td> <i title="Коробка Механическая коробка" class="icon mechanic"></i>
+	                    </td>
+	                    <td>80</td> <td>1000</td> <td>900</td> <td>800</td> <td>700</td> <td>600</td> <td>500</td> <td>6000</td> </tr>
+	                <tr>
+	                    <td>Ford Thunderbird</td> <td> <i title="Коробка автоматическая" class="icon automatic"></i>
+	                        <i title="Кондиционер" class="icon condition"></i>
+	                    </td>
+	                    <td>500</td> <td>4700</td> <td>4500</td> <td>4300</td> <td>4200</td> <td>4100</td> <td>1000</td> <td>25000</td> </tr>
+	                <tr>
+	                    <td>Hummer Н2 4WD</td> <td> <i title="Коробка Автоматическая" class="icon automatic"></i>
+	                        <i title="Кондиционер" class="icon condition"></i>
+	                    </td>
+	                    <td>350</td> <td>4700</td> <td>4500</td> <td>4300</td> <td>4200</td> <td>4100</td> <td>1000</td> <td>25000</td> </tr>
+	                <tr>
+	                    <td>Volvo XC70</td> <td> <i title="Коробка автоматическая" class="icon automatic"></i>
+	                        <i title="Кондиционер" class="icon condition"></i>
+	                    </td>
+	                    <td>340</td> <td>4600</td> <td>4400</td> <td>4200</td> <td>4100</td> <td>4000</td> <td>1000</td> <td>25000</td> </tr>
+	                <tr>
+	                    <td>Mitsubishi Pajero 3.0 4WD</td> <td> <i title="Коробка Автоматическая" class="icon automatic"></i>
+	                        <i title="Кондиционер" class="icon condition"></i>
+	                    </td>
+	                    <td>320</td> <td>4300</td> <td>4100</td> <td>3900</td> <td>3700</td> <td>3500</td> <td>1000</td> <td>25000</td> </tr>
+	                <tr>
+	                    <td>BMW X3</td> <td> <i title="Коробка автоматическая" class="icon automatic"></i>
+	                        <i title="Кондиционер" class="icon condition"></i>
+	                    </td>
+	                    <td>320</td> <td>4100</td> <td>3900</td> <td>3700</td> <td>3500</td> <td>3300</td> <td>1000</td> <td>25000</td> </tr>
+	                <tr>
+	                    <td>Hyundai Grand Starex</td> <td> <i title="Коробка автомат" class="icon  automatic"></i>
+	                        <i title="Кондиционер" class="icon condition"></i>
+	                    </td>
+	                    <td>300</td> <td>3900</td> <td>3700</td> <td>3500</td> <td>3300</td> <td>3000</td> <td>1000</td> <td>20000</td> </tr>
+	                <tr>
+	                    <td>Toyota Land Cruiser 100 4WD</td> <td> <i title="Коробка автоматическая" class="icon automatic"></i>
+	                        <i title="Кондиционер" class="icon condition"></i>
+	                    </td>
+	                    <td>280</td> <td>3700</td> <td>3500</td> <td>3300</td> <td>3100</td> <td>2900</td> <td>1000</td> <td>20000</td> </tr>
+	                <tr>
+	                    <td>Toyota Camry</td> <td> <i title="Коробка автоматическая" class="icon automatic"></i>
+	                        <i title="Кондиционер" class="icon condition"></i>
+	                    </td>
+	                    <td>280</td> <td>3700</td> <td>3500</td> <td>3300</td> <td>3100</td> <td>2900</td> <td>1000</td> <td>20000</td> </tr>
+	                <tr>
+	                    <td>Mitsubishi L200 4WD</td> <td> <i title="Коробка механическая" class="icon manual"></i>
+	                        <i title="Кондиционер" class="icon condition"></i>
+	                    </td>
+	                    <td>250</td> <td>3500</td> <td>3300</td> <td>3100</td> <td>2900</td> <td>2700</td> <td>1000</td> <td>20000</td> </tr>
+	                <tr>
+	                    <td>Volkswagen Tiguan 4WD</td> <td> <i title="Коробка автоматическая" class="icon automatic"></i>
+	                        <i title="Кондиционер" class="icon condition"></i>
+	                    </td>
+	                    <td>240</td> <td>3300</td> <td>3100</td> <td>2900</td> <td>2700</td> <td>2500</td> <td>1000</td> <td>10000</td> </tr>
+	                <tr>
+	                    <td>Toyota RAV4</td> <td> <i title="Коробка автоматическая" class="icon automatic"></i>
+	                        <i title="Кондиционер" class="icon condition"></i>
+	                    </td>
+	                    <td>240</td> <td>3300</td> <td>3100</td> <td>2900</td> <td>2700</td> <td>2500</td> <td>1000</td> <td>10000</td> </tr>
+	                <tr>
+	                    <td>KIA Sportage</td> <td> <i title="Коробка автоматическая" class="icon automatic"></i>
+	                        <i title="Кондиционер" class="icon condition"></i>
+	                    </td>
+	                    <td>240</td> <td>3300</td> <td>3100</td> <td>2900</td> <td>2700</td> <td>2500</td> <td>1000</td> <td>10000</td> </tr>
+	                <tr>
+	                    <td>Renault Fluence</td> <td> <i title="Коробка автоматическая" class="icon automatic"></i>
+	                        <i title="Кондиционер" class="icon condition"></i>
+	                    </td>
+	                    <td>200</td> <td>2500</td> <td>2300</td> <td>2200</td> <td>2100</td> <td>2000</td> <td>700</td> <td>10000</td> </tr>
+	                <tr>
+	                    <td>Renault Fluence</td> <td> <i title="Коробка автоматическая" class="icon automatic"></i>
+	                        <i title="Кондиционер" class="icon condition"></i>
+	                    </td>
+	                    <td>200</td> <td>2500</td> <td>2300</td> <td>2200</td> <td>2100</td> <td>2000</td> <td>700</td> <td>10000</td> </tr>
+	                <tr>
+	                    <td>Mitsubishi ASX</td> <td> <i title="Коробка автоматическая" class="icon automatic"></i>
+	                        <i title="Кондиционер" class="icon condition"></i>
+	                    </td>
+	                    <td>200</td> <td>2500</td> <td>2300</td> <td>2200</td> <td>2100</td> <td>2000</td> <td>700</td> <td>10000</td> </tr>
+	                <tr>
+	                    <td>Renault Duster 4WD</td> <td> <i title="Коробка механическая" class="icon manual"></i>
+	                        <i title="Кондиционер" class="icon condition"></i>
+	                    </td>
+	                    <td>200</td> <td>2500</td> <td>2300</td> <td>2200</td> <td>2100</td> <td>2000</td> <td>700</td> <td>10000</td> </tr>
+	                <tr>
+	                    <td>Volkswagen Tiguan</td> <td> <i title="Коробка механическая" class="icon manual"></i>
+	                        <i title="Кондиционер" class="icon condition"></i>
+	                    </td>
+	                    <td>200</td> <td>2500</td> <td>2300</td> <td>2200</td> <td>2100</td> <td>2000</td> <td>700</td> <td>10000</td> </tr>
+	                <tr>
+	                    <td>Hyundai Sonata</td> <td> <i title="Коробка Автоматическая" class="icon automatic"></i>
+	                        <i title="Кондиционер" class="icon condition"></i>
+	                    </td>
+	                    <td>190</td> <td>2400</td> <td>2200</td> <td>2100</td> <td>2000</td> <td>1900</td> <td>700</td> <td>10000</td> </tr>
+	                <tr>
+	                    <td>Chevrolet Niva 4WD</td> <td> <i title="Коробка механическая" class="icon manual"></i>
+	                    </td>
+	                    <td>190</td> <td>2400</td> <td>2200</td> <td>2100</td> <td>2000</td> <td>1900</td> <td>700</td> <td>7000</td> </tr>
+	                <tr>
+	                    <td>Mitsubishi Lancer X</td> <td> <i title="Коробка автоматическая" class="icon automatic"></i>
+	                        <i title="Кондиционер" class="icon condition"></i>
+	                    </td>
+	                    <td>170</td> <td>2200</td> <td>2000</td> <td>1900</td> <td>1800</td> <td>1700</td> <td>700</td> <td>7000</td> </tr>
+	                <tr>
+	                    <td>Peugeot 308</td> <td> <i title="Коробка автоматическая" class="icon automatic"></i>
+	                        <i title="Кондиционер" class="icon condition"></i>
+	                    </td>
+	                    <td>170</td> <td>2200</td> <td>2000</td> <td>1900</td> <td>1800</td> <td>1700</td> <td>700</td> <td>7000</td> </tr>
+	                <tr>
+	                    <td>Mitsubishi Lancer X</td> <td> <i title="Коробка механическая" class="icon manual"></i>
+	                        <i title="Кондиционер" class="icon condition"></i>
+	                    </td>
+	                    <td>160</td> <td>2100</td> <td>1900</td> <td>1750</td> <td>1650</td> <td>1500</td> <td>700</td> <td>7000</td> </tr>
+	                <tr>
+	                    <td>Renault Fluence</td> <td> <i title="Коробка Механическая" class="icon manual"></i>
+	                        <i title="Кондиционер" class="icon condition"></i>
+	                    </td>
+	                    <td>160</td> <td>2100</td> <td>1900</td> <td>1750</td> <td>1650</td> <td>1600</td> <td>700</td> <td>7000</td> </tr>
+	                <tr>
+	                    <td>Ford Focus III</td> <td> <i title="Коробка механическая" class="icon mechanic"></i>
+	                        <i title="Кондиционер" class="icon condition"></i>
+	                    </td>
+	                    <td>160</td> <td>2100</td> <td>1900</td> <td>1750</td> <td>1650</td> <td>1600</td> <td>700</td> <td>7000</td> </tr>
+	                <tr>
+	                    <td>Nissan Almera New</td> <td> <i title="Коробка автоматическая" class="icon automatic"></i>
+	                        <i title="Кондиционер" class="icon condition"></i>
+	                    </td>
+	                    <td>155</td> <td>2000</td> <td>1850</td> <td>1700</td> <td>1500</td> <td>1400</td> <td>700</td> <td>7000</td> </tr>
+	                <tr>
+	                    <td>Nissan Almera New</td> <td> <i title="Коробка механическая" class="icon manual"></i>
+	                        <i title="Кондиционер" class="icon condition"></i>
+	                    </td>
+	                    <td>150</td> <td>1900</td> <td>1750</td> <td>1600</td> <td>1400</td> <td>1300</td> <td>700</td> <td>7000</td> </tr>
+	                <tr>
+	                    <td>Mercedes-Benz VITO</td> <td> <i title="Коробка механическая" class="icon manual"></i>
+	                    </td>
+	                    <td>150</td> <td>1900</td> <td>1750</td> <td>1600</td> <td>1400</td> <td>1300</td> <td>700</td> <td>10000</td> </tr>
+	                <tr>
+	                    <td>Hyundai SOLARIS</td> <td> <i title="Коробка механическая" class="icon manual"></i>
+	                        <i title="Кондиционер" class="icon condition"></i>
+	                    </td>
+	                    <td>150</td> <td>1900</td> <td>1750</td> <td>1600</td> <td>1400</td> <td>1300</td> <td>700</td> <td>7000</td> </tr>
+	                <tr>
+	                    <td>Renault Logan</td> <td> <i title="Коробка автоматическая" class="icon automatic"></i>
+	                        <i title="Кондиционер" class="icon condition"></i>
+	                    </td>
+	                    <td>140</td> <td>1750</td> <td>1600</td> <td>1500</td> <td>1250</td> <td>1100</td> <td>500</td> <td>7000</td> </tr>
+	                <tr>
+	                    <td>Lada Largus</td> <td> <i title="Коробка механическая" class="icon manual"></i>
+	                        <i title="Кондиционер" class="icon condition"></i>
+	                    </td>
+	                    <td>140</td> <td>1750</td> <td>1600</td> <td>1500</td> <td>1250</td> <td>1100</td> <td>500</td> <td>7000</td> </tr>
+	                <tr>
+	                    <td>Hyundai Accent</td> <td> <i title="Коробка автоматическая" class="icon automatic"></i>
+	                        <i title="Кондиционер" class="icon condition"></i>
+	                    </td>
+	                    <td>140</td> <td>1750</td> <td>1600</td> <td>1500</td> <td>1250</td> <td>1100</td> <td>500</td> <td>7000</td> </tr>
+	                <tr>
+	                    <td>Renault Sandero</td> <td> <i title="Коробка автоматическая" class="icon automatic"></i>
+	                        <i title="Кондиционер" class="icon condition"></i>
+	                    </td>
+	                    <td>140</td> <td>1750</td> <td>1600</td> <td>1500</td> <td>1250</td> <td>1100</td> <td>500</td> <td>7000</td> </tr>
+	                <tr>
+	                    <td>Suzuki Liana 4WD</td> <td> <i title="Коробка автоматическая" class="icon automatic"></i>
+	                        <i title="Кондиционер" class="icon condition"></i>
+	                    </td>
+	                    <td>140</td> <td>1750</td> <td>1600</td> <td>1500</td> <td>1250</td> <td>1100</td> <td>500</td> <td>7000</td> </tr>
+	                <tr>
+	                    <td>ГАЗ 330202</td> <td> <i title="Коробка механическая" class="icon manual"></i>
+	                    </td>
+	                    <td>140</td> <td>1750</td> <td>1600</td> <td>1500</td> <td>1250</td> <td>1100</td> <td>500</td> <td>7000</td> </tr>
+	                <tr>
+	                    <td>Renault Logan </td> <td> <i title="Коробка механическая" class="icon manual"></i>
+	                        <i title="Кондиционер" class="icon condition"></i>
+	                    </td>
+	                    <td>130</td> <td>1650</td> <td>1500</td> <td>1400</td> <td>1200</td> <td>1050</td> <td>500</td> <td>7000</td> </tr>
+	                <tr>
+	                    <td>Fiat Albea</td> <td> <i title="Коробка механическая" class="icon manual"></i>
+	                        <i title="Кондиционер" class="icon condition"></i>
+	                    </td>
+	                    <td>130</td> <td>1650</td> <td>1500</td> <td>1400</td> <td>1200</td> <td>1000</td> <td>500</td> <td>7000</td> </tr>
+	                <tr>
+	                    <td>Renault Sandero</td> <td> <i title="Коробка механическая" class="icon manual"></i>
+	                        <i title="Кондиционер" class="icon condition"></i>
+	                    </td>
+	                    <td>130</td> <td>1650</td> <td>1500</td> <td>1400</td> <td>1200</td> <td>1050</td> <td>500</td> <td>7000</td> </tr>
+	                <tr>
+	                    <td>Fiat Albea</td> <td> <i title="Коробка механическая" class="icon manual"></i>
+	                    </td>
+	                    <td>100</td> <td>1300</td> <td>1200</td> <td>1100</td> <td>900</td> <td>800</td> <td>500</td> <td>7000</td> </tr>
+	                <tr>
+	                    <td>Lada Priora</td> <td> <i title="Коробка механическая" class="icon manual"></i>
+	                        <i title="Кондиционер" class="icon condition"></i>
+	                    </td>
+	                    <td>100</td> <td>1300</td> <td>1200</td> <td>1100</td> <td>900</td> <td>800</td> <td>500</td> <td>6000</td> </tr>
+	                <tr>
+	                    <td>Lada Kalina</td> <td> <i title="Коробка механическая" class="icon manual"></i>
+	                    </td>
+	                    <td>100</td> <td>1300</td> <td>1200</td> <td>1100</td> <td>900</td> <td>800</td> <td>500</td> <td>6000</td> </tr>
+	                <tr>
+	                    <td>Кемпер Bailey Ranger</td> <td> </td>
+	                    <td></td> <td></td> <td>1000</td> <td>1000</td> <td>750</td> <td>500</td> <td>500</td> <td>10000</td> </tr>
+	                <tr>
+	                    <td>Прицеп "Атлет" (8213 В5)</td> <td> </td>
+	                    <td></td> <td>700</td> <td>700</td> <td>700</td> <td>700</td> <td>700</td> <td>500</td> <td>5000</td> </tr>
+	                <tr>
+	                    <td>Пвх лодка Delta 320 мк</td> <td> </td>
+	                    <td></td> <td>700</td> <td>700</td> <td>700</td> <td>700</td> <td>700</td> <td>500</td> <td>5000</td> </tr>
+	            </tbody>
+	        </table>
+	        <div id="fixed-table-container_price" class="fixed-table-container samara">
+	            <table>
+	                <thead>
+	                    <tr>
+	                        <th>Марка/Модель</th>
+	                        <th>Опции</th>
+	                        <th>1 час **</th>
+	                        <th>
+	                            <p align="center">1-3 суток</p>
+	                        </th>
+	                        <th>
+	                            <p align="center">4-6 суток</p>
+	                        </th>
+	                        <th>
+	                            <p align="center">7-15 суток</p>
+	                        </th>
+	                        <th>
+	                            <p align="center">16-30 суток</p>
+	                        </th>
+	                        <th>
+	                            <p align="center">от 30 дней</p>
+	                        </th>
+	                        <th>
+	                            <p align="center">Защита при ДТП<sup style="color: #ff0000;">***</sup></p>
+	                        </th>
+	                        <th>
+	                            <p align="center">Залог</p>
+	                        </th>
+	                    </tr>
+	                </thead>
+	                <tbody>
+	                    <tr>
+	                        <td>Daewoo Matiz</td> <td> <i title="Коробка механическая" class="icon manual"></i>
+	                        </td>
+	                        <td>90</td> <td>1100</td> <td>1000</td> <td>900</td> <td>800</td> <td>750</td> <td>500</td> <td>6000</td> </tr>
+	                    <tr>
+	                        <td>ВАЗ 2114</td> <td> <i title="Коробка Механическая коробка" class="icon mechanic"></i>
+	                        </td>
+	                        <td>80</td> <td>1000</td> <td>900</td> <td>800</td> <td>700</td> <td>600</td> <td>500</td> <td>6000</td> </tr>
+	                    <tr>
+	                        <td>Ford Thunderbird</td> <td> <i title="Коробка автоматическая" class="icon automatic"></i>
+	                            <i title="Кондиционер" class="icon condition"></i>
+	                        </td>
+	                        <td>500</td> <td>4700</td> <td>4500</td> <td>4300</td> <td>4200</td> <td>4100</td> <td>1000</td> <td>25000</td> </tr>
+	                    <tr>
+	                        <td>Hummer Н2 4WD</td> <td> <i title="Коробка Автоматическая" class="icon automatic"></i>
+	                            <i title="Кондиционер" class="icon condition"></i>
+	                        </td>
+	                        <td>350</td> <td>4700</td> <td>4500</td> <td>4300</td> <td>4200</td> <td>4100</td> <td>1000</td> <td>25000</td> </tr>
+	                    <tr>
+	                        <td>Volvo XC70</td> <td> <i title="Коробка автоматическая" class="icon automatic"></i>
+	                            <i title="Кондиционер" class="icon condition"></i>
+	                        </td>
+	                        <td>340</td> <td>4600</td> <td>4400</td> <td>4200</td> <td>4100</td> <td>4000</td> <td>1000</td> <td>25000</td> </tr>
+	                    <tr>
+	                        <td>Mitsubishi Pajero 3.0 4WD</td> <td> <i title="Коробка Автоматическая" class="icon automatic"></i>
+	                            <i title="Кондиционер" class="icon condition"></i>
+	                        </td>
+	                        <td>320</td> <td>4300</td> <td>4100</td> <td>3900</td> <td>3700</td> <td>3500</td> <td>1000</td> <td>25000</td> </tr>
+	                    <tr>
+	                        <td>BMW X3</td> <td> <i title="Коробка автоматическая" class="icon automatic"></i>
+	                            <i title="Кондиционер" class="icon condition"></i>
+	                        </td>
+	                        <td>320</td> <td>4100</td> <td>3900</td> <td>3700</td> <td>3500</td> <td>3300</td> <td>1000</td> <td>25000</td> </tr>
+	                    <tr>
+	                        <td>Hyundai Grand Starex</td> <td> <i title="Коробка автомат" class="icon  automatic"></i>
+	                            <i title="Кондиционер" class="icon condition"></i>
+	                        </td>
+	                        <td>300</td> <td>3900</td> <td>3700</td> <td>3500</td> <td>3300</td> <td>3000</td> <td>1000</td> <td>20000</td> </tr>
+	                    <tr>
+	                        <td>Toyota Land Cruiser 100 4WD</td> <td> <i title="Коробка автоматическая" class="icon automatic"></i>
+	                            <i title="Кондиционер" class="icon condition"></i>
+	                        </td>
+	                        <td>280</td> <td>3700</td> <td>3500</td> <td>3300</td> <td>3100</td> <td>2900</td> <td>1000</td> <td>20000</td> </tr>
+	                    <tr>
+	                        <td>Toyota Camry</td> <td> <i title="Коробка автоматическая" class="icon automatic"></i>
+	                            <i title="Кондиционер" class="icon condition"></i>
+	                        </td>
+	                        <td>280</td> <td>3700</td> <td>3500</td> <td>3300</td> <td>3100</td> <td>2900</td> <td>1000</td> <td>20000</td> </tr>
+	                    <tr>
+	                        <td>Mitsubishi L200 4WD</td> <td> <i title="Коробка механическая" class="icon manual"></i>
+	                            <i title="Кондиционер" class="icon condition"></i>
+	                        </td>
+	                        <td>250</td> <td>3500</td> <td>3300</td> <td>3100</td> <td>2900</td> <td>2700</td> <td>1000</td> <td>20000</td> </tr>
+	                    <tr>
+	                        <td>Volkswagen Tiguan 4WD</td> <td> <i title="Коробка автоматическая" class="icon automatic"></i>
+	                            <i title="Кондиционер" class="icon condition"></i>
+	                        </td>
+	                        <td>240</td> <td>3300</td> <td>3100</td> <td>2900</td> <td>2700</td> <td>2500</td> <td>1000</td> <td>10000</td> </tr>
+	                    <tr>
+	                        <td>Toyota RAV4</td> <td> <i title="Коробка автоматическая" class="icon automatic"></i>
+	                            <i title="Кондиционер" class="icon condition"></i>
+	                        </td>
+	                        <td>240</td> <td>3300</td> <td>3100</td> <td>2900</td> <td>2700</td> <td>2500</td> <td>1000</td> <td>10000</td> </tr>
+	                    <tr>
+	                        <td>KIA Sportage</td> <td> <i title="Коробка автоматическая" class="icon automatic"></i>
+	                            <i title="Кондиционер" class="icon condition"></i>
+	                        </td>
+	                        <td>240</td> <td>3300</td> <td>3100</td> <td>2900</td> <td>2700</td> <td>2500</td> <td>1000</td> <td>10000</td> </tr>
+	                    <tr>
+	                        <td>Renault Fluence</td> <td> <i title="Коробка автоматическая" class="icon automatic"></i>
+	                            <i title="Кондиционер" class="icon condition"></i>
+                        </td>
+                        <td>200</td> <td>2500</td> <td>2300</td> <td>2200</td> <td>2100</td> <td>2000</td> <td>700</td> <td>10000</td> </tr>
+                    <tr>
+                        <td>Renault Fluence</td> <td> <i title="Коробка автоматическая" class="icon automatic"></i>
+                            <i title="Кондиционер" class="icon condition"></i>
+                        </td>
+                        <td>200</td> <td>2500</td> <td>2300</td> <td>2200</td> <td>2100</td> <td>2000</td> <td>700</td> <td>10000</td> </tr>
+                    <tr>
+                        <td>Mitsubishi ASX</td> <td> <i title="Коробка автоматическая" class="icon automatic"></i>
+                            <i title="Кондиционер" class="icon condition"></i>
+                        </td>
+                        <td>200</td> <td>2500</td> <td>2300</td> <td>2200</td> <td>2100</td> <td>2000</td> <td>700</td> <td>10000</td> </tr>
+                    <tr>
+                        <td>Renault Duster 4WD</td> <td> <i title="Коробка механическая" class="icon manual"></i>
+                            <i title="Кондиционер" class="icon condition"></i>
+                        </td>
+                        <td>200</td> <td>2500</td> <td>2300</td> <td>2200</td> <td>2100</td> <td>2000</td> <td>700</td> <td>10000</td> </tr>
+                    <tr>
+                        <td>Volkswagen Tiguan</td> <td> <i title="Коробка механическая" class="icon manual"></i>
+                            <i title="Кондиционер" class="icon condition"></i>
+                        </td>
+                        <td>200</td> <td>2500</td> <td>2300</td> <td>2200</td> <td>2100</td> <td>2000</td> <td>700</td> <td>10000</td> </tr>
+                    <tr>
+                        <td>Hyundai Sonata</td> <td> <i title="Коробка Автоматическая" class="icon automatic"></i>
+                            <i title="Кондиционер" class="icon condition"></i>
+                        </td>
+                        <td>190</td> <td>2400</td> <td>2200</td> <td>2100</td> <td>2000</td> <td>1900</td> <td>700</td> <td>10000</td> </tr>
+                    <tr>
+                        <td>Chevrolet Niva 4WD</td> <td> <i title="Коробка механическая" class="icon manual"></i>
+                        </td>
+                        <td>190</td> <td>2400</td> <td>2200</td> <td>2100</td> <td>2000</td> <td>1900</td> <td>700</td> <td>7000</td> </tr>
+                    <tr>
+                        <td>Mitsubishi Lancer X</td> <td> <i title="Коробка автоматическая" class="icon automatic"></i>
+                            <i title="Кондиционер" class="icon condition"></i>
+                        </td>
+                        <td>170</td> <td>2200</td> <td>2000</td> <td>1900</td> <td>1800</td> <td>1700</td> <td>700</td> <td>7000</td> </tr>
+                    <tr>
+                        <td>Peugeot 308</td> <td> <i title="Коробка автоматическая" class="icon automatic"></i>
+                            <i title="Кондиционер" class="icon condition"></i>
+                        </td>
+                        <td>170</td> <td>2200</td> <td>2000</td> <td>1900</td> <td>1800</td> <td>1700</td> <td>700</td> <td>7000</td> </tr>
+                    <tr>
+                        <td>Mitsubishi Lancer X</td> <td> <i title="Коробка механическая" class="icon manual"></i>
+                            <i title="Кондиционер" class="icon condition"></i>
+                        </td>
+                        <td>160</td> <td>2100</td> <td>1900</td> <td>1750</td> <td>1650</td> <td>1500</td> <td>700</td> <td>7000</td> </tr>
+                    <tr>
+                        <td>Renault Fluence</td> <td> <i title="Коробка Механическая" class="icon manual"></i>
+                            <i title="Кондиционер" class="icon condition"></i>
+                        </td>
+                        <td>160</td> <td>2100</td> <td>1900</td> <td>1750</td> <td>1650</td> <td>1600</td> <td>700</td> <td>7000</td> </tr>
+                    <tr>
+                        <td>Ford Focus III</td> <td> <i title="Коробка механическая" class="icon mechanic"></i>
+                            <i title="Кондиционер" class="icon condition"></i>
+                        </td>
+                        <td>160</td> <td>2100</td> <td>1900</td> <td>1750</td> <td>1650</td> <td>1600</td> <td>700</td> <td>7000</td> </tr>
+                    <tr>
+                        <td>Nissan Almera New</td> <td> <i title="Коробка автоматическая" class="icon automatic"></i>
+                            <i title="Кондиционер" class="icon condition"></i>
+                        </td>
+                        <td>155</td> <td>2000</td> <td>1850</td> <td>1700</td> <td>1500</td> <td>1400</td> <td>700</td> <td>7000</td> </tr>
+                    <tr>
+                        <td>Nissan Almera New</td> <td> <i title="Коробка механическая" class="icon manual"></i>
+                            <i title="Кондиционер" class="icon condition"></i>
+                        </td>
+                        <td>150</td> <td>1900</td> <td>1750</td> <td>1600</td> <td>1400</td> <td>1300</td> <td>700</td> <td>7000</td> </tr>
+                    <tr>
+                        <td>Mercedes-Benz VITO</td> <td> <i title="Коробка механическая" class="icon manual"></i>
+                        </td>
+                        <td>150</td> <td>1900</td> <td>1750</td> <td>1600</td> <td>1400</td> <td>1300</td> <td>700</td> <td>10000</td> </tr>
+                    <tr>
+                        <td>Hyundai SOLARIS</td> <td> <i title="Коробка механическая" class="icon manual"></i>
+                            <i title="Кондиционер" class="icon condition"></i>
+                        </td>
+                        <td>150</td> <td>1900</td> <td>1750</td> <td>1600</td> <td>1400</td> <td>1300</td> <td>700</td> <td>7000</td> </tr>
+                    <tr>
+                        <td>Renault Logan</td> <td> <i title="Коробка автоматическая" class="icon automatic"></i>
+                            <i title="Кондиционер" class="icon condition"></i>
+                        </td>
+                        <td>140</td> <td>1750</td> <td>1600</td> <td>1500</td> <td>1250</td> <td>1100</td> <td>500</td> <td>7000</td> </tr>
+                    <tr>
+                        <td>Lada Largus</td> <td> <i title="Коробка механическая" class="icon manual"></i>
+                            <i title="Кондиционер" class="icon condition"></i>
+                        </td>
+                        <td>140</td> <td>1750</td> <td>1600</td> <td>1500</td> <td>1250</td> <td>1100</td> <td>500</td> <td>7000</td> </tr>
+                    <tr>
+                        <td>Hyundai Accent</td> <td> <i title="Коробка автоматическая" class="icon automatic"></i>
+                            <i title="Кондиционер" class="icon condition"></i>
+                        </td>
+                        <td>140</td> <td>1750</td> <td>1600</td> <td>1500</td> <td>1250</td> <td>1100</td> <td>500</td> <td>7000</td> </tr>
+                    <tr>
+                        <td>Renault Sandero</td> <td> <i title="Коробка автоматическая" class="icon automatic"></i>
+                            <i title="Кондиционер" class="icon condition"></i>
+                        </td>
+                        <td>140</td> <td>1750</td> <td>1600</td> <td>1500</td> <td>1250</td> <td>1100</td> <td>500</td> <td>7000</td> </tr>
+                    <tr>
+                        <td>Suzuki Liana 4WD</td> <td> <i title="Коробка автоматическая" class="icon automatic"></i>
+                            <i title="Кондиционер" class="icon condition"></i>
+                        </td>
+                        <td>140</td> <td>1750</td> <td>1600</td> <td>1500</td> <td>1250</td> <td>1100</td> <td>500</td> <td>7000</td> </tr>
+                    <tr>
+                        <td>ГАЗ 330202</td> <td> <i title="Коробка механическая" class="icon manual"></i>
+                        </td>
+                        <td>140</td> <td>1750</td> <td>1600</td> <td>1500</td> <td>1250</td> <td>1100</td> <td>500</td> <td>7000</td> </tr>
+                    <tr>
+                        <td>Renault Logan </td> <td> <i title="Коробка механическая" class="icon manual"></i>
+                            <i title="Кондиционер" class="icon condition"></i>
+                        </td>
+                        <td>130</td> <td>1650</td> <td>1500</td> <td>1400</td> <td>1200</td> <td>1050</td> <td>500</td> <td>7000</td> </tr>
+                    <tr>
+                        <td>Fiat Albea</td> <td> <i title="Коробка механическая" class="icon manual"></i>
+                            <i title="Кондиционер" class="icon condition"></i>
+                        </td>
+                        <td>130</td> <td>1650</td> <td>1500</td> <td>1400</td> <td>1200</td> <td>1000</td> <td>500</td> <td>7000</td> </tr>
+                    <tr>
+                        <td>Renault Sandero</td> <td> <i title="Коробка механическая" class="icon manual"></i>
+                            <i title="Кондиционер" class="icon condition"></i>
+                        </td>
+                        <td>130</td> <td>1650</td> <td>1500</td> <td>1400</td> <td>1200</td> <td>1050</td> <td>500</td> <td>7000</td> </tr>
+                    <tr>
+                        <td>Fiat Albea</td> <td> <i title="Коробка механическая" class="icon manual"></i>
+                        </td>
+                        <td>100</td> <td>1300</td> <td>1200</td> <td>1100</td> <td>900</td> <td>800</td> <td>500</td> <td>7000</td> </tr>
+                    <tr>
+                        <td>Lada Priora</td> <td> <i title="Коробка механическая" class="icon manual"></i>
+                            <i title="Кондиционер" class="icon condition"></i>
+                        </td>
+                        <td>100</td> <td>1300</td> <td>1200</td> <td>1100</td> <td>900</td> <td>800</td> <td>500</td> <td>6000</td> </tr>
+                    <tr>
+                        <td>Lada Kalina</td> <td> <i title="Коробка механическая" class="icon manual"></i>
+                        </td>
+                        <td>100</td> <td>1300</td> <td>1200</td> <td>1100</td> <td>900</td> <td>800</td> <td>500</td> <td>6000</td> </tr>
+                    <tr>
+                        <td>Кемпер Bailey Ranger</td> <td> </td>
+                        <td></td> <td></td> <td>1000</td> <td>1000</td> <td>750</td> <td>500</td> <td>500</td> <td>10000</td> </tr>
+                    <tr>
+                        <td>Прицеп "Атлет" (8213 В5)</td> <td> </td>
+                        <td></td> <td>700</td> <td>700</td> <td>700</td> <td>700</td> <td>700</td> <td>500</td> <td>5000</td> </tr>
+                    <tr>
+                        <td>Пвх лодка Delta 320 мк</td> <td> </td>
+                        <td></td> <td>700</td> <td>700</td> <td>700</td> <td>700</td> <td>700</td> <td>500</td> <td>5000</td> </tr>
+                </tbody>
+            </table>
+        </div>
+        <p id="dfnd" style="position: relative; bottom: 180px;">&nbsp;</p>
+        <p id="dop-service">* На автомобили с кондиционером в период с 01.05 по 01.09 стоимость аренды увеличивается на 10% <br> ** почасовая аренда автомобиля возможна от 3 до 8 часов</p>
+        <p>*** <b>«Защита при ДТП»</b> - это дополнительная услуга, оплатив которую клиент освобождается от ответственности по: <br><i>п. 4.2. Арендатор возмещает Арендодателю стоимость ремонта поврежденных элементов в полном объеме, если Арендатор виновен в ДТП, если же не виновен, но суммы выплаты по ОСАГО меньше стоимости ремонта, Арендатор оплачивает разницу</i><br>и<br> <i>п. 5.8. Гарантийная сумма удерживается, если Автомобиль попал в ДТП по вине Арендатора. В этом случае все расходы при повреждениях несет ООО "БУМЕРАНГ-АВТО".</i><br><br> ОБЯЗАТЕЛЬНЫМ УСЛОВИЕМ остается правильное оформление документов при ДТП !!!</p>
+        <p>&nbsp;</p>
+        <!-- <p><span style="color: #ff0000;">** Возможность воспользоваться займом на специальных условиях</span></p> -->
+        <table class="color" style="width: 100%;">
+            <tbody>
+                <tr>
+                    <td colspan="2">
+                        <h2><span style="font-size: 60%; font-family: arial, helvetica, sans-serif; color: #ffffff;">Дополнительные услуги</span></h2>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="border-bottom: none;">
+                        <p>мойка автомобиля</p>
+                    </td>
+                    <td style="border-bottom: none;">
+                        <p>от 600 руб.*</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>снятие суточного ограничения по пробегу</td> <td>50 % от стоимости проката</td> </tr>
+                <tr>
+                    <td>почасовая оплата при несвоевременном приеме автомобиля</td> <td>от 100 руб./час</td> </tr>
+                <tr>
+                    <td style="border-bottom: none;">сверхлимитный пробег&nbsp;</td>
+                    <td style="border-bottom: none;">
+                        <p>от 3 руб. за каждый км.*</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>выдача / прием автомобиля вне пункта проката в рабочее время по г. Самара</td> <td>500 руб.</td> </tr>
+                <tr>
+                    <td>выдача / прием автомобиля с 20-00 до 23-00</td> <td>500 руб.</td> </tr>
+                <tr>
+                    <td>выдача / прием автомобиля с 23-00 до 6-00</td> <td>1000 руб.</td> </tr>
+                <tr>
+                    <td>выдача / прием автомобиля с 6-00 до 8-00</td> <td>500 руб.</td> </tr>
+                <tr>
+                    <td>выдача / прием автомобиля в рабочее время в аэропорту Курумоч</td> <td>1000 руб.</td> </tr>
+                <tr>
+                    <td>аренда детского кресла</td> <td>100 руб./ сутки</td> </tr>
+                <tr>
+                    <td>аренда навигатора</td> <td>100 руб./ сутки</td> </tr>
+                <tr>
+                    <td>аренда бокса на крышу автомобиля</td> <td>200 руб./ сутки</td> </tr>
+                <tr>
+                    <td> <p style="font-size: 100%; margin-top: 0px;">прокат прицепа к легковому автомобилю</p>
+                    </td>
+                    <td>700 руб./ сутки</td> </tr>
+            </tbody>
+        </table>
+        <p>* стоимость согласно договора</p>
+        <div class="questions">
+            <button>Остались вопросы?</button>
+        </div>
+    </div>
+</section>
+	<!-- /TEXT -->
+
+
+	<!-- STOCK -->
+
+	<section class="stock">
+		<div class="container">
+			<h2>Акции</h2>
+			<div class="stock__slider make">
+				<div class="stock__slider-slide">
+					<a href="vozmi-avto-na-prokat-v-fevrale-so-skidkoj.html">
+						<img src="img/stock1.jpg" alt="Возьми авто на прокат в феврале со скидкой" title="Возьми авто на прокат в феврале со скидкой">
+						<div class="short_name pt-3"><a href="vozmi-avto-na-prokat-v-fevrale-so-skidkoj.html" class="name">Возьми авто на прокат в феврале со скидкой</a></div>
+						<div class="short_desc pt-3"><p>Начался февраль, а значит впереди череда праздников! И БУМЕРАНГ-АВТО конечно не оставит вас без подарков!</p></div>
+						<div class="show_more pt-3">
+							<a href="vozmi-avto-na-prokat-v-fevrale-so-skidkoj.html" class="name">Подробнее</a>
+						</div>
+					</a>
+				</div>
+				<div class="stock__slider-slide">
+					<a href="skidka-za-skorost.html">
+						<img src="img/stock2.jpg" alt="Выгодные тарифы на краткосрочный прокат" title="Выгодные тарифы на краткосрочный прокат">
+						<div class="short_name pt-3"><a href="skidka-za-skorost.html" class="name">Выгодные тарифы на краткосрочный прокат</a></div>
+						<div class="short_desc pt-3"><p>Весь октябрь - краткосрочный прокат по выгодным тарифам длительного</p></div>
+						<div class="show_more pt-3">
+							<a href="skidka-za-skorost.html" class="name">Подробнее</a>
+						</div>
+					</a>
+				</div>
+				<div class="stock__slider-slide">
+					<a href="vozmi-avto-na-prokat-v-fevrale-so-skidkoj.html">
+						<img src="img/stock1.jpg" alt="Возьми авто на прокат в феврале со скидкой" title="Возьми авто на прокат в феврале со скидкой">
+						<div class="short_name pt-3"><a href="vozmi-avto-na-prokat-v-fevrale-so-skidkoj.html" class="name">Возьми авто на прокат в феврале со скидкой</a></div>
+						<div class="short_desc pt-3"><p>Начался февраль, а значит впереди череда праздников! И БУМЕРАНГ-АВТО конечно не оставит вас без подарков!</p></div>
+						<div class="show_more pt-3">
+							<a href="vozmi-avto-na-prokat-v-fevrale-so-skidkoj.html" class="name">Подробнее</a>
+						</div>
+					</a>
+				</div>
+				<div class="stock__slider-slide">
+					<a href="skidka-za-skorost.html">
+						<img src="img/stock2.jpg" alt="Выгодные тарифы на краткосрочный прокат" title="Выгодные тарифы на краткосрочный прокат">
+						<div class="short_name pt-3"><a href="skidka-za-skorost.html" class="name">Выгодные тарифы на краткосрочный прокат</a></div>
+						<div class="short_desc pt-3"><p>Весь октябрь - краткосрочный прокат по выгодным тарифам длительного</p></div>
+						<div class="show_more pt-3">
+							<a href="skidka-za-skorost.html" class="name">Подробнее</a>
+						</div>
+					</a>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- /STOCK -->
+
+	<!-- VIDEO -->
+	<section class="video">
+		<div class="container">
+		   <div class="row">
+				<div class="col-md mb-5 oddVideo">
+					<h2 class="pb-4">ОТЗЫВЫ</h2>
+					<div class="">   
+						<div class="embed-responsive embed-responsive-16by9">
+							<iframe src="https://www.youtube.com/embed/V9GJFNcKKFs" class="embed-responsive-item" allowfullscreen=""></iframe>
+						</div>
+					</div>
+					<br>
+					<div class="pt-2">Отзыв клиента о сервисе проката автомобилей Бумеранг-Авто</div>
+				</div>
+				<div class="col-md text-right evenVideo">
+					<h2 class="pb-4">УСЛУГИ</h2>
+					<div class="">
+						<div class="embed-responsive embed-responsive-16by9">
+							<iframe src="https://www.youtube.com/embed/zZpiid4KDrE" class="embed-responsive-item" allowfullscreen=""></iframe>
+						</div>
+					</div>
+					<br>
+					<div class="pt-2">Почему приуныла Toyota</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- /VIDEO -->
+
+	
+
+	<footer class="footer">
+		<div class="container">
+			<div class="row">
+				<div class="col-xl-3 col-lg-3 col-md-3">
+					<div class="footer-logo">
+						<a href="index.html">
+							<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 510.51 131.03"><defs></defs><title>logo_vertikal</title><path class="cls-1" d="M331.75,78.67H320.28l-22.82,51.48h12.86l3.92-8.8h23.33l4,8.8h13Zm1.15,31.51h-14l6.89-17.53Z"/><path class="cls-1" d="M390.92,78.67v30.11a11.78,11.78,0,0,1-.8,4.43,9.83,9.83,0,0,1-2.15,3.3,11.9,11.9,0,0,1-3.47,2.37,10.18,10.18,0,0,1-4.23.89,10,10,0,0,1-7.7-3.26,10.77,10.77,0,0,1-3.1-7.73V78.67H357.41v29.58a23.25,23.25,0,0,0,1.73,9,22.48,22.48,0,0,0,4.86,7.28,22.12,22.12,0,0,0,7,4.69,23.54,23.54,0,0,0,9.24,1.74,23.21,23.21,0,0,0,8.78-1.61,22.47,22.47,0,0,0,7-4.48A22.8,22.8,0,0,0,403,108.25V78.67Z"/><polygon class="cls-1" points="408.3 78.67 408.3 89.84 426.14 89.84 426.14 130.15 438.03 130.15 438.03 89.84 455.87 89.84 455.87 78.67 408.3 78.67"/><path class="cls-1" d="M508.55,94a26.59,26.59,0,0,0-5.66-8.66,25.22,25.22,0,0,0-8.54-5.59,30.48,30.48,0,0,0-22.05.22,25.6,25.6,0,0,0-8.69,6,26,26,0,0,0-5.32,8.31,27.07,27.07,0,0,0-1.88,10.09,25.89,25.89,0,0,0,1.93,9.86,27.07,27.07,0,0,0,5.18,8.21,27.46,27.46,0,0,0,8.71,6.19A26.89,26.89,0,0,0,483.49,131a28.37,28.37,0,0,0,11.08-2.1,26.34,26.34,0,0,0,8.65-5.87,25.22,25.22,0,0,0,5.41-8.37A28.78,28.78,0,0,0,508.55,94Zm-10.09,10.41a16.51,16.51,0,0,1-1.08,6.08,15,15,0,0,1-2.93,4.72,14.46,14.46,0,0,1-4.89,3.43,15.78,15.78,0,0,1-12.2,0,14.12,14.12,0,0,1-4.83-3.47,15.56,15.56,0,0,1-3-4.75,15.75,15.75,0,0,1-1.11-6,16,16,0,0,1,1.11-6.06,15.53,15.53,0,0,1,3-4.74,14.53,14.53,0,0,1,4.89-3.43A15.27,15.27,0,0,1,483.49,89a15.16,15.16,0,0,1,10.9,4.58,14.58,14.58,0,0,1,3,4.68A16.53,16.53,0,0,1,498.46,104.41Z"/><path class="cls-1" d="M42.72,27.14a14,14,0,0,0-3.38-3.23,12.43,12.43,0,0,0,2-2.46,11.44,11.44,0,0,0,1.09-3,14.76,14.76,0,0,0,.32-3.07,14.71,14.71,0,0,0-1-5.44A12.78,12.78,0,0,0,38.93,5.6a15.33,15.33,0,0,0-5.59-3.55A19.14,19.14,0,0,0,26.73.9H0V52.75H27.7a19,19,0,0,0,7.05-1.29,18.41,18.41,0,0,0,5.74-3.61,15.45,15.45,0,0,0,3.68-5.18,16.07,16.07,0,0,0,1.32-6.5A15.17,15.17,0,0,0,42.72,27.14ZM12.14,19.59V11.91H26.27a4.91,4.91,0,0,1,3.47,1.16,3.45,3.45,0,0,1,1,2.72,4,4,0,0,1-.92,2.7,3.7,3.7,0,0,1-1.07.82,2.55,2.55,0,0,1-1.22.28Zm21.44,16.5a6.62,6.62,0,0,1-.37,2.26,4.29,4.29,0,0,1-.91,1.53,7.26,7.26,0,0,1-2.11,1.36,6,6,0,0,1-2.39.5H12.14V30.6H28.2a5.49,5.49,0,0,1,2.35.52,6.12,6.12,0,0,1,1.93,1.36A5.31,5.31,0,0,1,33.59,36.09Z"/><polygon class="cls-1" points="214.17 0.9 198.4 23.53 182.24 0.9 170.24 0.9 170.24 52.75 181.89 52.75 181.89 20.61 195.54 39.78 200.49 39.78 213.97 20.65 213.97 52.75 226.11 52.75 226.11 0.9 214.17 0.9"/><polygon class="cls-1" points="247.48 41.49 247.48 31.32 273.25 31.32 273.25 20.07 247.48 20.07 247.48 12.32 276.31 12.32 276.31 0.9 235.34 0.9 235.34 52.75 277.44 52.75 277.44 41.49 247.48 41.49"/><path class="cls-1" d="M330.3,50.08q-2.18-3.63-4.56-7.51l-3.54-5.76a16.57,16.57,0,0,0,2.29-1.53,20.32,20.32,0,0,0,3.19-3.19,18.56,18.56,0,0,0,3.82-11.71,18.81,18.81,0,0,0-1.56-7.73,20.47,20.47,0,0,0-4.21-6.1,19.86,19.86,0,0,0-6.49-4.2A20.93,20.93,0,0,0,311.47.9h-25.6V52.75H298V39.62h12.1l7.84,13.13h14ZM319.37,20.42a8.86,8.86,0,0,1-.54,3,7.64,7.64,0,0,1-1.65,2.64,5.82,5.82,0,0,1-2.28,1.64,8.24,8.24,0,0,1-3.25.63H298V12.32h13.24a8.61,8.61,0,0,1,3.53.73,6.79,6.79,0,0,1,2.64,2A7.42,7.42,0,0,1,319.37,20.42Z"/><path class="cls-1" d="M370.71.9H359.15l-23,51.85h13l3.95-8.86h23.49l4,8.86h13.1Zm1.16,31.74H357.81L364.74,15Z"/><polygon class="cls-1" points="436.52 0.9 436.52 32.54 410.52 0.9 399.96 0.9 399.96 52.75 411.94 52.75 411.94 21.2 437.77 52.75 448.34 52.75 448.34 0.9 436.52 0.9"/><path class="cls-1" d="M480.53,31.8l12.4.64v7.32a19.78,19.78,0,0,1-3.8,1.65,18,18,0,0,1-11.45-.28A14.77,14.77,0,0,1,472.94,38a14.41,14.41,0,0,1-3.25-4.85,16.72,16.72,0,0,1-1.19-6.45,16.19,16.19,0,0,1,1.12-6.07,14,14,0,0,1,3-4.69,15.66,15.66,0,0,1,5-3.37,17.94,17.94,0,0,1,12.89,0,18.56,18.56,0,0,1,5.72,4.09L497.51,18l8.21-8.21-1.24-1.24A28.81,28.81,0,0,0,495,2a31.8,31.8,0,0,0-22.18,0,26.66,26.66,0,0,0-8.69,5.63,25.33,25.33,0,0,0-5.88,8.56,26.94,26.94,0,0,0-2.07,10.51,28.3,28.3,0,0,0,1.68,9.79,26.24,26.24,0,0,0,4.53,7.93,25,25,0,0,0,9,6.76,29.39,29.39,0,0,0,12.1,2.41,28.38,28.38,0,0,0,7.66-1,47.09,47.09,0,0,0,7.61-2.92A23,23,0,0,0,504.06,46l1-.9v-24H480.53Z"/><path class="cls-1" d="M160.56,16.34a26.78,26.78,0,0,0-5.7-8.72A25.4,25.4,0,0,0,146.25,2a27.75,27.75,0,0,0-8.86-2H134l0,.06a29.68,29.68,0,0,0-17.48,7l-4.59-4.59V19.77h17.31l-4.72-4.72a18.37,18.37,0,0,1,10.92-3.76h0a15.16,15.16,0,0,1,10.79,4.59,14.69,14.69,0,0,1,3,4.71,16.64,16.64,0,0,1,1.12,6.23,16.59,16.59,0,0,1-1.08,6.12,15.11,15.11,0,0,1-3,4.76,14.56,14.56,0,0,1-4.93,3.45,15.73,15.73,0,0,1-7.73,1.06c-7.55-1-13.39-8.34-19.37-16.5l0,0-7-9.23C100.71,8.19,92.76.88,81.27.1L79.57,0l-.32,0L77.49.11a27.76,27.76,0,0,0-9.27,2.1,25.73,25.73,0,0,0-8.75,6.08,26.14,26.14,0,0,0-5.36,8.37,27.27,27.27,0,0,0-1.9,10.16,26.07,26.07,0,0,0,1.94,9.93A27.25,27.25,0,0,0,59.37,45a27.63,27.63,0,0,0,8.77,6.24,26.55,26.55,0,0,0,9.34,2.28l1.76.09h.26l1.76-.11c7-.53,12.54-3.83,17.35-8.36l5,5V32.89H86.36l4.31,4.31c-3.43,3.11-7.12,5.14-11.38,5.15a15.09,15.09,0,0,1-6-1.24,14.27,14.27,0,0,1-4.86-3.49,15.67,15.67,0,0,1-3-4.78,15.88,15.88,0,0,1-1.12-6,16.11,16.11,0,0,1,1.12-6.1,15.64,15.64,0,0,1,3-4.78,14.64,14.64,0,0,1,4.93-3.45,15.35,15.35,0,0,1,5.8-1.19h0c8.82,0,15.08,6.5,21.13,14.42l7,9.39c7.09,9.42,14.93,18,27,18.46l0,.06h2.78c6.62,0,14.1-4.11,18-8a25.4,25.4,0,0,0,5.45-8.43,28,28,0,0,0,1.9-10.36A27.88,27.88,0,0,0,160.56,16.34Z"/></svg>
+						</a>
+						<div class="footer-logo-text">
+							Действующий участник Российской ассоциации проката автомобилей
+						</div>	
+					</div>
+				</div>
+				<div class="col-xl-3 col-lg-2 col-md-3">
+					<nav class="footer-menu">
+						<ul>
+							<li><a href="arenda-mashin.html">Автопарк</a></li>
+							<li><a href="mashiny-na-prokat.html">Условия аренды</a></li>
+							<li><a href="avtoservis.html">Автосервис</a></li>
+							<li><a href="prajs.html">Прайс</a></li>
+							<li><a href="avtoprokat.html">О нас</a></li>
+							<li><a href="kontakty.html">Контакты</a></li>
+							<li><a href="otzyvy.html">Отзывы</a></li>
+							<li><a href="oplata.html">Оплата</a></li>
+							<li><a href="stati.html">Статьи</a></li>
+						</ul>
+					</nav>
+				</div>
+				<div class="col-xl-4 col-lg-4 col-md-3">
+					<div class="work-time">
+						<div class="work-time-title">Режим работы:</div>
+						<ul>
+							<li>Ежедневно: С 08:00 до 20:00</li>
+							<li>Город: 
+								<select id="select-cust" class="select-cust">
+									<option value="Самара">Самара</option>
+									<option value="Москва">Москва</option>
+									<option value="Пермь">Пермь</option>
+								</select>
+							</li>
+							<li>Адрес: 443022, Самара, Заводское шоссе, 11, офис 106</li>
+							<a href="mailto:info@avtobum63.ru">info@avtobum63.ru</a>
+						</ul>
+					</div>
+				</div>
+				<div class="col-xl-2 col-lg-3 col-md-3">
+					<div class="footer-callback">
+						<div class="social">
+							<a href="#"><img src="img/inst.png" alt="ALT"></a>
+							<a href="#"><img src="img/vk.png" alt="ALT"></a>
+							<a href="#"><img src="img/fb.png" alt="ALT"></a>
+						</div>
+						<div class="footer-callback-phone">
+							<div class="footer-callback-title">Позвоните нам</div>
+							<a href="tel:+79001234567">+7 (900) 123-45-67</a>
+							<a href="tel:+79001234567">+7 (900) 123-45-67</a>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-12">
+					<p>Обращаем Ваше внимание на то, что данный интернет сайт носит исключительно информационный характер и ни при каких условиях не является публичной офертой, определяемой положениями Статьи 437 (2) Нражданского кодекса Российской Федерации. Для получения подробной иформации о наличии и стоимости указанных товаров и (или) услуг, пожалуйста обращайтесь к менеджерам отдела клиентского обслуживания с помощью специальной формы связи или по телефону: 8 (846) 989-07-34 (24)</p>
+				</div>			
+			</div>
+		</div>
+	</footer>
+	<div class="car-bg"></div>
+
+	<script src="js/scripts.min.js"></script>
+
+</body>
+</html>

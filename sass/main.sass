@@ -297,7 +297,204 @@ section
 		.name
 			font-size: 20px
 			padding: 10px 0
+
+.price-table 
+	display: none
+	tr 
+		&:first-child 
+			display: none
+
+		&:nth-child(2) 
+			display: none
+
+		&:nth-child(2n) td 
+			background: $blue
+		
+		td:nth-child(n + 3) 
+			text-align: center
+	tbody 
+		&:first-child tr 
+			&:nth-child(3) td:first-child 
+				position: absolute
+				display: inline-block
+
+			&:first-child td:nth-child(2) 
+				padding-left: 40px
+
+		tr td 
+			height: 59px
+			&:first-child 
+				position: absolute
+				display: inline-block
+				width: 120px
+
+			&:nth-child(2) 
+				padding-left: 140px !important
+	&.samara tr 
+		&:nth-child(3) td:nth-child(7) 
+			background-color: #ff6c1c63 !important
+
+		&:nth-child(n + 4) td:nth-child(9) 
+			background-color: #ff6c1c63 !important
+
+
+	&.cheboksary tr 
+		&:nth-child(3) td:nth-child(3) 
+			background-color: #ff6c1c63 !important
+
+		&:nth-child(n + 4) td:nth-child(5) 
+			background-color: #ff6c1c63 !important
+
 // TEXT END
+
+// FIXED-TABLE
+
+//@extend-elements
+//original selectors
+//.fixed-table-container th, .fixed-table-container td
+.extend_1 
+	border-right: 1px solid $color_celeste_approx
+	border-bottom: 1px solid $color_celeste_approx
+	padding: 8px
+	text-align: left
+	vertical-align: top
+	white-space: nowrap !important
+
+//@extend-elements
+//original selectors
+//.fixed-table-container th, .fixed-table-container td
+.extend_2 
+	text-align: center !important
+	padding: 9px 7px !important
+	border-top: none !important
+	border-bottom: 1px solid $blue !important
+	border-right: 1px solid $blue !important
+	font-size: 14px !important
+	line-height: 130% !important
+
+
+
+.fixed-table-container 
+	height: 500px
+	//If you use compass, instead of the line below you could use + box-sizing($bs)
+	box-sizing: border-box
+	border: 1px solid $color_celeste_approx
+	margin-bottom: 40px
+	table 
+		border-collapse: collapse
+		width: 100%
+
+	th 
+		@extend .extend_1
+		background: $color_gallery_approx
+		font-size: 12px
+		line-height: 16px
+		padding-top: 10px
+		padding-bottom: 10px
+		&:last-child 
+			border-right: 0
+
+
+	td 
+		@extend .extend_1
+		&:first-child 
+			background: $color_gallery_approx
+
+		&:last-child 
+			border-right: 0
+
+
+	tr:last-child td 
+		border-bottom: 0
+
+
+
+.fixed-table-container 
+	display: block !important
+	height: 500px !important
+	margin: 30px 0 0 0 !important
+	table 
+		border-bottom: 3px solid $blue !important
+		width: 100%
+		border-collapse: separate !important
+		//If you use compass, instead of the line below you could use + border-radius($radius, $vertical-radius)
+		border-radius: 5px 5px 10px 10px !important
+		border-left: 1px solid $white !important
+		border-right: 1px solid $white !important
+		color: $black !important
+		line-height: 130% !important
+		thead 
+			left: 137px !important
+			tr th 
+				background: $color_bon_jour_approx !important
+				vertical-align: middle
+				color: $black !important
+				&:first-child 
+					width: 122px !important
+					background: $color_bon_jour_approx !important
+					line-height: 130% !important
+					left: -137px !important
+
+
+
+		tbody 
+			margin-top: 63px !important
+			width: 100% !important
+			tr 
+				padding-left: 136px !important
+				&:nth-child(even) 
+					background: $color_bon_jour_approx !important
+					td:first-child 
+						background: $color_bon_jour_approx !important
+
+
+				td:first-child 
+					width: 122px !important
+					padding: 9px 7px !important
+					line-height: 130% !important
+
+
+
+		td 
+			color: $black !important
+
+		tr td:nth-child(n + 3) 
+			text-align: center
+
+
+	th 
+		@extend .extend_2
+		height: 60px !important
+
+	td 
+		@extend .extend_2
+		height: 60px !important
+
+	p 
+		font-size: 14px !important
+		color: $black !important
+
+	tr td:first-child 
+		white-space: normal !important
+
+	&.samara table 
+		tr td:nth-child(9) 
+			background-color: #ff6c1c63 !important
+
+		thead tr th:nth-child(9) 
+			background-color: #ff6c1c63 !important
+
+
+	&.cheboksary table 
+		tr td:nth-child(5) 
+			background-color: #ff6c1c63 !important
+
+		thead tr th:nth-child(5) 
+			background-color: #ff6c1c63 !important
+
+
+// FIXED-TABLE END
+
 
 //STOCK
 .stock
@@ -383,6 +580,28 @@ section
 		box-shadow: -20px 20px rgba(0, 0, 0, 0.2)
 .evenVideo .embed-responsive.embed-responsive-16by9
 		box-shadow: 20px 20px rgba(0, 0, 0, 0.2)
+
+.embed-responsive.embed-responsive-16by9.text-review 
+	&:before 
+		content: ""
+		position: absolute
+		z-index: -1
+		background: $logo_infinity no-repeat center center $black_alpha05 / 120%
+		display: block
+		width: 100%
+		height: 100%
+		opacity: .2
+		background-position-x: -210%
+
+	div 
+		position: relative
+		top: 0
+		bottom: 0
+		left: 0
+		width: 100%
+		height: 100%
+		border: 0
+		padding: 10px
 //VIDEO END
 
 //PARTNERS
@@ -502,57 +721,6 @@ section
 		margin-top: 50px
 // FOOTER END
 
-// FIXED-TABLE
-
-//colors
-$color_celeste_approx: #ccc
-$color_gallery_approx: #eee
-
-//@extend-elements
-//original selectors
-//.fixed-table-container th, .fixed-table-container td
-.extend_1 
-	border-right: 1px solid $color_celeste_approx
-	border-bottom: 1px solid $color_celeste_approx
-	padding: 8px
-	text-align: left
-	vertical-align: top
-	white-space: nowrap !important
-
-.fixed-table-container 
-	height: 300px
-	//If you use compass, instead of the line below you could use + box-sizing($bs)
-	box-sizing: border-box
-	border: 1px solid $color_celeste_approx
-	margin-bottom: 40px
-	table 
-		border-collapse: collapse
-		width: 100%
-
-	th 
-		@extend .extend_1
-		background: $color_gallery_approx
-		font-size: 12px
-		line-height: 16px
-		padding-top: 10px
-		padding-bottom: 10px
-		&:last-child 
-			border-right: 0
-
-
-	td 
-		@extend .extend_1
-		&:first-child 
-			background: $color_gallery_approx
-
-		&:last-child 
-			border-right: 0
-
-
-	tr:last-child td 
-		border-bottom: 0
-
-// FIXED-TABLE END
 
 
 

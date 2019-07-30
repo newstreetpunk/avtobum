@@ -80,7 +80,7 @@
 	<!-- MAIN -->
 	<main class="content">
 		<div class="content__block">
-			<form action="#">
+			<form action="/arenda-mashin.html">
 				<div class="content__block-loc content__block-item">
 					<img src="img/emblem.png" alt="ALT">
 					<div class="content__block--city content__block--mid">Город</div>
@@ -131,9 +131,14 @@
 					carName.forEach(function callback(currentValue, index, array) {
 					    document.write('<div class="col-sm-6 col-xl-4 mb-5 product">\
 					    	<p class="nameCar"><a href="/bmw-x6.html">'+currentValue+'</a></p>\
-					    	<div class="photo embed-responsive embed-responsive-16by9">\
-					    	<span class="new-avto"></span>\
-							<a href="/bmw-x6.html" title="'+currentValue+'"><img alt="'+currentValue+'" class="embed-responsive-item" src="'+imgPath+imgURL[index]+'"></a>\
+					    	<div class="photo embed-responsive embed-responsive-16by9">');
+
+					    if(Math.random()<0.3)
+						    document.write('<span class="new-avto"></span>');
+					    else if(Math.random()>0.7)
+						    document.write('<span class="trailer-icon"></span>');
+
+						document.write('<a href="/bmw-x6.html" title="'+currentValue+'"><img alt="'+currentValue+'" class="embed-responsive-item" src="'+imgPath+imgURL[index]+'"></a>\
 							</div>\
 					   	');
 				        document.write('<div class="bronInfo">');
@@ -145,7 +150,6 @@
 			                от\
 			                <span class="car-price">1700</span> <span class="price-note">₽/сут.</span>\
 			            </p>\
-			            <a class="bron" data-name="Peugeot 308" rel="peugeot-308">Забронировать</a>\
 			            </div>');
 					    document.write('\
 					    <div class="descCar">\
@@ -190,15 +194,15 @@
 				                        </li>');
 	                    document.write('</ul>\
 				                </div>\
-				                <a class="toggle-more collapsed" href="javascript:void(0);">Посмотреть подробную информацию</a>\
+				                <div class="toggle-more"><a class="collapsed" href="javascript:void(0);">Посмотреть подробную информацию</a></div>\
 				                <p class="inner" style="display: none;">\
-				                <strong>Дополнительные опции</strong>:\
+				                <strong>Дополнительные опции</strong>:<br>\
 				                2 электростеклоподъёмника, электрорегулировка и обогрев зеркал,  подогрев передних сидений,  автомагнитола.\
 				                </p>\
 				            </div>\
 				        </div>');
 					    document.write('\
-			    	<div class="table-box car-section" style="display:none;">\
+			    	<div class="table-box1 car-section" style="display:none;">\
 			            <table class="color">\
 			                <tbody>\
 			                    <tr>\

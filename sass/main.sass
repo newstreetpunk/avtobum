@@ -789,6 +789,30 @@ table.price-table
 			left: 0
 			right: 0
 			bottom: 0
+		
+		.new-avto 
+			display: block
+			background: $new_avto
+			width: 115px
+			height: 63px
+			background-repeat: no-repeat
+			position: absolute
+			right: 0
+			top: 60px
+			z-index: 10
+
+		.trailer-icon 
+			display: block
+			background: $trailer
+			background-size: contain
+			width: 85px
+			height: 85px
+			background-repeat: no-repeat
+			position: absolute
+			right: 0
+			top: 70px
+			z-index: 10
+			
 	.bronInfo
 		.new-price,
 		.price
@@ -808,79 +832,56 @@ table.price-table
 		.bron
 	.descCar
 		.desc
+			// icon on list avto
+			.vehicle-options
+				&.pt-2
+					width: 100%
+					float: none
+					text-align: center
+					flex-wrap: wrap
+					width: 100%
+					margin-bottom: 25px
+					ul
+						padding: 0 0 10px !important
+						justify-content: space-around
+						list-style: none
+						padding-bottom: .5em
+						display: -webkit-flex
+						flex-wrap: wrap
+						display: flex
+						// width: 80%
+						margin: 0 auto
+						li
+							display: table
+							padding: 0 5px
+							fill: $blue
+				img
+					width: 18px
+					height: 18px
+					margin-right: 10px
+					vertical-align: middle
+					border-style: none
+				.farkop 
+					img
+						width: 34px
+						height: auto
+			.ineer
+				margin-top: 20px
 		.toggle-more
+			position: relative
+			padding-right: 20px
+			a:after
+				content: url(https://avtobum63.ru/assets/images/svg/013-arrow-down-sign-to-navigate.svg)
+				width: 12px
+				position: absolute
+				right: 0
+				transform: rotate(-180deg)
+				transition: all .5s
+			a.collapsed:after
+				transform: rotate(0deg)
 	.table-box.car-section
 
-
-// icon on list avto
-.vehicle-options.pt-2
-    width: 100%
-    float: none
-    text-align: center
-    flex-wrap: wrap
-    width: 100%
-    margin-bottom: 25px
-
-.vehicle-options.pt-2 ul
-    padding: 0 0 10px !important
-    justify-content: space-around
-    list-style: none
-    padding-bottom: .5em
-    display: -webkit-flex
-    flex-wrap: wrap
-    display: flex
-    // width: 80%
-    margin: 0 auto
-
-.vehicle-options.pt-2 ul li
-    display: table
-    padding: 0 5px
-
-.vehicle-options img
-    width: 18px
-    height: 18px
-    margin-right: 10px
-    vertical-align: middle
-    border-style: none
-
-.vehicle-options .farkop img
-    width: 34px
-    height: auto
-
-
-
-
-.desc a.toggle
-    font-size: .8em
-    position: relative
-    padding-right: 20px
-    text-decoration: underline
-    color: #000
-
-
-#content .product .descCar .desc p.inner
-    margin-top: 20px
-
-    
-.desc a.toggle.collapsed:after
-    transform: rotate(0deg)
-
-
-.desc a.toggle:after
-    content: url(/assets/images/svg/013-arrow-down-sign-to-navigate.svg?)
-    width: 12px
-    position: absolute
-    right: 0
-    top: 2px
-    transform: rotate(-180deg)
-    transition: all .5s
-
 // AVTOPARK END
-
-
-.lang_panel,
-header .phone .mobile__switch
-    display: none
 
 
 @import "media" // Always at the end

@@ -113,17 +113,17 @@ $(function() {
         if(document.getElementById('fixed-table-container_price')) {
            var fixedTable = fixTable(document.getElementById('fixed-table-container_price'));
         }
-        
-        $('.toggle-more').click(function(e) {
+
+        $('.toggle-more a').click(function(e) {
             e.preventDefault();
           
             var $this = $(this);
           
-            if ($this.next().hasClass('show')) {
+            if ($this.parent().next().hasClass('show')) {
                 // hide current
                 $this.addClass('collapsed');
-                $this.next().removeClass('show');
-                $this.next().slideUp(350);
+                $this.parent().next().removeClass('show');
+                $this.parent().next().slideUp(350);
                 $this.parent().parent().parent().children('.table-box.car-section').removeClass('show');
                 $this.parent().parent().parent().children('.table-box.car-section').slideUp(350);
             } else {
@@ -140,8 +140,8 @@ $(function() {
                 
                 if(typeof yaCounter28702351 !== 'undefined') yaCounter28702351.reachGoal('show_more_autoinfo');
                 $this.removeClass('collapsed');
-                $this.next().toggleClass('show');
-                $this.next().slideToggle(350);
+                $this.parent().next().toggleClass('show');
+                $this.parent().next().slideToggle(350);
                 $this.parent().parent().parent().children('.table-box.car-section').toggleClass('show');
                 $this.parent().parent().parent().children('.table-box.car-section').slideToggle(350);
             }
@@ -284,5 +284,6 @@ $(function() {
         relayout: relayout
       };
     }
+
 
 }, jQuery);

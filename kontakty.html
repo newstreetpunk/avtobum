@@ -116,8 +116,130 @@
 	<!-- TEXT -->
 	<section class="text clearfix">
 		<div class="container">
-			<h1>Заголовок для страницы Контакты</h1>
+			<h1>Адреса филиалов БУМЕРАНГ-АВТО</h1>
 			
+<div class="row"><div class="col-md-5 mb-5">
+<h1><b>Контакты г. Самара:</b></h1>
+<p><b>Адрес:</b> 443022, Самара, Заводское шоссе, 11 , офис 106</p>
+<p><b>Телефоны:</b><br>
+<a class="contact__phone" href="tel:8 800 550 08 51">8 800 550 08 51</a> &ndash; звонок бесплатный<br>
+<a class="contact__phone" href="tel:+7 (937) 989-04-34">+7 (937) 989-04-34</a><br>
+<a class="contact__phone" href="tel:8 (846) 989-04-24">8 (846) 989-04-24</a><br>
+<a class="contact__phone" href="tel:+7 (937) 999-80-60">+7 (937) 999-80-60</a> &ndash; технический специалист
+</p>
+<p><b>E-mail:</b> <a class="email" href="mailto:info@avtobum63.ru">info@avtobum63.ru</a></p>
+<p><p><strong>Ежедневно</strong>: с 08:00 до 20:00</p></p>
+</div>
+<div class="col-md-7 mb-5">
+<div id="tiles-top-" style="width: 100%; min-height: 473px;"></div>
+</div>
+<script>
+(function() {
+	function startYamap() {
+		ymaps.ready(init);
+        var map,
+            placemark;
+
+        function init() {
+            var map = new ymaps.Map("tiles-top-", {
+                center: [53.200072, 50.261113],
+                zoom: 14
+            });
+            map.behaviors.disable("scrollZoom");
+
+            placemark = new ymaps.Placemark([53.200072, 50.261113], { hintContent: "Бумеранг-Авто в Самаре", balloonContent: "<b>Бумеранг-Авто в Самаре</b><br>443022, Самара, Заводское шоссе, 11 , офис 106" }, { preset: "islands#blueAutoIcon" });
+            map.geoObjects.add(placemark);
+        }
+	}
+	document.addEventListener("DOMContentLoaded", function(event) { 
+        if(typeof ymaps !== "undefined") startYamap();
+        else setTimeout(startYamap, 1000);
+	});
+})();
+</script>
+<div class="col-md-5 mb-5">
+<h1><b>Контакты г. Чебоксары:</b></h1>
+<p><b>Адрес:</b> 428003, Чебоксары, проезд Школьный, дом 1, офис 206</p>
+<p><b>Телефоны:</b><br>
+<a class="contact__phone" href="tel:8 800 550 08 51">8 800 550 08 51</a> &ndash; звонок бесплатный<br>
+<a class="contact__phone" href="tel:+7 (937) 372 62 50">+7 (937) 372 62 50</a><br>
+
+
+</p>
+<p><b>E-mail:</b> <a class="email" href="mailto:info@avtobum63.ru">info@avtobum63.ru</a></p>
+<p><p><strong>Ежедневно</strong>: с 08:00 до 20:00</p></p>
+</div>
+<div class="col-md-7 mb-5">
+<div id="tiles-top-cheb" style="width: 100%; min-height: 473px;"></div>
+</div>
+<script>
+(function() {
+	function startYamap() {
+		ymaps.ready(init);
+        var map,
+            placemark;
+
+        function init() {
+            var map = new ymaps.Map("tiles-top-cheb", {
+                center: [56.122561, 47.260770],
+                zoom: 14
+            });
+            map.behaviors.disable("scrollZoom");
+
+            placemark = new ymaps.Placemark([56.122561, 47.260770], { hintContent: "Бумеранг-Авто в Чебоксарах", balloonContent: "<b>Бумеранг-Авто в Чебоксарах</b><br>428003, Чебоксары, проезд Школьный, дом 1, офис 206" }, { preset: "islands#blueAutoIcon" });
+            map.geoObjects.add(placemark);
+        }
+	}
+	document.addEventListener("DOMContentLoaded", function(event) { 
+        if(typeof ymaps !== "undefined") startYamap();
+        else setTimeout(startYamap, 1000);
+	});
+})();
+</script>
+<div class="col-md-5 mb-5">
+<h1><b>Контакты г. Уфа:</b></h1>
+<p><b>Адрес:</b> 450029, Республика Башкортостан, г. Уфа, ул. Ульяновых, д.65, корп.10, офис 104 </p>
+<p><b>Телефоны:</b><br>
+<a class="contact__phone" href="tel:8 800 550 08 51">8 800 550 08 51</a> &ndash; звонок бесплатный<br>
+
+
+
+</p>
+<p><b>E-mail:</b> <a class="email" href="mailto:info@avtobum63.ru">info@avtobum63.ru</a></p>
+<p><p><strong>Ежедневно</strong>: с 08:00 до 20:00</p></p>
+</div>
+<div class="col-md-7 mb-5">
+<div id="tiles-top-ufa" style="width: 100%; min-height: 473px;"></div>
+</div>
+<script>
+(function() {
+	function startYamap() {
+		ymaps.ready(init);
+        var map,
+            placemark;
+
+        function init() {
+            var map = new ymaps.Map("tiles-top-ufa", {
+                center: [54.829675, 56.086633],
+                zoom: 14
+            });
+            map.behaviors.disable("scrollZoom");
+
+            placemark = new ymaps.Placemark([54.829675, 56.086633], { hintContent: "Бумеранг-Авто в Уфе", balloonContent: "<b>Бумеранг-Авто в Уфе</b><br>450029, Республика Башкортостан, г. Уфа, ул. Ульяновых, д.65, корп.10, офис 104 " }, { preset: "islands#blueAutoIcon" });
+            map.geoObjects.add(placemark);
+        }
+	}
+	document.addEventListener("DOMContentLoaded", function(event) { 
+        if(typeof ymaps !== "undefined") startYamap();
+        else setTimeout(startYamap, 1000);
+	});
+})();
+</script>
+</div>
+
+			
+			<p><b>ООО&nbsp;"БУМЕРАНГ-АВТО"</b> <br /> Банковские реквизиты: <br /> ИНН 6312143781, КПП 631801001 <br /> Р/с 40702810129180001170 в Филиал &laquo;Нижегородский&raquo;АО&laquo;АЛЬФА-БАНК&raquo; <br /> К/с 30101810200000000824 в ВОЛГО-ВЯТСКОЕ ГУ БАНКА РОССИИ <br /> БИК 042202824</p>
+<p><b>Обращаем Ваше внимание!</b> <br /> Прием и выдача автомобиля осуществляется круглосуточно, если за 1 сутки согласовано с менеджером компании время и место приема или выдачи автомобиля. Принять и сдать авто в нерабочее время, как в офисе компании, так и по адресу Арендатора можно за дополнительную плату, с тарифами можно ознакомиться&nbsp;<a href="prajs.html">здесь</a></p>
 			
 
 			<div class="questions">
@@ -283,5 +405,6 @@
 
 	<script src="js/scripts.min.js"></script>
 
+	<script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript" charset="utf-8" async defer></script>
 </body>
 </html>

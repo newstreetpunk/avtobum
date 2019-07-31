@@ -58,9 +58,9 @@
 						<a href="mailto:info@avtobum63.ru" class="email fwm">info@avtobum63.ru</a>
 					</div> -->
 					<select id="select-cust" class="select-cust">
-						<option value="Самара">Самара</option>
-						<option value="Москва">Москва</option>
-						<option value="Пермь">Пермь</option>
+						<option value="smr">Самара</option>
+						<option value="cheb">Чебоксары</option>
+						<option value="ufa">Уфа</option>
 					</select>
 					<div class="header__phone--callback">
 						<a href="tel:88005500851" class="phone">8 (800) 550-08-51</a>
@@ -85,9 +85,9 @@
 					<img src="img/emblem.png" alt="ALT">
 					<div class="content__block--city content__block--mid">Город</div>
 					<select id="select-cust" class="select-cust">
-						<option value="Самара">Самара</option>
-						<option value="Чебоксары">Чебоксары</option>
-						<option value="Уфа">Уфа</option>
+						<option value="smr">Самара</option>
+						<option value="cheb">Чебоксары</option>
+						<option value="ufa">Уфа</option>
 					</select>
 				</div>
 				<!-- 
@@ -119,6 +119,7 @@
 			<h1>Заголовок для страницы Автопарк</h1>
 			
 			<div class="row">
+
 				<script>
 					function randomInteger(min, max) {
 					    var rand = min + Math.random() * (max + 1 - min);
@@ -129,7 +130,7 @@
 					var imgPath = '//avtobum63.ru/assets/images/avto/';
 					var imgURL = ['delta-320mk-600px-t.png', 'peugeot_308-2-600px-t.png', 'sportage_silver_3-t.png', 'volva-xc70-t.png', 'bmw-x3.png', 'lada-kalina1.png', 'solaris_hb_fl_white.png', 'pritsep-atlet-8213v5-min.png', 'lada_priora.png', 'bailey-ranger-new.png', 'toyota_rav4.png', 'new_tiguan_current_600x336.png', 'thunderbird-401.png', 'car_gaz.png', 'chevrolet-niva-4wd.png', 'mitsubishi-l200-black.png', 'pajero_3-600px-t.png', '6_66.png', 'h-2.png', '11-1.png', '1-223.png', '1_41.png', '1-2-1.png', 'tojota-kamri-chernaya.png', '1_31.png', '1_51.png', '1_1.png', 'main_1.png', 'this11.png', 'plo.png', '6f.png', 'toyota_lc_main.png', '01042016.png', 'lighwhite.png', '10.png', 'renaultlogan(2).png', 'renaultlogan(2).png', 'nissanalmeranew.png', 'amabe.png', 'bez-imeni-2.png', 'bez-imeni-2.png', '1_51.png', 'c12145011.png', '72t1.png', 'vaz.png'];
 					carName.forEach(function callback(currentValue, index, array) {
-					    document.write('<div class="col-sm-6 col-xl-4 mb-5 product">\
+					    document.write('<div class="col-sm-6 col-xl-6 mb-5 product">\
 					    	<p class="nameCar"><a href="bmw-x6.html">'+currentValue+'</a></p>\
 					    	<div class="photo embed-responsive embed-responsive-16by9">');
 
@@ -143,7 +144,7 @@
 					   	');
 				        document.write('<div class="bronInfo">');
 
-					   	if(Math.random()>0.5)
+					   	if(Math.random()>0.2)
 						    document.write('<p class="new-price"> <span class="car-price">170</span> <span class="price-note">₽/час.</span></p>');
 			            
 			            document.write('<p class="price">\
@@ -160,40 +161,43 @@
 	                        document.write('\
 			                        	<li title="Количество мест">\
 				                            <img src="//avtobum63.ru/assets/images/svg/003-user.svg" alt="Количество мест">\
-				                            <span>5</span>\
+				                            5\
 				                        </li>');
 					    if(Math.random()>0.5)
 	                        document.write('\
 				                        <li title="Коробка передач">\
 				                            <img src="//avtobum63.ru/assets/images/svg/001-manual-transmission.svg" alt="Коробка передач">\
-				                            <span>Механика</span>\
+				                            Механика\
 				                        </li>');
 					    if(Math.random()>0.5)
 	                        document.write('\
 				                        <li title="Объем багажника">\
 											<img src="//avtobum63.ru/assets/images/svg/002-bag.svg" alt="Объем багажника">\
-											<span>500 л.</span>\
+											500 л.\
 										</li>');
 					    if(Math.random()>0.5)
 	                        document.write('\
 				                        <li title="Топливо">\
 				                            <img src="//avtobum63.ru/assets/images/svg/004-fuel.svg" alt="Топливо">\
-				                            <span>Дизельное</span>\
+				                            Дизельное\
 				                        </li>');
 					    if(Math.random()>0.5)
 	                        document.write('\
 				                        <li title="Кондиционер">\
 				                            <img src="//avtobum63.ru/assets/images/svg/010-ice.svg" alt="Кондиционер">\
-				                            <span>Кондиционер</span>\
+				                            Кондиционер\
 				                        </li>');
 					    if(Math.random()>0.5)
 	                        document.write('\
 				                        <li title="Фаркоп" class="farkop">\
 				                            <img src="//avtobum63.ru/assets/images/svg/011-car-with-trailer.svg" alt="Фаркоп">\
-				                            <span>Фаркоп</span>\
+				                            Фаркоп\
 				                        </li>');
 	                    document.write('</ul>\
 				                </div>\
+				                <div class="questions">\
+						            <button>Оставить заявку</button>\
+						        </div>\
 				                <div class="toggle-more"><a class="collapsed" href="javascript:void(0);">Посмотреть подробную информацию</a></div>\
 				                <p class="inner" style="display: none;">\
 				                <strong>Дополнительные опции</strong>:<br>\
@@ -203,35 +207,37 @@
 				        </div>');
 					    document.write('\
 			    	<div class="table-box1 car-section" style="display:none;">\
+			    		<div class="table-scroll">\
 			            <table class="color">\
 			                <tbody>\
 			                    <tr>\
-			                        <td colspan="8">\
-			                            <p style="text-align: center;"><span>Стоимость аренды '+currentValue+' в сутки (₽)</span></p>\
-			                        </td>\
+			                        <th colspan="8">\
+			                            Стоимость аренды '+currentValue+', ₽\
+			                        </th>\
 			                    </tr>\
 			                    <tr>\
-			                        <td class="light-green"><span>За час*</span></td>\
-			                        <td><span>1-3 суток</span></td>\
-			                        <td><span>4-6 суток</span></td>\
-			                        <td><span>7-15 суток</span></td>\
-			                        <td style="padding: 9px 11px;"><span>16-30 суток</span></td>\
-			                        <td><span>от 30 дней</span></td>\
-			                        <td><span>Защита при ДТП</span></td>\
-			                        <td><span>Залог</span></td>\
+			                        <td class="light-green">За час*</td>\
+			                        <td>1-3 суток</td>\
+			                        <td>4-6 суток</td>\
+			                        <td>7-15 суток</td>\
+			                        <td style="padding: 9px 11px;">16-30 суток</td>\
+			                        <td>от 30 дней</td>\
+			                        <td>Защита при ДТП</td>\
+			                        <td>Залог</td>\
 			                    </tr>\
 			                    <tr>\
-			                        <td class="light-green"><span>320</span></td>\
-			                        <td><span>4300</span></td>\
-			                        <td><span>4100</span></td>\
-			                        <td><span>3900</span></td>\
-			                        <td><span>3700</span></td>\
-			                        <td><span>3500</span></td>\
-			                        <td><span>1000</span></td>\
-			                        <td><span>25000</span></td>\
+			                        <td class="light-green">320</td>\
+			                        <td>4300</td>\
+			                        <td>4100</td>\
+			                        <td>3900</td>\
+			                        <td>3700</td>\
+			                        <td>3500</td>\
+			                        <td>1000</td>\
+			                        <td>25000</td>\
 			                    </tr>\
 			                </tbody>\
 			            </table>\
+			            </div>\
 			            <div class="car-section__footnote">*почасовая оплата возможна при сроке аренды от 3 до 8 часов</div>\
 			        </div>');
 					    document.write('</div>');
@@ -335,9 +341,9 @@
 							<li>Ежедневно: С 08:00 до 20:00</li>
 							<li>Город: 
 								<select id="select-cust" class="select-cust">
-									<option value="Самара">Самара</option>
-									<option value="Москва">Москва</option>
-									<option value="Пермь">Пермь</option>
+									<option value="smr">Самара</option>
+									<option value="cheb">Чебоксары</option>
+									<option value="ufa">Уфа</option>
 								</select>
 							</li>
 							<li>Адрес: 443022, Самара, Заводское шоссе, 11, офис 106</li>

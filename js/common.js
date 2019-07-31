@@ -110,9 +110,19 @@ $(function() {
 
         });
 
-        if(document.getElementById('fixed-table-container_price')) {
-           var fixedTable = fixTable(document.getElementById('fixed-table-container_price'));
-        }
+        var switched = false;
+        if (($(window).width() < 767) && !switched && document.getElementById('fixed-table-container_price')) { 
+            switched = true;
+
+            var divs = document.querySelectorAll('#fixed-table-container_price'), i;
+
+            for (i = 0; i < divs.length; ++i) {
+              divs[i].querySelector('table').classList = "";
+              divs[i].classList.add("fixed-table-container");
+              fixTable(divs[i]);
+            }
+
+        } 
 
         $('.toggle-more a').click(function(e) {
             e.preventDefault();
@@ -124,8 +134,8 @@ $(function() {
                 $this.addClass('collapsed');
                 $this.parent().next().removeClass('show');
                 $this.parent().next().slideUp(350);
-                $this.parent().parent().parent().children('.table-box.car-section').removeClass('show');
-                $this.parent().parent().parent().children('.table-box.car-section').slideUp(350);
+                $this.parent().parent().parent().parent().children('.table-box.car-section').removeClass('show');
+                $this.parent().parent().parent().parent().children('.table-box.car-section').slideUp(350);
             } else {
                 // hide other
                 /* решено было отключить, чтобы людей не бесило то, что всё закрывается и нужно открывать вновь * /
@@ -142,10 +152,11 @@ $(function() {
                 $this.removeClass('collapsed');
                 $this.parent().next().toggleClass('show');
                 $this.parent().next().slideToggle(350);
-                $this.parent().parent().parent().children('.table-box.car-section').toggleClass('show');
-                $this.parent().parent().parent().children('.table-box.car-section').slideToggle(350);
+                $this.parent().parent().parent().parent().children('.table-box.car-section').toggleClass('show');
+                $this.parent().parent().parent().parent().children('.table-box.car-section').slideToggle(350);
             }
         });
+
 
     });
 

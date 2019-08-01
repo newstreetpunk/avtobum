@@ -129,9 +129,10 @@
 					var carName = ['Пвх лодка Delta 320 мк', 'Peugeot 308', 'KIA Sportage', 'Volvo XC70', 'BMW X3', 'Lada Kalina', 'Hyundai SOLARIS', 'Прицеп "Атлет" (8213 В5)', 'Lada Priora', 'Кемпер Bailey Ranger', 'Toyota RAV4', 'Volkswagen Tiguan 4WD', 'Ford Thunderbird', 'ГАЗ 330202', 'Chevrolet Niva 4WD', 'Mitsubishi L200 4WD', 'Mitsubishi Pajero 3.0 4WD', 'Ford Focus III', 'Hummer Н2 4WD', 'Hyundai Sonata', 'Mercedes-Benz VITO', 'Hyundai Grand Starex', 'Volkswagen Tiguan', 'Toyota Camry', 'Renault Duster 4WD', 'Fiat Albea', 'Mitsubishi ASX', 'Renault Fluence', 'Mitsubishi Lancer X', 'Mitsubishi Lancer X', 'Renault Fluence', 'Toyota Land Cruiser 100 4WD', 'Daewoo Matiz', 'Lada Largus', 'Renault Fluence', 'Renault Logan ', 'Renault Logan', 'Nissan Almera New', 'Nissan Almera New', 'Renault Sandero', 'Renault Sandero', 'Albea', 'Hyundai Accent', 'Suzuki Liana 4WD', 'ВАЗ 2114'];
 					var imgPath = '//avtobum63.ru/assets/images/avto/';
 					var imgURL = ['delta-320mk-600px-t.png', 'peugeot_308-2-600px-t.png', 'sportage_silver_3-t.png', 'volva-xc70-t.png', 'bmw-x3.png', 'lada-kalina1.png', 'solaris_hb_fl_white.png', 'pritsep-atlet-8213v5-min.png', 'lada_priora.png', 'bailey-ranger-new.png', 'toyota_rav4.png', 'new_tiguan_current_600x336.png', 'thunderbird-401.png', 'car_gaz.png', 'chevrolet-niva-4wd.png', 'mitsubishi-l200-black.png', 'pajero_3-600px-t.png', '6_66.png', 'h-2.png', '11-1.png', '1-223.png', '1_41.png', '1-2-1.png', 'tojota-kamri-chernaya.png', '1_31.png', '1_51.png', '1_1.png', 'main_1.png', 'this11.png', 'plo.png', '6f.png', 'toyota_lc_main.png', '01042016.png', 'lighwhite.png', '10.png', 'renaultlogan(2).png', 'renaultlogan(2).png', 'nissanalmeranew.png', 'amabe.png', 'bez-imeni-2.png', 'bez-imeni-2.png', '1_51.png', 'c12145011.png', '72t1.png', 'vaz.png'];
+					var link = "bmw-x6.html#title";
 					carName.forEach(function callback(currentValue, index, array) {
 					    document.write('<div class="col-sm-6 col-xl-6 mb-5 product">\
-					    	<p class="nameCar"><a href="bmw-x6.html">'+currentValue+'</a></p>\
+					    	<p class="nameCar"><a href="'+link+'">'+currentValue+'</a></p>\
 					    	<div class="photo embed-responsive embed-responsive-16by9">');
 
 					    if(Math.random()<0.3)
@@ -139,7 +140,7 @@
 					    else if(Math.random()>0.7)
 						    document.write('<span class="trailer-icon"></span>');
 
-						document.write('<a href="bmw-x6.html" title="'+currentValue+'"><img alt="'+currentValue+'" class="embed-responsive-item" src="'+imgPath+imgURL[index]+'"></a>\
+						document.write('<a href="'+link+'" title="'+currentValue+'"><img alt="'+currentValue+'" class="embed-responsive-item" src="'+imgPath+imgURL[index]+'"></a>\
 							</div>\
 					   	');
 				        document.write('<div class="bronInfo">');
@@ -243,7 +244,7 @@
 					    document.write('</div>');
 					});
 				</script>
-
+			</div>
 			<div class="questions">
 				<button>Остались вопросы?</button>
 			</div>

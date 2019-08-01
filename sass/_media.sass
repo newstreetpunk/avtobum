@@ -127,6 +127,11 @@
 
 // Small devices (landscape phones, less than 768px)
 +media-breakpoint-down(sm)
+	button,
+	select
+		&:focus
+			outline: none
+
 	.partners-slider .next, .partners-slider .prev
 		z-index: 1
 	.header
@@ -159,14 +164,16 @@
 		text-align: left
 		margin-bottom: 15px
 	.footer-menu
-		margin-bottom: 18px
-	.footer-menu ul li a
-		padding-left: 0
-		font-size: 16px
-		padding-bottom: 3px
+		margin-bottom: 28px
+	.footer-menu ul li 
+		border-top: 1px solid #666
+		a
+			padding-left: 0
+			font-size: 16px
+			padding: 10px 0
 	.footer .work-time
 		font-size: 16px
-		margin-bottom: 18px
+		margin-bottom: 28px
 	.footer-callback
 		flex-direction: row
 		justify-content: flex-start
@@ -194,6 +201,8 @@
 
 // Extra small devices (portrait phones, less than 576px)
 +media-breakpoint-down(xs)
+	.table-scroll table.color
+		padding: 0 15px
 	.header-wrap
 		min-height: 90px
 	.header__phone--callback

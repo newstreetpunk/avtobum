@@ -157,6 +157,12 @@ $(function() {
             }
         });
 
+        // $( '.swipebox' ).swipebox();
+        
+        $('[data-fancybox="group"]').fancybox({
+            buttons : ["close"]
+        });
+
 
     });
 

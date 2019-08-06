@@ -37,7 +37,7 @@
 	.footer-menu ul li a
 		padding-left: 50px
 	.footer-callback .social a img
-		width: 50px
+		// width: 50px
 		height: 50px
 
 // Large devices (desktops, less than 1200px)
@@ -87,7 +87,7 @@
 		width: 85%
 		margin-left: auto
 	.footer-callback .social a img
-		width: 45px
+		// width: 45px
 		height: 45px
 	section .container
 		padding: 0 15px
@@ -111,9 +111,8 @@
 	.footer-logo-text
 		font-size: 13px
 	.footer-callback .social a img
-		width: 40px
+		// width: 40px
 		height: 40px
-		margin-bottom: 20px 
 	.footer p
 		font-size: 12px
 	.footer-callback
@@ -132,10 +131,6 @@
 		&:focus
 			outline: none
 
-	.partners-slider .next, .partners-slider .prev
-		z-index: 1
-	.header
-		z-index: 101
 	.header
 		.select-cust
 			display: none
@@ -184,9 +179,8 @@
 		margin-left: 30px
 		order: 2
 		align-items: center
-	.footer-callback .social a img
-		margin-bottom: 0
-		margin-right: 10px
+	.footer-callback-phone a
+		padding: 10px 0
 	.stock
 		margin-top: 0
 	section h2
@@ -252,13 +246,21 @@
 
 // Extra large devices (large desktops, 1200px and up)
 +media-breakpoint-up(xl)
+	.header__menu ul li
+		margin-right: 16px;
 	.about-text
 		max-width: 80%
+
+@media (min-width: 1300px)
+	.header__menu ul li
+		margin-right: 32px;
+
 
 @media (min-width: 1600px)
 	.about
 		&:before
 			background-size: 50%;
+
 
 
 /*==========  Using the minimum and maximum breakpoint widths  ==========*/

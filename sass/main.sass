@@ -115,6 +115,13 @@ section
 	&:after
 		clear: both
 
+#slideout
+	display: none
+	width: 100%
+	height: 100%
+	position: fixed
+	background: $black
+	z-index: 9997
 
 //HEADER
 .header
@@ -122,9 +129,14 @@ section
 	position: fixed
 	width: 100%
 	top: 0
-	z-index: 10
 	transition: all .3s ease-in-out
 	z-index: 150
+	&.show
+		top: 0
+		box-shadow: 0 3px 40px rgba(0,0,0,.3)
+	&.hide
+		top: -150px
+		box-shadow: 0 3px 30px transparent
 	&-wrap
 		display: flex
 		justify-content: space-between
@@ -146,7 +158,7 @@ section
 				display: none
 			display: flex
 			li
-				margin-right: 25px
+				margin-right: 32px
 				&:last-child
 					margin-right: 0
 				a
@@ -178,8 +190,9 @@ section
 		margin: 0
 		position: absolute
 		top: 50%
-		left: 50%
-		transform: translate(-50%, -50%)
+		left: 0
+		right: 0
+		transform: translateY(-50%)
 		&-item
 			margin-bottom: 2%
 			position: relative
@@ -281,19 +294,25 @@ section
 				margin: 0
 
 // Кнопка Остались вопросы
-.questions
-	width: 40%
-	min-width: 290px
-	margin: 30px auto
-	padding: 10px 0
-	border-radius: 25px
-	background: $orange
+.button-open_popup
+	// width: 40%
+	// margin: 30px auto
+	// padding: 10px 0
+	// border-radius: 25px
+	// background: $orange
 	text-align: center
+	margin-top: 2rem
+	margin-bottom: 2rem
 	button
 		width: 100%
-		font-weight: bold
+		min-width: 240px
+		max-width: 300px;
+		height: 40px
+		font-weight: 700
 		text-transform: uppercase
-		color: #fff !important
+		color: $white !important
+		border-radius: 25px
+		background: $orange
 
 // ссылки на документы на текстовых страницах
 .doc-link
@@ -339,6 +358,7 @@ section
 .stock
 	position: relative
 	&__slider
+		z-index: 110
 		display: flex
 		justify-content: space-between
 		&-slide
@@ -449,6 +469,7 @@ section
 //PARTNERS
 .partners
 	&-slider
+		z-index: 120
 		.slick-track
 			display: flex
 			align-items: center
@@ -469,7 +490,6 @@ section
 			cursor: pointer
 			transition: all .2s
 			opacity: .8
-			z-index: 101
 			&:hover
 				opacity: 1
 		.next
@@ -547,10 +567,15 @@ section
 		text-align: right
 		.social
 			display: flex
-			justify-content: space-between
+			flex-wrap: wrap
+			justify-content: flex-end
 			a
 				&:first-child
 					margin-left: 0
+				img
+					max-width: none
+					margin-right: 5px
+					margin-bottom: 5px
 		&-phone
 			font-size: 20px
 			a
@@ -571,6 +596,7 @@ section
 
 .avtodetail .product,
 .avtopark .product
+	margin-bottom: 2rem
 	.nameCar
 		font-style: italic
 		font-weight: 400
@@ -620,21 +646,31 @@ section
 			z-index: 10
 
 	.bronInfo
+		display: flex
+		flex-wrap: wrap
+		justify-content: space-around
+		margin-top: 2rem
+		// align-items: center
+		> div
+			flex-grow: 1
+			text-align: center
+			margin-bottom: 2rem
+			margin: 0 0.5rem 2rem
+			max-width: 410px
 		.new-price,
 		.price
-			width: 49%
 			display: inline-block
 			font-style: italic
 			color: $orange
 			vertical-align: text-top
-			margin-top: 1rem
+			// margin-top: 1rem
 			.car-price
 				font-weight: 400
 				font-size: 1.8em
 			.price-note
 				font-weight: 100
 		.price
-			text-align: right;
+			// text-align: right;
 		.footnote
 			font-size: 12px
 			color: $black
@@ -689,7 +725,7 @@ section
 				transition: all .5s
 			a.collapsed:after
 				transform: rotate(0deg)
-	.questions
+	.button-open_popup
 		min-width: 240px
 
 .table-box.car-section 
@@ -742,7 +778,6 @@ table.color
 		td 
 			@extend .border-right-bottom-padding
 			&:first-child 
-				text-align: left
 				border-left: 1px solid $orange
 			
 			&:nth-child(odd) td 
@@ -779,7 +814,7 @@ table.color
 	&.price-table 
 		tr:nth-child(3)
 			td:first-child
-			    // border-left: none
+				// border-left: none
 
 	&.avtopark
 		td:first-child 
@@ -792,15 +827,23 @@ table.color
 		td
 			height: 60px !important
 		td:first-child
-				font-size: 12px;
-				white-space: normal !important
-	td:first-child
+			font-size: 12px;
 			white-space: normal !important
+	td:first-child
+		white-space: normal !important
 
 
 
 
 table.price-table
+	thead th
+		position: sticky !important
+		transition: top .3s ease-in-out
+		top: 0
+	thead.with_header th
+		top: 100px
+	tr td:first-child
+		text-align: left
 	tr td:nth-child(n + 3) 
 		// text-align: center
 	tr:nth-child(odd)

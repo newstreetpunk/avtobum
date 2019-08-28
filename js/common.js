@@ -153,6 +153,64 @@ $(function() {
             }
         });
 
+
+        function createCookie(cookieName,cookieValue,daysToExpire)
+        {
+          var date = new Date();
+          date.setTime(date.getTime()+(daysToExpire*24*60*60*1000));
+          document.cookie = cookieName + "=" + cookieValue + "; expires=" + date.toGMTString();
+        }
+
+        function accessCookie(cookieName)
+        {
+          var name = cookieName + "=";
+          var allCookieArray = document.cookie.split(';');
+          for(var i=0; i<allCookieArray.length; i++)
+          {
+            var temp = allCookieArray[i].trim();
+            if (temp.indexOf(name)==0)
+            return temp.substring(name.length,temp.length);
+          }
+            return "";
+        }
+
+        function checkCookie()
+        {
+          var user = accessCookie("testCookie");
+          if (user!="")
+            alert("Welcome Back " + user + "!!!");
+          else
+          {
+            user = prompt("Please enter your name");
+            num = prompt("How many days you want to store your name on your computer?");
+            if (user!="" && user!=null)
+            {
+            createCookie("testCookie", user, num);
+            }
+          }
+        }
+        
+        if(window.location.host.indexOf('avtobum63.ru') != -1) {
+            $("select.city").change(function(){                        
+                $(this).find("option:selected").each(function(){
+                    //$('select').val($(this).attr("value"));
+                    var url="//";
+
+                    if($(this).attr("value")=="smr"){
+                        url += "avtobum63.ru";
+                    }
+                    if($(this).attr("value")=="cheb"){
+                        url += "cheboksary.avtobum63.ru";
+                    }
+                    if($(this).attr("value")=="ufa"){
+                        url += "ufa.avtobum63.ru";
+                    }
+                    url += window.location.pathname;
+                    location.href = url;
+                });
+            })
+        }
+
         // $( '.swipebox' ).swipebox();
         
         if($('[data-fancybox="group"]').length != 0)
@@ -161,7 +219,8 @@ $(function() {
             });
 
 
-        /*
+        if(window.location.href.indexOf("https://avtobum63.ru/dev.html") != -1) {
+        /**/
         //$("#stillHaveQuestions").hide();  
         $(".questions").click(function show_popup() {
             $("#stillHaveQuestions").fadeIn(500);
@@ -430,7 +489,10 @@ $(function() {
             if(typeof ga !== 'undefined') ga('send', 'pageview', '/virtual/otziv_good');
         }); 
         /**/
-        $('.callback, .call, .questions, .bron').click(function(event) {
+        } /* end dev script */
+
+        $('.callback, .call, .question, .bron').click(function(event) {
+            /* * /
             if(typeof yaCounter28702351 !== 'undefined') yaCounter28702351.reachGoal('open_venyoo_callclickhovermenu');
             if($('#pv_head_wrapper').length) {
                 $('#pv_head_wrapper').click();        
@@ -438,7 +500,36 @@ $(function() {
             if($('div[data-goal="callclickhovermenu"').length) {
                 $('div[data-goal="callclickhovermenu"').click();
             }
+            /**/
         });
+        
+        $(document).on('submit','#frmwrapper form',function(ev){
+            var frm = $('#frmwrapper form');
+            $('#submit').prop( "disabled", true );
+            /* * /
+            $.get('/form_callme', frm_data, function (data) {
+                 $('#frmwrapper form').remove();
+                 $('#frmwrapper').html( data );
+                });
+            /**/
+            /* */
+            $.ajax({
+                url: '/form_callme',
+                type: 'post',
+                data: frm.serialize(),
+                success: function (data) {
+                 $('#frmwrapper form').remove();
+                 $('#frmwrapper').html( data );
+                },
+                error: function(status) {
+                    console.log(status);
+                }
+            });
+            /**/
+            ev.preventDefault();
+        });
+
+        lazyload();
 
     });
 
@@ -578,13 +669,13 @@ $(function() {
       };
     }
 
-
+    /* * /    
     setTimeout(function() {
         if (location.hash) {
-            /* we need to scroll to the top of the window first, because the browser will always jump to the anchor first before JavaScript is ready, thanks Stack Overflow: http://stackoverflow.com/a/3659116 */
-            // window.scrollTo(0, 0);
-            // target = location.hash.split('#');
-            // smoothScrollTo($('#' + target[1]));
+            // we need to scroll to the top of the window first, because the browser will always jump to the anchor first before JavaScript is ready, thanks Stack Overflow: http://stackoverflow.com/a/3659116 
+            window.scrollTo(0, 0);
+            target = location.hash.split('#');
+            smoothScrollTo($('#' + target[1]));
         }
     }, 1);
 
@@ -594,7 +685,7 @@ $(function() {
         .not('[href="#"]')
         .not('[href="#0"]').click(function() {
         if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
-            // smoothScrollTo($(this.hash));
+            smoothScrollTo($(this.hash));
             return false;
         }
     });
@@ -608,5 +699,6 @@ $(function() {
             }, 1000);
         }
     }
+    /**/
 
 }, jQuery);

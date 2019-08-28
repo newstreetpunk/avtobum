@@ -59,7 +59,7 @@
 						<a href="tel:88005500851" class="phone">8 (800) 550-08-51</a>
 						<a href="mailto:info@avtobum63.ru" class="email fwm">info@avtobum63.ru</a>
 					</div> -->
-					<select id="select-cust" class="select-cust">
+					<select id="select-cust" class="select-cust city">
 						<option value="smr">Самара</option>
 						<option value="cheb">Чебоксары</option>
 						<option value="ufa">Уфа</option>
@@ -84,9 +84,11 @@
 		<div class="content__block">
 			<form action="arenda-mashin.html">
 				<div class="content__block-loc content__block-item">
-					<img src="img/emblem.png" alt="ALT">
+					<img class="smr box" src="img/emblems/smr62p.png" alt="Самара">
+					<img class="cheb box" src="img/emblems/cheb62p.png" alt="Чебоксары">
+					<img class="ufa box" src="img/emblems/ufa62p.png" alt="Уфа">
 					<div class="content__block--city content__block--mid">Город</div>
-					<select id="select-cust" class="select-cust">
+					<select id="select-cust" class="select-cust city">
 						<option value="smr">Самара</option>
 						<option value="cheb">Чебоксары</option>
 						<option value="ufa">Уфа</option>
@@ -95,13 +97,13 @@
 				<!-- 
 				<div class="content__block-term content__block-item">
 					<div class="content__block--mid">Срок аренды</div>
-					<select id="select-cust" class="select-cust">
+					<select id="select-cust" class="select-cust city">
 						<option value="">17.04.19 - 18.04.19</option>
 					</select>
 				</div>
 				<div class="content__block-type content__block-item">
 					<div class="content__block--mid">Тип автомобиля</div>
-					<select id="select-cust" class="select-cust">
+					<select id="select-cust" class="select-cust city">
 						<option value="Хетчбэк">Хетчбэк</option>
 						<option value="Седан">Седан</option>
 						<option value="Минивен">Минивен</option>
@@ -123,37 +125,37 @@
 			<h1>Аренда Peugeot 308 в&nbsp;Самаре</h1>
 			
             <div class="row product">
-                <div class="col-sm-6">
-                    <div class="row">
-                    	<div class="col-12">
-	                    	<a data-fancybox-trigger="group" href="javascript:;" class="gallery__item swipebox"><img alt="Peugeot 308" src="https://avtobum63.ru/assets/images/avto/peugeot_308-2-600px-t.png" class="big"></a>
-                    	</div>
-                    </div>
-                    <div class="row no-gutters gallery">
-                    	<div class="col-4">
-                    		<a href="https://avtobum63.ru/assets/galleries/220/viber-image-2019-03-25-13.40.13-1.jpg" data-fancybox="group" class="gallery__item swipebox" rel="group"> <img alt="" src="https://avtobum63.ru/images/assets/galleries/220/viber-image-2019-03-25-13.40.13-1-141x88-2e4.jpg"> </a>
-                    	</div>
-                    	<div class="col-4">
-                    		<a href="https://avtobum63.ru/assets/galleries/220/viber-image-2019-03-25-13.40.15-3.jpg" data-fancybox="group" class="gallery__item swipebox" rel="group"> <img alt="" src="https://avtobum63.ru/images/assets/galleries/220/viber-image-2019-03-25-13.40.15-3-141x88-efe.jpg"> </a>
-                    	</div>
-                    	<div class="col-4">
-                    		<a href="https://avtobum63.ru/assets/galleries/220/viber-image-2019-03-25-13.40.17-5.jpg" data-fancybox="group" class="gallery__item swipebox" rel="group"> <img alt="" src="https://avtobum63.ru/images/assets/galleries/220/viber-image-2019-03-25-13.40.17-5-141x88-52a.jpg"> </a>
-                    	</div>
-                    	<div class="col-4">
-                    		<a href="https://avtobum63.ru/assets/galleries/220/viber-image-2019-03-25-13.40.16-4.jpg" data-fancybox="group" class="gallery__item swipebox" rel="group"> <img alt="" src="https://avtobum63.ru/images/assets/galleries/220/viber-image-2019-03-25-13.40.16-4-141x88-73c.jpg"> </a>
-                    	</div>
-                    	<div class="col-4">
-                    		<a href="https://avtobum63.ru/assets/galleries/220/viber-image-2019-03-25-13.40.20-9.jpg" data-fancybox="group" class="gallery__item swipebox" rel="group"> <img alt="" src="https://avtobum63.ru/images/assets/galleries/220/viber-image-2019-03-25-13.40.20-9-141x88-716.jpg"> </a>
-                    	</div>
-                    	<div class="col-4">
-                    		<a href="https://avtobum63.ru/assets/galleries/220/viber-image-2019-03-25-13.40.19-8.jpg" data-fancybox="group" class="gallery__item swipebox" rel="group"> <img alt="" src="https://avtobum63.ru/images/assets/galleries/220/viber-image-2019-03-25-13.40.19-8-141x88-8be.jpg"> </a>
-                    	</div>
-                    	<div class="col-4">
-                    		<a href="https://avtobum63.ru/assets/galleries/220/viber-image-2019-03-25-13.40.17-5.jpg" data-fancybox="group" class="gallery__item swipebox" rel="group"> <img alt="" src="https://avtobum63.ru/images/assets/galleries/220/viber-image-2019-03-25-13.40.17-5-141x88-52a.jpg"> </a>
-                    	</div>
-                    </div>
-                </div>
-                <div class="col-sm-6">
+                <div class="col-12">
+	                <div class="photos">
+	                    <div class="row">
+	                    	<div class="col-12">
+		                    	<a data-fancybox-trigger="group" href="javascript:;" class="gallery__item swipebox"><img alt="Peugeot 308" src="https://avtobum63.ru/assets/images/avto/peugeot_308-2-600px-t.png" class="big"></a>
+	                    	</div>
+	                    </div>
+	                    <div class="row no-gutters gallery">
+	                    	<div class="col-4">
+	                    		<a href="https://avtobum63.ru/assets/galleries/220/viber-image-2019-03-25-13.40.13-1.jpg" data-fancybox="group" class="gallery__item swipebox" rel="group"> <img alt="" src="https://avtobum63.ru/images/assets/galleries/220/viber-image-2019-03-25-13.40.13-1-141x88-2e4.jpg"> </a>
+	                    	</div>
+	                    	<div class="col-4">
+	                    		<a href="https://avtobum63.ru/assets/galleries/220/viber-image-2019-03-25-13.40.15-3.jpg" data-fancybox="group" class="gallery__item swipebox" rel="group"> <img alt="" src="https://avtobum63.ru/images/assets/galleries/220/viber-image-2019-03-25-13.40.15-3-141x88-efe.jpg"> </a>
+	                    	</div>
+	                    	<div class="col-4">
+	                    		<a href="https://avtobum63.ru/assets/galleries/220/viber-image-2019-03-25-13.40.17-5.jpg" data-fancybox="group" class="gallery__item swipebox" rel="group"> <img alt="" src="https://avtobum63.ru/images/assets/galleries/220/viber-image-2019-03-25-13.40.17-5-141x88-52a.jpg"> </a>
+	                    	</div>
+	                    	<div class="col-4">
+	                    		<a href="https://avtobum63.ru/assets/galleries/220/viber-image-2019-03-25-13.40.16-4.jpg" data-fancybox="group" class="gallery__item swipebox" rel="group"> <img alt="" src="https://avtobum63.ru/images/assets/galleries/220/viber-image-2019-03-25-13.40.16-4-141x88-73c.jpg"> </a>
+	                    	</div>
+	                    	<div class="col-4">
+	                    		<a href="https://avtobum63.ru/assets/galleries/220/viber-image-2019-03-25-13.40.20-9.jpg" data-fancybox="group" class="gallery__item swipebox" rel="group"> <img alt="" src="https://avtobum63.ru/images/assets/galleries/220/viber-image-2019-03-25-13.40.20-9-141x88-716.jpg"> </a>
+	                    	</div>
+	                    	<div class="col-4">
+	                    		<a href="https://avtobum63.ru/assets/galleries/220/viber-image-2019-03-25-13.40.19-8.jpg" data-fancybox="group" class="gallery__item swipebox" rel="group"> <img alt="" src="https://avtobum63.ru/images/assets/galleries/220/viber-image-2019-03-25-13.40.19-8-141x88-8be.jpg"> </a>
+	                    	</div>
+	                    	<div class="col-4">
+	                    		<a href="https://avtobum63.ru/assets/galleries/220/viber-image-2019-03-25-13.40.17-5.jpg" data-fancybox="group" class="gallery__item swipebox" rel="group"> <img alt="" src="https://avtobum63.ru/images/assets/galleries/220/viber-image-2019-03-25-13.40.17-5-141x88-52a.jpg"> </a>
+	                    	</div>
+	                    </div>
+	                </div>
                     <div class="bronInfo">
                         <div class="new-price">
                             <span class="car-price">170</span> <span class="price-note">₽/час</span>
@@ -178,10 +180,13 @@
                         <p><strong>Объем багажника:</strong>&nbsp;348 литров</p>
                         <p><strong>Дополнительные опции:</strong><br>2 электростеклоподъёмника, электрорегулировка и обогрев зеркал, подогрев передних сидений, автомагнитола.</p>
                     </div>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis, eos quibusdam. Fugiat minima alias iste aliquam possimus tempore ipsam iure nobis, accusantium veritatis eaque, ab adipisci voluptatem, consequuntur rerum? Excepturi accusantium eligendi nam officiis voluptate, repudiandae dolores voluptatibus iste aliquam laboriosam. Nostrum, perspiciatis asperiores, eveniet sint quidem consectetur, repellat, laboriosam sequi incidunt praesentium quibusdam perferendis aliquam! Sunt dignissimos cumque eveniet minima sint dolor, error porro repudiandae asperiores debitis. Beatae magnam deleniti repudiandae commodi accusantium recusandae eum sint omnis laboriosam porro. Assumenda, quidem quibusdam sint expedita voluptatum facilis eaque! Voluptate inventore molestiae qui ad magnam quod id earum eaque beatae, repellat?</p>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam corrupti sequi impedit. Ipsa dignissimos modi fugit fuga nam voluptates quos non nemo id dolor fugiat repellendus tempora maiores est unde expedita, consequuntur culpa rem exercitationem, omnis magnam, asperiores dolorem sapiente. Illo iure amet facilis minima incidunt. Quaerat voluptatem saepe delectus.</p>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quis corporis atque consequatur provident quibusdam voluptatem nesciunt asperiores eos incidunt quia quas nemo natus, possimus dicta ullam eum eveniet eius, ex!</p>
                 </div>
                 <div class="table-box car-section mt-2">
 	                <div class="table-scroll">
-                        <table class="color">
+                        <table class="color col-12">
                             <thead>
                                 <tr>
                                     <th colspan="8">Стоимость аренды Peugeot 308 в сутки (руб.)</th>
@@ -346,17 +351,54 @@
 						<ul>
 							<li>Ежедневно: С 08:00 до 20:00</li>
 							<li>Город: 
-								<select id="select-cust" class="select-cust">
+								<select id="select-cust" class="select-cust city">
 									<option value="smr">Самара</option>
 									<option value="cheb">Чебоксары</option>
 									<option value="ufa">Уфа</option>
 								</select>
 							</li>
-							<li>Адрес: 443022, Самара, Заводское шоссе, 11, офис 106</li>
+							<li class="smr box">Адрес: 443022, Самара, Заводское шоссе, 11, офис 106<br>
+							</li>
+							<li class="cheb box">Адрес: 428003, Чебоксары, проезд Школьный, дом 1, офис 206<br>
+							</li>
+							<li class="ufa box">Адрес: 450029, Республика Башкортостан, г. Уфа, ул. Ульяновых, д.65, корп.10, офис 104</li>
 							<a href="mailto:info@avtobum63.ru">info@avtobum63.ru</a>
 						</ul>
 					</div>
 				</div>
+				<style>
+					.box{
+						display: none;
+					}
+				</style>
+				<script>
+					window.onload = function() {
+						$(document).ready(function(){
+							$(".smr").show();
+							$("select").change(function(){                        
+								$(this).find("option:selected").each(function(){
+									$('select').val($(this).attr("value"));
+									if($(this).attr("value")=="smr"){
+										$(".box").hide();
+										$(".smr").show();
+									}
+									if($(this).attr("value")=="cheb"){
+										$(".box").hide();
+										$(".cheb").show();
+									}
+									if($(this).attr("value")=="ufa"){
+										$(".box").hide();
+										$(".ufa").show();
+									}
+									if($(this).attr("value")=="choose"){
+										$(".box").hide();
+										$(".choose").show();
+									}
+								});
+							}).change();
+						});
+					}
+				</script>
 				<div class="col-xl-2 col-lg-3 col-md-3">
 					<div class="footer-callback">
 						<div class="social">

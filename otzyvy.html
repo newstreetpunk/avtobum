@@ -57,7 +57,7 @@
 						<a href="tel:88005500851" class="phone">8 (800) 550-08-51</a>
 						<a href="mailto:info@avtobum63.ru" class="email fwm">info@avtobum63.ru</a>
 					</div> -->
-					<select id="select-cust" class="select-cust">
+					<select id="select-cust" class="select-cust city">
 						<option value="smr">Самара</option>
 						<option value="cheb">Чебоксары</option>
 						<option value="ufa">Уфа</option>
@@ -82,9 +82,11 @@
 		<div class="content__block">
 			<form action="arenda-mashin.html">
 				<div class="content__block-loc content__block-item">
-					<img src="img/emblem.png" alt="ALT">
+					<img class="smr box" src="img/emblems/smr62p.png" alt="Самара">
+					<img class="cheb box" src="img/emblems/cheb62p.png" alt="Чебоксары">
+					<img class="ufa box" src="img/emblems/ufa62p.png" alt="Уфа">
 					<div class="content__block--city content__block--mid">Город</div>
-					<select id="select-cust" class="select-cust">
+					<select id="select-cust" class="select-cust city">
 						<option value="smr">Самара</option>
 						<option value="cheb">Чебоксары</option>
 						<option value="ufa">Уфа</option>
@@ -93,13 +95,13 @@
 				<!-- 
 				<div class="content__block-term content__block-item">
 					<div class="content__block--mid">Срок аренды</div>
-					<select id="select-cust" class="select-cust">
+					<select id="select-cust" class="select-cust city">
 						<option value="">17.04.19 - 18.04.19</option>
 					</select>
 				</div>
 				<div class="content__block-type content__block-item">
 					<div class="content__block--mid">Тип автомобиля</div>
-					<select id="select-cust" class="select-cust">
+					<select id="select-cust" class="select-cust city">
 						<option value="Хетчбэк">Хетчбэк</option>
 						<option value="Седан">Седан</option>
 						<option value="Минивен">Минивен</option>
@@ -341,17 +343,54 @@
 						<ul>
 							<li>Ежедневно: С 08:00 до 20:00</li>
 							<li>Город: 
-								<select id="select-cust" class="select-cust">
+								<select id="select-cust" class="select-cust city">
 									<option value="smr">Самара</option>
 									<option value="cheb">Чебоксары</option>
 									<option value="ufa">Уфа</option>
 								</select>
 							</li>
-							<li>Адрес: 443022, Самара, Заводское шоссе, 11, офис 106</li>
+							<li class="smr box">Адрес: 443022, Самара, Заводское шоссе, 11, офис 106<br>
+							</li>
+							<li class="cheb box">Адрес: 428003, Чебоксары, проезд Школьный, дом 1, офис 206<br>
+							</li>
+							<li class="ufa box">Адрес: 450029, Республика Башкортостан, г. Уфа, ул. Ульяновых, д.65, корп.10, офис 104</li>
 							<a href="mailto:info@avtobum63.ru">info@avtobum63.ru</a>
 						</ul>
 					</div>
 				</div>
+				<style>
+					.box{
+						display: none;
+					}
+				</style>
+				<script>
+					window.onload = function() {
+						$(document).ready(function(){
+							$(".smr").show();
+							$("select").change(function(){                        
+								$(this).find("option:selected").each(function(){
+									$('select').val($(this).attr("value"));
+									if($(this).attr("value")=="smr"){
+										$(".box").hide();
+										$(".smr").show();
+									}
+									if($(this).attr("value")=="cheb"){
+										$(".box").hide();
+										$(".cheb").show();
+									}
+									if($(this).attr("value")=="ufa"){
+										$(".box").hide();
+										$(".ufa").show();
+									}
+									if($(this).attr("value")=="choose"){
+										$(".box").hide();
+										$(".choose").show();
+									}
+								});
+							}).change();
+						});
+					}
+				</script>
 				<div class="col-xl-2 col-lg-3 col-md-3">
 					<div class="footer-callback">
 						<div class="social">

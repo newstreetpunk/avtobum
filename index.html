@@ -57,7 +57,7 @@
 						<a href="tel:88005500851" class="phone">8 (800) 550-08-51</a>
 						<a href="mailto:info@avtobum63.ru" class="email fwm">info@avtobum63.ru</a>
 					</div> -->
-					<select id="select-cust" class="select-cust">
+					<select id="select-cust" class="select-cust city">
 						<option value="smr">Самара</option>
 						<option value="cheb">Чебоксары</option>
 						<option value="ufa">Уфа</option>
@@ -78,13 +78,15 @@
 	<!-- /HEADER -->
 
 	<!-- MAIN -->
-	<main class="content">
+	<main class="lazyload content" data-lazynowclass1="lazynow" data-srcbefore="img/hummer_b_w-t.jpg">
 		<div class="content__block">
 			<form action="arenda-mashin.html">
 				<div class="content__block-loc content__block-item">
-					<img src="img/emblem.png" alt="ALT">
+					<img class="smr box" src="img/emblems/smr62p.png" alt="Самара">
+					<img class="cheb box" src="img/emblems/cheb62p.png" alt="Чебоксары">
+					<img class="ufa box" src="img/emblems/ufa62p.png" alt="Уфа">
 					<div class="content__block--city content__block--mid">Город</div>
-					<select id="select-cust" class="select-cust">
+					<select id="select-cust" class="select-cust city">
 						<option value="smr">Самара</option>
 						<option value="cheb">Чебоксары</option>
 						<option value="ufa">Уфа</option>
@@ -93,13 +95,13 @@
 				<!-- 
 				<div class="content__block-term content__block-item">
 					<div class="content__block--mid">Срок аренды</div>
-					<select id="select-cust" class="select-cust">
+					<select id="select-cust" class="select-cust city">
 						<option value="">17.04.19 - 18.04.19</option>
 					</select>
 				</div>
 				<div class="content__block-type content__block-item">
 					<div class="content__block--mid">Тип автомобиля</div>
-					<select id="select-cust" class="select-cust">
+					<select id="select-cust" class="select-cust city">
 						<option value="Хетчбэк">Хетчбэк</option>
 						<option value="Седан">Седан</option>
 						<option value="Минивен">Минивен</option>
@@ -120,7 +122,7 @@
 			<div class="stock__slider make">
 				<div class="stock__slider-slide">
 					<a href="statya-example.html">
-						<img src="img/stock1.jpg" alt="Возьми авто на прокат в феврале со скидкой" title="Возьми авто на прокат в феврале со скидкой">
+						<img class="lazyload" src="img/picture.svg" data-src="img/stock1.jpg" alt="Возьми авто на прокат в феврале со скидкой" title="Возьми авто на прокат в феврале со скидкой">
 					</a>
 					<div class="short_name pt-3"><a href="statya-example.html" class="name">Возьми авто на прокат в феврале со скидкой</a></div>
 					<div class="short_desc pt-3"><p>Начался февраль, а значит впереди череда праздников! И БУМЕРАНГ-АВТО конечно не оставит вас без подарков!</p></div>
@@ -128,7 +130,7 @@
 				</div>
 				<div class="stock__slider-slide">
 					<a href="statya-example.html">
-						<img src="img/stock2.jpg" alt="Выгодные тарифы на краткосрочный прокат" title="Выгодные тарифы на краткосрочный прокат">
+						<img class="lazyload" src="img/picture.svg" data-src="img/stock2.jpg" alt="Выгодные тарифы на краткосрочный прокат" title="Выгодные тарифы на краткосрочный прокат">
 					</a>
 					<div class="short_name pt-3"><a href="statya-example.html" class="name">Выгодные тарифы на краткосрочный прокат</a></div>
 					<div class="short_desc pt-3"><p>Весь октябрь - краткосрочный прокат по выгодным тарифам длительного</p></div>
@@ -136,7 +138,7 @@
 				</div>
 				<div class="stock__slider-slide">
 					<a href="statya-example.html">
-						<img src="img/stock1.jpg" alt="Возьми авто на прокат в феврале со скидкой" title="Возьми авто на прокат в феврале со скидкой">
+						<img class="lazyload" src="img/picture.svg" data-src="img/stock1.jpg" alt="Возьми авто на прокат в феврале со скидкой" title="Возьми авто на прокат в феврале со скидкой">
 					</a>
 					<div class="short_name pt-3"><a href="statya-example.html" class="name">Возьми авто на прокат в феврале со скидкой</a></div>
 					<div class="short_desc pt-3"><p>Начался февраль, а значит впереди череда праздников! И БУМЕРАНГ-АВТО конечно не оставит вас без подарков!</p></div>
@@ -144,7 +146,7 @@
 				</div>
 				<div class="stock__slider-slide">
 					<a href="statya-example.html">
-						<img src="img/stock2.jpg" alt="Выгодные тарифы на краткосрочный прокат" title="Выгодные тарифы на краткосрочный прокат">
+						<img class="lazyload" src="img/picture.svg" data-src="img/stock2.jpg" alt="Выгодные тарифы на краткосрочный прокат" title="Выгодные тарифы на краткосрочный прокат">
 					</a>
 					<div class="short_name pt-3"><a href="statya-example.html" class="name">Выгодные тарифы на краткосрочный прокат</a></div>
 					<div class="short_desc pt-3"><p>Весь октябрь - краткосрочный прокат по выгодным тарифам длительного</p></div>
@@ -203,22 +205,22 @@
 			<h2>Партнеры</h2>
 			<div class="partners-slider make">
 				<div class="partners-slider-item">
-					<img src="img/part1.jpg" alt="ALT">
+					<img class="lazyload" src="img/picture.svg" data-src="img/part1.jpg" alt="ALT">
 				</div>
 				<div class="partners-slider-item">
-					<img src="img/part2.jpg" alt="ALT">
+					<img class="lazyload" src="img/picture.svg" data-src="img/part2.jpg" alt="ALT">
 				</div>
 				<div class="partners-slider-item">
-					<img src="img/part3.jpg" alt="ALT">
+					<img class="lazyload" src="img/picture.svg" data-src="img/part3.jpg" alt="ALT">
 				</div>
 				<div class="partners-slider-item">
-					<img src="img/part4.jpg" alt="ALT">
+					<img class="lazyload" src="img/picture.svg" data-src="img/part4.jpg" alt="ALT">
 				</div>
 				<div class="partners-slider-item">
-					<img src="img/part5.jpg" alt="ALT">
+					<img class="lazyload" src="img/picture.svg" data-src="img/part5.jpg" alt="ALT">
 				</div>
 				<div class="partners-slider-item">
-					<img src="img/part3.jpg" alt="ALT">
+					<img class="lazyload" src="img/picture.svg" data-src="img/part3.jpg" alt="ALT">
 				</div>
 			</div>
 		</div>
@@ -260,17 +262,54 @@
 						<ul>
 							<li>Ежедневно: С 08:00 до 20:00</li>
 							<li>Город: 
-								<select id="select-cust" class="select-cust">
+								<select id="select-cust" class="select-cust city">
 									<option value="smr">Самара</option>
 									<option value="cheb">Чебоксары</option>
 									<option value="ufa">Уфа</option>
 								</select>
 							</li>
-							<li>Адрес: 443022, Самара, Заводское шоссе, 11, офис 106</li>
+							<li class="smr box">Адрес: 443022, Самара, Заводское шоссе, 11, офис 106<br>
+							</li>
+							<li class="cheb box">Адрес: 428003, Чебоксары, проезд Школьный, дом 1, офис 206<br>
+							</li>
+							<li class="ufa box">Адрес: 450029, Республика Башкортостан, г. Уфа, ул. Ульяновых, д.65, корп.10, офис 104</li>
 							<a href="mailto:info@avtobum63.ru">info@avtobum63.ru</a>
 						</ul>
 					</div>
 				</div>
+				<style>
+					.box{
+						display: none;
+					}
+				</style>
+				<script>
+					window.onload = function() {
+						$(document).ready(function(){
+							$(".smr").show();
+							$("select").change(function(){                        
+								$(this).find("option:selected").each(function(){
+									$('select').val($(this).attr("value"));
+									if($(this).attr("value")=="smr"){
+										$(".box").hide();
+										$(".smr").show();
+									}
+									if($(this).attr("value")=="cheb"){
+										$(".box").hide();
+										$(".cheb").show();
+									}
+									if($(this).attr("value")=="ufa"){
+										$(".box").hide();
+										$(".ufa").show();
+									}
+									if($(this).attr("value")=="choose"){
+										$(".box").hide();
+										$(".choose").show();
+									}
+								});
+							}).change();
+						});
+					}
+				</script>
 				<div class="col-xl-2 col-lg-3 col-md-3">
 					<div class="footer-callback">
 						<div class="social">

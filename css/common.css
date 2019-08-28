@@ -1,0 +1,703 @@
+.feedback, .feedback-w {
+    display: none;
+    width: 480px;
+    position: fixed;
+    z-index: 9998;
+    padding: 35px 0 25px;
+    background: #f2f2f4;
+    left: 50%;
+    margin-left: -240px;
+    top: 50%;
+    margin-top: -300px;
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.5)
+}
+
+.feedback p.note {
+    font-size: 13px;
+    text-align: left;
+    margin-top: 10px;
+    text-transform: initial;
+}
+
+.feedback .form, .feedback-w .form {
+    width: 300px;
+    margin-left: 90px;
+    float: left;
+}
+
+.feedback .theme, .feedback-w .theme {
+    font-size: 18px;
+    color: #088AC8;
+    text-align: center;
+    text-transform: uppercase;
+    width: 100%;
+    float: left;
+    margin: 0 0 10px 0;
+}
+
+.feedback p, .feedback-w p {
+    font-size: 14px;
+    color: #088AC8;
+    text-align: center;
+    text-transform: uppercase;
+    width: 100%;
+    float: left;
+    margin: 10px 0 0 0;
+    float: left;
+}
+
+.feedback .close, .feedback-w .close-w {
+    margin: -32px 0 0 0;
+    right: 3px;
+    position: absolute;
+    cursor: pointer;
+    width: 31px;
+    height: 31px;
+    background: url('../img/clos.png') no-repeat;
+}
+
+.feedback .form input, .feedback-w .form input {
+    outline: none;
+    width: 293px;
+    padding: 0 0 0 5px;
+    height: 29px;
+    line-height: 29px;
+    border: 1px solid #fff;
+    font-size: 14px;
+    color: #000;
+    float: left;
+    margin: 10px 0 0 0;
+}
+
+.feedback .form textarea, .feedback-w .form textarea {
+    outline: none;
+    overflow: auto;
+    resize: none;
+    width: 293px;
+    padding: 0 0 0 5px;
+    height: 70px;
+    border: 1px solid #cacaca;
+    font-size: 14px;
+    color: #000;
+    float: left;
+    /*margin: 10px 0 0 0;*/
+}
+
+.feedback .form .submit, .feedback-w .form .submit {
+    border-radius: 7px;
+    width: 200px;
+    height: 40px;
+    background: #088AC8;
+    cursor: pointer;
+    float: left;
+    margin: 30px 0 0 50px;
+    border: none;
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 19px;
+}
+
+.feedback .form .submit:hover, .feedback-w .form .submit:hover {
+    background: #58C644;
+}
+
+.feedback img, .feedback-w img {
+    float: left;
+    margin: 15px 10px 0 50px;
+    height: 25px;
+    width: 75px;
+}
+
+.feedback .form .ver, .feedback-w .form .ver {
+    width: 107px;
+    float: left;
+}
+
+.feedback form input::-webkit-input-placeholder, .feedback-w form input::-webkit-input-placeholder {
+    color: #1b1b1b;
+    font-size: 16px;
+}
+
+.feedback form input:-moz-placeholder, .feedback-w form input:-moz-placeholder {
+    color: #1b1b1b;
+    font-size: 16px;
+}
+
+#thank {
+    display: none;
+    border-radius: 8px;
+    width: 480px;
+    position: fixed;
+    z-index: 9998;
+    padding: 35px 0 25px;
+    background: #f2f2f4;
+    left: 50%;
+    margin-left: -240px;
+    top: 50%;
+    margin-top: -300px;
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.5);
+}
+
+#thank_review {
+    display: none;
+    border-radius: 8px;
+    width: 800px;
+    position: fixed;
+    z-index: 9998;
+    padding: 35px 0 25px;
+    background: #f2f2f4;
+    left: 50%;
+    margin-left: -400px;
+    top: 50%;
+    margin-top: -300px;
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.5);
+}
+
+#thank_feedback {
+    display: none;
+    border-radius: 8px;
+    width: 600px;
+    position: fixed;
+    z-index: 9998;
+    padding: 35px 0 25px;
+    background: #f2f2f4;
+    left: 50%;
+    margin-left: -300px;
+    top: 50%;
+    margin-top: -300px;
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.5);
+}
+
+#thank_question {
+    display: none;
+    border-radius: 8px;
+    width: 600px;
+    position: fixed;
+    z-index: 9998;
+    padding: 35px 0 25px;
+    background: #f2f2f4;
+    left: 50%;
+    margin-left: -300px;
+    top: 50%;
+    margin-top: -300px;
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.5);
+}
+
+#thank_callback {
+    display: none;
+    border-radius: 8px;
+    width: 600px;
+    position: fixed;
+    z-index: 9998;
+    padding: 35px 0 25px;
+    background: #f2f2f4;
+    left: 50%;
+    margin-left: -300px;
+    top: 50%;
+    margin-top: -300px;
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.5);
+}
+
+#thank .close,
+#thank_review .close,
+#thank_callback .close,
+#thank_feedback .close,
+#thank_question .close {
+    margin: -32px 0 0 0;
+    right: 3px;
+    position: absolute;
+    cursor: pointer;
+    width: 31px;
+    height: 31px;
+    background: url('../img/clos.png') no-repeat;
+}
+
+#thank p,
+#thank_review p,
+#thank_callback p,
+#thank_feedback p,
+#thank_question p {
+    margin: 21px 0 42px 0;
+    width: 100%;
+    text-transform: uppercase;
+    float: left;
+    font-size: 19px;
+    text-align: center;
+    color: #307E98;
+}
+
+.feedback .form-check input, .feedback-w .form-check input,
+#content .eform.contactForm .form-check input {
+    width: initial;
+    height: initial;
+    margin: 0px 10px 0px 0px;
+}
+
+.form-check {
+    display: inline-block;
+    font-size: 12px;
+    width: 340px;
+    margin: 10px 0px 0px 0px;
+}
+
+.feedback, .feedback-w {
+    z-index: 10009999;
+}
+
+
+.calcForm {
+    width: 1073px;
+    max-width: 100%;
+    padding: 0 40px 25px 60px;
+    box-sizing: border-box;
+    background: #fff;
+    display: none;
+    position: fixed;
+    z-index: 10000;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    min-height: 475px;
+}
+
+.bt-price {
+    width: 80px;
+    position: fixed;
+    z-index: 9991;
+    left: 0px;
+    top: 174px;
+    height: 420px;
+    cursor: pointer;
+}
+
+.lang_en .bt-price {
+    width: 80px;
+    position: fixed;
+    z-index: 9991;
+    left: 0px;
+    top: 174px;
+    height: 420px;
+    cursor: pointer;
+}
+
+.calcForm .form {
+    width: 100%;
+    height: 400px;
+    height: 418px;
+    margin: 0;
+    background: #fff;
+    position: relative;
+}
+
+.calcForm .form .but {
+    position: absolute;
+    left: -88px;
+    width: 88px;
+    height: 420px;
+    cursor: pointer;
+    z-index: 9992;
+}
+
+.calcForm .form .theme {
+    color: #52c14a;
+    font-size: 30px;
+    margin: 30px 0;
+    line-height: 100%;
+    font-weight: bold;
+}
+
+.calcForm .form p {
+    color: #1e2128;
+    font-size: 14px;
+    width: 100%;
+    margin-bottom: 8px;
+    float: left;
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 130%;
+}
+
+.calcForm .form .rent_place p {
+    margin-bottom: 22px;
+}
+
+.jq-selectbox__select, .calcForm .form input {
+    margin: 0 !important;
+    font-size: 14px !important;
+    border-radius: 2px !important;
+    margin-right: 5px !important;
+    background: #fff !important;
+    border: 1px solid #d7dae1 !important;
+    height: 40px !important;
+    width: 137px !important;
+}
+
+.jq-selectbox__select-text {
+    margin-top: 13px !important;
+}
+
+#marka-styler .jq-selectbox__select {
+    width: 212px !important;
+}
+
+.jq-selectbox__trigger-arrow {
+    background: url('../img/strselect.png') no-repeat !important;
+    top: 20px !important;
+}
+.jq-selectbox ul {
+    width: 260px;
+    background: #fff;
+    border: 1px solid #d7dae1;
+    max-height: 400px !important;
+}
+#rent-start-time-styler.jq-selectbox ul,
+#rent-end-time-styler.jq-selectbox ul {
+    width: 146px;
+}
+
+.calcForm .form .leftBlock {
+    width: 245px;
+    float: left;
+}
+
+.calcForm .form .leftBlock .priceBlock {
+    float: left;
+    margin: 5px 0 0 0;
+    width: 100%;
+    padding-bottom: 12px;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.calcForm .form .leftBlock .priceBlock p {
+    color: #F66A26;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    font-weight: bold;
+    margin: 12px 0 0 0;
+}
+
+.calcForm .form .leftBlock .priceBlock p.zalog {
+    color: #000;
+}
+
+.calcForm .form .leftBlock .priceBlock p span {
+    font-weight: normal;
+    font-size: 16px;
+}
+
+.calcForm .form .leftBlock .summa {
+    float: left;
+    padding: 10px 0;
+    border-top: 1px solid #fff;
+    width: 100%;
+}
+
+.calcForm .form .leftBlock .summa p {
+    color: #000;
+    font-size: 16px;
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+}
+
+.calcForm .form .leftBlock .summa .itog {
+    font-size: 16px;
+    color: #000;
+    font-weight: normal;
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 7px 0 0 0;
+}
+
+.calcForm .form .leftBlock a.bron {
+    width: 100%;
+    float: left;
+    margin: 5px 0 0 0;
+    background: #52ae59;
+    text-align: center;
+    border-radius: 25px;
+    font-weight: 400;
+    color: #fff;
+    font-size: 15px;
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 8px 0;
+    font-family: Arial, Helvetica, sans-serif;
+    cursor: pointer;
+}
+
+.calcForm .form .leftBlock a.bron:hover {
+    background: #58C644;
+}
+
+#calcBron {
+    display: none;
+}
+
+.calcForm .form input {
+    border: none;
+    outline: none;
+    width: 185px;
+    padding: 0 0 0 10px;
+    height: 27px;
+    line-height: 27px;
+    font-size: 12px;
+    color: #808080;
+    float: left;
+    border-radius: 15px;
+    background: #e8e4e4;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.calcForm .form input::-webkit-input-placeholder {
+    color: #808080;
+    font-size: 12px;
+}
+
+.calcForm .form input:-moz-placeholder {
+    color: #808080;
+    font-size: 12px;
+}
+
+.calcForm .form input[type="checkbox"] {
+    position: absolute;
+    left: -9999px;
+}
+
+.calcForm .form input[type="checkbox"]+label {
+    width: auto;
+    /*background: url('../img/check.png') 0 -37px no-repeat;*/
+    background: url('../img/uncheck.png') no-repeat;
+    padding: 2px 0 2px 30px;
+    line-height: 130%;
+    min-height: 18px;
+    color: #6b6b6b;
+    font-size: 14px;
+    font-family: Arial, Helvetica, sans-serif;
+    float: left;
+    cursor: pointer;
+    margin: 2px 0 0 0;
+}
+
+.calcForm .form input[type="checkbox"]:checked+label {
+    /*background: url('../img/check.png') 0 0 no-repeat;*/
+    background: url('../img/checked.png') no-repeat;
+    color: #52ae59;
+}
+
+.calcForm .form .calc-table {
+    border: none;
+    border-collapse: collapse;
+    width: 390px;
+    float: left;
+    margin: 7px 0 0 25px;
+}
+
+.calcForm .form .calc-table tr td {
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.calcForm .form .calc-table tr td:first-child {
+    width: 226px;
+    border-right: 1px solid #69c362;
+}
+
+.calcForm .form .calc-table tr td:nth-child(2) {
+    padding: 2px 0 1px 9px;
+    vertical-align: middle;
+    height: 100%;
+    line-height: 130%;
+    color: #000000;
+    font-size: 15px;
+    font-family: Arial, Helvetica, sans-serif;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.calcForm .form .calc-table tr td:nth-child(2) span {
+    font-size: 10px;
+}
+
+.calcForm .form .calc-table tr:last-child td {
+    border-bottom: none;
+}
+
+.calcForm .form .close, #new_order .close {
+    width: 19px;
+    height: 20px;
+    background: url('../img/close-btn.png') no-repeat;
+    position: absolute;
+    right: -20px;
+    top: 20px;
+    cursor: pointer;
+}
+
+
+@media only screen and (max-width:425px){
+    .calcForm .form .close, #new_order .close{
+        right: 0;
+    }
+}
+
+#new_order .close {
+    right: 20px;
+}
+
+.calcForm .form .re {
+    width: 25px;
+    height: 26px;
+    background: url('../img/strReload.png') no-repeat;
+    position: absolute;
+    right: 325px;
+    margin-top: -12px;
+    cursor: pointer;
+}
+.select_auto {
+    float: left;
+    width: 220px;
+    margin-bottom: 25px;
+    display: inline-block;
+    margin-right: 30px;
+}
+.dop_options {
+    max-width: 720px;
+    display: inline-block;
+}
+.options_list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    min-height: 40px;
+}
+.rent_start, .rent_end {
+    display: block;
+}
+.rent_start::before {
+    content: 'с';
+    display: inline-block;
+    margin-right: 10px;
+    font-size: 14px;
+    color: #8b8b8b;
+    float: left;
+    margin-top: 14px;
+}
+.rent_start::after {
+    content: '—';
+    display: inline-block;
+    margin: 0 10px;
+    font-size: 18px;
+    color: #1f1f1f;
+    float: left;
+    margin-top: 11px;
+}
+.rent_end::before {
+    content: 'до';
+    display: inline-block;
+    margin-right: 10px;
+    font-size: 14px;
+    color: #8b8b8b;
+    float: left;
+    margin-top: 14px;
+}
+.rent_time {
+    width: 100%;
+    margin-bottom: 35px;
+    display: inline-block;
+}
+.tabnav {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-bottom: 15px;
+}
+.tabnav li a {
+    color: #878787;
+    font-size: 14px;
+    padding: 14px 20px;
+    text-decoration: none;
+    border: 1px solid #dddddd;
+    border-radius: 50px;
+}
+.tabnav li.ui-tabs-selected a {
+    background-color: #52ae59;
+    color: #fff;
+    border-color: #52ae59;
+}
+.tabnav li {
+    padding-bottom: 15px;
+}
+.tabtext {
+    width: 100%;
+    border: 1px solid #dddddd;
+    font-family: Arial, Helvetica, sans-serif;
+    /*margin-top: 15px;*/
+    font-size: 14px;
+}
+.tabtext:read-only {
+    color: #8c8c8c;
+    cursor: no-drop;
+}
+.ui-tabs-hide {
+    display: none;
+}
+.rent_place {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-bottom: 40px;
+}
+.location-block {
+    width: 440px;
+}
+#location-in {
+    margin-right: 50px;
+}
+.rent_foot {
+    background: #52ae59;
+    display: flex;
+    width: 100%;
+    padding: 25px 40px 25px 61px;
+    margin-right: -40px;
+    margin-left: -61px;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.calcForm .form .rent_price {
+    max-width: 250px;
+}
+.calcForm .form .rent_price p {
+    color: #fff;
+    font-size: 12px;
+}
+.calcForm .form .rent_price p #price-p {
+    font-size: 24px;
+    font-weight: bold;
+}
+.calcForm .form .rent_price p #price-z {
+    font-size: 16px;
+}
+.calcForm .form .foot_desc {
+    width: 340px;
+}
+.calcForm .form .foot_desc p {
+    color: #a5e9ab;
+    font-size: 12px;
+}
+.calcForm .form .foot_desc p a {
+    color: #a5e9ab;
+}
+.calcForm .form .summa {
+    width: 300px;
+    min-height: 1px;
+    text-align: right;
+    padding-top: 18px;
+}
+.calcForm .form .summa .bron {
+    color: #fff;
+    background-color: #e94d19;
+    border-radius: 50px;
+    padding: 17px 70px;
+    font-size: 20px;
+    cursor: pointer;
+}

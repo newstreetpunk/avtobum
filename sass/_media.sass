@@ -38,7 +38,6 @@
 		padding-left: 50px
 	.footer-callback .social a img
 		// width: 50px
-		height: 50px
 
 // Large devices (desktops, less than 1200px)
 +media-breakpoint-down(lg)
@@ -112,7 +111,6 @@
 		font-size: 13px
 	.footer-callback .social a img
 		// width: 40px
-		height: 40px
 	.footer p
 		font-size: 12px
 	.footer-callback
@@ -135,7 +133,8 @@
 		.select-cust
 			display: none
 	.header__menu
-		height: calc(100vh - 120px)
+		// height: calc(100vh - 120px)
+		height: 400px
 	.header__menu ul
 		flex-direction: column
 	.header__menu ul li
@@ -144,7 +143,7 @@
 		text-align: center
 	.header__menu ul li a
 		display: block
-		padding: 5px 0
+		padding: 10px 0
 		font-size: 16px
 		font-weight: 500
 	.header__phone--callback
@@ -232,6 +231,11 @@
 
 // Medium devices (tablets, 768px and up)
 +media-breakpoint-up(md)
+	.avtodetail .product
+		.photos
+			width: 50%
+			float: left
+			margin: 0 2rem 2rem 0
 	.about
 		padding-top: 10%
 		margin-bottom: 10%
@@ -243,6 +247,11 @@
 +media-breakpoint-up(lg)
 	.content
 		height: 570px
+	.footer-callback .social a img
+		height: 50px
+	.vehicle-options
+		&.pt-2
+			min-height: 70px;
 
 // Extra large devices (large desktops, 1200px and up)
 +media-breakpoint-up(xl)
@@ -270,9 +279,15 @@
 
 // Small devices (landscape phones, 576px and up)
 +media-breakpoint-only(sm)
+	.vehicle-options
+		&.pt-2
+			min-height: 130px;
 
 // Medium devices (tablets, 768px and up)
 +media-breakpoint-only(md)
+	.vehicle-options
+		&.pt-2
+			min-height: 104px;
 
 // Large devices (desktops, 992px and up)
 +media-breakpoint-only(lg)

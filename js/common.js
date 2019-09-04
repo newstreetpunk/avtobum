@@ -502,10 +502,13 @@ $(function() {
             }
             /**/
         });
-        
+        $('.callback, .call, .question, .bron').click(function(){
+            var num=$(this).attr('data-name');
+            $('#btnname').val(num);
+        });
         $(document).on('submit','#frmwrapper form',function(ev){
             var frm = $('#frmwrapper form');
-            $('#submit').prop( "disabled", true );
+            $('#frmwrapper form #submit').prop( "disabled", true );
             /* * /
             $.get('/form_callme', frm_data, function (data) {
                  $('#frmwrapper form').remove();

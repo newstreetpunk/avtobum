@@ -157,7 +157,7 @@
                             }
                             
                         } else if (srcbefore !== null) {
-                            entry.target.pseudoStyle('before', 'background-image', 'url(' + srcbefore + ')');
+                            entry.target.pseudoStyle('before', 'background-image', srcbefore);
                         } else if (lazynowclass !== null) {
                             entry.target.classList.add(lazynowclass);
                         } else {

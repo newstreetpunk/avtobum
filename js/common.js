@@ -4,6 +4,7 @@ $(function() {
 
     $( document ).ready(function() {
         
+        /* опускающийся хедер при прокрутке вверх */
         var prevScrollpos = window.pageYOffset;
         $(window).scroll( function() {
             var currentScrollPos = window.pageYOffset;
@@ -22,12 +23,13 @@ $(function() {
             }
         });
 
-        //Мобильное меню
+        /* Мобильное меню при клике на бургер */
         $('.toggle-btn').click(function() {
             $(this).toggleClass('active');
             $('.header__menu').slideToggle(200);
         });
 
+        /* ресайз заголовка когда изменяется размер окна, ээээ а че стилями нельзя? */
         function resizeW() {
             if ($(window).width() < 1200) {
                 $('.header__menu').hide();
@@ -47,7 +49,7 @@ $(function() {
         $(window).resize(resizeW);
 
 
-        // Слайдеры
+        /* Слайдер акций */
         $('.stock__slider.make').slick({
             infinite: true,
     		slidesToShow: 3,
@@ -74,6 +76,7 @@ $(function() {
         	]
         });
 
+        /* Слайдер партнеров */
         $('.partners-slider.make').slick({
             infinite: true,
             slidesToShow: 5,
@@ -106,6 +109,7 @@ $(function() {
 
         });
 
+        /* добавление мобильной таблицы, если размер экрана меньше 767 */
         var switched = false;
         if (($(window).width() < 767) && !switched && document.getElementById('fixed-table-container_price')) { 
             switched = true;
@@ -120,6 +124,7 @@ $(function() {
 
         } 
 
+        /* Разворачивание списка "Посмотреть подробную информация" о машине */
         $('.toggle-more a').click(function(e) {
             e.preventDefault();
           
@@ -153,7 +158,133 @@ $(function() {
             }
         });
 
+        /* Сортировка автопарка по */
+        function getSorted(selector, dataName, order) {
+            // var selector = '.product',
+                // dataName = 'brand'
+            /* */
+            var toSort = document.querySelectorAll(selector),
+                parent = toSort[0].parentNode;
+            toSort = Array.prototype.slice.call(toSort, 0);
+            toSort.sort(function(a, b) {
+                switch(dataName) {
+                    case "brand":
+                    case "type":
+                        var aVal = a.getAttribute('data-'+dataName),
+                            bVal = b.getAttribute('data-'+dataName);
+                        break;
+                    default:
+                        var aVal = parseInt(a.getAttribute('data-'+dataName)),
+                            bVal = parseInt(b.getAttribute('data-'+dataName));
+                }
+                if(aVal === bVal) return 0;
+                else if(aVal === "") return 1;
+                else if(bVal === "") return -1;
+                else if(order == 'down') return (aVal < bVal) ? -1 : (aVal > bVal) ? 1 : 0;
+                else return (aVal < bVal) ? 1 : (aVal > bVal) ? -1 : 0;
+            });
+            parent.innerHTML = "";
 
+            for(var i = 0, l = toSort.length; i < l; i++) {
+                parent.appendChild(toSort[i]);
+            }
+            /* */
+            // console.log([selector, dataName]);
+
+
+
+            /* * /
+            $(selector).sort(function(a, b) { 
+                var aVal = parseInt($(a).data(dataName)); 
+                var bVal = parseInt($(b).data(dataName)); 
+                if(order == 'down')
+                    return (aVal < bVal) ? -1 : (aVal > bVal) ? 1 : 0; 
+                else
+                    return (aVal < bVal) ? 1 : (aVal > bVal) ? -1 : 0; 
+            }).appendTo($(selector).parent());
+            /* */
+
+            /* * /
+            $(selector).sort(function(a, b){
+                var aVal = parseInt(a.getAttribute('data-'+dataName)),
+                    bVal = parseInt(b.getAttribute('data-'+dataName));
+                if(order == 'down')
+                    return aVal - bVal;
+                else
+                    return bVal - aVal;
+            }).appendTo($(selector).parent());
+            /**/
+        }
+
+        /* Действие кнопок сортировки автопарка */
+        $('.Sort-Order a').click(function(e) {
+            e.preventDefault();
+          
+            var $this = $(this),
+                sort = $this.parent().data('sort'),
+                url = (location.hostname == 'localhost') ? 'arenda-mashin.html' : '/arenda-mashin/';
+          
+            if ($this.parent().hasClass('Sort-Order_select')) {
+                $this.parent().toggleClass('Sort-Order_up');
+            } else {
+                $('.Sort-Order').each(function(){
+                    $(this).removeClass('Sort-Order_select')
+                    $(this).removeClass('Sort-Order_up')
+                });
+                $this.parent().addClass('Sort-Order_select');
+            }
+
+            
+            if($this.parent().hasClass('Sort-Order_up')) {
+                getSorted('.product', sort, 'up');
+                window.history.pushState({}, document.title, url+"?sort="+sort+"&order=up");
+            } else {
+                getSorted('.product', sort, 'down');
+                window.history.pushState({}, document.title, url+"?sort="+sort+"&order=down");
+            }
+        });
+
+        /* Первая сортировка, если есть параметры в URL */
+        function firstSort() {
+            if (window.location.hash != '') {
+                var query = document.location.hash.substring(1);
+            } else {
+                var query = window.location.search.substring(1);
+            }
+            // console.log("query : " + query);
+            
+            var params = window.location.search.substring(1);
+            // console.log("params : " + params);
+            
+            var vars = params.split("&");
+            // console.log("vars : " + vars);
+
+            var sort = [],
+                sorts = ['brand', 'type', 'price', 'rank'],
+                orders = ['up', 'down'];
+
+            for (var i = 0; i < vars.length; i++) {
+                var pair = vars[i].split("=");
+                
+                // console.log("pair : " + pair);
+                
+                if (pair[0] === 'sort' && sorts.indexOf(pair[1]) != -1) { 
+                    sort.push(pair[1]);
+                }
+                if (pair[0] === 'order' && orders.indexOf(pair[1]) != -1) { 
+                    sort.push(pair[1]);
+                }
+            }
+            // console.log(['sort', sort]);
+            if(sort.length == 2)
+                getSorted('.product', sort[0], sort[1]);
+
+            var pathname = window.location.pathname.split("/");
+            // console.log("pathname : " + pathname);
+        }
+        firstSort();
+
+        /* создать куки */
         function createCookie(cookieName,cookieValue,daysToExpire)
         {
           var date = new Date();
@@ -161,6 +292,7 @@ $(function() {
           document.cookie = cookieName + "=" + cookieValue + "; expires=" + date.toGMTString();
         }
 
+        /* доступ к куки */
         function accessCookie(cookieName)
         {
           var name = cookieName + "=";
@@ -174,6 +306,7 @@ $(function() {
             return "";
         }
 
+        /* проверить куки */
         function checkCookie()
         {
           var user = accessCookie("testCookie");
@@ -190,6 +323,7 @@ $(function() {
           }
         }
         
+        /* если реальный сайт, то кнопка выбора города должна менять поддомен */
         if(window.location.host.indexOf('avtobum63.ru') != -1) {
             $("select.city").change(function(){                        
                 $(this).find("option:selected").each(function(){
@@ -213,284 +347,41 @@ $(function() {
 
         // $( '.swipebox' ).swipebox();
         
+        /* настройки галереи на детальной странице авто */
         if($('[data-fancybox="group"]').length != 0)
             $('[data-fancybox="group"]').fancybox({
                 buttons : ["close"]
             });
 
+        if($('[data-src="#callback-form"]').length != 0)
+            $('[data-src="#callback-form"]').fancybox({
+                afterShow: function( instance, slide ) {
 
-        if(window.location.href.indexOf("https://avtobum63.ru/dev.html") != -1) {
-        /**/
-        //$("#stillHaveQuestions").hide();  
-        $(".questions").click(function show_popup() {
-            $("#stillHaveQuestions").fadeIn(500);
-            $('#slideout').fadeIn();
-        }); 
-            
-        
-        $(".review").hide();
-        $(".callback").click(function show_popup() {
-            $(".review").fadeIn(500);
-        });
-        $(".popup_close").click(function() {
-            $(".review").fadeOut(300);
-        });
-        $('#calcBron').click(function(){
-            var valueDop = '';
-            $('#avto_param').val($('#marka option:selected').html());
-            $('#srok_param').val($('#srok').val());
-            $('input[type=checkbox]:checked').each(function() {
-                valueDop = valueDop + $(this).val() + ', ';
-            });
-            $('#list_param').val(valueDop);
-        });
+                    // Tip: Each event passes useful information within the event object:
 
-        $('.call').click(function(){
-            $('#slideout').fadeIn();
-            $('#callback').fadeIn();
-        });
-        
-        
-        $(".questions, .call-keys").click(function() {
-            $("#stillHaveQuestions").fadeIn();
-            $('#slideout').fadeIn();
-        }); 
-        
-        $('#calcBron').click(function(){
-            //$('#pricesform').fadeIn();
-            $('#calculator').stop(true, true).fadeOut(function(){
-                window.calc();
-                $("#new_order").fadeIn();
-            });
-            $('#slideout').fadeIn();
-        });
+                    // Object containing references to interface elements
+                    // (background, buttons, caption, etc)
+                    // console.info( instance.$refs );
 
-        $('#new_order form').submit(function(event) {
-            event.preventDefault();
-            var form = $(this);
-            var phone_el = form.find('input[name="phone"]');
-            phone_el.removeClass('error');
-            if (!phone_el.val()) {
-                phone_el.addClass('error');
-                return;
-            }
-            var approve = form.find('input[name="agree"]');
-            approve.removeClass('error');
-            if (!approve.is(':checked')) {
-                approve.addClass('error');
-                return;
-            }
-            var form_msg = $(this).serialize();
-            $.ajax({
-                type: "POST",
-                url: "/assets/templates/site/send.php",
-                data: form_msg,
-                success: function(response) {
-                    if (response == "ok") {
-                        $('#new_order').fadeOut();
-                        $('#thank').fadeIn();
-                    }
-                },
-                complete: function() {
-                    console.log(arguments);
+                    // Current slide options
+                    // console.info( slide.opts );
+
+                    // Clicked element
+                    // console.info( slide.opts.$orig );
+
+                    // Reference to DOM element of the slide
+                    // console.info( slide.$slide );
+                    var fb = document.querySelector('#callback-form');
+                    fb.querySelector('#frmwrapper').append(fb.querySelector('.fancybox-close-small'));
+                    // console.log([typeof slide.$slide, typeof slide.$slide[0]]);
+                    // console.info([instance, slide]);
+                    // console.info([fb, slide.src]);
+                    // fb.find('#frmwrapper').append(fb.find('.fancybox-close-small'));
+
                 }
             });
-        });
 
-        $('.new_order__right__back').click(function(e){
-            e.preventDefault();
-            $('#new_order').stop(true, true).fadeOut(function(){
-                $("#calculator").fadeIn();
-            });
-        });
-
-        $('.header-banner, .visible_mobile').click(function(){
-            $('#slideout').fadeIn();
-            $('#calculator').fadeIn();
-        });
-    
-        $('body').on('click','.product .bron, .bronInfo .bron',function(){
-            $('#slideout').fadeIn();
-            $('#feedback').fadeIn();
-                var num=$(this).attr('rel');
-                $('#avtonum').val(num);
-            });
-        $('.bronCar').click(function(){
-            $('#slideout').fadeIn();
-            $('#order').fadeIn();
-            var num=$(this).attr('rel');$('#avtonum').val(num);
-        });
-
-
-        
-        $('.close').click(function(){
-            $('#slideout').fadeOut();
-            $('.feedback').fadeOut();
-            $('#thank').fadeOut();
-            $('#thank_review').fadeOut();
-            $('#thank_callback').fadeOut();
-            $('#thank_feedback').fadeOut();
-            $('#thank_question').fadeOut();
-            $('#calculator').fadeOut();
-            $('#new_order').fadeOut();
-        });
-
-        $('.close-w').click(function() {
-            $('#pricesform').fadeOut();
-        });
-
-        $('#slideout').click(function(){
-            $('#slideout').fadeOut();
-            $('.feedback').fadeOut();
-            $('#thank').fadeOut();
-            $('#thank_question').fadeOut();
-            $('#calculator').fadeOut();
-            $('#pricesform').fadeOut();
-            $('#new_order').fadeOut();
-        });
-
-        $('.bronInfo .bron').click(function(){
-            //console.log('test1');
-            if(typeof yaCounter28702351 !== 'undefined') yaCounter28702351.reachGoal('reserv_click');
-            if(typeof ga !== 'undefined') ga('send', 'pageview', '/virtual/reserv_click');
-        });
-        
-        $('#form-five input, #form-five textarea').focusout(function(){
-            if($(this).val().length >= 3){
-                //console.log('test2');
-                if(typeof yaCounter28702351 !== 'undefined') yaCounter28702351.reachGoal('reserv_dannih');
-                if(typeof ga !== 'undefined') ga('send', 'pageview', '/virtual/reserv_dannih');
-            }
-        });
-        
-        $('#form-five .submit').click(function(){
-            //console.log('test3');
-            if(typeof yaCounter28702351 !== 'undefined') yaCounter28702351.reachGoal('reserv_good');
-            if(typeof ga !== 'undefined') ga('send', 'pageview', '/virtual/reserv_good');
-        });     
-        
-        $('#form-seven input, #form-seven textarea').focusout(function(){
-            if($(this).val().length >= 3){
-                //console.log('test2');
-                if(typeof yaCounter28702351 !== 'undefined') yaCounter28702351.reachGoal('reserv_dannih');
-                if(typeof ga !== 'undefined') ga('send', 'pageview', '/virtual/reserv_dannih');
-            }
-        });
-        
-        $('#form-seven .submit').click(function(){
-            //console.log('test3');
-            if(typeof yaCounter28702351 !== 'undefined') yaCounter28702351.reachGoal('reserv_good');
-            if(typeof ga !== 'undefined') ga('send', 'pageview', '/virtual/reserv_good');
-        }); 
-        
-        $('.header-banner, .visible_mobile').click(function(){
-            //console.log('test4');
-            if(typeof yaCounter28702351 !== 'undefined') yaCounter28702351.reachGoal('calcform_click');
-            if(typeof ga !== 'undefined') ga('send', 'pageview', '/virtual/calcform_click');
-
-            $('body').addClass('fixed');
-
-        }); 
-        $('#calculator .form a.close, #slideout, #new_order a.close, .new_order__left button').on('click', function(){
-            $('body').removeClass('fixed');
-        });     
-         
-        $('#rent-start-date, #rent-end-date, input[type=checkbox], #marka, #rent-start-time, #rent-end-time').change(function(){
-            //console.log('test5');
-            if(typeof yaCounter28702351 !== 'undefined') yaCounter28702351.reachGoal('calcform_check');
-            if(typeof ga !== 'undefined') ga('send', 'pageview', '/virtual/calcform_check');
-        });
-
-        $('.location-tab .tabnav a').click(function(){
-            //console.log('test5');
-            if(typeof yaCounter28702351 !== 'undefined') yaCounter28702351.reachGoal('calcform_check');
-            if(typeof ga !== 'undefined') ga('send', 'pageview', '/virtual/calcform_check');
-        });
-
-        $('.form #calcBron').click(function(){
-            //console.log('test6');
-            if(typeof yaCounter28702351 !== 'undefined') yaCounter28702351.reachGoal('calcform_zabron');
-            if(typeof ga !== 'undefined') ga('send', 'pageview', '/virtual/calcform_zabron');
-        });     
-
-        $('#new_order form input').focusout(function(){
-            if($(this).val().length >= 3){
-                //console.log('test7');
-                if(typeof yaCounter28702351 !== 'undefined') yaCounter28702351.reachGoal('calcform_nabor');
-                if(typeof ga !== 'undefined') ga('send', 'pageview', '/virtual/calcform_nabor');
-            }
-        });
-         
-        $('#new_order form').submit(function(){
-            //console.log('test8');
-            if(typeof yaCounter28702351 !== 'undefined') yaCounter28702351.reachGoal('calcform_good');
-            if(typeof ga !== 'undefined') ga('send', 'pageview', '/virtual/calcform_good');
-        });
-        
-        $(".slide .call").click(function(){
-            //console.log('test8');
-            if(typeof yaCounter28702351 !== 'undefined') yaCounter28702351.reachGoal('zvonok_click');
-            if(typeof ga !== 'undefined') ga('send', 'pageview', '/virtual/zvonok_click');
-        });
-        
-        $('#form-one input').focusout(function(){
-            if($(this).val().length >= 3){
-                //console.log('test9');
-                if(typeof yaCounter28702351 !== 'undefined') yaCounter28702351.reachGoal('zvonok_nabor');
-                if(typeof ga !== 'undefined') ga('send', 'pageview', '/virtual/zvonok_nabor');
-            }
-        }); 
-        
-        $('#form-one .submit').click(function(){
-            //console.log('test10');
-            if(typeof yaCounter28702351 !== 'undefined') yaCounter28702351.reachGoal('zvonok_good');
-            if(typeof ga !== 'undefined') ga('send', 'pageview', '/virtual/zvonok_good');
-        }); 
-        
-        $('#form-pay input').focusout(function(){
-            if($(this).val().length >= 3){
-                //console.log('test11');
-                if(typeof yaCounter28702351 !== 'undefined') yaCounter28702351.reachGoal('oplata_nabor');
-                if(typeof ga !== 'undefined') ga('send', 'pageview', '/virtual/oplata_nabor');
-            }
-        }); 
-
-        $('#submit-pay').click(function(){
-            //console.log('test12');
-            if(typeof yaCounter28702351 !== 'undefined') yaCounter28702351.reachGoal('oplata_good');
-            if(typeof ga !== 'undefined') ga('send', 'pageview', '/virtual/oplata_good');
-        }); 
-        
-        $('#form-four input, #form-four textarea').focusout(function(){
-            if($(this).val().length >= 3){
-                //console.log('test13');
-                if(typeof yaCounter28702351 !== 'undefined') yaCounter28702351.reachGoal('vopros_nabor');
-                if(typeof ga !== 'undefined') ga('send', 'pageview', '/virtual/vopros_nabor');
-            }
-        });     
-        
-        $('#form-four .submit').click(function(){
-            //console.log('test14');
-            if(typeof yaCounter28702351 !== 'undefined') yaCounter28702351.reachGoal('vopros_good');
-            if(typeof ga !== 'undefined') ga('send', 'pageview', '/virtual/vopros_good');
-        }); 
-        
-        $('#form-three input').focusout(function(){
-            if($(this).val().length >= 3){
-                //console.log('test15');
-                if(typeof yaCounter28702351 !== 'undefined') yaCounter28702351.reachGoal('otziv_nabor');
-                if(typeof ga !== 'undefined') ga('send', 'pageview', '/virtual/otziv_nabor');
-            }
-        }); 
-
-        $('#form-three .btn.btn-left').click(function(){
-            //console.log('test16');
-            if(typeof yaCounter28702351 !== 'undefined') yaCounter28702351.reachGoal('otziv_good');
-            if(typeof ga !== 'undefined') ga('send', 'pageview', '/virtual/otziv_good');
-        }); 
-        /**/
-        } /* end dev script */
-
+        /* эм, что-то должно было происходить при клике на кнопки брони, аааа... открывался веня, это когда не работали формы захвата родные на сайте */
         $('.callback, .call, .question, .bron').click(function(event) {
             /* * /
             if(typeof yaCounter28702351 !== 'undefined') yaCounter28702351.reachGoal('open_venyoo_callclickhovermenu');
@@ -502,10 +393,69 @@ $(function() {
             }
             /**/
         });
+
+        /* передается данных кнопки в форму захвата */
         $('.callback, .call, .question, .bron').click(function(){
-            var num=$(this).attr('data-name');
-            $('#btnname').val(num);
+            var btn_name = $(this).attr('data-name'),
+                btn_class = $(this).attr('data-class');
+            $('#btnname').val(btn_name);
+
+            $('#callback-form form').attr('data-class', btn_class);
         });
+
+        function sendGoal(goal, title) {
+            if(typeof yaCounter28702351 !== 'undefined') yaCounter28702351.reachGoal(goal);
+            if(typeof ga !== 'undefined') ga('send', 'pageview', '/virtual/'+goal);
+            dataLayer.push({
+                'event':'VirtualPageView',
+                'virtualPageURL':'/virtual/'+goal,
+                'virtualPageTitle' : title
+            });
+
+
+        }
+
+        $('.call').click(function(){
+            sendGoal('zvonok_click', 'click callback btn');
+        });
+        $('.bron').click(function(){
+            sendGoal('reserv_click', 'click reserv btn');
+        });
+        $('.question').click(function(){
+            sendGoal('vopros_click','click vopros btn');
+        });
+        $('#callback-form #inputPhone').focusout(function(){
+            if($(this).val().length >= 5) {
+                switch($('#callback-form form').attr('data-class')) {
+                    case "call":
+                        sendGoal('zvonok_nabor','write smth callback phone');
+                        break;
+                    case "bron":
+                        sendGoal('reserv_dannih','write smth reserv phone');
+                        break;
+                    case "question":
+                        sendGoal('vopros_nabor','write smth vopros phone');
+                        break;
+                    default:
+                }
+            }
+        });
+        $('#callback-form form').submit(function(){
+            switch($(this).attr('data-class')) {
+                case "call":
+                    sendGoal('zvonok_good','send callback info');
+                    break;
+                case "bron":
+                    sendGoal('reserv_good','send reserv info');
+                    break;
+                case "question":
+                    sendGoal('vopros_good','send vopros info');
+                    break;
+                default:
+            }
+        }); 
+
+        /* Отправление формы захвата */
         $(document).on('submit','#frmwrapper form',function(ev){
             var frm = $('#frmwrapper form');
             $('#frmwrapper form #submit').prop( "disabled", true );
@@ -521,8 +471,8 @@ $(function() {
                 type: 'post',
                 data: frm.serialize(),
                 success: function (data) {
-                 $('#frmwrapper form').remove();
-                 $('#frmwrapper').html( data );
+                    $('#frmwrapper form').remove();
+                    $('#frmwrapper').html( data );
                 },
                 error: function(status) {
                     console.log(status);
@@ -532,10 +482,13 @@ $(function() {
             ev.preventDefault();
         });
 
+        /* ленивая загрузка картинок */
         lazyload();
 
-    });
 
+    });
+    
+    /* мобильная таблица прайслиста */
     function fixTable(container) {
       // Store references to table elements
       var thead = container.querySelector('thead');
@@ -672,7 +625,7 @@ $(function() {
       };
     }
 
-    /* * /    
+    /* плавная прокрутка страницы * /    
     setTimeout(function() {
         if (location.hash) {
             // we need to scroll to the top of the window first, because the browser will always jump to the anchor first before JavaScript is ready, thanks Stack Overflow: http://stackoverflow.com/a/3659116 

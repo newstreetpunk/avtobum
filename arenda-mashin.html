@@ -25,11 +25,49 @@
 
 
 	<link rel="stylesheet" href="css/main.css">
+	<link rel="stylesheet" href="css/jquery.fancybox.min.css">
+	<script src="https://avtobum63.ru/assets/js/jquery.min.js" type="text/javascript"></script>
 
 </head>
 
 <body>
 	
+	<div class="callback-form" id="callback-form">
+		<img src="img/form-car.svg" alt="">
+		<div id="frmwrapper">
+			<form method="post" class="was-validated" data-t="https://avtobum63.ru/">
+				<h2 class="mb-3">
+					Заказ звонка
+				</h2>
+				
+				<input type="hidden" name="id" value="4">
+				<input type="hidden" name="url" value="arenda-mashin/">
+				<input type="hidden" name="pagetitle" value="Автопарк">
+				<input type="hidden" name="btnname" value="" id="btnname">
+				<input type="hidden" name="formid" value="basic">
+			  	<div class="form-group mb-2">
+					<label for="inputName">Имя</label>
+					<input type="text" id="inputName" class="form-control  " placeholder="Как вас зовут?" name="first-name" value="" required="">
+					
+				</div>
+				<div class="form-group mb-2">
+					<label for="inputPhone">Телефон</label>
+					<input type="text" id="inputPhone" class="form-control  " placeholder="Ваш номер телефона" name="phone" value="" required="">
+					
+				</div>
+				<div class="form-check">
+					<input type="checkbox" class="form-check-input custom-control-input " id="politikaCheckbox" name="agree" value="Да" required="">
+					<label class="form-check-label custom-control-label" for="politikaCheckbox"><a href="/politika-konfidencialnosti.html" target="_blank">Согласен с условиями обработки персональных данных</a></label>
+					
+				</div>
+				<p class="mt-2 text-center">
+					<button id="submit" type="submit" class="btn btn-primary">Отправить</button>
+				</p>
+				
+			</form>
+			
+		</div>
+	</div>
 	
 	<!-- HEADER -->
 	<header class="header" id="header">
@@ -78,7 +116,7 @@
 	<!-- /HEADER -->
 
 	<!-- MAIN -->
-	<main class="content">
+	<main class="lazyload content" data-lazynowclass="lazynow" data-srcbefore1="url(../img-hny2020/bg-ded-1.png), url(../img-hny2020/background-NG-3.jpg)">
 		<div class="content__block">
 			<form action="arenda-mashin.html">
 				<div class="content__block-loc content__block-item">
@@ -114,11 +152,25 @@
 	</main>
 	<!-- /MAIN -->
 
+	<!-- hny2020 -->
+	<section class="garland"></section>
+	<!-- /hny2020 -->
+
 
 	<!-- TEXT -->
 	<section class="text clearfix avtopark">
 		<div class="container">
 			<h1>Заголовок для страницы Автопарк</h1>
+
+			<div class="row Sort">
+				<div class="Sort-Title col-12">СОРТИРОВАТЬ ПО:</div>
+				<div class="col-12 Sort-ByList">
+				    <div class="Sort-Order" data-sort="rank"><a href="javascript:void(0);">популярности</a></div>
+				    <div class="Sort-Order" data-sort="price"><a href="javascript:void(0);">цене</a></div>
+				    <div class="Sort-Order" data-sort="brand"><a href="javascript:void(0);">марке</a></div>
+				    <div class="Sort-Order" data-sort="type"><a href="javascript:void(0);">кузову</a></div>
+				</div>
+			</div>
 			
 			<div class="row">
 
@@ -128,12 +180,24 @@
 					    rand = Math.floor(rand);
 					    return rand;
 					  }
-					var carName = ['Пвх лодка Delta 320 мк', 'Peugeot 308', 'KIA Sportage', 'Volvo XC70', 'BMW X3', 'Lada Kalina', 'Hyundai SOLARIS', 'Прицеп "Атлет" (8213 В5)', 'Lada Priora', 'Кемпер Bailey Ranger', 'Toyota RAV4', 'Volkswagen Tiguan 4WD', 'Ford Thunderbird', 'ГАЗ 330202', 'Chevrolet Niva 4WD', 'Mitsubishi L200 4WD', 'Mitsubishi Pajero 3.0 4WD', 'Ford Focus III', 'Hummer Н2 4WD', 'Hyundai Sonata', 'Mercedes-Benz VITO', 'Hyundai Grand Starex', 'Volkswagen Tiguan', 'Toyota Camry', 'Renault Duster 4WD', 'Fiat Albea', 'Mitsubishi ASX', 'Renault Fluence', 'Mitsubishi Lancer X', 'Mitsubishi Lancer X', 'Renault Fluence', 'Toyota Land Cruiser 100 4WD', 'Daewoo Matiz', 'Lada Largus', 'Renault Fluence', 'Renault Logan ', 'Renault Logan', 'Nissan Almera New', 'Nissan Almera New', 'Renault Sandero', 'Renault Sandero', 'Albea', 'Hyundai Accent', 'Suzuki Liana 4WD', 'ВАЗ 2114'];
-					var imgPath = '//avtobum63.ru/assets/images/avto/';
-					var imgURL = ['delta-320mk-600px-t.png', 'peugeot_308-2-600px-t.png', 'sportage_silver_3-t.png', 'volva-xc70-t.png', 'bmw-x3.png', 'lada-kalina1.png', 'solaris_hb_fl_white.png', 'pritsep-atlet-8213v5-min.png', 'lada_priora.png', 'bailey-ranger-new.png', 'toyota_rav4.png', 'new_tiguan_current_600x336.png', 'thunderbird-401.png', 'car_gaz.png', 'chevrolet-niva-4wd.png', 'mitsubishi-l200-black.png', 'pajero_3-600px-t.png', '6_66.png', 'h-2.png', '11-1.png', '1-223.png', '1_41.png', '1-2-1.png', 'tojota-kamri-chernaya.png', '1_31.png', '1_51.png', '1_1.png', 'main_1.png', 'this11.png', 'plo.png', '6f.png', 'toyota_lc_main.png', '01042016.png', 'lighwhite.png', '10.png', 'renaultlogan(2).png', 'renaultlogan(2).png', 'nissanalmeranew.png', 'amabe.png', 'bez-imeni-2.png', 'bez-imeni-2.png', '1_51.png', 'c12145011.png', '72t1.png', 'vaz.png'];
+					function htmlspecialchars( html){
+					  var div =  document.createElement('div');
+					  div.innerText = html;
+					  return div.innerHTML;
+					}
+					var carName = ['Пвх лодка Delta 320 мк', 'Peugeot 308', 'KIA Sportage', 'Volvo XC70', 'BMW X3', 'Lada Kalina', 'Hyundai SOLARIS', 'Прицеп "Атлет" (8213 В5)', 'Lada Priora', 'Кемпер Bailey Ranger', 'Toyota RAV4', 'Volkswagen Tiguan 4WD', 'Ford Thunderbird', 'ГАЗ 330202', 'Chevrolet Niva 4WD', 'Mitsubishi L200 4WD', 'Mitsubishi Pajero 3.0 4WD', 'Ford Focus III', 'Hummer Н2 4WD', 'Hyundai Sonata', 'Mercedes-Benz VITO', 'Hyundai Grand Starex', 'Volkswagen Tiguan', 'Toyota Camry', 'Renault Duster 4WD', 'Fiat Albea', 'Mitsubishi ASX', 'Renault Fluence', 'Mitsubishi Lancer X', 'Mitsubishi Lancer X', 'Renault Fluence', 'Toyota Land Cruiser 100 4WD', 'Daewoo Matiz', 'Lada Largus', 'Renault Fluence', 'Renault Logan ', 'Renault Logan', 'Nissan Almera New', 'Nissan Almera New', 'Renault Sandero', 'Renault Sandero', 'Fiat Albea', 'Hyundai Accent', 'Suzuki Liana 4WD', 'ВАЗ 2114'],
+						brandName = ['', 'Peugeot 308', 'KIA Sportage', 'Volvo XC70', 'BMW X3', 'Lada Kalina', 'Hyundai SOLARIS', '', 'Lada Priora', '', 'Toyota RAV4', 'Volkswagen Tiguan 4WD', 'Ford Thunderbird', 'ГАЗ 330202', 'Chevrolet Niva 4WD', 'Mitsubishi L200 4WD', 'Mitsubishi Pajero 3.0 4WD', 'Ford Focus III', 'Hummer Н2 4WD', 'Hyundai Sonata', 'Mercedes-Benz VITO', 'Hyundai Grand Starex', 'Volkswagen Tiguan', 'Toyota Camry', 'Renault Duster 4WD', 'Fiat Albea', 'Mitsubishi ASX', 'Renault Fluence', 'Mitsubishi Lancer X', 'Mitsubishi Lancer X', 'Renault Fluence', 'Toyota Land Cruiser 100 4WD', 'Daewoo Matiz', 'Lada Largus', 'Renault Fluence', 'Renault Logan ', 'Renault Logan', 'Nissan Almera New', 'Nissan Almera New', 'Renault Sandero', 'Renault Sandero', 'Fiat Albea', 'Hyundai Accent', 'Suzuki Liana 4WD', 'ВАЗ 2114'],
+						imgPath = '//avtobum63.ru/assets/images/avto/',
+						imgURL = ['delta-320mk-600px-t.png', 'peugeot_308-2-600px-t.png', 'sportage_silver_3-t.png', 'volva-xc70-t.png', 'bmw-x3.png', 'lada-kalina1.png', 'solaris_hb_fl_white.png', 'pritsep-atlet-8213v5-min.png', 'lada_priora.png', 'bailey-ranger-600-tiny.png', 'toyota_rav4.png', 'new_tiguan_current_600x336.png', 'thunderbird-401.png', 'car_gaz.png', 'chevrolet-niva-4wd.png', 'mitsubishi-l200-black.png', 'pajero_3-600px-t.png', 'ford-focus-iii-tiny.png', 'h-2.png', '11-1.png', '1_41.png', '1_41.png', '1-2-1.png', 'tojota-kamri-chernaya.png', '1_31.png', '1_51.png', '1_1.png', 'main_1.png', 'this11.png', 'plo.png', '6f.png', 'toyota_lc_main.png', '01042016.png', 'lighwhite.png', '10.png', 'renaultlogan(2).png', 'renaultlogan(2).png', 'nissanalmeranew.png', 'amabe.png', 'bez-imeni-2.png', 'bez-imeni-2.png', '1_51.png', 'c12145011.png', '72t1.png', 'vaz.png'],
+						carType = ['Седан', 'Универсал', 'Хетчбэк', 'Внедорожник', 'Кабриолет'];
 					var link = "bmw-x6.html#lookingfor";
+					var countCar = 0;
 					carName.forEach(function callback(currentValue, index, array) {
-					    document.write('<div class="col-sm-6 col-xl-4 mb-5 product">\
+						var priceHour = Math.round(Math.random()*100),
+							priceDay = Math.round(Math.random()*1000),
+							rank = Math.round(Math.random()*10),
+							typeNum = Math.round(Math.random()*5);
+					    document.write('<div class="col-sm-6 col-xl-4 mb-5 product" data-price="'+priceDay+'" data-rank="'+rank+'" data-brand="'+htmlspecialchars(brandName[index])+'" data-type="'+carType[typeNum]+'">\
 					    	<p class="nameCar"><a href="'+link+'">'+currentValue+'</a></p>\
 					    	<div class="photo embed-responsive embed-responsive-16by9">');
 
@@ -142,24 +206,24 @@
 					    else if(Math.random()>0.7)
 						    document.write('<span class="trailer-icon"></span>');
 
-						document.write('<a href="'+link+'" title="'+currentValue+'"><img alt="'+currentValue+'" class="embed-responsive-item" src="'+imgPath+imgURL[index]+'"></a>\
+						document.write('<a href="'+link+'" title="'+htmlspecialchars(currentValue)+'"><img alt="'+htmlspecialchars(currentValue)+'" class="embed-responsive-item" src="'+imgPath+imgURL[index]+'"></a>\
 							</div>\
 					   	');
 				        document.write('<div class="bronInfo">');
 
 					   	if(Math.random()>0.2)
-						    document.write('<p class="new-price"> <span class="car-price">170</span> <span class="price-note">₽/час.</span></p>');
+						    document.write('<p class="new-price"> <span class="car-price">'+priceHour+'</span> <span class="price-note">₽/час.</span></p>');
 			            
 			            document.write('<p class="price">\
 			                от\
-			                <span class="car-price">1700</span> <span class="price-note">₽/сут.</span>\
+			                <span class="car-price">'+priceDay+'</span> <span class="price-note">₽/сут.</span>\
 			            </p>\
 			            </div>');
 					    document.write('\
-					    <div class="descCar">\
-				            <div class="desc">\
-				                <div class="vehicle-options pt-2">\
-				                    <ul>');
+						    <div class="descCar">\
+					            <div class="desc">\
+					                <div class="vehicle-options pt-2">\
+					                    <ul>');
 					    if(Math.random()>0.5)
 	                        document.write('\
 			                        	<li title="Количество мест">\
@@ -197,58 +261,106 @@
 				                            Фаркоп\
 				                        </li>');
 	                    document.write('</ul>\
-				                </div>\
-				                <div class="button-open_popup">\
-						            <button>Оставить заявку</button>\
-						        </div>\
-				                <div class="toggle-more"><a class="collapsed" href="javascript:void(0);">Посмотреть подробную информацию</a></div>\
-				                <p class="inner" style="display: none;">\
-				                <strong>Дополнительные опции</strong>:<br>\
-				                2 электростеклоподъёмника, электрорегулировка и обогрев зеркал,  подогрев передних сидений,  автомагнитола.\
-				                </p>\
-				            </div>\
-				        </div>');
+					                </div>\
+					                <div class="button-open_popup">\
+										<button class="btn bron" data-fancybox="" data-src="#callback-form" data-name="Оставить заявку на '+htmlspecialchars(currentValue)+'" rel="'+htmlspecialchars(currentValue)+'">Оставить заявку</button>\
+									</div>\
+					                <div class="toggle-more"><a class="collapsed" href="javascript:void(0);">Посмотреть подробную информацию</a></div>\
+					                <p class="inner" style="display: none;">\
+					                <strong>Дополнительные опции</strong>:<br>\
+					                2 электростеклоподъёмника, электрорегулировка и обогрев зеркал,  подогрев передних сидений,  автомагнитола.\
+					                </p>\
+					            </div>\
+					        </div>');
 					    document.write('\
-			    	<div class="table-box1 car-section" style="display:none;">\
-			    		<div class="table-scroll">\
-			            <table class="color">\
-			                <tbody>\
-			                    <tr>\
-			                        <th colspan="8">\
-			                            Стоимость аренды '+currentValue+', ₽\
-			                        </th>\
-			                    </tr>\
-			                    <tr>\
-			                        <td class="light-green">За час*</td>\
-			                        <td>1-3 суток</td>\
-			                        <td>4-6 суток</td>\
-			                        <td>7-15 суток</td>\
-			                        <td style="padding: 9px 11px;">16-30 суток</td>\
-			                        <td>от 30 дней</td>\
-			                        <td>Защита при ДТП</td>\
-			                        <td>Залог</td>\
-			                    </tr>\
-			                    <tr>\
-			                        <td class="light-green">320</td>\
-			                        <td>4300</td>\
-			                        <td>4100</td>\
-			                        <td>3900</td>\
-			                        <td>3700</td>\
-			                        <td>3500</td>\
-			                        <td>1000</td>\
-			                        <td>25000</td>\
-			                    </tr>\
-			                </tbody>\
-			            </table>\
-			            </div>\
-			            <div class="car-section__footnote">*почасовая оплата возможна при сроке аренды от 3 до 8 часов</div>\
-			        </div>');
+					    	<div class="table-box1 car-section" style="display:none;">\
+					    		<div class="table-scroll">\
+					            <table class="color">\
+					                <tbody>\
+					                    <tr>\
+					                        <th colspan="8">\
+					                            Стоимость аренды '+currentValue+', ₽\
+					                        </th>\
+					                    </tr>\
+					                    <tr>\
+					                        <td class="light-green">За час*</td>\
+					                        <td>1-3 суток</td>\
+					                        <td>4-6 суток</td>\
+					                        <td>7-15 суток</td>\
+					                        <td style="padding: 9px 11px;">16-30 суток</td>\
+					                        <td>от 30 дней</td>\
+					                        <td>Защита при ДТП</td>\
+					                        <td>Залог</td>\
+					                    </tr>\
+					                    <tr>\
+					                        <td class="light-green">320</td>\
+					                        <td>4300</td>\
+					                        <td>4100</td>\
+					                        <td>3900</td>\
+					                        <td>3700</td>\
+					                        <td>3500</td>\
+					                        <td>1000</td>\
+					                        <td>25000</td>\
+					                    </tr>\
+					                </tbody>\
+					            </table>\
+					            </div>\
+					            <div class="car-section__footnote">*почасовая оплата возможна при сроке аренды от 3 до 8 часов</div>\
+					        </div>');
 					    document.write('</div>');
+					    if(++countCar > 5) {
+					    	countCar = 0;
+						    document.write('\
+			<div class="col-12">\
+				<div class="row alert alert-primary align-items-center">\
+					<a href="#" class="col-6 col-md-4 col-lg-3 map">\
+						<h4 class="alert-heading">Там где нужно!</h4>\
+						<div>Доставка в любую<br>часть города</div>\
+					</a>\
+					<div class="col-6 col-md-4 col-lg-3 min">\
+						<h4 class="alert-heading">Быстрый старт!</h4>\
+						<div>Оформление документов<br/>не более 15 минут</div>\
+					</div>\
+					<a href="#" class="col-6 col-md-4 col-lg-3 docs d-none d-md-block">\
+						<h4 class="alert-heading">Ничего лишнего!</h4>\
+						<div>Для оформления два документа</div>\
+					</a>\
+					<div class="col-6 col-md-4 col-lg-3 repair d-none d-lg-block">\
+						<h4 class="alert-heading">Предоставим подменную машину!</h4>\
+						<div>Починим любой автомобиль!</div>\
+					</div>\
+				</div>\
+			</div>\
+							');
+					    }
 					});
 				</script>
 			</div>
+			<div class="row alert alert-primary align-items-center">
+				<div class="col-6 col-md-4 col-lg-3 map">
+					<h4 class="alert-heading">Там где нужно!</h4>
+					<div>Доставка в любую<br>часть города</div>
+				</div>
+				<div class="col-6 col-md-4 col-lg-3 min">
+					<h4 class="alert-heading">Быстрый старт!</h4>
+					<div>Оформление документов<br/>не более 15 минут</div>
+				</div>
+				<div class="col-6 col-md-4 col-lg-3 docs d-none d-md-block">
+					<h4 class="alert-heading">Ничего лишнего!</h4>
+					<div>Для оформления два документа</div>
+				</div>
+				<div class="col-6 col-md-4 col-lg-3 repair d-none d-lg-block">
+					<h4 class="alert-heading">Предоставим подменную машину!</h4>
+					<div>Починим любой автомобиль!</div>
+				</div>
+			</div>
+			<div align="justify">
+				<p align="left">Столкнувшись с необходимостью взять в аренду машину, многие жители и гости города вынуждены тратить массу времени на поиск проверенной компании и автомобиля, подходящего по всем параметрам. Существенно упростить и ускорить процесс выбора авто есть возможность у клиентов компании "БУМЕРАНГ-АВТО", имеющей репутацию надежного партнера с привлекательными условиями аренды машин.</p>
+				<p align="left">Мы предлагаем честную аренду без переплат и с гарантией замены в случае поломки. На нашем сайте вы найдете всю необходимую информацию, как об условиях аренды машин (цены, сроки, залог и требования к арендодателю), так и характеристики транспортных средств. В нашем автопарке имеется множество автомобилей эконом класса, варьирующихся по комплектации, марке, расцветке, объему багажника и мощности двигателя, поэтому вам легко удастся выбрать идеальный автотранспорт. Мы заботимся о том, чтобы аренда была не только выгодной в финансовом плане, но также стремимся экономить ваше время, предоставляя доступ к данным автомобилям в режиме онлайн.</p>
+				<p align="left">Мы индивидуально подходим к расчету тарифов, исходя из срока взятия машины напрокат, территории использования авто, возраста водителя, технического оснащения автомобиля и т.д.</p>
+			</div>
 			<div class="button-open_popup">
-				<button>Остались вопросы?</button>
+				<button class="btn question" data-fancybox="" data-src="#callback-form" data-name="Остались вопросы. Автопарк">Остались вопросы?</button>	
 			</div>
 		</div>
 	</section>
@@ -418,6 +530,7 @@
 	<div class="car-bg"></div>
 
 	<script src="js/scripts.min.js"></script>
+	<script src="js/jquery.fancybox.min.js"></script>
 
 </body>
 </html>

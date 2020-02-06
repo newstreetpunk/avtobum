@@ -249,8 +249,35 @@ section
 		left: 50%
 		top: 50%
 		transform: translate(-50%, -50%)
+	// hny2020
+	&.hny2020:before
+		content: ''
+		display: block
+		// background-image: url(../img-hny2020/bg-ded-2-lazy.png), url(../img-hny2020/background-NG-3-192.jpg)
+		background-image: url(../img-hny2020/bg-ded-2.png), url(../img-hny2020/background-NG-3.jpg)
+		background-size: cover, cover
+		background-position: 55vw 40%, center center
+		background-repeat: no-repeat
+		position: absolute
+		width: 100%
+		height: 100%
+		z-index: -5
+		opacity: 0.5
+		left: 50%
+		top: 50%
+		transform: translate(-50%, -50%)
+		transition: all 1s ease-in-out 0.5s
 	&.lazynow:before
-		background: center center no-repeat /cover url(../img/hummer_b_w-t.jpg)
+		background: url(../img/hummer_b_w-t.jpg)
+		background-size: cover
+		background-repeat: no-repeat
+		background-position: center center
+	&.hny2020.lazynow:before
+		// background-image: url(../img-hny2020/bg-ded-2.png), url(../img-hny2020/background-NG-3.jpg)
+		background-position: calc(50% + 90px) 40%, center center
+		@media (min-width: 900px)
+			background-position-x: calc(50% + 380px), center
+
 	&:after
 		content: ''
 		display: block
@@ -267,6 +294,9 @@ section
 
 // TEXT
 .text
+	&.mashiny-na-prokat
+		a
+			text-decoration: underline
 	h1
 		margin-bottom: 25px
 	font-size: initial
@@ -336,25 +366,26 @@ section
 	display: inline-block
 	width: 17px
 	height: 18px
-	background: $icon_file 0 0 no-repeat
 	vertical-align: text-bottom
-	&.mechanic 
-		background-position: 0 -20px
+	&.oldicon
+		background: $icon_file 0 0 no-repeat
+		&.mechanic 
+			background-position: 0 -20px
 
-	&.manual 
-		background-position: 0 -20px
+		&.manual 
+			background-position: 0 -20px
 
-	&.automatic 
-		background-position: 0 -89px
+		&.automatic 
+			background-position: 0 -89px
 
-	&.condition 
-		background-position: 0 -64px
+		&.condition 
+			background-position: 0 -64px
 
-	&.people 
-		background-position: 0 0
+		&.people 
+			background-position: 0 0
 
-	&.doors 
-		background-position: 0 -40px
+		&.doors 
+			background-position: 0 -40px
 
 // TEXT END
 
@@ -366,7 +397,10 @@ section
 		z-index: 110
 		display: flex
 		justify-content: space-between
+		flex-wrap: nowrap
+		flex-direction: row
 		&-slide
+			min-width: 298px
 			.short_name
 				font-weight: 400
 			.show_more a
@@ -382,10 +416,11 @@ section
 				margin: 0 auto
 				display: block
 				&.lazyload
-					max-height: 127px
-					min-width: 245px
-					min-height: 105px
-					width: auto
+					// max-height: 127px
+					// min-width: 245px
+					// min-height: 105px
+					// width: auto
+					width: 90%
 		.next,
 		.prev
 			background: url(../img/arrow.svg)
@@ -424,6 +459,7 @@ section
 		content: ''
 		display: block
 		background: center bottom no-repeat url(../img/info_people-768-t.jpg)
+		// background: center bottom no-repeat url(../img-hny2020/avtobum-NG-ded-moroz-100.jpg)
 		background-size: cover
 		position: absolute
 		width: 100%
@@ -446,6 +482,20 @@ section
 		z-index: -1
 		// transform: scale(2) translate(-58%,-30%)
 		opacity: 0.2
+	// hny2020
+	&.hny2020:after
+		content: ''
+		display: block
+		background: top center no-repeat url(../img-hny2020/avtobum-NG-krug-final.png)
+		background-size: 200%
+		background-position: 150% 0
+		top: 20%
+		width: 100%
+		height: 150%
+		position: absolute
+		z-index: -1
+		// transform: scale(2) translate(-58%,-30%)
+		opacity: 0.3
 
 //ABOUT END
 
@@ -522,17 +572,17 @@ section
 	font-size: 18px
 	position: relative
 	z-index: 100
-	&:after
+	&:before
 		content: ''
-		display: block
+		// display: block
 		background: url(../img/footer_ford-t.png) right bottom no-repeat
+		// background: url(../img-hny2020/footer_ford-hny2020-t.png) right bottom no-repeat
 		background-size: contain
 		width: 100%
 		height: 800px
 		position: absolute
 		right: 0
 		bottom: 0
-		z-index: -1
 	.select-cust
 		background: url(../img/loc-white.png) left center no-repeat,url(../img/arrow-down-white.png) right 10px center no-repeat
 		color: #fff
@@ -635,6 +685,8 @@ section
 			left: 0
 			right: 0
 			bottom: 0
+			&.lazyload
+				min-width: 100%
 		
 		.new-avto 
 			display: block
@@ -753,11 +805,84 @@ section
 	#swipebox-close
 		filter: invert(0.8) !important
 
+.avtopark
+	.row
+		.alert
+			position: relative
+			padding: .75rem 1.25rem
+			margin-bottom: 1rem
+			border: 1px solid transparent
+			-webkit-border-radius: .25rem
+			border-radius: .25rem
+			&.alert-primary
+				color: #064b6d
+				background-color: #cee9f6
+				border-color: #bbe0f2
+				img
+					max-width: 100px
+				> a,
+				> div
+					color: #064b6d
+					padding: 15px
+					padding-left: 60px
+					min-height: 80px
+					&.map
+						background: left center no-repeat url(../img/utp/avtobum-utp-1a-blue.svg)
+						background-size: 50px
+					&.min
+						background: left center no-repeat url(../img/utp/avtobum-utp-2a-blue.svg)
+						background-size: 50px
+					&.docs
+						background: left center no-repeat url(../img/utp/avtobum-utp-3-blue.svg)
+						background-size: 50px
+					&.repair
+						background: left center no-repeat url(../img/utp/avtobum-utp-4a-blue.svg)
+						background-size: 50px
+		.align-items-center
+			align-items: center!important
+
+
+	
+
 .avtodetail .product
 	.gallery
 		img
 			padding: 1px
 			width: 100%
+
+.Sort
+	font-size: 1.2rem
+
+	&-Title
+		font-weight: 400
+	
+	&-ByList
+		display: flex
+		flex: 1 0 auto
+		flex-wrap: wrap
+
+	&-Order
+		margin: 5px 10px 0 0
+		padding-right: 15px
+		
+		a
+			cursor: pointer
+
+		&_select
+			font-weight: 700
+			font-style: italic
+
+		&:after
+			content: ""
+			width: 25px
+			height: 10px
+			display: inline-block
+
+		&_select:after
+			background: center center no-repeat url(../img/arrow-down-gray.png)
+
+		&_up:after
+			transform: scaleY(-1)
 
 // AVTOPARK END
 
@@ -847,7 +972,11 @@ table.color
 		white-space: normal !important
 
 
-
+// hny2020
+.garland
+	height: 68px
+	background: center center repeat-x url(../img-hny2020/garland.png)
+	margin-top: 3rem
 
 table.price-table
 	thead th
@@ -869,6 +998,20 @@ table.price-table
 
 .callback-form
 	display: none
+
+	#frmwrapper
+		padding: 44px
+		background-color: #f7f7f8
+		margin: 0 3.7%
+		position: relative
+
+.callback-form.fancybox-content
+	padding: 0
+	background: transparent
+
+
+.callback-form.fancybox-content img
+	margin-bottom: -1px
 
 form
 	.form-check

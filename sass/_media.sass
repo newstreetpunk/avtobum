@@ -48,7 +48,7 @@
 			display: none
 			position: absolute
 			background-color: #fff
-			height: 80px
+			height: 110px
 			top: 100%
 			width: 100%
 			left: 0
@@ -134,7 +134,7 @@
 			display: none
 	.header__menu
 		// height: calc(100vh - 120px)
-		height: 400px
+		height: 450px
 	.header__menu ul
 		flex-direction: column
 	.header__menu ul li
@@ -146,6 +146,8 @@
 		padding: 10px 0
 		font-size: 16px
 		font-weight: 500
+	.header__menu ul li a p br
+		display: none
 	.header__phone--callback
 		margin-left: 0
 	.phone
@@ -264,8 +266,10 @@
 	.header__menu
 		margin: 0px 20px
 		ul li
-			max-width: 140px
+			// max-width: 140px
 			margin-right: 16px
+	.header__phone-wrap
+		flex: 1 0 auto
 	.about-text
 		max-width: 80%
 
@@ -302,6 +306,8 @@
 	.vehicle-options
 		&.pt-2
 			min-height: 104px
+	.header__menu ul
+		padding-left: 16px
 
 // Large devices (desktops, 992px and up)
 +media-breakpoint-only(lg)

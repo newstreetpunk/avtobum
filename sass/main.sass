@@ -156,20 +156,25 @@ section
 			font-size: 18px
 	&__menu
 		ul
+			display: flex
 			.phone
 				display: none
-			display: flex
 			li
 				margin-right: 32px
 				&:last-child
 					margin-right: 0
 				a
 					text-transform: uppercase
+					p
+						font-size: 10px
+						color: #dc5c13
+						// display: none
 	&__phone
 		&-wrap
 			display: flex
 			justify-content: space-between
 			align-items: center
+			max-width: 26.5%
 		&--callback
 			margin-left: 40px
 			.phone

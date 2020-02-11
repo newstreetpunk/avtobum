@@ -157,11 +157,12 @@ section
 	&__menu
 		ul
 			display: flex
-			align-items: center
+			align-items: baseline
 			.phone
 				display: none
 			li
 				margin-right: 32px
+				line-height: 1
 				&:last-child
 					margin-right: 0
 				a
@@ -169,6 +170,9 @@ section
 					p
 						font-size: 10px
 						color: #dc5c13
+						letter-spacing: 0.4px
+						padding-top: 5px
+						line-height: 1.4
 						// display: none
 	&__phone
 		&-wrap
@@ -240,6 +244,11 @@ section
 			text-align: center
 			cursor: pointer
 			padding: 0
+	&.feb14
+		color: white
+		.select-cust option,
+		.content__block-item select
+			color: white
 	&:before
 		content: ''
 		display: block
@@ -272,16 +281,37 @@ section
 		top: 50%
 		transform: translate(-50%, -50%)
 		transition: all 1s ease-in-out 0.5s
-	&.lazynow:before
+	&.feb14:before
+		content: ''
+		display: block
+		background-image: url(../img-feb14/heart-fon-final-2-ver1.jpg)
+		background-size: cover
+		background-position: center center
+		background-repeat: no-repeat
+		position: absolute
+		width: 100%
+		height: 100%
+		z-index: -5
+		opacity: 0.8
+		left: 50%
+		top: 50%
+		transform: translate(-50%, -50%)
+		transition: all 1s ease-in-out 0.5s
+	&.alexsab.lazynow:before
 		background: url(../img/hummer_b_w-t.jpg)
 		background-size: cover
 		background-repeat: no-repeat
 		background-position: center center
 	&.hny2020.lazynow:before
-		// background-image: url(../img-hny2020/bg-ded-2.png), url(../img-hny2020/background-NG-3.jpg)
+		background-image: url(../img-hny2020/bg-ded-2.png), url(../img-hny2020/background-NG-3.jpg)
 		background-position: calc(50% + 90px) 40%, center center
 		@media (min-width: 900px)
 			background-position-x: calc(50% + 380px), center
+	&.feb14.lazynow:before
+		background-image: url(../img-feb14/heart-fon-final-2-ver1.jpg)
+		background-position: center center
+		@media (min-width: 900px)
+			background-position-x: center
 
 	&:after
 		content: ''
@@ -463,14 +493,16 @@ section
 	&:before
 		content: ''
 		display: block
-		background: center bottom no-repeat url(../img/info_people-768-t.jpg)
+		// background: center bottom no-repeat url(../img/info_people-768-t.jpg)
 		// background: center bottom no-repeat url(../img-hny2020/avtobum-NG-ded-moroz-100.jpg)
+		opacity: 0.5 
+		background: center bottom no-repeat url(../img-feb14/background-feb14.jpg)
+		opacity: 1 //feb14
 		background-size: cover
 		position: absolute
 		width: 100%
 		height: 100%
 		z-index: -5
-		opacity: 0.5
 		left: 50%
 		top: 90%
 		transform: translate(-50%, -50%)
@@ -501,6 +533,19 @@ section
 		z-index: -1
 		// transform: scale(2) translate(-58%,-30%)
 		opacity: 0.3
+	&.feb14:after
+		content: ''
+		display: block
+		background: top center no-repeat url(../img-feb14/tyre-heart-feb14-1000.png)
+		background-size: 100%
+		background-position: 0 20%
+		top: 20%
+		width: 100%
+		height: 150%
+		position: absolute
+		z-index: -1
+		// transform: scale(2) translate(-58%,-30%)
+		opacity: 1
 
 //ABOUT END
 
@@ -580,8 +625,9 @@ section
 	&:before
 		content: ''
 		// display: block
-		background: url(../img/footer_ford-t.png) right bottom no-repeat
+		// background: url(../img/footer_ford-t.png) right bottom no-repeat
 		// background: url(../img-hny2020/footer_ford-hny2020-t.png) right bottom no-repeat
+		background: url(../img-feb14/footer_ford-feb14.png) right bottom no-repeat
 		background-size: contain
 		width: 100%
 		height: 800px

@@ -381,6 +381,15 @@ $(function() {
                 }
             });
 
+        if($('.embed-responsive.video').length != 0)
+            $('.embed-responsive.video').fancybox({
+                openEffect  : 'none',
+                closeEffect : 'none',
+                helpers : {
+                    media : {}
+                }
+            });
+
         /* эм, что-то должно было происходить при клике на кнопки брони, аааа... открывался веня, это когда не работали формы захвата родные на сайте */
         $('.callback, .call, .question, .bron').click(function(event) {
             /* * /

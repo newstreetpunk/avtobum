@@ -287,6 +287,13 @@ section
 		background-position: center center
 		background-repeat: no-repeat
 		opacity: 0.8
+	&.mar8:before
+		content: ''
+		background-image: url(../img/mar8/women-day-fon-final-2.jpg)
+		background-size: cover
+		background-position: center center
+		background-repeat: no-repeat
+		opacity: 0.8
 	&.lazynow:before
 		background: url(../img/hummer_b_w-t.jpg)
 		background-size: cover
@@ -299,6 +306,11 @@ section
 			background-position-x: calc(50% + 380px), center
 	&.feb14.lazynow:before
 		background-image: url(../img-feb14/heart-fon-final-2-ver1.jpg)
+		background-position: center center
+		@media (min-width: 900px)
+			background-position-x: center
+	&.mar8.lazynow:before
+		background-image: url(../img/mar8/women-day-fon-final-2.jpg)
 		background-position: center center
 		@media (min-width: 900px)
 			background-position-x: center
@@ -315,6 +327,8 @@ section
 		z-index: -1
 		// transform: scale(2.2) translate(80px, 0px)
 		opacity: 0.5
+	&.mar8 button
+		color: black
 //MAIN END
 
 // TEXT
@@ -504,6 +518,10 @@ section
 		background: center bottom no-repeat url(../img-feb23/defender-day-foto.jpg)
 		opacity: 0.3
 		background-size: cover
+	&.mar8:before
+		background: center bottom no-repeat url(../img/mar8/women-day-foto-1.png)
+		opacity: 1
+		background-size: cover
 	&:after
 		content: ''
 		display: block
@@ -545,6 +563,15 @@ section
 		width: 100%
 		height: 150%
 		opacity: 1
+	&.mar8:after
+		content: ''
+		background: top center no-repeat url(../img/mar8/women-day-krug.png)
+		background-size: 90vw
+		background-position: -200% 0px
+		top: 20%
+		width: 100%
+		height: 150%
+		opacity: 0.5
 
 //ABOUT END
 
@@ -668,6 +695,10 @@ section
 	&.feb23::before
 		background: url(../img-feb23/silhouette-army.png) right bottom no-repeat
 		background-size: contain
+	&.mar8::before
+		background: url(../img/mar8/women-day-footer.png) right bottom no-repeat
+		background-size: contain
+		opacity: 0.2
 	.select-cust
 		background: url(../img/loc-white.png) left center no-repeat,url(../img/arrow-down-white.png) right 10px center no-repeat
 		color: #fff

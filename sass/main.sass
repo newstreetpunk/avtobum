@@ -519,9 +519,11 @@ section
 		opacity: 0.3
 		background-size: cover
 	&.mar8:before
-		background: center bottom no-repeat url(../img/mar8/women-day-foto-1.png)
+		background: no-repeat url(../img/mar8/women-day-foto-1.png)
+		background-position: center bottom
 		opacity: 1
-		background-size: cover
+		background-size: 170%
+		width: 101%
 	&:after
 		content: ''
 		display: block
@@ -565,13 +567,15 @@ section
 		opacity: 1
 	&.mar8:after
 		content: ''
-		background: top center no-repeat url(../img/mar8/women-day-krug.png)
-		background-size: 90vw
-		background-position: -200% 0px
-		top: 20%
+		background: no-repeat url(../img/mar8/women-day-krug.png)
+		transform: rotate(3deg)
+		background-size: 100vw
+		background-position: center center
+		top: -60%
 		width: 100%
 		height: 150%
-		opacity: 0.5
+		opacity: 0.3
+
 
 //ABOUT END
 
@@ -697,7 +701,7 @@ section
 		background-size: contain
 	&.mar8::before
 		background: url(../img/mar8/women-day-footer.png) right bottom no-repeat
-		background-size: contain
+		background-size: cover
 		opacity: 0.2
 	.select-cust
 		background: url(../img/loc-white.png) left center no-repeat,url(../img/arrow-down-white.png) right 10px center no-repeat

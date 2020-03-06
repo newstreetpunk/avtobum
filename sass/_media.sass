@@ -216,8 +216,24 @@
 		margin-top: 20px
 		color: $accent
 
+@media (max-width: 380px)
+	.content.mar8.lazynow:before
+		background-position: 46% center
 
 /*==========  Mobile First  ==========*/
+
+@media (min-width: 370px)
+	.about
+		&.mar8:after
+			top: -70%
+		&.mar8:before
+			background-size: 140%
+
+@media (min-width: 490px)
+	.about
+		&.mar8:before
+			background-size: 120%
+
 
 // Small devices (landscape phones, 576px and up)
 +media-breakpoint-up(sm)
@@ -232,9 +248,13 @@
 		&.hny2020:after
 			background-size: 57%
 			background-position: -10% 0
+		&.mar8:before
+			background-size: 60vw
+			background-position: right top
 		&.mar8:after
-			background-size: 57%
-			background-position: -10% 0
+			top: 30%
+			background-size: 47%
+			background-position: 0 0
 	.text
 		margin-bottom: 50px
 
@@ -253,6 +273,9 @@
 	.about
 		&.feb23:after
 			top: -10%
+	.footer
+		&.mar8:before
+			background-size: contain
 
 
 // Large devices (desktops, 992px and up)
@@ -289,6 +312,8 @@
 	.about
 		&.feb14:after
 			background-position: -10vw 0
+		&.mar8:after
+			background-size: 37%
 
 
 @media (min-width: 1600px)

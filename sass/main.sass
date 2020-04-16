@@ -440,6 +440,13 @@ section
 		flex-direction: row
 		&-slide
 			min-width: 298px
+			> a 
+				&:before
+					// padding-top: 56.25%
+					// content: ''
+					// display: block
+				> img[src*="boomerang-loader"]
+					// padding: 48.5px
 			.short_name
 				font-weight: 400
 			.show_more a
@@ -455,11 +462,10 @@ section
 				margin: 0 auto
 				display: block
 				&.lazyload
-					// max-height: 127px
-					// min-width: 245px
-					// min-height: 105px
-					// width: auto
-					width: 90%
+					width: initial
+					// padding: 48.5px
+					padding: 16%
+					
 		.next,
 		.prev
 			background: url(../img/arrow.svg)
@@ -647,6 +653,9 @@ section
 			img
 				width: 70%
 				margin: 0 auto
+				&.lazyload
+					width: initial
+					padding: 48.5px
 		.next,
 		.prev
 			background: url(../img/arrow.svg)
@@ -717,6 +726,8 @@ section
 			opacity: 1
 			svg
 				fill: #fff
+			img.white
+				filter: invert(1)
 		&-text
 			font-size: 22px
 			text-align: right

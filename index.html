@@ -10,7 +10,7 @@
 	<meta name="description" content="">
 
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">
 	
 	<!-- Template Basic Images Start -->
 	<meta property="og:image" content="path/to/image.jpg">
@@ -21,7 +21,7 @@
 	<!-- Custom Browsers Color Start -->
 	<meta name="theme-color" content="#fff">
 	<!-- Custom Browsers Color End -->
-	<link href="https://fonts.googleapis.com/css?family=PT+Sans+Caption:400,700&display=swap&subset=cyrillic" rel="stylesheet">
+	<!-- <link href="https://fonts.googleapis.com/css?family=PT+Sans+Caption:400,700&display=swap&subset=cyrillic" rel="stylesheet"> -->
 
 
 	<link rel="stylesheet" href="css/main.css">
@@ -37,7 +37,7 @@
 		<div class="container">
 			<div class="header-wrap">
 				<div class="header__logo-wrap">
-					<a href="index.html"><img src="img/logo-header-maska.png" alt="Boomerang Auto"></a>
+					<a href="index.html"><img class="lazyload" src="img/boomerang-loader-1.gif" data-src="img/logo-header-maska.png" alt="Boomerang Auto"></a>
 					<span class="header__logo-text">Прокат автомобилей</span>
 				</div>
 				<nav class="header__menu">
@@ -79,8 +79,8 @@
 	<!-- /HEADER -->
 
 	<!-- MAIN -->
-	<!-- <main class="lazyload content" data-lazynowclass1="lazynow" data-srcbefore="img/hummer_b_w-t.jpg"> -->
-	<main class="lazyload content" data-lazynowclass="lazynow" data-srcbefore1="url(../img-hny2020/bg-ded-1.png), url(../img-hny2020/background-NG-3.jpg)">
+	<!-- <main class="lazyload content" data-lazynowclass1="load-imgs" data-srcbefore="img/hummer_b_w-t.jpg"> -->
+	<main class="content lazyload" data-lazynowclass="load-imgs" data-srcbefore1="url(../img-hny2020/bg-ded-1.png), url(../img-hny2020/background-NG-3.jpg)">
 		<div class="content__block">
 			<form action="arenda-mashin.html">
 				<div class="content__block-loc content__block-item">
@@ -169,7 +169,7 @@
 
 	<!-- ABOUT -->
 
-	<section class="about">
+	<section class="about lazyload" data-lazynowclass="load-imgs">
 		<div class="container">
 			<div class="about-text">
 				<p>Компания <span>&laquo;Бумеранг-Авто&raquo;</span> оказывает услуги в&nbsp;области аренды и&nbsp;проката автомобилей в&nbsp;Самаре. Услуги подобного рода пользуются исключительной популярностью во&nbsp;всех странах мира и&nbsp;становятся все более востребованными в&nbsp;России. Пользуясь прокатом автомобиля&nbsp;Вы получаете свободу передвижений, мобильность, независимо от&nbsp;сложившихся обстоятельств.</p>
@@ -186,7 +186,7 @@
 	            <div class="col-md mb-5 oddVideo">
 	                <h2 class="pb-4">ОТЗЫВЫ</h2>
 	                <div class="">   
-	                    <a href="https://www.youtube.com/watch?v=JnYxCvyuylo" data-rel="media" class="lazyload embed-responsive embed-responsive-16by9 video" data-srcbefore="https://i.ytimg.com/vi/V9GJFNcKKFs/maxresdefault.jpg">
+	                    <a href="https://www.youtube.com/watch?v=JnYxCvyuylo" data-rel="media" class="embed-responsive embed-responsive-16by9 video lazyload" data-srcbefore="https://i.ytimg.com/vi/V9GJFNcKKFs/maxresdefault.jpg">
 
 	                        <!-- <iframe src="https://www.youtube.com/embed/V9GJFNcKKFs" class="embed-responsive-item" allowfullscreen=""></iframe> -->
 	                    </a>
@@ -197,7 +197,7 @@
 	            <div class="col-md text-right evenVideo">
 	                <h2 class="pb-4">УСЛУГИ</h2>
 	                <div class="">
-	                    <a href="https://www.youtube.com/watch?v=JnYxCvyuylo" data-rel="media" class="lazyload embed-responsive embed-responsive-16by9 video" data-srcbefore="https://i.ytimg.com/vi/zZpiid4KDrE/maxresdefault.jpg">
+	                    <a href="https://www.youtube.com/watch?v=JnYxCvyuylo" data-rel="media" class="embed-responsive embed-responsive-16by9 video lazyload" data-srcbefore="https://i.ytimg.com/vi/zZpiid4KDrE/maxresdefault.jpg">
 
 	                        <!-- <iframe src="https://www.youtube.com/embed/zZpiid4KDrE" class="embed-responsive-item" allowfullscreen=""></iframe> -->
 	                    </a>
@@ -239,13 +239,13 @@
 
 	<!-- /PARTNERS -->
 
-	<footer class="footer">
+	<footer class="footer lazyload" data-lazynowclass="load-imgs">
 		<div class="container">
 			<div class="row">
 				<div class="col-xl-3 col-lg-3 col-md-3">
 					<div class="footer-logo">
-						<a href="index.html">
-							<img src="img/logo-footer-maska.png" alt="Boomerang Auto">
+						<a href="index.html" class="lazyparent">
+							<img class="lazyload" src="img/boomerang-loader-1.gif" data-src="img/logo-footer-maska.png" alt="Boomerang Auto">
 						</a>
 						<div class="footer-logo-text">
 							Действующий участник Российской ассоциации проката автомобилей
@@ -324,11 +324,11 @@
 				<div class="col-xl-2 col-lg-3 col-md-3">
 					<div class="footer-callback">
 						<div class="social">
-							<a href="https://www.instagram.com/avtobum63"><img src="https://avtobum63.ru/assets/templates/app/img/instagram.png" alt="ALT"></a>
-							<a href="https://vk.com/avtobum63"><img src="https://avtobum63.ru/assets/templates/app/img/vk.png" alt="ALT"></a>
-							<a href="https://www.facebook.com/avtobum63"><img src="https://avtobum63.ru/assets/templates/app/img/fb.png" alt="ALT"></a>
-							<a href="https://ok.ru/group/54922735386851"><img src="https://avtobum63.ru/assets/images/logo/Odnoklassniki.png" alt="ALT"></a>
-							<a href="https://www.youtube.com/channel/UCQO47QL9FzOPNQeBdTUqzlw"><img src="https://avtobum63.ru/assets/images/logo/320px-YouTube_play_buttom_icon_%282013-2017%29.png" alt="ALT"></a>
+							<a href="https://www.instagram.com/avtobum63" class="lazyparent"><img class="lazyload" src="img/boomerang-loader-1.gif" data-src1="https://avtobum63.ru/assets/templates/app/img/instagram.png" alt="Бумернга-Авто в Инстаграм"></a>
+							<a href="https://vk.com/avtobum63" class="lazyparent"><img class="lazyload" src="img/boomerang-loader-2.gif" data-src1="https://avtobum63.ru/assets/templates/app/img/vk.png" alt="Бумернга-Авто в ВКонтакте"></a>
+							<a href="https://www.facebook.com/avtobum63" class="lazyparent"><img class="lazyload" src="img/boomerang-loader-1.gif" data-src="https://avtobum63.ru/assets/templates/app/img/fb.png" alt="Бумернга-Авто в Facebook"></a>
+							<a href="https://ok.ru/group/54922735386851" class="lazyparent"><img class="lazyload" src="img/boomerang-loader-1.gif" data-src="https://avtobum63.ru/assets/images/logo/Odnoklassniki.png" alt="Бумернга-Авто в Одноклассниках"></a>
+							<a href="https://www.youtube.com/channel/UCQO47QL9FzOPNQeBdTUqzlw" class="lazyparent"><img class="lazyload" src="img/boomerang-loader-1.gif" data-src="https://avtobum63.ru/assets/images/logo/320px-YouTube_play_buttom_icon_%282013-2017%29.png" alt="Бумернга-Авто в YouTube"></a>
 						</div>
 						<div class="footer-callback-phone">
 							<div class="footer-callback-title">Позвоните нам</div>

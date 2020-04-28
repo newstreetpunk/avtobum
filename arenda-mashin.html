@@ -21,7 +21,7 @@
 	<!-- Custom Browsers Color Start -->
 	<meta name="theme-color" content="#fff">
 	<!-- Custom Browsers Color End -->
-	<link href="https://fonts.googleapis.com/css?family=PT+Sans+Caption:400,700&display=swap&subset=cyrillic" rel="stylesheet">
+	<!-- <link href="https://fonts.googleapis.com/css?family=PT+Sans+Caption:400,700&display=swap&subset=cyrillic" rel="stylesheet"> -->
 
 
 	<link rel="stylesheet" href="css/main.css">
@@ -74,7 +74,7 @@
 		<div class="container">
 			<div class="header-wrap">
 				<div class="header__logo-wrap">
-					<a href="index.html"><img src="img/logo-header.svg" alt="Boomerang Auto"></a>
+					<a href="index.html"><img class="lazyload" src="img/boomerang-loader-1.gif" data-src="img/logo-header.svg" alt="Boomerang Auto"></a>
 					<span class="header__logo-text">Прокат автомобилей</span>
 				</div>
 				<nav class="header__menu">
@@ -206,7 +206,7 @@
 					    else if(Math.random()>0.7)
 						    document.write('<span class="trailer-icon"></span>');
 
-						document.write('<a href="'+link+'" title="'+htmlspecialchars(currentValue)+'"><img alt="'+htmlspecialchars(currentValue)+'" class="embed-responsive-item" src="'+imgPath+imgURL[index]+'"></a>\
+						document.write('<a href="'+link+'" title="'+htmlspecialchars(currentValue)+'"><img alt="'+htmlspecialchars(currentValue)+'" class="embed-responsive-item lazyload" src="img/boomerang-loader-1.gif" data-src="'+imgPath+imgURL[index]+'"></a>\
 							</div>\
 					   	');
 				        document.write('<div class="bronInfo">');
@@ -375,7 +375,7 @@
 			<div class="stock__slider make">
 				<div class="stock__slider-slide">
 					<a href="statya-example.html">
-						<img src="img/stock1.jpg" alt="Возьми авто на прокат в феврале со скидкой" title="Возьми авто на прокат в феврале со скидкой">
+						<img class="lazyload" src="img/boomerang-loader-1.gif" data-src="img/stock1.jpg" alt="Возьми авто на прокат в феврале со скидкой" title="Возьми авто на прокат в феврале со скидкой">
 						<div class="short_name pt-3"><a href="statya-example.html" class="name">Возьми авто на прокат в феврале со скидкой</a></div>
 						<div class="short_desc pt-3"><p>Начался февраль, а значит впереди череда праздников! И БУМЕРАНГ-АВТО конечно не оставит вас без подарков!</p></div>
 						<div class="show_more pt-3">
@@ -385,7 +385,7 @@
 				</div>
 				<div class="stock__slider-slide">
 					<a href="statya-example.html">
-						<img src="img/stock2.jpg" alt="Выгодные тарифы на краткосрочный прокат" title="Выгодные тарифы на краткосрочный прокат">
+						<img class="lazyload" src="img/boomerang-loader-1.gif" data-src="img/stock2.jpg" alt="Выгодные тарифы на краткосрочный прокат" title="Выгодные тарифы на краткосрочный прокат">
 						<div class="short_name pt-3"><a href="statya-example.html" class="name">Выгодные тарифы на краткосрочный прокат</a></div>
 						<div class="short_desc pt-3"><p>Весь октябрь - краткосрочный прокат по выгодным тарифам длительного</p></div>
 						<div class="show_more pt-3">
@@ -395,7 +395,7 @@
 				</div>
 				<div class="stock__slider-slide">
 					<a href="statya-example.html">
-						<img src="img/stock1.jpg" alt="Возьми авто на прокат в феврале со скидкой" title="Возьми авто на прокат в феврале со скидкой">
+						<img class="lazyload" src="img/boomerang-loader-1.gif" data-src="img/stock1.jpg" alt="Возьми авто на прокат в феврале со скидкой" title="Возьми авто на прокат в феврале со скидкой">
 						<div class="short_name pt-3"><a href="statya-example.html" class="name">Возьми авто на прокат в феврале со скидкой</a></div>
 						<div class="short_desc pt-3"><p>Начался февраль, а значит впереди череда праздников! И БУМЕРАНГ-АВТО конечно не оставит вас без подарков!</p></div>
 						<div class="show_more pt-3">
@@ -405,7 +405,7 @@
 				</div>
 				<div class="stock__slider-slide">
 					<a href="statya-example.html">
-						<img src="img/stock2.jpg" alt="Выгодные тарифы на краткосрочный прокат" title="Выгодные тарифы на краткосрочный прокат">
+						<img class="lazyload" src="img/boomerang-loader-1.gif" data-src="img/stock2.jpg" alt="Выгодные тарифы на краткосрочный прокат" title="Выгодные тарифы на краткосрочный прокат">
 						<div class="short_name pt-3"><a href="statya-example.html" class="name">Выгодные тарифы на краткосрочный прокат</a></div>
 						<div class="short_desc pt-3"><p>Весь октябрь - краткосрочный прокат по выгодным тарифам длительного</p></div>
 						<div class="show_more pt-3">
@@ -426,8 +426,8 @@
 			<div class="row">
 				<div class="col-xl-3 col-lg-3 col-md-3">
 					<div class="footer-logo">
-						<a href="index.html">
-							<img class="white" src="img/logo-footer.svg" alt="Boomerang Auto">
+						<a href="index.html" class="lazyparent">
+							<img class="white lazyload" src="img/boomerang-loader-2.gif" data-src="img/logo-footer.svg" alt="Boomerang Auto">
 						</a>
 						<div class="footer-logo-text">
 							Действующий участник Российской ассоциации проката автомобилей
@@ -506,11 +506,11 @@
 				<div class="col-xl-2 col-lg-3 col-md-3">
 					<div class="footer-callback">
 						<div class="social">
-							<a href="https://www.instagram.com/avtobum63"><img src="https://avtobum63.ru/assets/templates/app/img/inst.png" alt="ALT"></a>
-							<a href="https://vk.com/avtobum63"><img src="https://avtobum63.ru/assets/templates/app/img/vk.png" alt="ALT"></a>
-							<a href="https://www.facebook.com/avtobum63"><img src="https://avtobum63.ru/assets/templates/app/img/fb.png" alt="ALT"></a>
-							<a href="https://ok.ru/group/54922735386851"><img src="https://avtobum63.ru/assets/images/logo/Odnoklassniki.png" alt="ALT"></a>
-							<a href="https://www.youtube.com/channel/UCQO47QL9FzOPNQeBdTUqzlw"><img src="https://avtobum63.ru/assets/images/logo/320px-YouTube_play_buttom_icon_%282013-2017%29.png" alt="ALT"></a>
+							<a href="https://www.instagram.com/avtobum63" class="lazyparent"><img class="lazyload" src="img/boomerang-loader-2t.gif" data-src1="https://avtobum63.ru/assets/templates/app/img/instagram.png" alt="ALT"></a>
+							<a href="https://vk.com/avtobum63" class="lazyparent"><img class="lazyload" src="img/boomerang-loader-2.gif" data-src1="https://avtobum63.ru/assets/templates/app/img/vk.png" alt="ALT"></a>
+							<a href="https://www.facebook.com/avtobum63" class="lazyparent"><img class="lazyload" src="img/boomerang-loader-1.gif" data-src="https://avtobum63.ru/assets/templates/app/img/fb.png" alt="ALT"></a>
+							<a href="https://ok.ru/group/54922735386851" class="lazyparent"><img class="lazyload" src="img/boomerang-loader-1.gif" data-src="https://avtobum63.ru/assets/images/logo/Odnoklassniki.png" alt="ALT"></a>
+							<a href="https://www.youtube.com/channel/UCQO47QL9FzOPNQeBdTUqzlw" class="lazyparent"><img class="lazyload" src="img/boomerang-loader-1.gif" data-src="https://avtobum63.ru/assets/images/logo/320px-YouTube_play_buttom_icon_%282013-2017%29.png" alt="ALT"></a>
 						</div>
 						<div class="footer-callback-phone">
 							<div class="footer-callback-title">Позвоните нам</div>

@@ -66,6 +66,7 @@
         srcbefore: "data-srcbefore",
         lazynowclass: "data-lazynowclass",
         selector: ".lazyload",
+        selectorparent: ".lazyparent",
         root: null,
         rootMargin: "0px",
         threshold: 0
@@ -145,9 +146,11 @@
                         let srcset = entry.target.getAttribute(self.settings.srcset);
                         let srcbefore = entry.target.getAttribute(self.settings.srcbefore);
                         let lazynowclass = entry.target.getAttribute(self.settings.lazynowclass);
+                        let remSelector = false;
                         if ("img" === entry.target.tagName.toLowerCase()) {
                             entry.target.onload = function(){
                                 entry.target.classList.remove(self.settings.selector.split('.').join(""));
+                                entry.target.parentNode.classList.remove(self.settings.selectorparent.split('.').join(""));
                             }
                             if (src) {
                                 entry.target.src = src;
@@ -158,10 +161,17 @@
                             
                         } else if (srcbefore !== null) {
                             entry.target.pseudoStyle('before', 'background-image',  'url(' + srcbefore + ')');
+                            remSelector = true;
                         } else if (lazynowclass !== null) {
                             entry.target.classList.add(lazynowclass);
+                            remSelector = true;
                         } else {
                             entry.target.style.backgroundImage = "url(" + src + ")";
+                            remSelector = true;
+                        }
+                        if(remSelector) {
+                            entry.target.classList.remove(self.settings.selector.split('.').join(""));
+                            entry.target.parentNode.classList.remove(self.settings.selectorparent.split('.').join(""));
                         }
                     }
                 });
@@ -187,9 +197,11 @@
                 let srcset = image.getAttribute(self.settings.srcset);
                 let srcbefore = image.getAttribute(self.settings.srcbefore);
                 let lazynowclass = image.getAttribute(self.settings.lazynowclass);
+                let remSelector = false;
                 if ("img" === image.tagName.toLowerCase()) {
                     image.onload = function(){
                         image.classList.remove(self.settings.selector.split('.').join(""));
+                        entry.target.parentNode.classList.remove(self.settings.selectorparent.split('.').join(""));
                     }
                     if (src) {
                         image.src = src;
@@ -199,10 +211,17 @@
                     }
                 } else if (srcbefore !== null) {
                     image.pseudoStyle('before', 'background-image', 'url(' + srcbefore + ')');
+                    remSelector = true;
                 } else if (lazynowclass !== null) {
                     image.classList.add(lazynowclass);
+                    remSelector = true;
                 } else {
                     image.style.backgroundImage = "url('" + src + "')";
+                    remSelector = true;
+                }
+                if(remSelector) {
+                    image.classList.remove(self.settings.selector.split('.').join(""));
+                    image.parentNode.classList.remove(self.settings.selectorparent.split('.').join(""));
                 }
             });
         },

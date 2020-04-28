@@ -85,7 +85,7 @@
 	.footer-callback .social
 		width: 85%
 		margin-left: auto
-	.footer-callback .social a img
+	.footer-callback .social a img:not(.lazyload)
 		// width: 45px
 		height: 45px
 	section .container
@@ -217,8 +217,9 @@
 		color: $accent
 
 @media (max-width: 380px)
-	.content.mar8.lazynow:before
-		background-position: 46% center
+	.content
+		&.mar8.load-imgs:before
+			background-position: 46% center
 
 /*==========  Mobile First  ==========*/
 
@@ -238,10 +239,10 @@
 // Small devices (landscape phones, 576px and up)
 +media-breakpoint-up(sm)
 	.about
-		&:before
+		&.load-imgs:before
 			background-size: 768px
 			background-position: right
-		&:after
+		&.load-imgs:after
 			background-size: 110%
 			background-position: 590% 0
 		// hny2020
@@ -282,7 +283,7 @@
 +media-breakpoint-up(lg)
 	.content
 		height: 570px
-	.footer-callback .social a img
+	.footer-callback .social a img:not(.lazyload)
 		height: 50px
 	.vehicle-options
 		&.pt-2
@@ -323,7 +324,7 @@
 	.content__block button
 		bottom: -86px
 	.about
-		&:before
+		&.load-imgs:before
 			background-size: 50%
 
 

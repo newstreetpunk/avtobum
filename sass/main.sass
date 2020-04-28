@@ -294,22 +294,22 @@ section
 		background-position: center center
 		background-repeat: no-repeat
 		opacity: 0.8
-	&.lazynow:before
+	&.load-imgs:before
 		background: url(../img/hummer_b_w-t.jpg)
 		background-size: cover
 		background-repeat: no-repeat
 		background-position: center center
-	&.hny2020.lazynow:before
+	&.hny2020.load-imgs:before
 		background-image: url(../img-hny2020/bg-ded-2.png), url(../img-hny2020/background-NG-3.jpg)
 		background-position: calc(50% + 90px) 40%, center center
 		@media (min-width: 900px)
 			background-position-x: calc(50% + 380px), center
-	&.feb14.lazynow:before
+	&.feb14.load-imgs:before
 		background-image: url(../img-feb14/heart-fon-final-2-ver1.jpg)
 		background-position: center center
 		@media (min-width: 900px)
 			background-position-x: center
-	&.mar8.lazynow:before
+	&.mar8.load-imgs:before
 		background-image: url(../img/mar8/women-day-fon-final-2.jpg)
 		background-position: center center
 		@media (min-width: 900px)
@@ -354,7 +354,7 @@ section
 			font-weight: bold
 			margin: 30px 0px 20px 0px
 		.car-service__img
-			img
+			img:not(.lazyload)
 				width: 100%
 	p
 		font-size: inherit
@@ -500,7 +500,7 @@ section
 		width: 100%
 		font-size: 24px
 		line-height: 1.65
-	&:before
+	&.load-imgs:before
 		content: ''
 		display: block
 		background: center bottom no-repeat url(../img/info_people-768-t.jpg)
@@ -530,7 +530,7 @@ section
 		opacity: 1
 		background-size: 170%
 		width: 101%
-	&:after
+	&.load-imgs:after
 		content: ''
 		display: block
 		background: top center no-repeat url(../img/logo_infinity-0.svg)
@@ -593,6 +593,7 @@ section
 
 .oddVideo .embed-responsive.embed-responsive-16by9.video,
 .evenVideo .embed-responsive.embed-responsive-16by9.video
+		background: #666
 		background-size: cover
 		background-repeat: no-repeat
 		&:before
@@ -689,7 +690,7 @@ section
 	font-size: 18px
 	position: relative
 	z-index: 100
-	&:before
+	&.load-imgs:before
 		content: ''
 		display: block
 		background: url(../img/footer_ford-t.png) right bottom no-repeat
@@ -723,6 +724,11 @@ section
 			opacity: 1
 	&-logo
 		a
+			&.lazyparent
+				background-color: #363636
+				mix-blend-mode: color
+			.lazyload
+				mix-blend-mode: color
 			opacity: 1
 			svg
 				fill: #fff
@@ -764,13 +770,18 @@ section
 			flex-wrap: wrap
 			justify-content: flex-end
 			a
+				&.lazyparent
+					background-color: #363636
+					mix-blend-mode: color
+				.lazyload
+					mix-blend-mode: color
 				&:first-child
 					margin-left: 0
 				img
 					max-width: none
 					margin-right: 5px
 					margin-bottom: 5px
-					height: 40px
+					// height: 40px
 		&-phone
 			font-size: 20px
 			a
@@ -817,7 +828,7 @@ section
 			right: 0
 			bottom: 0
 			&.lazyload
-				min-width: 100%
+				// min-width: 100%
 		
 		.new-avto 
 			display: block

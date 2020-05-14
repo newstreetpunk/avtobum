@@ -1,0 +1,163 @@
+//MAIN
+.content
+	position: relative
+	text-align: center
+	text-transform: uppercase
+	width: 100%
+	height: 350px
+	min-height: 350px
+	&__block
+		margin: 0
+		position: absolute
+		top: 50%
+		left: 0
+		right: 0
+		transform: translateY(-50%)
+		&-item
+			margin-bottom: 2%
+			position: relative
+			&:after
+				content: ''
+				display: block
+				width: 170px
+				height: 1px
+				background-color: #cbcbcb
+				position: absolute
+				bottom: 0
+				left: 50%
+				transform: translateX(-50%)
+			select
+				background: right center no-repeat url(../img/arrow-down-gray.png)
+				padding: 0 40px
+				color: $text
+				font-size: 30px
+				font-weight: 500
+				text-align: center
+				text-align-last: center
+				option
+					font-size: 26px
+		button
+			background-color: transparent
+			border: none
+			color: #fff
+			font-size: 25px
+			font-weight: 500
+			font-family: $default-font
+			width: 180px
+			line-height: 1.3
+			text-transform: uppercase
+			position: absolute
+			bottom: -100px
+			left: 50%
+			transform: translateX(-50%)
+			text-align: center
+			cursor: pointer
+			padding: 0
+	&.feb14,
+	&.feb23
+		color: white
+		.select-cust option,
+		.content__block-item select
+			color: white
+	&:before
+		content: ''
+		display: block
+		background: url(../img/hummer_b_w-t-192.jpg)
+		background-size: cover
+		background-position: center
+		position: absolute
+		width: 100%
+		height: 100%
+		z-index: -5
+		opacity: 0.5
+		left: 50%
+		top: 50%
+		transform: translate(-50%, -50%)
+	// hny2020
+	&.hny2020:before
+		content: ''
+		// background-image: url(../img-hny2020/bg-ded-2-lazy.png), url(../img-hny2020/background-NG-3-192.jpg)
+		background-image: url(../img-hny2020/bg-ded-2.png), url(../img-hny2020/background-NG-3.jpg)
+		background-size: cover, cover
+		background-position: 55vw 40%, center center
+		background-repeat: no-repeat
+		transition: all 1s ease-in-out 0.5s
+	&.feb14:before
+		content: ''
+		background-image: url(../img-feb14/heart-fon-final-2-ver1.jpg)
+		background-size: cover
+		background-position: center center
+		background-repeat: no-repeat
+		opacity: 0.8
+	&.feb23:before
+		content: ''
+		background-image: url(../img-feb23/defender-day-fon.jpg)
+		background-size: cover
+		background-position: center center
+		background-repeat: no-repeat
+		opacity: 0.8
+	&.mar8:before
+		content: ''
+		background-image: url(../img/mar8/women-day-fon-final-2.jpg)
+		background-size: cover
+		background-position: center center
+		background-repeat: no-repeat
+		opacity: 0.8
+	&.load-imgs.may1:before
+		content: ''
+		background-image: url(../img/may1/banner_1may-2020-02-t.jpg)
+		background-size: cover
+		background-position: center center
+		background-repeat: no-repeat
+		opacity: 1
+	&.may9
+		height: 470px
+		+media-breakpoint-up(lg)
+			height: 570px
+		@media (min-width: 1600px)
+			height: 670px
+		img.box
+			visibility: hidden
+	&.load-imgs.may9:before
+		content: ''
+		background-image: url(../img/may9/header-9may-1.jpg)
+		background-size: cover
+		background-position: center center
+		background-repeat: no-repeat
+		opacity: 1
+	&.load-imgs:before
+		background: url(../img/hummer_b_w-t.jpg)
+		background-size: cover
+		background-repeat: no-repeat
+		background-position: center center
+	&.hny2020.load-imgs:before
+		background-image: url(../img-hny2020/bg-ded-2.png), url(../img-hny2020/background-NG-3.jpg)
+		background-position: calc(50% + 90px) 40%, center center
+		@media (min-width: 900px)
+			background-position-x: calc(50% + 380px), center
+	&.feb14.load-imgs:before
+		background-image: url(../img-feb14/heart-fon-final-2-ver1.jpg)
+		background-position: center center
+		@media (min-width: 900px)
+			background-position-x: center
+	&.mar8.load-imgs:before
+		background-image: url(../img/mar8/women-day-fon-final-2.jpg)
+		background-position: center center
+		@media (min-width: 900px)
+			background-position-x: center
+
+	&:after
+		content: ''
+		display: block
+		background: center center no-repeat url(../img/logo_infinity-0.svg) 
+		background-size: 704px
+		background-position-x: calc(50% + 176px)
+		width: 100%
+		height: 100%
+		position: absolute
+		z-index: -1
+		// transform: scale(2.2) translate(80px, 0px)
+		opacity: 0.5
+	&.mar8 button
+		color: black
+//MAIN END

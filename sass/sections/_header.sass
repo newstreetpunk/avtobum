@@ -1,0 +1,63 @@
+//HEADER
+.header
+	background-color: #fff
+	position: fixed
+	width: 100%
+	top: 0
+	transition: all .3s ease-in-out
+	z-index: 1500
+	&.show
+		top: 0
+		box-shadow: 0 3px 40px rgba(0,0,0,.3)
+	&.hide
+		top: -150px
+		box-shadow: 0 3px 30px transparent
+	&-wrap
+		display: flex
+		justify-content: space-between
+		align-items: center
+		min-height: 100px
+	&__logo
+		&-wrap
+			max-width: 26.5%
+		&-text
+			text-transform: uppercase
+			display: block
+			margin-top: 5px
+			letter-spacing: 1px
+			color: $text2
+			font-size: 18px
+	&__menu
+		ul
+			display: flex
+			align-items: baseline
+			.phone
+				display: none
+			li
+				margin-right: 32px
+				line-height: 1
+				&:last-child
+					margin-right: 0
+				a
+					text-transform: uppercase
+					p
+						font-size: 10px
+						color: #dc5c13
+						letter-spacing: 0.4px
+						padding-top: 5px
+						line-height: 1.4
+						// display: none
+	&__phone
+		&-wrap
+			display: flex
+			justify-content: space-between
+			align-items: center
+		&--callback
+			margin-left: 40px
+			.phone
+				margin-bottom: 5px
+			.popup
+				cursor: pointer
+				&:hover
+					color: $orange
+//HEADER END

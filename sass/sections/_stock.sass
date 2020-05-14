@@ -1,0 +1,59 @@
+//STOCK
+.stock
+	position: relative
+	&__slider
+		z-index: 110
+		display: flex
+		justify-content: space-between
+		flex-wrap: nowrap
+		flex-direction: row
+		&-slide
+			min-width: 298px
+			> a 
+				&:before
+					// padding-top: 56.25%
+					// content: ''
+					// display: block
+				> img[src*="boomerang-loader"]
+					// padding: 48.5px
+			.short_name
+				font-weight: 400
+			.show_more a
+				color: $orange
+				&:hover
+					color: $blue
+			.short_name,
+			.short_desc,
+			.show_more,
+			img
+				width: 90%
+				max-height: 
+				margin: 0 auto
+				display: block
+				&.lazyload
+					width: initial
+					// padding: 48.5px
+					padding: 16%
+					
+		.next,
+		.prev
+			background: url(../img/arrow.svg)
+			background-repeat: no-repeat
+			width: 30px
+			height: 50px
+			position: absolute
+			top: 73px
+			transform: translateY(-50%)
+			left: -10px
+			z-index: 1
+			cursor: pointer
+			transition: all .2s
+			opacity: .8
+			&:hover
+				opacity: 1
+		.next
+			left: auto
+			right: -10px
+			transform: rotate(180deg)
+			margin-top: -25px
+//STOCK END

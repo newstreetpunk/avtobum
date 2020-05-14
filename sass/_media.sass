@@ -193,6 +193,11 @@
 	.stock__slider-slide .show_more,
 	.stock__slider-slide img
 		width: 85%
+	.about
+		&.load-imgs.may9:before
+			background-size: contain
+			background-position-x: calc(50% + 140px)
+
 
 // Extra small devices (portrait phones, less than 576px)
 +media-breakpoint-down(xs)
@@ -269,6 +274,9 @@
 	.about
 		padding-top: 10%
 		margin-bottom: 10%
+		&.load-imgs.may9:before
+			background-size: contain
+			background-position: right
 	.about-text
 		padding-left: 10%
 	.about

@@ -1,0 +1,58 @@
+//VIDEO
+.oddVideo .embed-responsive.embed-responsive-16by9
+		box-shadow: -20px 20px #00000051
+.evenVideo .embed-responsive.embed-responsive-16by9
+		box-shadow: 20px 20px #00000051
+
+.oddVideo .embed-responsive.embed-responsive-16by9.video,
+.evenVideo .embed-responsive.embed-responsive-16by9.video
+		background: #666
+		background-size: cover
+		background-repeat: no-repeat
+		&:before
+			background-size: cover
+			background-repeat: no-repeat
+		&:after
+			content: ''
+			display: block
+			// background: url(../img/youtube.png)
+			background: url(https://avtobum63.ru/assets/templates/app/img/youtube.png)
+			background-size: 100%
+			background-position: center
+			background-repeat: no-repeat
+			position: absolute
+			width: 85px
+			height: 100%
+			z-index: 5
+			opacity: 0.9
+			left: 50%
+			top: 50%
+			transform: translate(-50%, -50%)
+			// filter: brightness(0.5) grayscale(1)
+			// filter: contrast(0.5) brightness(0.5) grayscale(1)
+
+
+
+.embed-responsive.embed-responsive-16by9.text-review 
+	&:before 
+		content: ""
+		position: absolute
+		z-index: -1
+		background: no-repeat center center $black_alpha05 $logo_infinity
+		background-size: 120%
+		display: block
+		width: 100%
+		height: 100%
+		opacity: .2
+		background-position-x: -210%
+
+	div 
+		position: relative
+		top: 0
+		bottom: 0
+		left: 0
+		width: 100%
+		height: 100%
+		border: 0
+		padding: 10px
+//VIDEO END

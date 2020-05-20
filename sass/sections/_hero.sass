@@ -1,12 +1,9 @@
 .hero
 	transition: all .3s ease
 	position: absolute
-	top: 0
+	top: 5vh
 	right: 0
-	+media-breakpoint-up(sm)
-		max-height: 90vh
-	+media-breakpoint-down(sm)
-		position: relative
+		
 	&:before
 		// content: ''
 		display: block
@@ -18,7 +15,6 @@
 		background-color: rgba($text, .7)
 		z-index: 1
 	&.cover
-		// background-image: url(../img/hero-2.jpg);
 		z-index: 1
 		background-size: cover
 		background-position: center
@@ -31,26 +27,20 @@
 		display: flex
 		// justify-content: space-between
 		justify-content: flex-end
-		padding-top: 6%
+		// padding-top: 6%
+			
 	&-text
 		display: none
 	&-form
 		z-index: 1000
-		transition: all .3s ease
-		+media-breakpoint-up(sm)
-			margin-right: 5vw
-			margin-top: 48vh
-			transform: translateY(-50%)
-			background-color: #ffffffcc
+		transition: all .3s ease			
 		color: $text
 		max-width: 400px
 		width: 100%
 		height: auto
 		padding: 34px
 		// opacity: 0
-		+media-breakpoint-down(sm)
-			box-shadow: 0 0 30px rgba($text, .3)
-			// margin: 20px auto 
+			
 		input
 			background-color: #f3f3f399
 		button

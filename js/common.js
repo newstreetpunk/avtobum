@@ -4,11 +4,13 @@ $(function() {
 
     $( document ).ready(function() {
         
+        var hideHeaderPos = 100;
+        
         /* опускающийся хедер при прокрутке вверх */
         var prevScrollpos = window.pageYOffset;
         $(window).scroll( function() {
             var currentScrollPos = window.pageYOffset;
-            if (currentScrollPos > 50) {
+            if (currentScrollPos > hideHeaderPos) {
                 if (prevScrollpos > currentScrollPos) {
                     document.getElementById("header").classList.remove("hide");
                     document.getElementById("header").classList.add("show");

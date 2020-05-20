@@ -198,6 +198,25 @@
 			background-size: contain
 			background-position-x: calc(50% + 140px)
 
+	.hero
+		position: relative
+		top: 0
+		&-wrap
+			flex-direction: column
+		&-form
+			box-shadow: 0 0 30px rgba($text, .3)
+			margin: 0 auto 
+	.main-slider
+		height: $height_banner_mobile
+		margin-top: $height_header_mobile
+		.slick-slide
+			height: $height_banner_mobile
+		.caption
+			top: 5vh
+			font-size: 32px
+			width: 100%
+			left: auto
+			margin: 0 auto
 
 // Extra small devices (portrait phones, less than 576px)
 +media-breakpoint-down(xs)
@@ -287,6 +306,10 @@
 	.footer
 		&.mar8:before
 			background-size: contain
+	.hero
+		max-height: 90vh
+		&-form
+			background-color: #ffffffcc
 
 
 // Large devices (desktops, 992px and up)
@@ -302,6 +325,9 @@
 		&.feb14:after
 			background-size: 70%
 			background-position: -20vw 0
+	.hero
+		&-form
+			margin-right: 5vw
 
 // Extra large devices (large desktops, 1200px and up)
 +media-breakpoint-up(xl)

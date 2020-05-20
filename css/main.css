@@ -6048,20 +6048,8 @@ section h2 {
   -o-transition: all .3s ease;
   transition: all .3s ease;
   position: absolute;
-  top: 0;
+  top: 5vh;
   right: 0;
-}
-
-@media (min-width: 576px) {
-  .hero {
-    max-height: 90vh;
-  }
-}
-
-@media (max-width: 767.98px) {
-  .hero {
-    position: relative;
-  }
 }
 
 .hero:before {
@@ -6095,7 +6083,6 @@ section h2 {
   -webkit-justify-content: flex-end;
       -ms-flex-pack: end;
           justify-content: flex-end;
-  padding-top: 6%;
 }
 
 .hero-text {
@@ -6112,24 +6099,6 @@ section h2 {
   width: 100%;
   height: auto;
   padding: 34px;
-}
-
-@media (min-width: 576px) {
-  .hero-form {
-    margin-right: 5vw;
-    margin-top: 48vh;
-    -webkit-transform: translateY(-50%);
-        -ms-transform: translateY(-50%);
-            transform: translateY(-50%);
-    background-color: #ffffffcc;
-  }
-}
-
-@media (max-width: 767.98px) {
-  .hero-form {
-    -webkit-box-shadow: 0 0 30px rgba(0, 0, 0, 0.3);
-            box-shadow: 0 0 30px rgba(0, 0, 0, 0.3);
-  }
 }
 
 .hero-form input {
@@ -6299,21 +6268,16 @@ form small a:hover {
 
 .main-slider {
   position: relative;
+  margin-top: 100px;
   width: 100%;
-  height: 90vh;
+  height: calc( 94vh - 100px);
   min-height: 8vw;
-  margin-bottom: 50px;
+  margin-bottom: 5rem;
   opacity: 0;
   visibility: hidden;
   -webkit-transition: all 1.2s ease;
   -o-transition: all 1.2s ease;
   transition: all 1.2s ease;
-}
-
-@media (max-width: 767.98px) {
-  .main-slider {
-    height: 100vh;
-  }
 }
 
 .main-slider.slick-initialized {
@@ -6323,13 +6287,7 @@ form small a:hover {
 
 .main-slider .slick-slide {
   position: relative;
-  height: 90vh;
-}
-
-@media (max-width: 767.98px) {
-  .main-slider .slick-slide {
-    height: 100vh;
-  }
+  height: calc( 94vh - 100px);
 }
 
 .main-slider .slick-slide::before {
@@ -6350,6 +6308,8 @@ form small a:hover {
   -webkit-transform: translate(-50%, -50%);
       -ms-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 .main-slider .slick-slide iframe {
@@ -6386,7 +6346,7 @@ form small a:hover {
   position: absolute;
   top: 44%;
   left: 0;
-  right: 0;
+  text-align: center;
   width: 100%;
 }
 
@@ -6414,6 +6374,10 @@ form small a:hover {
   transition: all 0.7s cubic-bezier(0.32, 0.34, 0, 1.62) 0.6s;
 }
 
+.main-slider .slick-slide.slick-cloned video {
+  width: 100%;
+}
+
 .main-slider .caption {
   position: absolute;
   top: 44%;
@@ -6435,25 +6399,26 @@ form small a:hover {
           transform: translateY(100px);
 }
 
-@media (max-width: 767.98px) {
-  .main-slider .caption {
-    top: 100px;
-    font-size: 33px;
-    width: 100%;
-    left: auto;
-    margin: 0 auto;
-  }
-}
-
 .main-slider .slick-dots {
   text-align: center;
   padding-top: 15px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-flex-wrap: wrap;
+      -ms-flex-wrap: wrap;
+          flex-wrap: wrap;
 }
 
 .main-slider .slick-dots li {
   display: inline-block;
   vertical-align: top;
-  margin: 0 8px;
+  margin: 2px 8px;
 }
 
 .main-slider .slick-dots li button {
@@ -6472,6 +6437,7 @@ form small a:hover {
   -o-transition: all .3s ease;
   transition: all .3s ease;
   opacity: .4;
+  padding: 0;
 }
 
 .main-slider .slick-dots li button:focus {
@@ -8201,6 +8167,36 @@ form .help-block {
     background-size: contain;
     background-position-x: calc(50% + 140px);
   }
+  .hero {
+    position: relative;
+    top: 0;
+  }
+  .hero-wrap {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .hero-form {
+    -webkit-box-shadow: 0 0 30px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 0 30px rgba(0, 0, 0, 0.3);
+    margin: 0 auto;
+  }
+  .main-slider {
+    height: calc( 80vh - 90px);
+    margin-top: 90px;
+  }
+  .main-slider .slick-slide {
+    height: calc( 80vh - 90px);
+  }
+  .main-slider .caption {
+    top: 5vh;
+    font-size: 32px;
+    width: 100%;
+    left: auto;
+    margin: 0 auto;
+  }
 }
 
 @media (max-width: 575.98px) {
@@ -8308,6 +8304,12 @@ form .help-block {
   .footer.mar8:before {
     background-size: contain;
   }
+  .hero {
+    max-height: 90vh;
+  }
+  .hero-form {
+    background-color: #ffffffcc;
+  }
 }
 
 @media (min-width: 992px) {
@@ -8323,6 +8325,9 @@ form .help-block {
   .about.feb14:after {
     background-size: 70%;
     background-position: -20vw 0;
+  }
+  .hero-form {
+    margin-right: 5vw;
   }
 }
 

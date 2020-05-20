@@ -77,10 +77,98 @@
 		</div>
 	</header>
 	<!-- /HEADER -->
+	
+	<section class="main-slider">
+		<div class="item image">
+			<span class="loading">Loading...</span>
+			<figure>
+				<div class="slide-image slide-media" style="background-image:url('https://drive.google.com/uc?export=view&id=0B_koKn2rKOkLRkY4S0JDTk1BbE0');">
+					<img data-lazy="https://drive.google.com/uc?export=view&id=0B_koKn2rKOkLRkY4S0JDTk1BbE0" class="image-entity" />
+				</div>
+				<figcaption class="caption">Static Image</figcaption>
+			</figure>
+		</div>
+		<div class="item vimeo" data-video-start="4">
+			<iframe class="embed-player slide-media" src="https://player.vimeo.com/video/160658907?api=1&byline=0&portrait=0&title=0&background=1&mute=1&loop=1&autoplay=0&id=160658907" width="980" height="520" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+			<p class="caption">Vimeo</p>
+		</div>
+		<div class="item image">
+			<figure>
+				<div class="slide-image slide-media" style="background-image:url('https://drive.google.com/uc?export=view&id=0B_koKn2rKOkLNXBIcEdOUFVIWmM');">
+					<img data-lazy="https://drive.google.com/uc?export=view&id=0B_koKn2rKOkLNXBIcEdOUFVIWmM" class="image-entity" />
+				</div>
+				<figcaption class="caption">Static Image</figcaption>
+			</figure>
+		</div>
+		<div class="item youtube">
+			<iframe class="embed-player slide-media" width="980" height="520" src="https://www.youtube.com/embed/FadUo2ycxoM?enablejsapi=1&controls=0&mute=1&fs=0&iv_load_policy=3&rel=0&showinfo=0&loop=1&playlist=FadUo2ycxoM&start=1" frameborder="0" allowfullscreen></iframe> 
+			<p class="caption">YouTube</p>
+		</div>
+		<div class="item image">
+			<figure>
+				<div class="slide-image slide-media" style="background-image:url('https://drive.google.com/uc?export=view&id=0B2f40UV1GuGEYmk3QnA3LVp3TTU3cmtlUWJaX2U4NU1ZdWQ0');">
+					<img data-lazy="https://drive.google.com/uc?export=view&id=0B2f40UV1GuGEYmk3QnA3LVp3TTU3cmtlUWJaX2U4NU1ZdWQ0" class="image-entity" />
+				</div>
+				<figcaption class="caption">Static Image</figcaption>
+			</figure>
+		</div>
+		<div class="item youtube">
+			<iframe class="embed-player slide-media" width="980" height="520" src="https://www.youtube.com/embed/oB8dWRdYoQY?enablejsapi=1&controls=0&mute=1&fs=0&iv_load_policy=3&rel=0&showinfo=0&loop=1&playlist=oB8dWRdYoQY&start=1" frameborder="0" allowfullscreen></iframe> 
+			<p class="caption">YouTube Vertical</p>
+		</div>
+		<div class="item image">
+			<figure>
+				<div class="slide-image slide-media" style="background-image:url('https://drive.google.com/uc?export=view&id=0B_koKn2rKOkLSlBkWDBsWXJNazQ');">
+					<img data-lazy="https://drive.google.com/uc?export=view&id=0B_koKn2rKOkLSlBkWDBsWXJNazQ" class="image-entity" />
+				</div>
+				<figcaption class="caption">Static Image</figcaption>
+			</figure>
+		</div>
+		<div class="item video">
+			<video class="slide-video slide-media" loop muted preload="metadata" poster="https://drive.google.com/uc?export=view&id=0B_koKn2rKOkLSXZCakVGZWhOV00">
+				<source src="https://player.vimeo.com/external/138504815.sd.mp4?s=8a71ff38f08ec81efe50d35915afd426765a7526&profile_id=112" type="video/mp4" />
+			</video>
+			<p class="caption">HTML 5 Video</p>
+		</div>
+	</section>
+	
+	<div class="hero">
+		<div class="container">
+			<div class="hero-wrap">
+				<div class="hero-text">
+					<div class="hero-title">Зарезервируйте авто <span>онлайн</span></div>
+					<span class="hero-subtitle">по самой выгодной цене</span>
+					<span class="hero-subtitle">подменный авто на время ремонта</span>
+				</div>
+				<!-- /.hero-text -->
+				<div class="hero-form">
+					<div class="hero-form-title">Зарезервируйте авто <span>сейчас</span></div>
+					<p class="hero-form-subtitle">Оставьте свой номер телефона, и&nbsp;мы перезвоним Вам</p>
+					<form method="POST">
+						<!-- Hidden Required Fields -->
+						<input type="hidden" name="project_name" value="Service Avtobum">
+						<input type="hidden" name="admin_email" value="<?php echo $email; ?>">
+						<input type="hidden" name="form_subject" value="Форма из баннера">
+						<!-- END Hidden Required Fields -->
+
+						<input type="text" name="Имя" placeholder="Ваше имя*" required>
+						<input type="tel" name="Телефон" placeholder="8 (999) 999-99-99*" required>
+						<input type="email" name="Email" placeholder="mail@example.com">
+						<button type="submit" class="btn">Записаться</button>
+						<small>Нажимая на кнопку "Записаться", я даю согласие на <a href="#popup">обработку персональных данных</a></small>
+					</form>
+				</div>
+				<!-- /.hero-form -->
+			</div>
+		</div>
+		<!-- /.container -->
+	</div>
+	<!-- /.hero -->
+
 
 	<!-- MAIN -->
 	<!-- <main class="lazyload content" data-lazynowclass1="load-imgs" data-srcbefore="img/hummer_b_w-t.jpg"> -->
-	<main class="content lazyload may9" data-lazynowclass="load-imgs" data-srcbefore1="url(../img-hny2020/bg-ded-1.png), url(../img-hny2020/background-NG-3.jpg)">
+	<main class="content lazyload" data-lazynowclass="load-imgs" data-srcbefore1="url(../img-hny2020/bg-ded-1.png), url(../img-hny2020/background-NG-3.jpg)">
 		<div class="content__block">
 			<form action="arenda-mashin.html">
 				<div class="content__block-loc content__block-item">
@@ -169,7 +257,7 @@
 
 	<!-- ABOUT -->
 
-	<section class="about lazyload may9" data-lazynowclass="load-imgs">
+	<section class="about lazyload" data-lazynowclass="load-imgs">
 		<div class="container">
 			<div class="about-text">
 				<p>Компания <span>&laquo;Бумеранг-Авто&raquo;</span> оказывает услуги в&nbsp;области аренды и&nbsp;проката автомобилей в&nbsp;Самаре. Услуги подобного рода пользуются исключительной популярностью во&nbsp;всех странах мира и&nbsp;становятся все более востребованными в&nbsp;России. Пользуясь прокатом автомобиля&nbsp;Вы получаете свободу передвижений, мобильность, независимо от&nbsp;сложившихся обстоятельств.</p>

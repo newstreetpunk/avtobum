@@ -243,6 +243,8 @@
 
 // Small devices (landscape phones, 576px and up)
 +media-breakpoint-up(sm)
+	.mobile_only
+		display: none
 	.about
 		&.load-imgs:before
 			background-size: 768px
@@ -390,7 +392,7 @@
 		position: initial
 
 	.header.hide
-		box-shadow:none
+		box-shadow: none
 
 	.header__logo-wrap
 		max-width: 350px

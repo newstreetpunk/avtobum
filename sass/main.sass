@@ -102,8 +102,9 @@ button
 			top: -2px
 		span:nth-child(2)
 			display: none
-section
+section:not(.main-slider)
 	padding-top: 3rem
+section
 	position: relative
 	z-index: 125
 	.container
@@ -126,6 +127,8 @@ section
 	z-index: 9997
 
 @import sections/header
+@import sections/hero
+@import sections/main-slider
 @import sections/main
 @import sections/text
 @import sections/stock
@@ -269,3 +272,5 @@ form
 		color: red
 
 @import "media" // Always at the end
+
+@import "../css/common.css"

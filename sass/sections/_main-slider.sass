@@ -38,7 +38,7 @@ $height_banner_mobile: calc( 80vh - 90px )
 		height: $height_banner
 			
 		@extend %bv_hidden
-		&::before
+		&:not(.without_text):before
 			@extend %filled_obj
 			@extend %bv_hidden
 			background-color: #000
@@ -105,25 +105,61 @@ $height_banner_mobile: calc( 80vh - 90px )
 			video
 				width: 100%
 			
-		
+	.arrow
+		position: absolute
+		top: 52%
+		transform: translateY(-50%)
+		width: 40px
+		height: 40px
+		// border-radius: 50%
+		background-color: white
+		// left: 20px
+		padding: 0
+		border: none
+		cursor: pointer
+		transition: all .25s ease
+		z-index: 10
+		opacity: .2
+		outline: none
+		&:hover
+			opacity: .6
+		svg
+			width: 20px
+			padding: 0
+			margin: 0
+			height: 100%
+	.prev-arrow
+		svg
+			margin-left: -5px
+	.next-arrow
+		left: auto
+		// right: 20px
+		right: 0
+		svg
+			transform: rotate(180deg)
+			margin-right: -5px	
 
 	.caption
 		position: absolute
-		top: 44%
-		left: 5%
-		text-align: center
-		padding: 20px
+		top: 5vh
+		left: 5vw
+		width: 50vw
+		// text-align: center
+		// padding: 20px
 		// border: 3px solid
 		color: #fff
 		margin: 0
-		font-size: 40px
-		font-weight: bold
-		letter-spacing: .02em
 		opacity: 0
 		z-index: 1
 		transition: all .3s ease
 		transform: translateY(100px)
 		@extend %bv_hidden
+		.title
+			font-size: 40px
+			font-weight: bold
+			letter-spacing: .02em
+		.subtitle
+			font-size: 26px
 			
 
 
@@ -133,6 +169,7 @@ $height_banner_mobile: calc( 80vh - 90px )
 		display: flex
 		justify-content: center
 		flex-wrap: wrap
+		bottom: auto
 		li
 			display: inline-block
 			vertical-align: top
@@ -156,6 +193,8 @@ $height_banner_mobile: calc( 80vh - 90px )
 				
 				&:hover
 					opacity: 1
+				&::before
+					content: ""
 				
 			
 			&.slick-active

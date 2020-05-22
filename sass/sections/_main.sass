@@ -74,10 +74,13 @@
 		left: 50%
 		top: 50%
 		transform: translate(-50%, -50%)
-	// hny2020
+	&.load-imgs:before
+		background: url(../img/hummer_b_w-t.jpg)
+		background-size: cover
+		background-repeat: no-repeat
+		background-position: center center
 	&.hny2020:before
 		content: ''
-		// background-image: url(../img-hny2020/bg-ded-2-lazy.png), url(../img-hny2020/background-NG-3-192.jpg)
 		background-image: url(../img-hny2020/bg-ded-2.png), url(../img-hny2020/background-NG-3.jpg)
 		background-size: cover, cover
 		background-position: 55vw 40%, center center
@@ -111,6 +114,15 @@
 		background-position: center center
 		background-repeat: no-repeat
 		opacity: 1
+	&.hbLena
+		height: 100vh
+	&.load-imgs.hbLena:before
+		content: ''
+		background-image: url(../img/birthday/Lena-dr-1920x1080.jpg)
+		background-size: cover
+		background-position: center center
+		background-repeat: no-repeat
+		opacity: 1
 	&.may9
 		height: 470px
 		+media-breakpoint-up(lg)
@@ -126,11 +138,6 @@
 		background-position: center center
 		background-repeat: no-repeat
 		opacity: 1
-	&.load-imgs:before
-		background: url(../img/hummer_b_w-t.jpg)
-		background-size: cover
-		background-repeat: no-repeat
-		background-position: center center
 	&.hny2020.load-imgs:before
 		background-image: url(../img-hny2020/bg-ded-2.png), url(../img-hny2020/background-NG-3.jpg)
 		background-position: calc(50% + 90px) 40%, center center
@@ -159,6 +166,8 @@
 		z-index: -1
 		// transform: scale(2.2) translate(80px, 0px)
 		opacity: 0.5
+	&.hbLena:after
+		background: none
 	&.mar8 button
 		color: black
 //MAIN END

@@ -5613,17 +5613,185 @@ textarea.form-control {
 }
 
 /* Slider */
+.slick-loading .slick-list {
+  background: #fff url("./ajax-loader.gif") center center no-repeat;
+}
+
+/* Icons */
+@font-face {
+  font-family: "slick";
+  src: url("./fonts/slick.eot");
+  src: url("./fonts/slick.eot?#iefix") format("embedded-opentype"), url("./fonts/slick.woff") format("woff"), url("./fonts/slick.ttf") format("truetype"), url("./fonts/slick.svg#slick") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* Arrows */
+.slick-prev,
+.slick-next {
+  position: absolute;
+  display: block;
+  height: 20px;
+  width: 20px;
+  line-height: 0px;
+  font-size: 0px;
+  cursor: pointer;
+  background: transparent;
+  color: transparent;
+  top: 50%;
+  -webkit-transform: translate(0, -50%);
+  -ms-transform: translate(0, -50%);
+  transform: translate(0, -50%);
+  padding: 0;
+  border: none;
+  outline: none;
+}
+
+.slick-prev:hover, .slick-prev:focus,
+.slick-next:hover,
+.slick-next:focus {
+  outline: none;
+  background: transparent;
+  color: transparent;
+}
+
+.slick-prev:hover:before, .slick-prev:focus:before,
+.slick-next:hover:before,
+.slick-next:focus:before {
+  opacity: 1;
+}
+
+.slick-prev.slick-disabled:before,
+.slick-next.slick-disabled:before {
+  opacity: 0.25;
+}
+
+.slick-prev:before,
+.slick-next:before {
+  font-family: "slick";
+  font-size: 20px;
+  line-height: 1;
+  color: white;
+  opacity: 0.75;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.slick-prev {
+  left: -25px;
+}
+
+[dir="rtl"] .slick-prev {
+  left: auto;
+  right: -25px;
+}
+
+.slick-prev:before {
+  content: "←";
+}
+
+[dir="rtl"] .slick-prev:before {
+  content: "→";
+}
+
+.slick-next {
+  right: -25px;
+}
+
+[dir="rtl"] .slick-next {
+  left: -25px;
+  right: auto;
+}
+
+.slick-next:before {
+  content: "→";
+}
+
+[dir="rtl"] .slick-next:before {
+  content: "←";
+}
+
+/* Dots */
+.slick-dotted.slick-slider {
+  margin-bottom: 30px;
+}
+
+.slick-dots {
+  position: absolute;
+  bottom: -25px;
+  list-style: none;
+  display: block;
+  text-align: center;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+}
+
+.slick-dots li {
+  position: relative;
+  display: inline-block;
+  height: 20px;
+  width: 20px;
+  margin: 0 5px;
+  padding: 0;
+  cursor: pointer;
+}
+
+.slick-dots li button {
+  border: 0;
+  background: transparent;
+  display: block;
+  height: 20px;
+  width: 20px;
+  outline: none;
+  line-height: 0px;
+  font-size: 0px;
+  color: transparent;
+  padding: 5px;
+  cursor: pointer;
+}
+
+.slick-dots li button:hover, .slick-dots li button:focus {
+  outline: none;
+}
+
+.slick-dots li button:hover:before, .slick-dots li button:focus:before {
+  opacity: 1;
+}
+
+.slick-dots li button:before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  content: "•";
+  width: 20px;
+  height: 20px;
+  font-family: "slick";
+  font-size: 6px;
+  line-height: 20px;
+  text-align: center;
+  color: black;
+  opacity: 0.25;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.slick-dots li.slick-active button:before {
+  color: black;
+  opacity: 0.75;
+}
+
+/* Slider */
 .slick-slider {
   position: relative;
   display: block;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
+  -webkit-touch-callout: none;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  -webkit-touch-callout: none;
-  -khtml-user-select: none;
   -ms-touch-action: pan-y;
   touch-action: pan-y;
   -webkit-tap-highlight-color: transparent;
@@ -5631,8 +5799,8 @@ textarea.form-control {
 
 .slick-list {
   position: relative;
-  display: block;
   overflow: hidden;
+  display: block;
   margin: 0;
   padding: 0;
 }
@@ -5655,17 +5823,16 @@ textarea.form-control {
 
 .slick-track {
   position: relative;
-  top: 0;
   left: 0;
+  top: 0;
   display: block;
   margin-left: auto;
   margin-right: auto;
 }
 
-.slick-track:before,
-.slick-track:after {
+.slick-track:before, .slick-track:after {
+  content: "";
   display: table;
-  content: '';
 }
 
 .slick-track:after {
@@ -5677,13 +5844,13 @@ textarea.form-control {
 }
 
 .slick-slide {
-  display: none;
   float: left;
   height: 100%;
   min-height: 1px;
+  display: none;
 }
 
-[dir='rtl'] .slick-slide {
+[dir="rtl"] .slick-slide {
   float: right;
 }
 
@@ -6252,12 +6419,12 @@ form small a:hover {
   border-color: #0b91d1;
 }
 
-.main-slider .slick-slide, .main-slider .slick-slide::before, .main-slider .caption {
+.main-slider .slick-slide, .main-slider .slick-slide:not(.without_text):before, .main-slider .caption {
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
 }
 
-.main-slider .slick-slide::before {
+.main-slider .slick-slide:not(.without_text):before {
   content: '';
   position: absolute;
   top: 0;
@@ -6290,7 +6457,7 @@ form small a:hover {
   height: calc( 94vh - 100px);
 }
 
-.main-slider .slick-slide::before {
+.main-slider .slick-slide:not(.without_text):before {
   background-color: #000;
   opacity: .3;
   z-index: 1;
@@ -6378,17 +6545,60 @@ form small a:hover {
   width: 100%;
 }
 
+.main-slider .arrow {
+  position: absolute;
+  top: 52%;
+  -webkit-transform: translateY(-50%);
+      -ms-transform: translateY(-50%);
+          transform: translateY(-50%);
+  width: 40px;
+  height: 40px;
+  background-color: white;
+  padding: 0;
+  border: none;
+  cursor: pointer;
+  -webkit-transition: all .25s ease;
+  -o-transition: all .25s ease;
+  transition: all .25s ease;
+  z-index: 10;
+  opacity: .2;
+  outline: none;
+}
+
+.main-slider .arrow:hover {
+  opacity: .6;
+}
+
+.main-slider .arrow svg {
+  width: 20px;
+  padding: 0;
+  margin: 0;
+  height: 100%;
+}
+
+.main-slider .prev-arrow svg {
+  margin-left: -5px;
+}
+
+.main-slider .next-arrow {
+  left: auto;
+  right: 0;
+}
+
+.main-slider .next-arrow svg {
+  -webkit-transform: rotate(180deg);
+      -ms-transform: rotate(180deg);
+          transform: rotate(180deg);
+  margin-right: -5px;
+}
+
 .main-slider .caption {
   position: absolute;
-  top: 44%;
-  left: 5%;
-  text-align: center;
-  padding: 20px;
+  top: 5vh;
+  left: 5vw;
+  width: 50vw;
   color: #fff;
   margin: 0;
-  font-size: 40px;
-  font-weight: bold;
-  letter-spacing: .02em;
   opacity: 0;
   z-index: 1;
   -webkit-transition: all .3s ease;
@@ -6397,6 +6607,16 @@ form small a:hover {
   -webkit-transform: translateY(100px);
       -ms-transform: translateY(100px);
           transform: translateY(100px);
+}
+
+.main-slider .caption .title {
+  font-size: 40px;
+  font-weight: bold;
+  letter-spacing: .02em;
+}
+
+.main-slider .caption .subtitle {
+  font-size: 26px;
 }
 
 .main-slider .slick-dots {
@@ -6413,6 +6633,7 @@ form small a:hover {
   -webkit-flex-wrap: wrap;
       -ms-flex-wrap: wrap;
           flex-wrap: wrap;
+  bottom: auto;
 }
 
 .main-slider .slick-dots li {
@@ -6446,6 +6667,10 @@ form small a:hover {
 
 .main-slider .slick-dots li button:hover {
   opacity: 1;
+}
+
+.main-slider .slick-dots li button::before {
+  content: "";
 }
 
 .main-slider .slick-dots li.slick-active button {
@@ -6603,6 +6828,13 @@ form small a:hover {
           transform: translate(-50%, -50%);
 }
 
+.content.load-imgs:before {
+  background: url(../img/hummer_b_w-t.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
 .content.hny2020:before {
   content: '';
   background-image: url(../img-hny2020/bg-ded-2.png), url(../img-hny2020/background-NG-3.jpg);
@@ -6650,6 +6882,19 @@ form small a:hover {
   opacity: 1;
 }
 
+.content.hbLena {
+  height: 100vh;
+}
+
+.content.load-imgs.hbLena:before {
+  content: '';
+  background-image: url(../img/birthday/Lena-dr-1920x1080.jpg);
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  opacity: 1;
+}
+
 .content.may9 {
   height: 470px;
 }
@@ -6677,13 +6922,6 @@ form small a:hover {
   background-position: center center;
   background-repeat: no-repeat;
   opacity: 1;
-}
-
-.content.load-imgs:before {
-  background: url(../img/hummer_b_w-t.jpg);
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center center;
 }
 
 .content.hny2020.load-imgs:before {
@@ -6730,6 +6968,10 @@ form small a:hover {
   position: absolute;
   z-index: -1;
   opacity: 0.5;
+}
+
+.content.hbLena:after {
+  background: none;
 }
 
 .content.mar8 button {
@@ -8187,12 +8429,16 @@ form .help-block {
     height: calc( 80vh - 90px);
     margin-top: 90px;
   }
+  .main-slider.slick-dotted.slick-slider {
+    margin-bottom: 5rem;
+  }
   .main-slider .slick-slide {
     height: calc( 80vh - 90px);
   }
   .main-slider .caption {
     top: 5vh;
     font-size: 32px;
+    text-align: center;
     width: 100%;
     left: auto;
     margin: 0 auto;

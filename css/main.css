@@ -6159,7 +6159,7 @@ section h2 {
 }
 
 .header__menu ul li {
-  margin-right: 32px;
+  margin: 0 5px;
   line-height: 1;
 }
 
@@ -7043,6 +7043,54 @@ form small a:hover {
   color: #fff !important;
   border-radius: 25px;
   background: #dc5c13;
+}
+
+.feedback-btns {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-justify-content: space-around;
+      -ms-flex-pack: distribute;
+          justify-content: space-around;
+  -webkit-flex-wrap: wrap;
+      -ms-flex-wrap: wrap;
+          flex-wrap: wrap;
+}
+
+.feedback-btns .btn {
+  max-width: initial;
+  margin: 10px;
+  padding: 10px 30px;
+  width: initial;
+  height: initial;
+  position: relative;
+}
+
+.feedback-btns .btn:before {
+  content: "";
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 50px;
+  height: 55px;
+  display: block;
+  position: absolute;
+  top: -24px;
+}
+
+.feedback-btns .btn.yandex:before {
+  background-image: url(../img/maps/yandex.svg);
+  left: -23px;
+}
+
+.feedback-btns .btn.google:before {
+  background-image: url(../img/maps/google.svg);
+  left: -17px;
+}
+
+.feedback-btns .btn.gis2:before {
+  background-image: url(../img/maps/2gis.svg);
+  left: -16px;
 }
 
 .doc-link__item {
@@ -8203,14 +8251,15 @@ form .help-block {
   }
   .header__menu ul {
     height: 100%;
-    -webkit-box-pack: center;
-    -webkit-justify-content: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-    -webkit-box-align: center;
-    -webkit-align-items: center;
-        -ms-flex-align: center;
-            align-items: center;
+    -webkit-box-pack: space-evenly;
+    -webkit-justify-content: space-evenly;
+        -ms-flex-pack: space-evenly;
+            justify-content: space-evenly;
+    -webkit-box-align: baseline;
+    -webkit-align-items: baseline;
+        -ms-flex-align: baseline;
+            align-items: baseline;
+    padding-top: 30px;
     z-index: -1;
     -webkit-box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.1);
             box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.1);
@@ -8296,6 +8345,12 @@ form .help-block {
   }
 }
 
+@media (max-width: 803.98px) {
+  .header__menu ul {
+    padding-top: 20px;
+  }
+}
+
 @media (max-width: 767.98px) {
   button:focus,
   select:focus {
@@ -8313,6 +8368,15 @@ form .help-block {
     -webkit-flex-direction: column;
         -ms-flex-direction: column;
             flex-direction: column;
+    padding-top: initial;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+        -ms-flex-align: center;
+            align-items: center;
   }
   .header__menu ul li {
     margin-right: 0;
@@ -8582,15 +8646,25 @@ form .help-block {
   }
   .header__menu {
     margin: 0px 20px;
-  }
-  .header__menu ul li {
-    margin-right: 16px;
-  }
-  .header__phone-wrap {
     -webkit-box-flex: 1;
     -webkit-flex: 1 0 auto;
         -ms-flex: 1 0 auto;
             flex: 1 0 auto;
+  }
+  .header__menu ul {
+    -webkit-box-pack: space-evenly;
+    -webkit-justify-content: space-evenly;
+        -ms-flex-pack: space-evenly;
+            justify-content: space-evenly;
+  }
+  .header__menu ul li.last {
+    display: none;
+  }
+  .header__phone-wrap {
+    -webkit-box-flex: 0;
+    -webkit-flex: 0 0 auto;
+        -ms-flex: 0 0 auto;
+            flex: 0 0 auto;
   }
   .about-text {
     max-width: 80%;
@@ -8598,9 +8672,6 @@ form .help-block {
 }
 
 @media (min-width: 1300px) {
-  .header__menu ul li {
-    margin-right: 32px;
-  }
   .about.feb14:after {
     background-position: -10vw 0;
   }

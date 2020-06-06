@@ -7712,6 +7712,27 @@ form small a:hover {
   margin: 20px 0;
 }
 
+.avtodetail .product .photo.embed-responsive,
+.avtopark .product .photo.embed-responsive {
+  overflow: inherit;
+}
+
+.avtodetail .product .photo.akcia:after,
+.avtopark .product .photo.akcia:after {
+  content: "";
+  background-image: url(/img/znachki/akciya-onesize.png);
+  background-repeat: no-repeat;
+  display: block;
+  bottom: 27px;
+  right: 0;
+  background-size: 149px;
+  background-position: bottom right;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: 1;
+}
+
 .avtodetail .product .photo img,
 .avtopark .product .photo img {
   width: auto;
@@ -7727,11 +7748,10 @@ form small a:hover {
 }
 
 .avtodetail .product .photo .new-avto,
-.avtopark .product .photo .new-avto {
+.avtodetail .product .photo .trailer-icon,
+.avtopark .product .photo .new-avto,
+.avtopark .product .photo .trailer-icon {
   display: block;
-  background: url(../img/on_pages/new-avto.png);
-  width: 115px;
-  height: 63px;
   background-repeat: no-repeat;
   position: absolute;
   right: 0;
@@ -7739,18 +7759,61 @@ form small a:hover {
   z-index: 10;
 }
 
+.avtodetail .product .photo .new-avto,
+.avtopark .product .photo .new-avto {
+  background-image: url(../img/on_pages/new-avto.png);
+  width: 115px;
+  height: 63px;
+}
+
 .avtodetail .product .photo .trailer-icon,
 .avtopark .product .photo .trailer-icon {
-  display: block;
-  background: url(../img/on_pages/trailer-icon-115x114-t.png);
+  background-image: url(../img/on_pages/trailer-icon-115x114-t.png);
   background-size: contain;
   width: 85px;
   height: 85px;
+}
+
+.avtodetail .product .photo .akciya-icon,
+.avtodetail .product .photo .hit-icon,
+.avtodetail .product .photo .skidka-icon,
+.avtodetail .product .photo .spec-icon,
+.avtopark .product .photo .akciya-icon,
+.avtopark .product .photo .hit-icon,
+.avtopark .product .photo .skidka-icon,
+.avtopark .product .photo .spec-icon {
+  display: block;
+  background-size: contain;
   background-repeat: no-repeat;
+  background-position: bottom right;
   position: absolute;
-  right: 0;
-  bottom: 10px;
+  right: -40px;
+  bottom: 50px;
   z-index: 10;
+  width: 50%;
+  height: 100%;
+  -webkit-filter: drop-shadow(-2px -2px 0px white);
+          filter: drop-shadow(-2px -2px 0px white);
+}
+
+.avtodetail .product .photo .akciya-icon,
+.avtopark .product .photo .akciya-icon {
+  background-image: url(../img/znachki/akciya-onesize.png);
+}
+
+.avtodetail .product .photo .hit-icon,
+.avtopark .product .photo .hit-icon {
+  background-image: url(../img/znachki/hit-onesize.png);
+}
+
+.avtodetail .product .photo .skidka-icon,
+.avtopark .product .photo .skidka-icon {
+  background-image: url(../img/znachki/skidka-onesize.png);
+}
+
+.avtodetail .product .photo .spec-icon,
+.avtopark .product .photo .spec-icon {
+  background-image: url(../img/znachki/spec-onesize.png);
 }
 
 .avtodetail .product .bronInfo,
@@ -8123,7 +8186,7 @@ table.color.avtopark td:first-child {
 
 .garland {
   height: 68px;
-  background: center center repeat-x url(../img-hny2020/garland.png);
+  background: center center repeat-x url(../img/hny2020/garland.png);
   margin-top: 3rem;
 }
 

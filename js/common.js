@@ -838,5 +838,53 @@ $(function() {
         // resizePlayer(iframes, window.innerWidth/window.innerHeight);
     });
 
+    // DAtaPicker
+
+    // Зададим стартовую дату
+    var start = new Date(),
+    prevDay,
+    startHours = 9;
+
+    // 09:00
+    start.setHours(9);
+    start.setMinutes(0);
+
+    // Если сегодня суббота или воскресенье - 10:00
+    if ([6,0].indexOf(start.getDay()) != -1) {
+        start.setHours(10);
+        startHours = 10
+    }
+
+    $('#timepicker-actions-exmpl').datepicker({
+        timepicker: true,
+        startDate: start,
+        minHours: startHours,
+        maxHours: 18,
+        onSelect: function(fd, d, picker) {
+            // Ничего не делаем если выделение было снято
+            if (!d) return;
+
+            var day = d.getDay();
+
+            // Обновляем состояние календаря только если была изменена дата
+            if (prevDay != undefined && prevDay == day) return;
+            prevDay = day;
+
+            // Если выбранный день суббота или воскресенье, то устанавливаем
+            // часы для выходных, в противном случае восстанавливаем начальные значения
+            if (day == 6 || day == 0) {
+                picker.update({
+                    minHours: 10,
+                    maxHours: 16
+                })
+            } else {
+                picker.update({
+                    minHours: 9,
+                    maxHours: 18
+                })
+            }
+        }
+    });
+
 
 }, jQuery);

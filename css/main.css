@@ -8171,6 +8171,39 @@ form small a:hover {
   margin-bottom: 25px;
 }
 
+.location-block textarea {
+  width: 91%;
+  margin-top: 25px;
+  resize: none;
+  overflow-y: auto;
+  padding: 8px 16px;
+  font-weight: 300;
+  height: auto;
+}
+
+@media (max-width: 767.98px) {
+  .location-block textarea {
+    width: 100%;
+    margin-top: 0;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .location-block .flex-row {
+    -webkit-box-orient: vertical !important;
+    -webkit-box-direction: normal !important;
+    -webkit-flex-direction: column !important;
+        -ms-flex-direction: column !important;
+            flex-direction: column !important;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .location-block .custom-radio-check {
+    margin-bottom: 15px;
+  }
+}
+
 .custom-radio-check input {
   width: 0 !important;
   height: 0 !important;
@@ -8295,6 +8328,84 @@ textarea:-moz-read-only {
 textarea:read-only {
   color: #8c8c8c;
   cursor: no-drop;
+}
+
+.form-footer {
+  background-color: #208fce;
+  padding: 20px 15px;
+  color: #fff;
+  font-size: 14px;
+}
+
+@media (max-width: 991.98px) {
+  .form-footer-col.w-30, .form-footer-col.w-40 {
+    width: 50%;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .form-footer-col.w-30, .form-footer-col.w-40 {
+    width: 100% !important;
+    margin-bottom: 20px;
+  }
+}
+
+@media (max-width: 991.98px) {
+  .form-footer-submit.w-30 {
+    width: 100%;
+  }
+}
+
+.form-footer-submit .btn {
+  margin: 0 auto;
+  height: auto;
+  text-align: center;
+  padding: 15px;
+}
+
+@media (max-width: 991.98px) {
+  .form-footer-submit .btn {
+    margin-left: 0;
+    margin-top: 20px;
+  }
+}
+
+.form-footer p a {
+  color: #fff;
+  text-decoration: underline;
+  white-space: nowrap;
+}
+
+.form-footer p a:hover {
+  text-decoration: none;
+}
+
+.w-30 {
+  width: 30%;
+}
+
+.w-40 {
+  width: 40%;
+}
+
+.rent_price-text {
+  min-width: 140px;
+}
+
+.rent_price p {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.rent_price #price-p {
+  font-size: 24px;
+  font-weight: 500;
 }
 
 .border-right-bottom-padding, table.color tr th, table.color tr td {

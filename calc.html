@@ -124,7 +124,7 @@
 				
 				<form action="">
 					
-					<div class="flex-row wrap">
+					<div class="flex-row wrap model">
 						
 						<div class="form-group select-model">
 							<p>Выберите автомобиль из списка:</p>
@@ -175,9 +175,9 @@
 						<!-- /.form-group -->
 
 					</div>
-					<!-- /.flex-row -->
+					<!-- /.flex-row model -->
 
-					<div class="flex-row wrap">
+					<div class="flex-row wrap date">
 						
 						<div class="form-group select-date">
 							<p>Начало и конец аренды:</p>
@@ -192,16 +192,16 @@
 						<!-- /.form-group select-date -->
 
 					</div>
-					<!-- /.flex-row wrap -->
+					<!-- /.flex-row wrap date-->
 
-					<div class="flex-row wrap">
+					<div class="flex-row wrap location">
 						
-						<div class="form-group width-50 location-in" id="location-in">
+						<div class="form-group width-50 location-block location-in" id="location-in">
 							<p>Где принимаете авто?</p>
-							<div class="flex-row wrap location-block">
+							<div class="flex-row wrap">
 								
 								<div class="custom-radio-check">
-									<input type="radio" name="location_in" id="location_in_office" value="В офисе">
+									<input type="radio" name="location_in" id="location_in_office" value="В офисе" checked>
 									<label for="location_in_office">В офисе</label>
 								</div>
 								<!-- /.custom-radio-check -->
@@ -220,15 +220,17 @@
 							<!-- /.flex-row wrap location-block -->
 
 							<textarea name="location-in" id="location_in_office_text" readonly>Самара, Заводское шоссе, 11 , офис 106</textarea>
+							<textarea name="location-in" id="location_in_address_text" placeholder="Введите адрес доставки" style="display: none;"></textarea>
+							<textarea name="location-in" id="location_in_airport_text" readonly style="display: none;">Аэропорт Самара (Курумоч), лит26</textarea>
 						</div>
-						<!-- /.form-group location -->
+						<!-- /.form-group location-block location-in -->
 
-						<div class="form-group width-50 location-to" id="location-to">
+						<div class="form-group width-50 location-block location-to" id="location-to">
 							<p>Где сдаете авто?</p>
 							<div class="flex-row wrap location-block">
 								
 								<div class="custom-radio-check">
-									<input type="radio" name="location_to" id="location_to_office" value="В офисе">
+									<input type="radio" name="location_to" id="location_to_office" value="В офисе" checked>
 									<label for="location_to_office">В офисе</label>
 								</div>
 								<!-- /.custom-radio-check -->
@@ -244,12 +246,38 @@
 								<!-- /.custom-radio-check -->
 
 							</div>
-							<!-- /.flex-row wrap location-block -->
+							<!-- /.flex-row wrap -->
+
+							<textarea name="location-in" id="location_to_office_text" readonly>Самара, Заводское шоссе, 11 , офис 106</textarea>
+							<textarea name="location-in" id="location_to_address_text" placeholder="Введите адрес доставки" style="display: none;"></textarea>
+							<textarea name="location-in" id="location_to_airport_text" readonly style="display: none;">Аэропорт Самара (Курумоч), лит26</textarea>
+
 						</div>
-						<!-- /.form-group location -->
+						<!-- /.form-group location location-block location-to -->
 
 					</div>
-					<!-- /.flex-row wrap -->
+					<!-- /.flex-row wrap location -->
+
+					<div class="flex-row align-center wrap form-footer">
+						
+						<div class="form-footer-col w-30 rent_price">
+							<p><span class="rent_price-text">Стоимость проката: </span><span id="price-p">0 ₽</span></p>
+							<p><span class="rent_price-text">Возвратный залог: </span><span id="price-z">0 ₽</span></p>
+						</div>
+						<!-- /.form-footer-col w-30 rent_price-->
+
+						<div class="form-footer-col w-40">
+							<p>Калькулятор является предварительным, о персональных скидках и специальных предложениях уточняйте в офисе <br>по телефону: <a href="tel:+78005500851">8 800 550-08-51</a></p>
+						</div>
+						<!-- /.form-footer-col w-30 -->
+
+						<div class="form-footer-col w-30 form-footer-submit">
+							<button type="submit" class="btn">Забронировать</button>
+						</div>
+						<!-- /.form-footer-col w-30 -->				
+
+					</div>
+					<!-- /.form-footer -->
 
 				</form>
 

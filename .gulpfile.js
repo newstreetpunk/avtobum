@@ -37,6 +37,13 @@ let projects = {
 				'!' + base.avtobum + '/base/objs.json'
 			],
 		},
+
+		forProd: [
+			'/**',
+			' * @author https://github.com/newstreetpunk',
+			' * @editor https://github.com/alexsab',
+			' */',
+			''].join('\n'),
 	},
 
 }
@@ -81,7 +88,7 @@ function avtobum_scripts() {
 	return src(projects.avtobum.scripts.src)
 	.pipe(concat(projects.avtobum.scripts.output))
 	// .pipe(uglify()) // Minify js (opt.)
-	.pipe(header(forProd))
+	.pipe(header(projects.avtobum.forProd))
 	.pipe(dest(projects.avtobum.scripts.dest))
 	.pipe(browserSync.stream())
 };

@@ -1,0 +1,302 @@
+
+.calcForm
+	width: 1073px
+	max-width: 100%
+	padding: 0 40px 25px 60px
+	box-sizing: border-box
+	background: #fff
+	// display: none
+	// position: fixed
+	z-index: 10000
+	// left: 50%
+	// top: 50%
+	// transform: translate(-50%, -50%)
+	min-height: 475px
+
+	&-close
+		width: 19px
+		height: 20px
+		background: url('../img/calc/close-btn.png') no-repeat
+		position: absolute
+		right: -20px
+		top: 20px
+		cursor: pointer
+	&-step2 &-close
+		right: 20px
+
+	&-theme
+		color: #52c14a
+		font-size: 30px
+		margin: 30px 0
+		line-height: 100%
+		font-weight: bold
+
+	&-step1
+		width: 100%
+		height: 400px
+		height: 418px
+		margin: 0
+		background: #fff
+		position: relative
+
+		p
+			color: #1e2128
+			font-size: 14px
+			width: 100%
+			margin-bottom: 8px
+			float: left
+			font-family: Arial, Helvetica, sans-serif
+			line-height: 130%
+
+		input
+			border: none
+			outline: none
+			width: 185px
+			padding: 0 0 0 10px
+			height: 27px
+			line-height: 27px
+			font-size: 12px
+			color: #808080
+			float: left
+			border-radius: 15px
+			background: #e8e4e4
+			font-family: Arial, Helvetica, sans-serif
+
+			&::-webkit-input-placeholder, &:-moz-placeholder
+				color: #808080
+				font-size: 12px
+
+			&[type="checkbox"]
+				position: absolute
+				left: -9999px
+
+				+ label
+					width: auto
+
+					/*background: url('../img/calc/check.png') 0 -37px no-repeat;*/
+					background: url('../img/calc/uncheck.png') no-repeat
+					padding: 2px 0 2px 30px
+					line-height: 130%
+					min-height: 18px
+					color: #6b6b6b
+					font-size: 14px
+					font-family: Arial, Helvetica, sans-serif
+					float: left
+					cursor: pointer
+					margin: 2px 0 0 0
+
+				&:checked + label
+					/*background: url('../img/calc/check.png') 0 0 no-repeat;*/
+					background: url('../img/calc/checked.png') no-repeat
+					color: #52ae59
+
+
+
+	&-select_auto
+		float: left
+		width: 220px
+		margin-bottom: 25px
+		display: inline-block
+		margin-right: 30px
+
+	&-dop_options
+		max-width: 720px
+		display: inline-block
+
+	&-options_list
+		display: flex
+		flex-wrap: wrap
+		justify-content: space-between
+		align-items: center
+		width: 100%
+		min-height: 40px
+
+	&-rent_start, &-rent_end
+		display: block
+
+	&-rent_start
+		&::before
+			content: 'с'
+			display: inline-block
+			margin-right: 10px
+			font-size: 14px
+			color: #8b8b8b
+			float: left
+			margin-top: 14px
+
+		&::after
+			content: '—'
+			display: inline-block
+			margin: 0 10px
+			font-size: 18px
+			color: #1f1f1f
+			float: left
+			margin-top: 11px
+
+	&-rent_end::before
+		content: 'до'
+		display: inline-block
+		margin-right: 10px
+		font-size: 14px
+		color: #8b8b8b
+		float: left
+		margin-top: 14px
+
+	&-rent_time
+		width: 100%
+		margin-bottom: 35px
+		display: inline-block
+
+	.tabnav
+		width: 100%
+		display: flex
+		flex-wrap: wrap
+		justify-content: space-between
+		margin-bottom: 15px
+
+		li
+			a
+				color: #878787
+				font-size: 14px
+				padding: 14px 20px
+				text-decoration: none
+				border: 1px solid #dddddd
+				border-radius: 50px
+
+			&.ui-tabs-selected a
+				background-color: #52ae59
+				color: #fff
+				border-color: #52ae59
+
+			padding-bottom: 15px
+
+	.tabtext
+		width: 100%
+		border: 1px solid #dddddd
+		font-family: Arial, Helvetica, sans-serif
+
+		/*margin-top: 15px;*/
+		font-size: 14px
+
+		&:read-only
+			color: #8c8c8c
+			cursor: no-drop
+
+	.ui-tabs-hide
+		display: none
+
+	&-rent_place
+		width: 100%
+		display: flex
+		flex-wrap: wrap
+		justify-content: space-between
+		margin-bottom: 40px
+		p
+			margin-bottom: 22px
+
+	&-location_block
+		width: 440px
+
+		#location-in
+			margin-right: 50px
+
+	&-rent_footer
+		background: #52ae59
+		display: flex
+		width: 100%
+		padding: 25px 40px 25px 61px
+		margin-right: -40px
+		margin-left: -61px
+		flex-wrap: wrap
+		justify-content: space-between
+
+	&-rent_price
+		max-width: 250px
+
+		p
+			color: #fff
+			font-size: 12px
+
+			#price-p
+				font-size: 24px
+				font-weight: bold
+
+			#price-z
+				font-size: 16px
+
+	&-foot_desc
+		width: 340px
+
+		p
+			color: #a5e9ab
+			font-size: 12px
+
+			a
+				color: #a5e9ab
+
+	&-summa
+		width: 300px
+		min-height: 1px
+		text-align: right
+		padding-top: 18px
+
+		.bron
+			color: #fff
+			background-color: #e94d19
+			border-radius: 50px
+			padding: 17px 70px
+			font-size: 20px
+			cursor: pointer
+		.re
+			width: 25px
+			height: 26px
+			background: url('../img/calc/strReload.png') no-repeat
+			position: absolute
+			right: 325px
+			margin-top: -12px
+			cursor: pointer
+		
+		#calcBron
+			display: none
+
+
+
+
+
+.jq-selectbox__select, .calcForm .form input
+	margin: 0 !important
+	font-size: 14px !important
+	border-radius: 2px !important
+	margin-right: 5px !important
+	background: #fff !important
+	border: 1px solid #d7dae1 !important
+	height: 40px !important
+	width: 137px !important
+
+.jq-selectbox__select-text
+	margin-top: 13px !important
+
+#marka-styler .jq-selectbox__select
+	width: 212px !important
+
+.jq-selectbox__trigger-arrow
+	background: url('../img/calc/strselect.png') no-repeat !important
+	top: 20px !important
+
+.jq-selectbox ul
+	width: 260px
+	background: #fff
+	border: 1px solid #d7dae1
+	max-height: 400px !important
+
+#rent-start-time-styler.jq-selectbox ul, #rent-end-time-styler.jq-selectbox ul
+	width: 146px
+
+
+
+
+@media only screen and (max-width: 425px)
+	.calcForm-close
+		right: 0
+
+

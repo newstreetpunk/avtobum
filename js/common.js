@@ -834,7 +834,7 @@ $(function() {
       // resizePlayer(iframes, window.innerWidth/window.innerHeight);
     });
 
-
+    $('select').styler();
 
 
 

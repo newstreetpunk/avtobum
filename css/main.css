@@ -8134,12 +8134,33 @@ form small a:hover {
   width: 100%;
 }
 
+.calc input {
+  width: auto;
+}
+
+.width-50 {
+  width: 50%;
+}
+
+@media (max-width: 767.98px) {
+  .width-50 {
+    width: 100%;
+  }
+}
+
 .form-group {
   margin-bottom: 30px;
 }
 
 .form-group p {
   margin-bottom: 10px;
+  font-weight: 500;
+}
+
+@media (max-width: 767.98px) {
+  .form-group span {
+    display: none;
+  }
 }
 
 .select-model {
@@ -8150,14 +8171,44 @@ form small a:hover {
   margin-bottom: 25px;
 }
 
+.custom-radio-check input {
+  width: 0 !important;
+  height: 0 !important;
+  margin: 0;
+  opacity: 0 !important;
+}
+
+.custom-radio-check input:checked ~ label {
+  background-color: #208fce;
+  color: #fff;
+}
+
+.custom-radio-check label {
+  margin: 0 15px 0 0;
+  background-color: #f0f0f0;
+  padding: 12px 30px;
+  border-radius: 30px;
+  cursor: pointer;
+  -webkit-transition: all .25s ease;
+  -o-transition: all .25s ease;
+  transition: all .25s ease;
+}
+
 .custom-check {
   margin-bottom: 5px;
 }
 
+@media (max-width: 575.98px) {
+  .custom-check {
+    width: 100%;
+  }
+}
+
 .custom-check input {
-  width: 0;
+  width: 0 !important;
+  height: 0 !important;
   margin: 0;
-  opacity: 0;
+  opacity: 0 !important;
 }
 
 .custom-check input:checked ~ label {
@@ -8202,6 +8253,38 @@ form small a:hover {
   -o-transition: all .25s ease;
   transition: all .25s ease;
   opacity: 0;
+}
+
+@media (max-width: 575.98px) {
+  .select-date {
+    width: 100%;
+  }
+}
+
+.fieldset-date {
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 100%;
+}
+
+.fieldset-date input {
+  margin: 0 10px;
+}
+
+@media (max-width: 767.98px) {
+  .fieldset-date input {
+    margin: 0;
+    width: 48%;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .fieldset-date input {
+    width: 100%;
+    margin: 0 0 15px;
+  }
 }
 
 .border-right-bottom-padding, table.color tr th, table.color tr td {

@@ -1,10 +1,21 @@
 .calc
 	width: 100%
+	input
+		width: auto
+
+.width-50
+	width: 50%
+	+media-breakpoint-down(sm)
+		width: 100%
 
 .form-group
 	margin-bottom: 30px
 	p
 		margin-bottom: 10px
+		font-weight: 500
+	span
+		+media-breakpoint-down(sm)
+			display: none
 
 .select-model
 	margin-right: 30px
@@ -12,12 +23,35 @@
 .dop-uslugi
 	margin-bottom: 25px
 
+.location-block
+
+
+.custom-radio-check
+	input
+		width: 0 !important
+		height: 0 !important
+		margin: 0
+		opacity: 0 !important
+		&:checked ~ label
+			background-color: $accent
+			color: $white
+	label
+		margin: 0 15px 0 0
+		background-color: #f0f0f0
+		padding: 12px 30px
+		border-radius: 30px
+		cursor: pointer
+		transition: all .25s ease
+
 .custom-check
 	margin-bottom: 5px
+	+media-breakpoint-down(xs)
+		width: 100%
 	input
-		width: 0
+		width: 0 !important
+		height: 0 !important
 		margin: 0
-		opacity: 0
+		opacity: 0 !important
 		&:checked ~ label
 			color: $accent
 			&::after
@@ -50,3 +84,17 @@
 			border-radius: 1px
 			transition: all .25s ease
 			opacity: 0
+.select-date
+	+media-breakpoint-down(xs)
+		width: 100%
+.fieldset-date
+	justify-content: space-between
+	width: 100%
+	input
+		margin: 0 10px
+		+media-breakpoint-down(sm)
+			margin: 0
+			width: 48%
+		+media-breakpoint-down(xs)
+			width: 100%
+			margin: 0 0 15px

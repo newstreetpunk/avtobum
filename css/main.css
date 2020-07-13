@@ -8287,6 +8287,16 @@ form small a:hover {
   }
 }
 
+textarea:-moz-read-only {
+  color: #8c8c8c;
+  cursor: no-drop;
+}
+
+textarea:read-only {
+  color: #8c8c8c;
+  cursor: no-drop;
+}
+
 .border-right-bottom-padding, table.color tr th, table.color tr td {
   border-right: 1px solid #dc5c13;
   border-bottom: 1px solid #dc5c13;

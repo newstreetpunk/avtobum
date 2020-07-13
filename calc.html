@@ -124,7 +124,58 @@
 				
 				<form action="">
 					
-					
+					<div class="flex-row wrap">
+						
+						<div class="form-group select-model">
+							<p>Выберите автомобиль из списка:</p>
+							<select name="select-model" id="select-model">
+								<option value="0" selected>Выбор автомобиля</option>
+								<option value="135">Toyota Land Cruiser 100* АТ 4WD</option>
+								<option value="93">Hyundai Accent</option>
+								<option value="129">Suzuki Liana At 4WD</option>
+								<option value="122">Chevrolet Cruze</option>
+								<option value="195">Chevrolet Niva</option>
+							</select>
+						</div>
+						<!-- /.form-group -->
+
+						<div class="form-group  dop-uslugi">
+							<p>Дополнительные услуги:</p>
+							<div class="flex-row wrap">
+
+								<div class="custom-check flex-row">
+									<input type="checkbox" data-prodid="600" data-ed="рубли" name="checks[1]" id="checkbox-id1" value="Мойка">
+									<label for="checkbox-id1">Мойка</label>
+								</div>
+								<!-- /.custom-check -->
+								<div class="custom-check flex-row">
+									<input type="checkbox" data-prodid="100" data-ed="рубли/сутки" name="checks[2]" id="checkbox-id2" value="Детское кресло">
+									<label for="checkbox-id2">Детское кресло</label>
+								</div>
+								<!-- /.custom-check -->
+								<div class="custom-check flex-row">
+									<input type="checkbox" data-prodid="100" data-ed="рубли/сутки" name="checks[3]" id="checkbox-id3" value="Навигатор">
+									<label for="checkbox-id3">Навигатор</label>
+								</div>
+								<!-- /.custom-check -->
+								<div class="custom-check flex-row">
+									<input type="checkbox" data-prodid="50" data-ed="% от стоимости проката" name="checks[4]" id="checkbox-id4" value="Без ограничения по пробегу">
+									<label for="checkbox-id4">Без ограничения по пробегу</label>
+								</div>
+								<!-- /.custom-check -->
+								<div class="custom-check flex-row">
+									<input type="checkbox" data-prodid="protection" data-ed="рубли" name="checks[5]" id="checkbox-id5" value="Защита при ДТП">
+									<label for="checkbox-id5">Защита при ДТП</label>
+								</div>
+								<!-- /.custom-check -->
+
+							</div>
+							<!-- /.flex-row -->
+						</div>
+						<!-- /.form-group -->
+
+					</div>
+					<!-- /.flex-row -->
 
 				</form>
 

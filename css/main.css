@@ -10210,14 +10210,49 @@ textarea:read-only {
   color: #208fce;
 }
 
+.modal__calc-right ul li span:last-child.rental-price-info span {
+  color: #208fce;
+}
+
 .modal__calc-close {
   cursor: pointer;
   position: absolute;
-  right: 20px;
-  top: 20px;
+  right: 15px;
+  top: 15px;
   width: 30px;
   height: 30px;
-  border: 1px solid;
+  -webkit-transition: all .2s ease;
+  -o-transition: all .2s ease;
+  transition: all .2s ease;
+  opacity: .6;
+}
+
+.modal__calc-close:hover {
+  opacity: 1;
+}
+
+.modal__calc-close:before, .modal__calc-close:after {
+  content: '';
+  display: block;
+  width: 16px;
+  height: 1px;
+  background-color: #000;
+  position: absolute;
+  top: 50%;
+}
+
+.modal__calc-close:before {
+  left: 7px;
+  -webkit-transform: rotate(45deg);
+      -ms-transform: rotate(45deg);
+          transform: rotate(45deg);
+}
+
+.modal__calc-close:after {
+  right: 7px;
+  -webkit-transform: rotate(-45deg);
+      -ms-transform: rotate(-45deg);
+          transform: rotate(-45deg);
 }
 
 .overlay {

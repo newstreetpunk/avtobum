@@ -7575,16 +7575,16 @@ body {
   color: #000;
 }
 
-body input, body textarea {
-  border: #666 1px solid;
+body input:not([type="range"]), body textarea {
+  border: none;
   outline: none;
 }
 
-body input:focus:required:invalid, body textarea:focus:required:invalid {
+body input:not([type="range"]):focus:required:invalid, body textarea:focus:required:invalid {
   border-color: red;
 }
 
-body input:required:valid, body textarea:required:valid {
+body input:not([type="range"]):required:valid, body textarea:required:valid {
   border-color: green;
 }
 
@@ -7673,7 +7673,7 @@ button {
   height: 2px;
   background-color: #fff;
   display: block;
-  margin: 4.5px auto;
+  margin: 4px auto;
   position: relative;
   -webkit-transition: all .2s ease-in-out;
   -o-transition: all .2s ease-in-out;
@@ -9765,7 +9765,7 @@ form small a:hover {
 }
 
 @media (max-width: 767.98px) {
-  .form-group span {
+  .form-group .pretext {
     display: none;
   }
 }
@@ -9779,6 +9779,7 @@ form small a:hover {
 }
 
 .location-block textarea {
+  background-color: #f0f0f0;
   width: 91%;
   margin-top: 25px;
   resize: none;
@@ -10016,8 +10017,102 @@ textarea:read-only {
   font-weight: 500;
 }
 
+.select2-container--default .select2-selection--single {
+  background-color: #f0f0f0;
+  border-radius: 0;
+  border: none;
+  outline: none;
+  padding: 6px 12px;
+  height: auto;
+}
+
+.select2-container--default .select2-selection--single .select2-selection__arrow b {
+  display: none;
+}
+
+.select2-container--default .select2-selection--single .select2-selection__arrow {
+  height: 100%;
+  top: 0;
+  width: 30px;
+}
+
+.select2-container--default .select2-selection--single .select2-selection__arrow:before, .select2-container--default .select2-selection--single .select2-selection__arrow:after {
+  content: '';
+  display: block;
+  width: 8px;
+  height: 1px;
+  background-color: #404040;
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+      -ms-transform: translateY(-50%);
+          transform: translateY(-50%);
+  -webkit-transition: all .25s ease-in-out;
+  -o-transition: all .25s ease-in-out;
+  transition: all .25s ease-in-out;
+}
+
+.select2-container--default .select2-selection--single .select2-selection__arrow:before {
+  -webkit-transform: rotate(40deg);
+      -ms-transform: rotate(40deg);
+          transform: rotate(40deg);
+  left: 50%;
+  margin-left: -8px;
+}
+
+.select2-container--default .select2-selection--single .select2-selection__arrow:after {
+  -webkit-transform: rotate(-40deg);
+      -ms-transform: rotate(-40deg);
+          transform: rotate(-40deg);
+  right: 50%;
+  margin-right: -6px;
+}
+
+.select2-container--default.select2-container--open .select2-selection--single .select2-selection__arrow {
+  -webkit-transform: rotate(360deg);
+      -ms-transform: rotate(360deg);
+          transform: rotate(360deg);
+}
+
+.select2-container--default.select2-container--open .select2-selection--single .select2-selection__arrow:before {
+  -webkit-transform: rotate(-220deg);
+      -ms-transform: rotate(-220deg);
+          transform: rotate(-220deg);
+  background-color: #208fce;
+}
+
+.select2-container--default.select2-container--open .select2-selection--single .select2-selection__arrow:after {
+  -webkit-transform: rotate(220deg);
+      -ms-transform: rotate(220deg);
+          transform: rotate(220deg);
+  background-color: #208fce;
+}
+
+.select2-container--default .select2-results__option--selected {
+  background-color: #f0f0f0;
+}
+
+.select2-container--default .select2-results__option--highlighted.select2-results__option--selectable {
+  background-color: #208fce;
+}
+
+.select2-dropdown {
+  border: none;
+  -webkit-box-shadow: 0 20px 30px rgba(64, 64, 64, 0.2);
+          box-shadow: 0 20px 30px rgba(64, 64, 64, 0.2);
+  border-radius: 0;
+}
+
+.select2-container--default .select2-results > .select2-results__options {
+  max-height: 300px;
+}
+
 .datepicker {
   z-index: 1000;
+}
+
+.datepicker--time-row:last-child, .datepicker--time-row input[name='minutes'] {
+  display: none !important;
 }
 
 .border-right-bottom-padding, table.color tr th, table.color tr td {

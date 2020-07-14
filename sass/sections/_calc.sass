@@ -13,7 +13,7 @@
 	p
 		margin-bottom: 10px
 		font-weight: 500
-	span
+	.pretext
 		+media-breakpoint-down(sm)
 			display: none
 
@@ -25,6 +25,7 @@
 
 .location-block
 	textarea
+		background-color: #f0f0f0
 		width: 91%
 		margin-top: 25px
 		resize: none
@@ -166,6 +167,68 @@ textarea:read-only
 		font-size: 24px
 		font-weight: 500
 
+// Custom Select2
+
+.select2-container--default .select2-selection--single
+	background-color: #f0f0f0
+	border-radius: 0
+	border: none
+	outline: none
+	padding: 6px 12px
+	height: auto
+
+.select2-container--default .select2-selection--single .select2-selection__arrow b
+	display: none
+
+.select2-container--default .select2-selection--single .select2-selection__arrow
+	height: 100%
+	top: 0
+	width: 30px
+	&:before, &:after
+		content: ''
+		display: block
+		width: 8px
+		height: 1px
+		background-color: $text2
+		position: absolute
+		top: 50%
+		transform: translateY(-50%)
+		transition: all .25s ease-in-out
+	&:before
+		transform: rotate(40deg)
+		left: 50%
+		margin-left: -8px
+	&:after
+		transform: rotate(-40deg)
+		right: 50%
+		margin-right: -6px
+
+.select2-container--default.select2-container--open .select2-selection--single .select2-selection__arrow
+	transform: rotate(360deg)
+	&:before
+		transform: rotate(-220deg)
+		background-color: $accent
+	&:after
+		transform: rotate(220deg)
+		background-color: $accent
+.select2-container--default .select2-results__option--selected
+	background-color: #f0f0f0
+.select2-container--default .select2-results__option--highlighted.select2-results__option--selectable
+	background-color: $accent
+.select2-dropdown
+	border: none
+	box-shadow: 0 20px 30px rgba($text2, .2)
+	border-radius: 0
+.select2-container--default .select2-results > .select2-results__options
+	max-height: 300px
+
+
+
+
+// Custom DataPicker
 .datepicker
 	z-index: 1000
+
+.datepicker--time-row:last-child(), .datepicker--time-row input[name='minutes']
+	display: none !important
 

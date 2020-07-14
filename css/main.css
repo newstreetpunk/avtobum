@@ -9806,7 +9806,7 @@ form small a:hover {
   }
 }
 
-@media (max-width: 767.98px) {
+@media (max-width: 1339px) {
   .location-block .custom-radio-check {
     margin-bottom: 15px;
   }
@@ -9945,22 +9945,9 @@ textarea:read-only {
   font-size: 14px;
 }
 
-@media (max-width: 991.98px) {
-  .form-footer-col.w-30, .form-footer-col.w-40 {
-    width: 50%;
-  }
-}
-
 @media (max-width: 767.98px) {
-  .form-footer-col.w-30, .form-footer-col.w-40 {
-    width: 100% !important;
+  .form-footer-col {
     margin-bottom: 20px;
-  }
-}
-
-@media (max-width: 991.98px) {
-  .form-footer-submit.w-30 {
-    width: 100%;
   }
 }
 
@@ -9969,11 +9956,11 @@ textarea:read-only {
   height: auto;
   text-align: center;
   padding: 15px;
-  display: none;
 }
 
 @media (max-width: 991.98px) {
   .form-footer-submit .btn {
+    max-width: 100%;
     margin-left: 0;
     margin-top: 20px;
   }
@@ -9987,14 +9974,6 @@ textarea:read-only {
 
 .form-footer p a:hover {
   text-decoration: none;
-}
-
-.w-30 {
-  width: 30%;
-}
-
-.w-40 {
-  width: 40%;
 }
 
 .rent_price-text {

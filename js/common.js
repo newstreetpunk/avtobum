@@ -499,7 +499,7 @@ $(function() {
 		/* ленивая загрузка картинок */
 		lazyload();
 
-		$('.calcForm select').styler();
+		// $('.calcForm select').styler();
 
 	});
 	
@@ -837,8 +837,6 @@ $(function() {
 		// resizePlayer(iframes, 9/16);
 		// resizePlayer(iframes, window.innerWidth/window.innerHeight);
 	});
-
-	/* =================== DIY ===================== */
 	
 	// Select2 for Calc
 
@@ -894,12 +892,16 @@ $(function() {
 	});
     $endPicker.data('datepicker').selectDate(tomorrow);
 
-	/* =================== DIY End ===================== */
-
 
     function calc() {
         $('#price-p span')[0].innerText = Math.round(Math.random()*10000);
         $('#price-z span')[0].innerText = Math.round(Math.random()*10000);
     }
+
+    $('#form-calc').submit(function(){
+    	var data = $(this).serializeArray();
+    	console.log(data);
+    	return false;
+    });
 
 }, jQuery);

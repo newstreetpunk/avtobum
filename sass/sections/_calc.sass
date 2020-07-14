@@ -222,3 +222,71 @@ textarea:read-only
 .datepicker--time-row:last-child(), .datepicker--time-row input[name='minutes']
 	display: none !important
 
+
+
+.modal__calc
+	&-wrap
+		position: absolute
+		top: 0
+		left: 0
+		width: 100%
+		height: 100%
+	&-form
+		position: fixed
+		left: 50%
+		top: 50%
+		background-color: $white
+		transform: translate(-50%, -50%)
+		max-width: 800px
+		width: 98%
+		height: auto
+		z-index: 2000
+		display: flex
+	&-left
+		width: 50%
+		padding: 40px 30px
+		color: $white
+		background-color: $accent
+		h4
+			font-size: 24px
+			text-align: center
+			margin-top: 0
+		.subtitle
+			display: block
+			text-align: center
+		.btn
+			width: 100%
+			max-width: 100%
+			text-align: center
+			display: block
+		form
+			small
+				font-size: 14px
+				text-align: center
+				a
+					color: $orange
+					border-color: $orange
+					&:hover
+						border: none
+	&-right
+		width: 50%
+		padding: 40px 30px
+		h4
+			font-size: 24px
+			color: $accent
+	&-close
+		cursor: pointer
+		position: absolute
+		right: 20px
+		top: 20px
+		width: 30px
+		height: 30px
+		border: 1px solid
+.overlay
+	width: 100%
+	height: 100%
+	position: absolute
+	top: 0
+	left: 0
+	background-color: rgba(0,0,0,.5)
+	z-index: 2000

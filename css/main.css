@@ -10104,6 +10104,15 @@ textarea:read-only {
   display: none;
 }
 
+@media (max-width: 767.98px) {
+  .modal__calc-wrap {
+    min-height: 100vh;
+    overflow: auto;
+    position: fixed;
+    z-index: 9999;
+  }
+}
+
 .modal__calc-form {
   position: fixed;
   left: 50%;
@@ -10122,11 +10131,40 @@ textarea:read-only {
   display: flex;
 }
 
+@media (max-width: 767.98px) {
+  .modal__calc-form {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: reverse;
+    -webkit-flex-direction: column-reverse;
+        -ms-flex-direction: column-reverse;
+            flex-direction: column-reverse;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+        -ms-flex-align: center;
+            align-items: center;
+    top: 1%;
+    left: 1%;
+    -webkit-transform: translate(0, 0);
+        -ms-transform: translate(0, 0);
+            transform: translate(0, 0);
+    position: relative;
+  }
+  .modal__calc-form > div {
+    width: 100%;
+  }
+}
+
 .modal__calc-left {
   width: 50%;
   padding: 40px 30px;
   color: #fff;
   background-color: #208fce;
+}
+
+@media (max-width: 575.98px) {
+  .modal__calc-left {
+    padding: 30px 15px;
+  }
 }
 
 .modal__calc-left h4 {
@@ -10166,6 +10204,12 @@ textarea:read-only {
   padding: 40px 30px;
 }
 
+@media (max-width: 575.98px) {
+  .modal__calc-right {
+    padding: 30px 15px;
+  }
+}
+
 .modal__calc-right h4 {
   font-size: 24px;
   color: #208fce;
@@ -10187,6 +10231,17 @@ textarea:read-only {
   margin-bottom: 8px;
 }
 
+@media (max-width: 575.98px) {
+  .modal__calc-right ul li {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    margin-bottom: 12px;
+  }
+}
+
 .modal__calc-right ul li.rental-price-wrap {
   -webkit-box-align: center;
   -webkit-align-items: center;
@@ -10194,15 +10249,39 @@ textarea:read-only {
           align-items: center;
 }
 
+@media (max-width: 575.98px) {
+  .modal__calc-right ul li.rental-price-wrap {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: row;
+        -ms-flex-direction: row;
+            flex-direction: row;
+  }
+  .modal__calc-right ul li.rental-price-wrap ~ li {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: row;
+        -ms-flex-direction: row;
+            flex-direction: row;
+  }
+}
+
 .modal__calc-right ul li span:first-child {
   min-width: 150px;
   margin-right: 10px;
   color: #404040;
+  margin-bottom: 0;
 }
 
 .modal__calc-right ul li span:last-child {
   font-weight: 500;
   text-align: right;
+}
+
+@media (max-width: 575.98px) {
+  .modal__calc-right ul li span:last-child {
+    text-align: left;
+  }
 }
 
 .modal__calc-right ul li span:last-child.rental-price-info {

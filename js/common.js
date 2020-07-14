@@ -851,102 +851,55 @@ $(function() {
 		$('.form-footer-submit .btn').show(200);
 	});
 
+
+    $('.calc #select-model, .calc input[type=checkbox], .calc input[type=radio]').change(function() {
+        calc();
+    });
+
 	// Select2 for Calc End
 
 	// DAtaPicker
 	// Зададим стартовую дату
-	var start = new Date(),
-	prevDay,
-	startHours = new Date().toLocaleTimeString().slice(0,-6);
 
-	var tomorrow = new Date(start.getTime() + (24 * 60 * 60 * 1000));
-	var dayTomorrow = tomorrow.getDate(); 
-	var a = tomorrow.getMonth() + 1;
+    var today = new Date(),
+        tomorrow = new Date(),
+        $startPicker = $('#timepicker-actions-in'),
+        $endPicker = $('#timepicker-actions-to');
 
-	if (a < 10) {
-		var monthTomorrow = '0' + a; //в js месяц отсчитывается с нуля
-	}else{
-		var monthTomorrow = a; //в js месяц отсчитывается с нуля
-	}
-	
-	var yearTomorrow = tomorrow.getFullYear();
-	var strTomorrow = dayTomorrow +'.'+ monthTomorrow +'.'+ yearTomorrow;
+    today.setMinutes(0);
+    tomorrow.setMinutes(0);
+    tomorrow.setDate(today.getDate() + 1);
 
-	// 09:00
-	start.setHours(new Date().toLocaleTimeString().slice(0,-6));
-	start.setMinutes(0);
-
-	// Если сегодня суббота или воскресенье - 10:00
-	if ([6,0].indexOf(start.getDay()) != -1) {
-		start.setHours(10);
-		startHours = 10
-	}
-
-	$('#timepicker-actions-in').val( new Date().toLocaleDateString() + ' ' + new Date().toLocaleTimeString().slice(0,-6) + ':00').datepicker({
+	$startPicker.datepicker({
 		timepicker: true,
-		minDate: start,
-		startDate: start,
-		minHours: startHours,
-		maxHours: 23,
+		minDate: today,
+		startDate: today,
 		onSelect: function(fd, d, picker) {
 			// Ничего не делаем если выделение было снято
 			if (!d) return;
-
-			var day = d.getDay();
-
-			// Обновляем состояние календаря только если была изменена дата
-			if (prevDay != undefined && prevDay == day) return;
-			prevDay = day;
-
-			// Если выбранный день суббота или воскресенье, то устанавливаем
-			// часы для выходных, в противном случае восстанавливаем начальные значения
-			if (day == 6 || day == 0) {
-				picker.update({
-					minHours: 10,
-					maxHours: 16
-				})
-			} else {
-				picker.update({
-					minHours: new Date().toLocaleTimeString().slice(0,-6),
-					maxHours: 23
-				})
-			}
+            calc();
 		}
 	});
+    $startPicker.data('datepicker').selectDate(today);
 
-	$('#timepicker-actions-to').val( strTomorrow + ' ' + new Date().toLocaleTimeString().slice(0,-6) + ':00').datepicker({
+	$endPicker.datepicker({
 		timepicker: true,
-		minDate: tomorrow,
+		minDate: today,
 		startDate: tomorrow,
-		minHours: startHours,
-		maxHours: 23,
 		onSelect: function(fd, d, picker) {
 			// Ничего не делаем если выделение было снято
 			if (!d) return;
-
-			var day = d.getDay();
-
-			// Обновляем состояние календаря только если была изменена дата
-			if (prevDay != undefined && prevDay == day) return;
-			prevDay = day;
-
-			// Если выбранный день суббота или воскресенье, то устанавливаем
-			// часы для выходных, в противном случае восстанавливаем начальные значения
-			if (day == 6 || day == 0) {
-				picker.update({
-					minHours: 10,
-					maxHours: 16
-				})
-			} else {
-				picker.update({
-					minHours: new Date().toLocaleTimeString().slice(0,-6),
-					maxHours: 23
-				})
-			}
+            calc();
 		}
 	});
+    $endPicker.data('datepicker').selectDate(tomorrow);
 
 	/* =================== DIY End ===================== */
 
+
+    function calc() {
+        $('#price-p span')[0].innerText = Math.round(Math.random()*10000);
+        $('#price-z span')[0].innerText = Math.round(Math.random()*10000);
+    }
 
 }, jQuery);

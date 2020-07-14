@@ -900,8 +900,12 @@ $(function() {
 
     $('#form-calc').submit(function(){
     	var data = $(this).serializeArray();
-    	console.log(data);
+    	$('.modal__calc-wrap').show();
     	return false;
+    });
+
+    $('.modal__calc-close').click(function(){
+    	$(this).closest('.modal__calc-wrap').hide();
     });
 
 }, jQuery);

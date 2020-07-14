@@ -839,9 +839,7 @@ $(function() {
 	});
 
 	/* =================== DIY ===================== */
-
-	console.log(new Date());
-
+	
 	// Select2 for Calc
 
 	$('#select-model').select2({

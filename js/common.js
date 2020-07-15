@@ -928,7 +928,14 @@ $(function() {
     		textarea.removeAttr('placeholder').attr('readonly', true).val('Самара, Заводское шоссе, 11 , офис 106');
     	}
     	if( id == name+'_address' ){
-    		textarea.removeAttr('readonly').attr('placeholder', 'Введите адрес доставки').text('').val('');
+    		textarea.keydown(function(){
+    			localStorage.setItem('address', textarea.val());
+    		});
+    		var address = localStorage.getItem('address');
+    			console.log(address);
+
+    		textarea.removeAttr('readonly').attr('placeholder', 'Введите адрес доставки').text(address).val(address);
+    		
     	}
     	if( id == name+'_airport' ){
     		textarea.removeAttr('placeholder').attr('readonly', true).val('Аэропорт Самара (Курумоч), лит26');

@@ -908,11 +908,33 @@ $(function() {
     	$('.refund-info span').text(priceZ);
 
     	$('.modal__calc-wrap').show();
+
+    	console.log(data);
     	return false;
     });
 
     $('.modal__calc-close, .overlay').click(function(){
     	$(this).closest('.modal__calc-wrap').hide();
+    });
+
+    $('.custom-radio-check input').change(function(){
+    	var th = $(this),
+    		name = th.attr('name'),
+    		id = th.attr('id'),
+    		parent = th.closest('.location-block'),
+    		textarea = parent.children('#'+ name +'_text');
+    	
+    	if( id == name+'_office' ){
+    		textarea.removeAttr('placeholder').attr('readonly', true).text('Самара, Заводское шоссе, 11 , офис 106');
+    	}
+    	if( id == name+'_address' ){
+    		textarea.removeAttr('readonly').attr('placeholder', 'Введите адрес доставки').text('');
+    	}
+    	if( id == name+'_airport' ){
+    		textarea.removeAttr('placeholder').attr('readonly', true).text('Аэропорт Самара (Курумоч), лит26');
+    	}
+
+
     });
 
 }, jQuery);

@@ -143,27 +143,27 @@
 							<div class="flex-row wrap">
 
 								<div class="custom-check flex-row">
-									<input type="checkbox" data-prodid="600" data-ed="рубли" name="checks[1]" id="checkbox-id1" value="Мойка">
+									<input type="checkbox" data-prodid="600" data-ed="рубли" name="checks[]" id="checkbox-id1" value="Мойка">
 									<label for="checkbox-id1">Мойка</label>
 								</div>
 								<!-- /.custom-check -->
 								<div class="custom-check flex-row">
-									<input type="checkbox" data-prodid="100" data-ed="рубли/сутки" name="checks[2]" id="checkbox-id2" value="Детское кресло">
+									<input type="checkbox" data-prodid="100" data-ed="рубли/сутки" name="checks[]" id="checkbox-id2" value="Детское кресло">
 									<label for="checkbox-id2">Детское кресло</label>
 								</div>
 								<!-- /.custom-check -->
 								<div class="custom-check flex-row">
-									<input type="checkbox" data-prodid="100" data-ed="рубли/сутки" name="checks[3]" id="checkbox-id3" value="Навигатор">
+									<input type="checkbox" data-prodid="100" data-ed="рубли/сутки" name="checks[]" id="checkbox-id3" value="Навигатор">
 									<label for="checkbox-id3">Навигатор</label>
 								</div>
 								<!-- /.custom-check -->
 								<div class="custom-check flex-row">
-									<input type="checkbox" data-prodid="50" data-ed="% от стоимости проката" name="checks[4]" id="checkbox-id4" value="Без ограничения по пробегу">
+									<input type="checkbox" data-prodid="50" data-ed="% от стоимости проката" name="checks[]" id="checkbox-id4" value="Без ограничения по пробегу">
 									<label for="checkbox-id4">Без ограничения по пробегу</label>
 								</div>
 								<!-- /.custom-check -->
 								<div class="custom-check flex-row">
-									<input type="checkbox" data-prodid="protection" data-ed="рубли" name="checks[5]" id="checkbox-id5" value="Защита при ДТП">
+									<input type="checkbox" data-prodid="protection" data-ed="рубли" name="checks[]" id="checkbox-id5" value="Защита при ДТП">
 									<label for="checkbox-id5">Защита при ДТП</label>
 								</div>
 								<!-- /.custom-check -->
@@ -218,15 +218,13 @@
 							</div>
 							<!-- /.flex-row wrap location-block -->
 
-							<textarea name="location-in" id="location_in_office_text" readonly>Самара, Заводское шоссе, 11 , офис 106</textarea>
-							<textarea name="location-in" id="location_in_address_text" placeholder="Введите адрес доставки" style="display: none;"></textarea>
-							<textarea name="location-in" id="location_in_airport_text" readonly style="display: none;">Аэропорт Самара (Курумоч), лит26</textarea>
+							<textarea name="location-in-text" id="location_in_text" readonly>Самара, Заводское шоссе, 11 , офис 106</textarea>
 						</div>
 						<!-- /.form-group location-block location-in -->
 
 						<div class="form-group width-50 location-block location-to" id="location-to">
 							<p>Где сдаете авто?</p>
-							<div class="flex-row wrap location-block">
+							<div class="flex-row wrap">
 								
 								<div class="custom-radio-check">
 									<input type="radio" name="location_to" id="location_to_office" value="В офисе" checked>
@@ -247,9 +245,7 @@
 							</div>
 							<!-- /.flex-row wrap -->
 
-							<textarea name="location-in" id="location_to_office_text" readonly>Самара, Заводское шоссе, 11 , офис 106</textarea>
-							<textarea name="location-in" id="location_to_address_text" placeholder="Введите адрес доставки" style="display: none;"></textarea>
-							<textarea name="location-in" id="location_to_airport_text" readonly style="display: none;">Аэропорт Самара (Курумоч), лит26</textarea>
+							<textarea name="location-to-text" id="location_to_text" readonly>Самара, Заводское шоссе, 11 , офис 106</textarea>
 
 						</div>
 						<!-- /.form-group location location-block location-to -->

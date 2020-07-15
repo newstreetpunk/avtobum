@@ -911,7 +911,7 @@ $(function() {
     	return false;
     });
 
-    $('.modal__calc-close').click(function(){
+    $('.modal__calc-close, .overlay').click(function(){
     	$(this).closest('.modal__calc-wrap').hide();
     });
 

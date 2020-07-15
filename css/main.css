@@ -10096,12 +10096,14 @@ textarea:read-only {
 }
 
 .modal__calc-wrap {
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
   display: none;
+  z-index: 9999;
+  overflow: auto;
 }
 
 @media (max-width: 767.98px) {
@@ -10114,13 +10116,13 @@ textarea:read-only {
 }
 
 .modal__calc-form {
-  position: fixed;
+  position: relative;
   left: 50%;
-  top: 50%;
+  top: 5%;
   background-color: #fff;
-  -webkit-transform: translate(-50%, -50%);
-      -ms-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
+  -webkit-transform: translateX(-50%);
+      -ms-transform: translateX(-50%);
+          transform: translateX(-50%);
   max-width: 800px;
   width: 98%;
   height: auto;
@@ -10201,7 +10203,7 @@ textarea:read-only {
 
 .modal__calc-right {
   width: 50%;
-  padding: 40px 30px;
+  padding: 40px 30px 50px;
 }
 
 @media (max-width: 575.98px) {
@@ -10334,10 +10336,28 @@ textarea:read-only {
           transform: rotate(-45deg);
 }
 
+.modal__calc-close.return-edit {
+  width: auto;
+  height: auto;
+  top: auto;
+  bottom: 15px;
+  font-size: 14px;
+}
+
+@media (max-width: 767.98px) {
+  .modal__calc-close.return-edit {
+    display: none;
+  }
+}
+
+.modal__calc-close.return-edit:before, .modal__calc-close.return-edit:after {
+  display: none;
+}
+
 .overlay {
   width: 100%;
   height: 100%;
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   background-color: rgba(0, 0, 0, 0.5);

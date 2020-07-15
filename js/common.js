@@ -932,7 +932,6 @@ $(function() {
     			localStorage.setItem('address', textarea.val());
     		});
     		var address = localStorage.getItem('address');
-    			console.log(address);
 
     		textarea.removeAttr('readonly').attr('placeholder', 'Введите адрес доставки').text(address).val(address);
     		

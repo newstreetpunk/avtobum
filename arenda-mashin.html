@@ -178,24 +178,12 @@
 						<div class="flex-row wrap align-center">
 							
 							<div class="form-group select-car-brand">
-								<select name="select-car-brand" id="select-car-brand">
-									<option value="Toyota">Toyota</option>
-									<option value="Hyundai">Hyundai</option>
-									<option value="Suzuki">Suzuki</option>
-									<option value="Chevrolet">Chevrolet</option>
-									<option value="Mitsubishi">Mitsubishi</option>
-									<option value="BMW">BMW</option>
-								</select>
+								<select name="select-car-brand" id="select-car-brand"></select>
 							</div>
 							<!-- /.form-group select-car-brand -->
 
 							<div class="form-group select-body-type">
-								<select name="select-body-type" id="select-body-type">
-									<option value="Седан">Седан</option>
-									<option value="Хэтчбэк">Хэтчбэк</option>
-									<option value="Кроссовер">Кроссовер</option>
-									<option value="Универсал">Универсал</option>
-								</select>
+								<select name="select-body-type" id="select-body-type"></select>
 							</div>
 							<!-- /.form-group select-body-type -->
 							
@@ -252,6 +240,29 @@
 						carType = ['Седан', 'Универсал', 'Хетчбэк', 'Внедорожник', 'Кабриолет'];
 					var link = "bmw-x6.html#lookingfor";
 					var countCar = 0;
+
+					// 
+					var uniqueNames = [];
+					$.each(carName, function(i, el){
+						if ( el.search(/[А-яЁё]/) === -1) {
+							model = el.split(' ')[0];
+						}else{
+							model = el;
+						}
+						if($.inArray(model, uniqueNames) === -1) uniqueNames.push(model);
+					});
+
+					$.each(uniqueNames, function(key, name){
+						var out = '<option value="'+ name +'">'+ name +'</option>';
+						$('#select-car-brand').append(out);
+					});
+
+					$.each(carType, function(key, val){
+						var out = '<option value="'+ val +'">'+ val +'</option>';
+						$('#select-body-type').append(out);
+					});
+					// 
+
 					carName.forEach(function callback(currentValue, index, array) {
 						var priceHour = Math.round(Math.random()*100),
 							priceDay = Math.round(Math.random()*1000),

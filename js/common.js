@@ -850,23 +850,23 @@ $(function() {
 	});
 
 
-    $('.calc #select-model, .calc input[type=checkbox], .calc input[type=radio]').change(function() {
-        calc();
-    });
+	$('.calc #select-model, .calc input[type=checkbox], .calc input[type=radio]').change(function() {
+		calc();
+	});
 
 	// Select2 for Calc End
 
 	// DAtaPicker
 	// Зададим стартовую дату
 
-    var today = new Date(),
-        tomorrow = new Date(),
-        $startPicker = $('#timepicker-actions-in'),
-        $endPicker = $('#timepicker-actions-to');
+	var today = new Date(),
+		tomorrow = new Date(),
+		$startPicker = $('#timepicker-actions-in'),
+		$endPicker = $('#timepicker-actions-to');
 
-    today.setMinutes(0);
-    tomorrow.setMinutes(0);
-    tomorrow.setDate(today.getDate() + 1);
+	today.setMinutes(0);
+	tomorrow.setMinutes(0);
+	tomorrow.setDate(today.getDate() + 1);
 
 	$startPicker.datepicker({
 		timepicker: true,
@@ -875,10 +875,12 @@ $(function() {
 		onSelect: function(fd, d, picker) {
 			// Ничего не делаем если выделение было снято
 			if (!d) return;
-            calc();
+			calc();
 		}
 	});
-    $startPicker.data('datepicker').selectDate(today);
+	$startPicker.data('datepicker').selectDate(today);
+
+	console.log($startPicker);
 
 	$endPicker.datepicker({
 		timepicker: true,
@@ -887,70 +889,80 @@ $(function() {
 		onSelect: function(fd, d, picker) {
 			// Ничего не делаем если выделение было снято
 			if (!d) return;
-            calc();
+			calc();
 		}
 	});
-    $endPicker.data('datepicker').selectDate(tomorrow);
+	$endPicker.data('datepicker').selectDate(tomorrow);
 
+	// Собираем данные формы -> открываем второе модальное окно (форму)
+	$('#form-calc').submit(function(){
+		var data = $(this).serializeArray();
 
-    function calc() {
-        $('#price-p span')[0].innerText = Math.round(Math.random()*10000);
-        $('#price-z span')[0].innerText = Math.round(Math.random()*10000);
-    }
+		var priceP = $('.rent_price #price-p span').text(),
+			priceZ = $('.rent_price #price-z span').text();
 
-    $('#form-calc').submit(function(){
-    	var data = $(this).serializeArray();
+		$('.rental-price-info span').text(priceP);
+		$('.refund-info span').text(priceZ);
 
-    	var priceP = $('.rent_price #price-p span').text(),
-    		priceZ = $('.rent_price #price-z span').text();
+		$('.modal__calc-wrap').show();
 
-    	$('.rental-price-info span').text(priceP);
-    	$('.refund-info span').text(priceZ);
+		//console.log(data);
+		return false;
+	});
 
-    	$('.modal__calc-wrap').show();
+	// Закрытие модального окна
+	$('.modal__calc-close, .overlay').click(function(){
+		$(this).closest('.modal__calc-wrap').hide();
+	});
 
-    	console.log(data);
-    	return false;
-    });
+	// Работа с TEXTAREA
+	$('.custom-radio-check input').change(function(){
+		var th = $(this),
+			name = th.attr('name'),
+			id = th.attr('id'),
+			parent = th.closest('.location-block'),
+			textarea = parent.children('#'+ name +'_text');
+		
+		if( id == name+'_office' ){
+			textarea.removeAttr('placeholder').attr('readonly', true).val('Самара, Заводское шоссе, 11 , офис 106');
+		}
+		if( id == name+'_address' ){
+			parent.children('#location_in_text').keydown(function(){
+				localStorage.setItem('address', $(this).val());
+			});
 
-    $('.modal__calc-close, .overlay').click(function(){
-    	$(this).closest('.modal__calc-wrap').hide();
-    });
+			parent.children('#location_to_text').keydown(function(){
+				localStorage.setItem('address2', $(this).val());
+			});
 
-    $('.custom-radio-check input').change(function(){
-    	var th = $(this),
-    		name = th.attr('name'),
-    		id = th.attr('id'),
-    		parent = th.closest('.location-block'),
-    		textarea = parent.children('#'+ name +'_text');
-    	
-    	if( id == name+'_office' ){
-    		textarea.removeAttr('placeholder').attr('readonly', true).val('Самара, Заводское шоссе, 11 , офис 106');
-    	}
-    	if( id == name+'_address' ){
-    		parent.children('#location_in_text').keydown(function(){
-    			localStorage.setItem('address', $(this).val());
-    		});
+			var address = localStorage.getItem('address');
+			var address2 = localStorage.getItem('address2');
 
-    		parent.children('#location_to_text').keydown(function(){
-    			localStorage.setItem('address2', $(this).val());
-    		});
+			textarea.removeAttr('readonly').attr('placeholder', 'Введите адрес доставки').text(address).val(address);
 
-    		var address = localStorage.getItem('address');
-    		var address2 = localStorage.getItem('address2');
+			if (address2) {
+				parent.children('#location_to_text').text(address2).val(address2);
+			}
+			
+		}
+		if( id == name+'_airport' ){
+			textarea.removeAttr('placeholder').attr('readonly', true).val('Аэропорт Самара (Курумоч), лит26');
+		}
 
-    		textarea.removeAttr('readonly').attr('placeholder', 'Введите адрес доставки').text(address).val(address);
+	});
 
-    		if (address2) {
-    			parent.children('#location_to_text').text(address2).val(address2);
-    		}
-    		
-    	}
-    	if( id == name+'_airport' ){
-    		textarea.removeAttr('placeholder').attr('readonly', true).val('Аэропорт Самара (Курумоч), лит26');
-    	}
+	function calc() {
+		$('#price-p span')[0].innerText = Math.round(Math.random()*10000);
+		$('#price-z span')[0].innerText = Math.round(Math.random()*10000);
+	}
 
-
-    });
+	function timeDiffCalc(){
+		var date1 = $('#timepicker-actions-in').val();
+		var date2 = $('#timepicker-actions-to').val();
+		
+		console.log(parseInt(date1));
+		console.log(parseInt(date2));
+	}
+	timeDiffCalc();
 
 }, jQuery);

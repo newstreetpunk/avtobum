@@ -9436,6 +9436,19 @@ form small a:hover {
           filter: drop-shadow(-2px -2px 0px white);
 }
 
+@media (max-width: 575.98px) {
+  .avtodetail .product .photo .akciya-icon,
+  .avtodetail .product .photo .hit-icon,
+  .avtodetail .product .photo .skidka-icon,
+  .avtodetail .product .photo .spec-icon,
+  .avtopark .product .photo .akciya-icon,
+  .avtopark .product .photo .hit-icon,
+  .avtopark .product .photo .skidka-icon,
+  .avtopark .product .photo .spec-icon {
+    right: -14px;
+  }
+}
+
 .avtodetail .product .photo .akciya-icon,
 .avtopark .product .photo .akciya-icon {
   background-image: url(../img/znachki/akciya-onesize.png);
@@ -9737,6 +9750,53 @@ form small a:hover {
           transform: scaleY(-1);
 }
 
+.sort-filter {
+  margin-top: 20px;
+}
+
+.sort-filter .form-group {
+  margin-bottom: 0;
+}
+
+.sort-filter .custom-check {
+  margin-bottom: 0;
+}
+
+.sort-filter .custom-check input:checked ~ label:after {
+  top: 9px;
+}
+
+.sort-filter .custom-check label:before {
+  margin-top: 2px;
+}
+
+@media (max-width: 575.98px) {
+  .sort-filter .custom-check {
+    width: 50%;
+    margin-bottom: 5px;
+  }
+}
+
+.select-car-brand, .select-body-type {
+  max-width: 250px;
+  width: 100%;
+  margin-right: 15px;
+}
+
+@media (max-width: 767.98px) {
+  .select-car-brand, .select-body-type {
+    max-width: 100%;
+    margin-right: 0;
+  }
+  .select-car-brand.form-group, .select-body-type.form-group {
+    margin-bottom: 15px;
+  }
+}
+
+.select-car-brand .select2-container, .select-body-type .select2-container {
+  width: 100% !important;
+}
+
 .calc {
   width: 100%;
 }
@@ -9890,9 +9950,6 @@ form small a:hover {
   left: 2px;
   top: 7px;
   border-radius: 1px;
-  -webkit-transition: all .25s ease;
-  -o-transition: all .25s ease;
-  transition: all .25s ease;
   opacity: 0;
 }
 
@@ -10085,6 +10142,16 @@ textarea:read-only {
 
 .select2-container--default .select2-results > .select2-results__options {
   max-height: 300px;
+}
+
+.select2-container--default .select2-selection--single .select2-selection__clear {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  right: 40px;
+  top: 4px;
+  margin: 0;
+  color: red;
 }
 
 .datepicker {

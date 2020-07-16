@@ -75,7 +75,7 @@
 			display: block
 			background-size: contain
 			background-repeat: no-repeat
-			background-position: bottom right;
+			background-position: bottom right
 			position: absolute
 			right: -40px
 			bottom: 50px
@@ -85,6 +85,8 @@
 			width: 50%
 			height: 100%
 			filter: drop-shadow(-2px -2px 0px rgba(255,255,255,1))
+			+media-breakpoint-down(xs)
+				right: -14px
 
 		.akciya-icon 
 			background-image: $akciya-car
@@ -97,6 +99,7 @@
 
 		.spec-icon 
 			background-image: $spec-car
+
 
 	.bronInfo
 		display: flex
@@ -271,4 +274,31 @@
 		&_up:after
 			transform: scaleY(-1)
 
+// FILTER
+.sort-filter
+	margin-top: 20px
+	.form-group
+		margin-bottom: 0
+	.custom-check
+		margin-bottom: 0
+		input
+			&:checked ~ label:after
+				top: 9px
+		label:before
+			margin-top: 2px
+		+media-breakpoint-down(xs)
+			width: 50%
+			margin-bottom: 5px
+.select-car-brand, .select-body-type
+	max-width: 250px
+	width: 100%
+	margin-right: 15px
+	+media-breakpoint-down(sm)
+		max-width: 100%
+		margin-right: 0
+		&.form-group
+			margin-bottom: 15px
+	.select2-container
+		width: 100% !important
+	
 // AVTOPARK END

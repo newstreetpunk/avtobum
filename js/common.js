@@ -880,8 +880,6 @@ $(function() {
 	});
 	$startPicker.data('datepicker').selectDate(today);
 
-	console.log($startPicker);
-
 	$endPicker.datepicker({
 		timepicker: true,
 		minDate: today,

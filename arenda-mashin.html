@@ -244,12 +244,12 @@
 					// 
 					var uniqueNames = [];
 					$.each(carName, function(i, el){
-						if ( el.search(/[А-яЁё]/) === -1) {
-							model = el.split(' ')[0];
+						if ( el.search(/[А-яЁё]/) === -1) { //если нет русских символов
+							model = el.split(' ')[0]; //оставляем только первое слово
 						}else{
 							model = el;
 						}
-						if($.inArray(model, uniqueNames) === -1) uniqueNames.push(model);
+						if($.inArray(model, uniqueNames) === -1) uniqueNames.push(model);//новый массив без повторений
 					});
 
 					$.each(uniqueNames, function(key, name){

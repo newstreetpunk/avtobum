@@ -884,11 +884,6 @@ $(function() {
 		$('.form-footer-submit .btn').show(200);
 	});
 
-
-	$('.calc #select-model, .calc input[type=checkbox], .calc input[type=radio]').change(function() {
-		calc();
-	});
-
 	// Select2 for Calc End
 
 	// DAtaPicker
@@ -899,9 +894,13 @@ $(function() {
 		startDate = new Date(),
 		tomorrow = new Date(),
 		$startPicker = $('#timepicker-actions-in'),
-		$endPicker = $('#timepicker-actions-to');
-
-
+		startPicker,
+		$endPicker = $('#timepicker-actions-to'),
+		endPicker;
+/*
+		startPicker = $startPicker.data('datepicker');
+		endPicker = $endPicker.data('datepicker');
+*/
 	if ($startPicker.length) {
 
 		today.setMinutes(0);
@@ -911,7 +910,7 @@ $(function() {
 		startDate.setSeconds(0);
 		startDate.setHours(today.getHours() + 1);
 
-		$startPicker.datepicker({
+		startPicker = $startPicker.datepicker({
 			timepicker: true,
 			minDate: today,
 			startDate: startDate,
@@ -919,22 +918,27 @@ $(function() {
 				// Ничего не делаем если выделение было снято
 				if (!d) return;
 
-				calc();
+				picker.date = d;
+
+				// console.log([fd, d, picker, startPicker.currentDate]);
+
+				if(endPicker) calc();
 			},
 			onShow: function(inst, animationCompleted) {
-				$endPicker.data('datepicker').hide();
+				endPicker.hide();
 			}
-		});
-		$startPicker.data('datepicker').selectDate(startDate);
+		}).data('datepicker');
+		startPicker.selectDate(startDate);
 	}
 	
 	if ($endPicker.length) {
 		
 		tomorrow.setMinutes(0);
 		tomorrow.setSeconds(0);
-		tomorrow.setDate(today.getDate() + 1);
+		tomorrow.setDate(tomorrow.getDate() + 1);
+		tomorrow.setHours(tomorrow.getHours() + 1);
 
-		$endPicker.datepicker({
+		endPicker = $endPicker.datepicker({
 			timepicker: true,
 			minDate: today,
 			startDate: tomorrow,
@@ -942,13 +946,17 @@ $(function() {
 				// Ничего не делаем если выделение было снято
 				if (!d) return;
 
-				calc();
+				picker.date = d;
+				
+				// console.log([fd, d, picker, endPicker.currentDate]);
+
+				if(startPicker) calc();
 			},
 			onShow: function(inst, animationCompleted) {
-				$startPicker.data('datepicker').hide();
+				startPicker.hide();
 			}
-		});
-		$endPicker.data('datepicker').selectDate(tomorrow);
+		}).data('datepicker');
+		endPicker.selectDate(tomorrow);
 	}
 	
 
@@ -1010,8 +1018,11 @@ $(function() {
 	});
 
 	function calc() {
-		$('#price-p span')[0].innerText = Math.round(Math.random()*10000);
-		$('#price-z span')[0].innerText = Math.round(Math.random()*10000);
+
+		var hours = Math.abs(startPicker.currentDate - endPicker.currentDate) / 36e5;
+
+		$('#price-p span')[0].innerText = hours*1000 + Math.round(Math.random()*1000);
+		$('#price-z span')[0].innerText = hours*1000 + Math.round(Math.random()*1000);
 	}
 
 	function timeDiffCalc(){
@@ -1022,5 +1033,10 @@ $(function() {
 		console.log(parseInt(date2));
 	}
 	//timeDiffCalc();
+
+	$('.calc #select-model, .calc input[type=checkbox], .calc input[type=radio]').change(function() {
+		calc();
+	});
+
 
 }, jQuery);

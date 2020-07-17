@@ -10002,6 +10002,26 @@ textarea:read-only {
   font-size: 14px;
 }
 
+@media (max-width: 767px) {
+  .form-footer {
+    position: -webkit-sticky;
+    position: sticky;
+    bottom: -130px;
+  }
+}
+
+@media (max-width: 500px) {
+  .form-footer {
+    bottom: -150px;
+  }
+}
+
+@media (max-width: 384px) {
+  .form-footer {
+    bottom: -180px;
+  }
+}
+
 @media (max-width: 767.98px) {
   .form-footer-col {
     margin-bottom: 20px;

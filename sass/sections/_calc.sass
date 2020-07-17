@@ -125,6 +125,13 @@ textarea:read-only
 	padding: 20px
 	color: $white
 	font-size: 14px
+	@media (max-width: 767px)
+		position: sticky
+		bottom: -130px
+	@media (max-width: 500px)
+		bottom: -150px
+	@media (max-width: 384px)
+		bottom: -180px
 	&-col
 		+media-breakpoint-down(sm)
 			margin-bottom: 20px

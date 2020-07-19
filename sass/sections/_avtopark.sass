@@ -240,20 +240,22 @@
 			padding: 1px
 			width: 100%
 
-.Sort
+.sort
 	font-size: 1.2rem
 
-	&-Title
+	&-title
 		font-weight: 400
+		text-transform: uppercase
+		margin-top: 10px
 	
-	&-ByList
+	&-by-list
 		display: flex
 		flex: 1 0 auto
 		flex-wrap: wrap
 
-	&-Order
+	&-order
 		margin: 5px 10px 0 0
-		padding-right: 15px
+		// padding-right: 15px
 		
 		a
 			cursor: pointer
@@ -289,15 +291,21 @@
 		+media-breakpoint-down(xs)
 			width: 50%
 			margin-bottom: 5px
+	+media-breakpoint-down(md)
+		> form > div
+			justify-content: space-between
+
 .select-car-brand, .select-body-type
 	max-width: 250px
 	width: 100%
 	margin-right: 15px
-	+media-breakpoint-down(sm)
-		max-width: 100%
+	+media-breakpoint-down(md)
+		max-width: 49%
 		margin-right: 0
 		&.form-group
 			margin-bottom: 15px
+	+media-breakpoint-down(sm)
+		max-width: 100%
 	.select2-container
 		width: 100% !important
 	

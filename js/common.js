@@ -838,7 +838,10 @@ $(function() {
 		// resizePlayer(iframes, window.innerWidth/window.innerHeight);
 	});
 	
-	// Select2 for Calc
+
+	/* калькулятор начало */
+
+	/* Select2 for Calc */
 
 	function placeholder(){
 		var arr = {
@@ -866,25 +869,12 @@ $(function() {
 		minimumResultsForSearch: -1,
 		placeholder: 'Выбор автомобиля'
 	});
-
-	$('#select-car-brand').select2({
-		minimumResultsForSearch: -1,
-		placeholder: 'Марка автомобиля',
-		allowClear: true
-	});
-
-	$('#select-body-type').select2({
-		minimumResultsForSearch: -1,
-		placeholder: 'Тип кузова',
-		allowClear: true
-	});
 	
-
 	$('#select-model').on('select2:select', function (evt) {
 		$('.form-footer-submit .btn').show(200);
 	});
 
-	// Select2 for Calc End
+	/* Select2 for Calc End */
 
 	// DAtaPicker
 	// Зададим стартовую дату
@@ -898,10 +888,10 @@ $(function() {
 		$endPicker = $('#timepicker-actions-to'),
 		endPicker,
 		$model = $('#select-model');
-/*
+	/*
 		startPicker = $startPicker.data('datepicker');
 		endPicker = $endPicker.data('datepicker');
-*/
+	*/
 	if ($startPicker.length) {
 
 		today.setMinutes(0);
@@ -1019,6 +1009,7 @@ $(function() {
 
 	});
 
+	// функция калькулятора
 	function calc() {
 
 		if($model.val() == null) return;
@@ -1141,6 +1132,36 @@ $(function() {
 	$('#location_in_text, #location_to_text').bind('input propertychange', function() {
 		calc();
 	});
+	/* калькулятор конец */
 
+
+	/* фильтр начало */
+
+	$('#select-car-brand').select2({
+		minimumResultsForSearch: -1,
+		placeholder: 'Марка автомобиля',
+		allowClear: true
+	});
+
+	$('#select-body-type').select2({
+		minimumResultsForSearch: -1,
+		placeholder: 'Тип кузова',
+		allowClear: true
+	});
+
+
+	var $filter_car_brand = $('#sort_filter #select-car-brand'),
+		$filter_body_type = $('#sort_filter #select-body-type'),
+		$filter_checkbox = $('#sort_filter .custom-check input[type=checkbox]:checked');
+
+	$('#sort_filter #select-car-brand, #sort_filter #select-body-type, #sort_filter .custom-check input[type=checkbox]').change(function() {
+		filter_car_list();
+	});
+
+	function filter_car_list() {
+
+	}
+
+	/* фильтр конец */
 
 }, jQuery);

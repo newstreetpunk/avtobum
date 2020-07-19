@@ -9697,15 +9697,17 @@ form small a:hover {
   width: 100%;
 }
 
-.Sort {
+.sort {
   font-size: 1.2rem;
 }
 
-.Sort-Title {
+.sort-title {
   font-weight: 400;
+  text-transform: uppercase;
+  margin-top: 10px;
 }
 
-.Sort-ByList {
+.sort-by-list {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -9719,32 +9721,31 @@ form small a:hover {
           flex-wrap: wrap;
 }
 
-.Sort-Order {
+.sort-order {
   margin: 5px 10px 0 0;
-  padding-right: 15px;
 }
 
-.Sort-Order a {
+.sort-order a {
   cursor: pointer;
 }
 
-.Sort-Order_select {
+.sort-order_select {
   font-weight: 700;
   font-style: italic;
 }
 
-.Sort-Order:after {
+.sort-order:after {
   content: "";
   width: 25px;
   height: 10px;
   display: inline-block;
 }
 
-.Sort-Order_select:after {
+.sort-order_select:after {
   background: center center no-repeat url(../img/arrow-down-gray.png);
 }
 
-.Sort-Order_up:after {
+.sort-order_up:after {
   -webkit-transform: scaleY(-1);
       -ms-transform: scaleY(-1);
           transform: scaleY(-1);
@@ -9777,19 +9778,34 @@ form small a:hover {
   }
 }
 
+@media (max-width: 991.98px) {
+  .sort-filter > form > div {
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+}
+
 .select-car-brand, .select-body-type {
   max-width: 250px;
   width: 100%;
   margin-right: 15px;
 }
 
-@media (max-width: 767.98px) {
+@media (max-width: 991.98px) {
   .select-car-brand, .select-body-type {
-    max-width: 100%;
+    max-width: 49%;
     margin-right: 0;
   }
   .select-car-brand.form-group, .select-body-type.form-group {
     margin-bottom: 15px;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .select-car-brand, .select-body-type {
+    max-width: 100%;
   }
 }
 

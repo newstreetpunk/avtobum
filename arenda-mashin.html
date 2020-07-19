@@ -162,15 +162,16 @@
 		<div class="container">
 			<h1>Заголовок для страницы Автопарк</h1>
 
-			<div class="row Sort">
-				<div class="Sort-Title col-12">СОРТИРОВАТЬ ПО:</div>
-				<div class="col-12 Sort-ByList">
-				    <div class="Sort-Order" data-sort="rank"><a href="javascript:void(0);">популярности</a></div>
-				    <div class="Sort-Order" data-sort="price"><a href="javascript:void(0);">цене</a></div>
-				    <div class="Sort-Order" data-sort="brand"><a href="javascript:void(0);">марке</a></div>
-				    <div class="Sort-Order" data-sort="type"><a href="javascript:void(0);">кузову</a></div>
+			<div class="row sort">
+				<div class="sort-title col-12">Сортировать по:</div>
+				<div class="col-12 sort-by-list">
+				    <div class="sort-order" data-sort="rank"><a href="javascript:void(0);">популярности</a></div>
+				    <div class="sort-order" data-sort="price"><a href="javascript:void(0);">цене</a></div>
+				    <div class="sort-order" data-sort="brand"><a href="javascript:void(0);">марке</a></div>
+				    <div class="sort-order" data-sort="type"><a href="javascript:void(0);">кузову</a></div>
 				</div>
-
+				
+				<div class="sort-title col-12">Фильтр:</div>
 				<div class="col-12 sort-filter">
 					
 					<form id="sort_filter">
@@ -178,12 +179,16 @@
 						<div class="flex-row wrap align-center">
 							
 							<div class="form-group select-car-brand">
-								<select name="select-car-brand" id="select-car-brand"></select>
+								<select name="select-car-brand" id="select-car-brand">
+									<option disabled selected value>Марка автомобиля</option>
+								</select>
 							</div>
 							<!-- /.form-group select-car-brand -->
 
 							<div class="form-group select-body-type">
-								<select name="select-body-type" id="select-body-type"></select>
+								<select name="select-body-type" id="select-body-type">
+									<option disabled selected value>Тип кузова</option>
+								</select>
 							</div>
 							<!-- /.form-group select-body-type -->
 							
@@ -227,14 +232,14 @@
 					    var rand = min + Math.random() * (max + 1 - min);
 					    rand = Math.floor(rand);
 					    return rand;
-					  }
-					function htmlspecialchars( html){
-					  var div =  document.createElement('div');
-					  div.innerText = html;
-					  return div.innerHTML;
 					}
-					var carName = ['Renault Sandero Stepway', 'KIA Rio', 'Эвакуатор подкатной', 'Пвх лодка Delta 320 мк', 'Peugeot 308', 'KIA Sportage', 'Volvo XC70', 'BMW X3', 'Hyundai SOLARIS', 'Lada Kalina', 'Прицеп ', 'Lada Priora', 'Кемпер Bailey Ranger', 'Toyota RAV4', 'Volkswagen Tiguan 4WD', 'Ford Thunderbird', 'ГАЗ 330202', 'Mitsubishi L200 4WD', 'Mitsubishi Pajero 3.0 4WD', 'Hummer Н2 4WD', 'Ford Focus III', 'Hyundai Grand Starex', 'Hyundai Sonata', 'Volkswagen Tiguan', 'Toyota Camry', 'Renault Duster 4WD', 'Fiat Albea', 'Mitsubishi ASX', 'Renault Fluence', 'Mitsubishi Lancer X', 'Mitsubishi Lancer X', 'Renault Fluence', 'Toyota Land Cruiser 100 4WD', 'Daewoo Matiz', 'Lada Largus', 'Renault Fluence', 'Renault Logan ', 'Renault Logan', 'Nissan Almera New', 'Nissan Almera New', 'Renault Sandero', 'Renault Sandero', 'Fiat Albea', 'Hyundai Accent', 'Suzuki Liana 4WD', 'ВАЗ 2114'],
-						brandName = ['Renault Sandero Stepway', 'KIA Rio', 'Эвакуатор подкатной', 'Пвх лодка Delta 320 мк', 'Peugeot 308', 'KIA Sportage', 'Volvo XC70', 'BMW X3', 'Hyundai SOLARIS', 'Lada Kalina', 'Прицеп ', 'Lada Priora', 'Кемпер Bailey Ranger', 'Toyota RAV4', 'Volkswagen Tiguan 4WD', 'Ford Thunderbird', 'ГАЗ 330202', 'Mitsubishi L200 4WD', 'Mitsubishi Pajero 3.0 4WD', 'Hummer Н2 4WD', 'Ford Focus III', 'Hyundai Grand Starex', 'Hyundai Sonata', 'Volkswagen Tiguan', 'Toyota Camry', 'Renault Duster 4WD', 'Fiat Albea', 'Mitsubishi ASX', 'Renault Fluence', 'Mitsubishi Lancer X', 'Mitsubishi Lancer X', 'Renault Fluence', 'Toyota Land Cruiser 100 4WD', 'Daewoo Matiz', 'Lada Largus', 'Renault Fluence', 'Renault Logan ', 'Renault Logan', 'Nissan Almera New', 'Nissan Almera New', 'Renault Sandero', 'Renault Sandero', 'Fiat Albea', 'Hyundai Accent', 'Suzuki Liana 4WD', 'ВАЗ 2114'],
+					function htmlspecialchars( html){
+					    var div =  document.createElement('div');
+					    div.innerText = html;
+					    return div.innerHTML;
+					}
+					var carName = ['Renault Sandero Stepway', 'KIA Rio', 'Эвакуатор подкатной', 'Пвх лодка Delta 320 мк', 'Peugeot 308', 'KIA Sportage', 'Volvo XC70', 'BMW X3', 'Hyundai SOLARIS', 'Lada Kalina', 'Прицеп', 'Lada Priora', 'Кемпер Bailey Ranger', 'Toyota RAV4', 'Volkswagen Tiguan 4WD', 'Ford Thunderbird', 'ГАЗ 330202', 'Mitsubishi L200 4WD', 'Mitsubishi Pajero 3.0 4WD', 'Hummer Н2 4WD', 'Ford Focus III', 'Hyundai Grand Starex', 'Hyundai Sonata', 'Volkswagen Tiguan', 'Toyota Camry', 'Renault Duster 4WD', 'Fiat Albea', 'Mitsubishi ASX', 'Renault Fluence', 'Mitsubishi Lancer X', 'Mitsubishi Lancer X', 'Renault Fluence', 'Toyota Land Cruiser 100 4WD', 'Daewoo Matiz', 'Lada Largus', 'Renault Fluence', 'Renault Logan ', 'Renault Logan', 'Nissan Almera New', 'Nissan Almera New', 'Renault Sandero', 'Renault Sandero', 'Fiat Albea', 'Hyundai Accent', 'Suzuki Liana 4WD', 'ВАЗ 2114'],
+						brandName = ['Renault', 'KIA', 'Эвакуатор подкатной', 'Пвх лодка', 'Peugeot', 'KIA', 'Volvo', 'BMW', 'Hyundai', 'Lada', 'Прицеп', 'Lada', 'Кемпер', 'Toyota', 'Volkswagen', 'Ford', 'ГАЗ', 'Mitsubishi', 'Mitsubishi', 'Hummer', 'Ford', 'Hyundai', 'Hyundai', 'Volkswagen', 'Toyota', 'Renault', 'Fiat', 'Mitsubishi', 'Renault', 'Mitsubishi', 'Mitsubishi', 'Renault', 'Toyota', 'Daewoo', 'Lada', 'Renault', 'Renault', 'Renault', 'Nissan', 'Nissan', 'Renault', 'Renault', 'Fiat', 'Hyundai', 'Suzuki', 'ВАЗ'],
 						imgPath = '//avtobum63.ru/assets/images/avtopark/',
 						imgURL = ['renault-sandero-stepway-500px.png', 'kia-rio-500px.png', 'evakuator-500px.png', 'lodka-500px.png', 'peugeot-308-500px.png', 'kia-sportage-500px.png', 'volva-xc70-500px.png', 'bmw-x3-500px.png', 'hyundai-solaris-500px.png', 'lada-kalina-500px.png', 'pricep-atlet-500px.png', 'lada-priora-500px.png', 'bailey-ranger-600-tiny-500px.png', 'toyota-rav4-500px.png', 'volkswagen-tiguan-red-500px.png', 'ford-thunderbird-500px.png', 'gaz-3302-500px.png', 'mitsubishi-l200-500px.png', 'mitsubishi-pajero-500px.png', 'hummer-h2-500px.png', 'ford-focus-3-500px.png', 'hyundai-starex-500px.png', 'hyundai-sonata-500px.png', 'volkswagen-tiguan-white-500px.png', 'toyota-camry-500px.png', 'renault-duster-500px.png', 'fiat-albea-white-500px.png', 'mitsubishi-asx-500px.png', 'renault-fluence-silver-500px.png', 'mitsubishi-lancerX-blue-500px.png', 'mitsubishi-lancerX-bej-500px.png', 'renault-fluence-black-500px.png', 'toyota-land-cruiser-100-500px.png', 'daewoo-matiz-500px.png', 'lada-largus-500px.png', 'renault-fluence-white-500px.png', 'renault-logan-white-500px.png', 'renault-logan-bej-500px.png', 'nissan-almera-black-500px.png', 'nissan-almera-white-500px.png', 'renault-sandero-black-500px.png', 'renault-sandero-500px.png', 'fiat-albea-white-500px.png', 'hyundai-accent-500px.png', 'suzuki-liana-500px.png', 'vaz-2114-500px.png'],
 						carType = ['Седан', 'Универсал', 'Хетчбэк', 'Внедорожник', 'Кабриолет'];
@@ -252,7 +257,8 @@
 						if($.inArray(model, uniqueNames) === -1) uniqueNames.push(model);//новый массив без повторений
 					});
 
-					$.each(uniqueNames, function(key, name){
+					var uniqEs6 = (arrArg) => arrArg.filter((elem, pos, arr) => arr.indexOf(elem) == pos);
+					$.each(uniqEs6(brandName).sort( (a, b) => a.localeCompare(b) ), function(key, name){
 						var out = '<option value="'+ name +'">'+ name +'</option>';
 						$('#select-car-brand').append(out);
 					});

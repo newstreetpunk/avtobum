@@ -10280,8 +10280,8 @@ textarea:read-only {
 }
 
 .modal__calc-left form small a {
-  color: #dc5c13;
-  border-color: #dc5c13;
+  color: #fff;
+  border-color: #fff;
 }
 
 .modal__calc-left form small a:hover {
@@ -10365,6 +10365,7 @@ textarea:read-only {
 .modal__calc-right ul li span:last-child {
   font-weight: 500;
   text-align: right;
+  word-break: break-word;
 }
 
 @media (max-width: 575.98px) {

@@ -896,7 +896,8 @@ $(function() {
 		$startPicker = $('#timepicker-actions-in'),
 		startPicker,
 		$endPicker = $('#timepicker-actions-to'),
-		endPicker;
+		endPicker,
+		$model = $('#select-model');
 /*
 		startPicker = $startPicker.data('datepicker');
 		endPicker = $endPicker.data('datepicker');
@@ -947,7 +948,7 @@ $(function() {
 				if (!d) return;
 
 				picker.date = d;
-				
+
 				// console.log([fd, d, picker, endPicker.currentDate]);
 
 				if(startPicker) calc();
@@ -982,57 +983,157 @@ $(function() {
 	});
 
 	// Работа с TEXTAREA
-	$('.custom-radio-check input').change(function(){
-		var th = $(this),
-			name = th.attr('name'),
-			id = th.attr('id'),
-			parent = th.closest('.location-block'),
-			textarea = parent.children('#'+ name +'_text');
+	$('.calc .custom-radio-check input').change(function(){
+		var $this = $(this),
+			name = $this.attr('name'),
+			id = $this.attr('id'),
+			parent = $this.closest('.location-block'),
+			textarea = parent.children('#'+ name +'_text'),
+			place = $this.data('place'),
+			price = $this.data('price');
 		
-		if( id == name+'_office' ){
-			textarea.removeAttr('placeholder').attr('readonly', true).val('Самара, Заводское шоссе, 11 , офис 106');
-		}
-		if( id == name+'_address' ){
-			parent.children('#location_in_text').keydown(function(){
-				localStorage.setItem('address', $(this).val());
-			});
+		switch(id) {
+			case name+'_office':
+			case name+'_airport':
+				textarea.removeAttr('placeholder').attr('readonly', true).val(place);
+				break;
+			case name+'_address':
+				parent.children('#location_in_text').keydown(function(){
+					localStorage.setItem('address_in', $(this).val());
+				});
 
-			parent.children('#location_to_text').keydown(function(){
-				localStorage.setItem('address2', $(this).val());
-			});
+				parent.children('#location_to_text').keydown(function(){
+					localStorage.setItem('address_to', $(this).val());
+				});
 
-			var address = localStorage.getItem('address');
-			var address2 = localStorage.getItem('address2');
+				var address_in = localStorage.getItem('address_in');
+				var address_to = localStorage.getItem('address_to');
 
-			textarea.removeAttr('readonly').attr('placeholder', 'Введите адрес доставки').text(address).val(address);
+				textarea.removeAttr('readonly').attr('placeholder', 'Введите адрес доставки').text(address_in).val(address_in);
 
-			if (address2) {
-				parent.children('#location_to_text').text(address2).val(address2);
-			}
-			
-		}
-		if( id == name+'_airport' ){
-			textarea.removeAttr('placeholder').attr('readonly', true).val('Аэропорт Самара (Курумоч), лит26');
+				if (address_to) {
+					parent.children('#location_to_text').text(address_to).val(address_to);
+				}
+				break;
 		}
 
 	});
 
 	function calc() {
 
-		var hours = Math.abs(startPicker.currentDate - endPicker.currentDate) / 36e5;
+		if($model.val() == null) return;
 
-		$('#price-p span')[0].innerText = hours*1000 + Math.round(Math.random()*1000);
-		$('#price-z span')[0].innerText = hours*1000 + Math.round(Math.random()*1000);
-	}
+		var rentTime = Math.abs(startPicker.date - endPicker.date) / 36e5,
+			countDay = Math.floor(rentTime / 24),
+			koff = rentTime % 24,
+			model = $model.val(),
+			zalog = pr_zalog[model],
+			dop_servs = [],
+			dopSumma = 0
+			price = 0;
 
-	function timeDiffCalc(){
-		var date1 = $('#timepicker-actions-in').val();
-		var date2 = $('#timepicker-actions-to').val();
+		if(countDay > 0) {
+			if (koff > 5) {
+				// Если аренда больше 1 суток + 5 часов - то это 2 суток.
+				countDay += 1;
+			}
+			else {
+				// Если аренда больше 1 суток (24 часа), но меньше 1 сутки + 5 часов (29 часов) - то сумма аренды 1 сутки + 100 рублей/час (не важно какая машина)
+				price += (100 * koff);
+			}
+		}
+		if(rentTime < 3) { 
+			// минимум 3 часа
+			price += pr_0[model]*3;
+		} 
+		else if(rentTime > 2 && rentTime < 9) { 
+			// Если аренда меньше 8 часов - то ставка почасовая (у каждой машины своя)
+			price += pr_0[model] * rentTime;
+		} 
+		else if(countDay == 1 || (rentTime > 8 && countDay == 0)) { 
+			// Если аренда больше 8 часов - то это 1 сутки
+			price += pr_1[model];
+		}
+		else if(countDay > 1 && countDay < 4) { 
+			price += pr_2[model] * countDay;
+		}
+		else if(countDay > 3 && countDay < 7) { 
+			price += pr_3[model] * countDay;
+		}
+		else if(countDay > 6 && countDay < 16) { 
+			price += pr_4[model] * countDay;
+		}
+		else if(countDay > 15 && countDay < 31) { 
+			price += pr_5[model] * countDay;
+		}
+		else if(countDay > 30) { 
+			price += pr_week[model] * countDay;
+		}
+
+		if([6,7,20,21,22].includes(startPicker.date.getHours())) {
+			price += 500;
+		}
+		if([23,0,1,2,3,4,5].includes(startPicker.date.getHours())) {
+			price += 1000;
+		}
 		
-		console.log(parseInt(date1));
-		console.log(parseInt(date2));
+		$('.dop-uslugi input[type=checkbox]:checked').each(function(index, el) {
+			var $this = $(this),
+				dopPrice = $this.data('pr'),
+				dopEdIzm = $this.data('ed'),
+				dopDTP = pr_dtp[model],
+				title = $this.attr('value');
+
+			switch(dopEdIzm) {
+				case "рубли":
+					dopSumma += dopPrice;
+					break;
+				case "рубли/сутки":
+					if(dopPrice == 'protection') {
+						// значит нужно взять цену защиты от ДТП из прайса, для каждого авто своя
+						dopSumma += dopDTP * Math.max(countDay, 1);
+					} else {
+						dopSumma += dopPrice * Math.max(countDay, 1);
+					}
+					break;
+				case "% от стоимости проката":
+					dopSumma += ( dopPrice / 100 ) * price;
+					break;
+				default:
+			}
+
+			var str = $this.parent().find('label').text().trim();
+			if (str) dop_servs.push(str);
+			
+
+		});
+		if (dop_servs.length) {
+			$('.modal__calc-right .dop-uslugi-info').text(dop_servs.join(' / '));
+		} else {
+			$('.modal__calc-right .dop-uslugi-info').text("");
+		}
+
+		$('.calc .custom-radio-check input').each(function(index, el) {
+			if(this.checked){
+				var $this = $(this),
+					placePrice = $this.data('price');
+
+				price += placePrice;
+			}
+		});
+
+
+		price += parseInt(dopSumma);
+
+		$('.modal__calc-right .model-info').text($model.find('option:selected').text());
+		$('.modal__calc-right .rent-info').text(startPicker.date.toLocaleString() + " — " + endPicker.date.toLocaleString());
+		$('.modal__calc-right .location-in-info').text($('#location_in_text').text());
+		$('.modal__calc-right .location-to-info').text($('#location_to_text').text());
+		$('.modal__calc-right .rental-price-info span').innerText = price;
+		$('.modal__calc-right .refund-info span').innerText = zalog;
+		$('#price-p span')[0].innerText = price;
+		$('#price-z span')[0].innerText = zalog;
 	}
-	//timeDiffCalc();
 
 	$('.calc #select-model, .calc input[type=checkbox], .calc input[type=radio]').change(function() {
 		calc();

@@ -1063,8 +1063,14 @@ $(function() {
 
 		if([6,7,20,21,22].includes(startPicker.date.getHours())) {
 			price += 500;
+		} 
+		else if([23,0,1,2,3,4,5].includes(startPicker.date.getHours())) {
+			price += 1000;
 		}
-		if([23,0,1,2,3,4,5].includes(startPicker.date.getHours())) {
+		if([6,7,20,21,22].includes(endPicker.date.getHours())) {
+			price += 500;
+		} 
+		else if([23,0,1,2,3,4,5].includes(endPicker.date.getHours())) {
 			price += 1000;
 		}
 		

@@ -1,6 +1,4 @@
 @charset "UTF-8";
-@import url(../libs/jquery.formstyler/jquery.formstyler.css);
-@import url(../libs/jquery.formstyler/jquery.formstyler.theme.css);
 @font-face {
   font-family: "geometria";
   font-weight: 300;
@@ -4694,8 +4692,24 @@ html {
   width: 25% !important;
 }
 
+.w-30 {
+  width: 30% !important;
+}
+
+.w-40 {
+  width: 40% !important;
+}
+
 .w-50 {
   width: 50% !important;
+}
+
+.w-60 {
+  width: 60% !important;
+}
+
+.w-70 {
+  width: 70% !important;
 }
 
 .w-75 {
@@ -4714,8 +4728,24 @@ html {
   height: 25% !important;
 }
 
+.h-30 {
+  height: 30% !important;
+}
+
+.h-40 {
+  height: 40% !important;
+}
+
 .h-50 {
   height: 50% !important;
+}
+
+.h-60 {
+  height: 60% !important;
+}
+
+.h-70 {
+  height: 70% !important;
 }
 
 .h-75 {
@@ -7588,38 +7618,6 @@ body input:not([type="range"]):required:valid, body textarea:required:valid {
   border-color: green;
 }
 
-.flex-row {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-}
-
-.flex-col {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-  -webkit-flex-direction: column;
-      -ms-flex-direction: column;
-          flex-direction: column;
-}
-
-.align-center {
-  -webkit-box-align: center;
-  -webkit-align-items: center;
-      -ms-flex-align: center;
-          align-items: center;
-}
-
-.wrap {
-  -webkit-flex-wrap: wrap;
-      -ms-flex-wrap: wrap;
-          flex-wrap: wrap;
-}
-
 .fwm {
   font-weight: 500;
 }
@@ -10013,15 +10011,13 @@ textarea:read-only {
 
 .form-footer {
   background-color: #208fce;
-  padding: 20px;
+  padding: 15px 0;
   color: #fff;
   font-size: 14px;
 }
 
 @media (max-width: 767px) {
   .form-footer {
-    position: -webkit-sticky;
-    position: sticky;
     bottom: -130px;
   }
 }
@@ -10035,6 +10031,24 @@ textarea:read-only {
 @media (max-width: 384px) {
   .form-footer {
     bottom: -180px;
+  }
+}
+
+@media (max-width: 344px) {
+  .form-footer {
+    bottom: -200px;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .form-footer-text {
+    padding: 0 15px;
+  }
+}
+
+@media (min-width: 768px) {
+  .form-footer-text {
+    max-width: 40%;
   }
 }
 
@@ -10794,7 +10808,7 @@ form .help-block {
     display: none;
   }
   .header__menu {
-    height: 450px;
+    height: 530px;
   }
   .header__menu ul {
     -webkit-box-orient: vertical;
@@ -11091,7 +11105,7 @@ form .help-block {
         -ms-flex-pack: space-evenly;
             justify-content: space-evenly;
   }
-  .header__menu ul li.last {
+  .header__menu ul li.last, .header__menu ul li.mobile {
     display: none;
   }
   .header__phone-wrap {

@@ -122,16 +122,23 @@ textarea:read-only
 
 .form-footer
 	background-color: $accent
-	padding: 20px
+	padding: 15px 0
 	color: $white
 	font-size: 14px
 	@media (max-width: 767px)
-		position: sticky
+		// position: sticky
 		bottom: -130px
 	@media (max-width: 500px)
 		bottom: -150px
 	@media (max-width: 384px)
 		bottom: -180px
+	@media (max-width: 344px)
+		bottom: -200px
+	&-text
+		+media-breakpoint-down(sm)
+			padding: 0 15px
+		+media-breakpoint-up(md)
+			max-width: 40%
 	&-col
 		+media-breakpoint-down(sm)
 			margin-bottom: 20px

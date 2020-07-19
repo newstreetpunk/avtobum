@@ -41,12 +41,14 @@
 				</div>
 				<nav class="header__menu">
 					<ul>
-						<li><a href="arenda-mashin.html">Автопарк</a></li>
-						<li><a href="mashiny-na-prokat.html">Условия аренды</a></li>
-						<li><a href="avtoservis.html">Автосервис</a></li>
-						<li><a href="prajs.html">Прайс</a></li>
-						<li><a href="avtoprokat.html">О нас</a></li>
-						<li><a href="kontakty.html">Контакты</a></li>
+						<li><a href="arenda-mashin.html">Автопарк<p>более 50&nbsp;авто</p></a></li>
+						<li><a href="mashiny-na-prokat.html">Условия аренды<p>возврат залога<br>СРАЗУ</p></a></li>
+						<li class="mobile"><a href="calc.html">Калькулятор проката<p>рассчитайте стоимость аренды</p></a></li>
+						<li><a href="avtoservis.html">Автосервис<p>подменный авто<br>на&nbsp;время ремонта</p></a></li>
+						<li><a href="prajs.html">Прайс<p>гибкий подход</p></a></li>
+						<li><a href="avtoprokat.html">О нас<p>более 5&nbsp;лет<br>на&nbsp;рынке</p></a></li>
+						<li><a href="kontakty.html">Контакты<p>три филиала</p></a></li>
+						<li class="mobile last"><a href="/otzyvy.html" title="Отзывы">Отзывы<p>поделитесь мнением</p></a></li>
 						<a href="tel:88005500851" class="phone">8 (800) 550-08-51</a>
 					</ul>
 					
@@ -124,7 +126,7 @@
 				
 				<form action="" id="form-calc">
 					
-					<div class="flex-row wrap model">
+					<div class="d-flex flex-row flex-wrap model">
 						
 						<div class="form-group select-model">
 							<p>Выберите автомобиль из списка:</p>
@@ -141,7 +143,7 @@
 
 						<div class="form-group dop-uslugi">
 							<p>Дополнительные услуги:</p>
-							<div class="flex-row wrap">
+							<div class="d-flex flex-row flex-wrap">
 
 								<div class="custom-check flex-row">
 									<input type="checkbox" data-pr="600" data-ed="рубли" name="checks[1]" id="checkbox-id1" value="Мойка">
@@ -177,11 +179,11 @@
 					</div>
 					<!-- /.flex-row model -->
 
-					<div class="flex-row wrap date">
+					<div class="d-flex flex-row flex-wrap date">
 						
 						<div class="form-group select-date">
 							<p>Начало и конец аренды:</p>
-							<div class="flex-row align-center wrap fieldset-date">
+							<div class="d-flex flex-row align-items-center flex-wrap fieldset-date">
 								<span class="pretext">с</span>
 								<input type="text" name="timepicker-actions-in" id='timepicker-actions-in' onfocus="blur();">
 								<span class="pretext">— до</span>
@@ -194,11 +196,11 @@
 					</div>
 					<!-- /.flex-row wrap date-->
 
-					<div class="flex-row wrap location">
+					<div class="d-flex flex-row flex-wrap location">
 						
 						<div class="form-group width-50 location-block location-in" id="location-in">
 							<p>Где принимаете авто?</p>
-							<div class="flex-row wrap">
+							<div class="d-flex flex-row flex-wrap">
 								
 								<div class="custom-radio-check">
 									<input type="radio" name="location_in" id="location_in_office" value="В офисе" checked data-place="Самара, Заводское шоссе, 11 , офис 106"  data-price="0">
@@ -225,7 +227,7 @@
 
 						<div class="form-group width-50 location-block location-to" id="location-to">
 							<p>Где сдаете авто?</p>
-							<div class="flex-row wrap">
+							<div class="d-flex flex-row flex-wrap">
 								
 								<div class="custom-radio-check">
 									<input type="radio" name="location_to" id="location_to_office" value="В офисе" checked data-place="Самара, Заводское шоссе, 11 , офис 106"  data-price="0">
@@ -254,20 +256,23 @@
 					</div>
 					<!-- /.flex-row wrap location -->
 
-					<div class="flex-row align-center wrap form-footer">
+					<div class="d-flex flex-row align-items-center justify-content-around flex-wrap form-footer">
 						
-						<div class="form-footer-col col-sm-12 col-md-6 col-lg-4 rent_price">
+						<div class="form-footer-col  rent_price">
+							<!-- col-sm-12 col-md-6 col-lg-4 -->
 							<p><span class="rent_price-text">Стоимость проката: </span><span id="price-p"><span>0</span> ₽</span></p>
 							<p><span class="rent_price-text">Возвратный залог: </span><span id="price-z"><span>0</span> ₽</span></p>
 						</div>
 						<!-- /.form-footer-col w-30 rent_price-->
 
-						<div class="form-footer-col col-sm-12 col-md-6 col-lg-4">
+						<div class="form-footer-col form-footer-text">
+							<!-- col-sm-12 col-md-6 col-lg-4 -->
 							<p>Калькулятор является предварительным, о&nbsp;персональных скидках и&nbsp;специальных предложениях уточняйте в&nbsp;офисе <br>по&nbsp;телефону: <a href="tel:+78005500851">8&nbsp;800 550-08-51</a></p>
 						</div>
 						<!-- /.form-footer-col w-30 -->
 
-						<div class="form-footer-col col-md-12 col-lg-4 form-footer-submit">
+						<div class="form-footer-col  form-footer-submit">
+							<!-- col-md-12 col-lg-4 -->
 							<button type="submit" class="btn">Забронировать</button>
 						</div>
 						<!-- /.form-footer-col w-30 -->				

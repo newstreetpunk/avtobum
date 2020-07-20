@@ -496,6 +496,27 @@ $(function() {
 			ev.preventDefault();
 		});
 
+		/* Отправление формы калькулятора */
+		$(document).on('submit','#calcwrapper form',function(ev){
+			var frm = $('#calcwrapper form');
+			$('#calcwrapper form #submit').prop( "disabled", true );
+			$.ajax({
+				url: '/form_calc',
+				type: 'post',
+				data: frm.serialize(),
+				success: function (data) {
+					$('#calcwrapper form').remove();
+					$('#calcwrapper').html( data );
+				},
+				error: function(status) {
+					console.log(status);
+				}
+			});
+			/**/
+			ev.preventDefault();
+		});
+
+
 		/* ленивая загрузка картинок */
 		lazyload();
 
@@ -953,13 +974,6 @@ $(function() {
 
 	// Собираем данные формы -> открываем второе модальное окно (форму)
 	$('#form-calc').submit(function(){
-		var data = $(this).serializeArray();
-
-		var priceP = $('.rent_price #price-p span').text(),
-			priceZ = $('.rent_price #price-z span').text();
-
-		$('.rental-price-info span').text(priceP);
-		$('.refund-info span').text(priceZ);
 
 		$('.modal__calc-wrap').show();
 
@@ -1018,9 +1032,10 @@ $(function() {
 			countDay = Math.floor(rentTime / 24),
 			koff = rentTime % 24,
 			model = $model.val(),
+			orderData = {},
 			zalog = pr_zalog[model],
 			dop_servs = [],
-			dopSumma = 0
+			dopSumma = 0,
 			price = 0;
 
 		if(countDay > 0) {
@@ -1105,8 +1120,10 @@ $(function() {
 
 		});
 		if (dop_servs.length) {
+			$('.modal__calc-right .dop-uslugi').show();
 			$('.modal__calc-right .dop-uslugi-info').text(dop_servs.join(' / '));
 		} else {
+			$('.modal__calc-right .dop-uslugi').hide();
 			$('.modal__calc-right .dop-uslugi-info').text("");
 		}
 
@@ -1122,10 +1139,22 @@ $(function() {
 
 		price += parseInt(dopSumma);
 
-		$('.modal__calc-right .model-info').text($model.find('option:selected').text());
-		$('.modal__calc-right .rent-info').text(startPicker.date.toLocaleString() + " — " + endPicker.date.toLocaleString());
-		$('.modal__calc-right .location-in-info').text($('#location_in_text').val());
-		$('.modal__calc-right .location-to-info').text($('#location_to_text').val());
+		orderData['Автомобиль'] = $model.find('option:selected').text();
+        if (dop_servs.length) {
+            orderData['Доп услуги'] = dop_servs.join(' / ');
+        }
+        orderData['Срок аренды'] = startPicker.date.toLocaleString() + " — " + endPicker.date.toLocaleString();
+        orderData['Место доставки авто'] = $('#location_in_text').val();
+        orderData['Место сдачи авто'] = $('#location_to_text').val();
+        orderData['Стоимость проката'] = price;
+        orderData['Возвратный залог'] = zalog;
+
+        $('#calcorderdata').val(JSON.stringify(orderData));
+
+		$('.modal__calc-right .model-info').text(orderData['Автомобиль']);
+		$('.modal__calc-right .rent-info').text(orderData['Срок аренды']);
+		$('.modal__calc-right .location-in-info').text(orderData['Место доставки авто']);
+		$('.modal__calc-right .location-to-info').text(orderData['Место сдачи авто']);
 		$('.modal__calc-right .rental-price-info span').innerText = price;
 		$('.modal__calc-right .refund-info span').innerText = zalog;
 		$('#price-p span')[0].innerText = price;

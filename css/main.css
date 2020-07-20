@@ -8014,13 +8014,14 @@ section h1, section h2 {
   opacity: 1;
 }
 
-form input, form button, form small, form textarea {
+form input:not(#politikaCheckbox), form button, form small, form textarea {
   display: block;
   width: 100%;
 }
 
-form input {
+form input:not(#politikaCheckbox) {
   font-size: 16px;
+  height: initial;
   font-weight: 300;
   background-color: #f0f0f0;
   padding: 10px 18px;
@@ -8028,33 +8029,8 @@ form input {
   margin: 20px 0;
 }
 
-form .dealer-choice {
-  font-size: 14px;
-  margin-bottom: 10px;
-  display: block;
-}
-
 form button {
   margin: 20px 0;
-}
-
-form small {
-  font-size: 16px;
-  font-weight: 300;
-}
-
-form small a {
-  text-decoration: none;
-  border-bottom: 1px solid #007FC7;
-  -webkit-box-shadow: inset 0px -0px 0px 0px #000;
-          box-shadow: inset 0px -0px 0px 0px #000;
-  color: #007FC7;
-  font-weight: 300;
-}
-
-form small a:hover {
-  color: #0b91d1;
-  border-color: #0b91d1;
 }
 
 .main-slider .slick-slide, .main-slider .slick-slide:not(.without_text):before, .main-slider .caption {
@@ -10304,18 +10280,18 @@ textarea:read-only {
   display: block;
 }
 
-.modal__calc-left form small {
+.modal__calc-left form .form-check {
   font-size: 14px;
-  text-align: center;
 }
 
-.modal__calc-left form small a {
+.modal__calc-left form .form-check a {
   color: #fff;
   border-color: #fff;
 }
 
-.modal__calc-left form small a:hover {
+.modal__calc-left form .form-check a:hover {
   border: none;
+  color: #fff;
 }
 
 .modal__calc-right {

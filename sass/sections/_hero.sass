@@ -116,23 +116,23 @@
 .t-radio__control .t-radio:checked ~ .t-radio__indicator:after
 	opacity: 1
 
+// .hero form, .modal__calc-form form, .callback-form form
 form
-	input, button, small, textarea
+	input:not(#politikaCheckbox), button, small, textarea
 		display: block
 		width: 100%
-	input
+	input:not(#politikaCheckbox)
 		font-size: 16px
+		height: initial
 		font-weight: 300
 		background-color: #f0f0f0
 		padding: 10px 18px
 		border: 1px solid transparent
 		margin: 20px 0
-	.dealer-choice
-		font-size: 14px
-		margin-bottom: 10px
-		display: block
 	button
 		margin: 20px 0
+
+// .hero form
 	small
 		font-size: 16px
 		font-weight: 300

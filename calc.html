@@ -25,7 +25,8 @@
 
 
 	<link rel="stylesheet" href="css/main.css">
-
+	<link rel="stylesheet" href="css/jquery.fancybox.min.css">
+	<script src="https://avtobum63.ru/assets/js/jquery.min.js" type="text/javascript"></script>
 </head>
 
 <body>
@@ -66,7 +67,7 @@
 					</select>
 					<div class="header__phone--callback">
 						<a href="tel:88005500851" class="phone">8 (800) 550-08-51</a>
-						<span class="popup fwm">Обратный звонок</span>
+						<span class="popup fwm call" data-fancybox="" data-src="#callback-form" data-name="Обратный звонок" data-class="call">Обратный звонок</span>
 					</div>
 					<button class="toggle-btn">
 						<span></span>
@@ -407,12 +408,28 @@
 			<div class="modal__calc-left">
 				<h4>Отправить заявку</h4>
 				<span class="subtitle">Мы обработаем ваш заказ и перезвоним для уточнения информации</span>
-				<form action="" id="modal_calc_form">
-					<input type="text" name="first-name" placeholder="Ваше имя">
-					<input type="tel" name="your-phone" placeholder="Ваш телефон">
-					<button type="submit" class="btn">Отправить</button>
-					<small>* Нажимая на кнопку действия, я даю согласие на обработку <a href="#">персональных&nbsp;данных</a></small>
+				<div id="calcwrapper">
+				<form action="" class="was-validated" id="modal_calc_form">
+					<div class="form-group mb-2">
+						<!-- <label for="inputName">Имя</label> -->
+						<input type="text" id="inputName" class="form-control  " placeholder="Ваше имя" name="first-name" value="" required="">
+						
+					</div>
+					<div class="form-group mb-2">
+						<!-- <label for="inputPhone">Телефон</label> -->
+						<input type="text" id="inputPhone" class="form-control  " placeholder="Ваш телефон" name="phone" value="" required="">
+						
+					</div>
+					<div class="form-check">
+						<input type="checkbox" class="form-check-input custom-control-input " id="politikaCheckbox" name="agree" value="Да" required="">
+						<label class="form-check-label custom-control-label" for="politikaCheckbox"><a href="/politika-konfidencialnosti.html" target="_blank">Согласен с условиями обработки персональных данных</a></label>
+						
+					</div>
+					<p class="mt-2 text-center">
+						<button id="submit" type="submit" class="btn btn-primary">Отправить</button>
+					</p>
 				</form>
+				</div>
 			</div>
 			<!-- /.modal__calc-left -->
 			<div class="modal__calc-right">
@@ -455,8 +472,46 @@
 	</div>
 	<!-- /.modal-calc-wrap -->
 
+	<div class="callback-form" id="callback-form">
+		<img src="img/form-car.svg" alt="">
+		<div id="frmwrapper">
+			<h2 class="mb-3"> Заказ звонка </h2>
+
+			<form method="post" class="was-validated" data-t="https://avtobum63.ru/">
+				
+				<input type="hidden" name="id" value="4">
+				<input type="hidden" name="url" value="arenda-mashin/">
+				<input type="hidden" name="pagetitle" value="Автопарк">
+				<input type="hidden" name="btnname" value="" id="btnname">
+				<input type="hidden" name="formid" value="basic">
+				<input type="hidden" name="orderdata" id="calcorderdata">
+			  	<div class="form-group mb-2">
+					<!-- <label for="inputName">Имя</label> -->
+					<input type="text" id="inputName" class="form-control  " placeholder="Ваше имя" name="first-name" value="" required="">
+					
+				</div>
+				<div class="form-group mb-2">
+					<!-- <label for="inputPhone">Телефон</label> -->
+					<input type="text" id="inputPhone" class="form-control  " placeholder="Ваш телефон" name="phone" value="" required="">
+					
+				</div>
+				<div class="form-check">
+					<input type="checkbox" class="form-check-input custom-control-input " id="politikaCheckbox" name="agree" value="Да" required="">
+					<label class="form-check-label custom-control-label" for="politikaCheckbox"><a href="/politika-konfidencialnosti.html" target="_blank">Согласен с условиями обработки персональных данных</a></label>
+					
+				</div>
+				<p class="mt-2 text-center">
+					<button id="submit" type="submit" class="btn btn-primary">Отправить</button>
+				</p>
+				
+			</form>
+			
+		</div>
+	</div>
+
 	<script type='text/javascript' src="js/calc_prices.js" defer='defer'></script>
 	<script type='text/javascript' src="js/scripts.min.js" defer='defer'></script>
+	<script src="js/jquery.fancybox.min.js"></script>
 
 </body>
 </html>

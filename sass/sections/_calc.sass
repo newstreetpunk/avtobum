@@ -3,6 +3,19 @@
 	input
 		width: auto
 
+	.fieldset-date
+		justify-content: space-between
+		width: 100%
+		input
+			margin: 0 10px
+			+media-breakpoint-down(sm)
+				margin: 0
+				width: 48%
+			+media-breakpoint-down(xs)
+				width: 100%
+				margin: 0 0 15px
+
+
 .width-50
 	width: 50%
 	+media-breakpoint-down(sm)
@@ -104,17 +117,6 @@
 .select-date
 	+media-breakpoint-down(xs)
 		width: 100%
-.fieldset-date
-	justify-content: space-between
-	width: 100%
-	input
-		margin: 0 10px
-		+media-breakpoint-down(sm)
-			margin: 0
-			width: 48%
-		+media-breakpoint-down(xs)
-			width: 100%
-			margin: 0 0 15px
 
 textarea:read-only 
 	color: #8c8c8c
@@ -289,7 +291,7 @@ textarea:read-only
 		background-color: $accent
 		+media-breakpoint-down(xs)
 			padding: 30px 15px
-		h4
+		h2
 			font-size: 24px
 			text-align: center
 			margin-top: 0
@@ -316,7 +318,7 @@ textarea:read-only
 		padding: 40px 30px 50px
 		+media-breakpoint-down(xs)
 			padding: 30px 15px
-		h4
+		h2
 			font-size: 24px
 			color: $accent
 		ul

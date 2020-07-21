@@ -7729,6 +7729,10 @@ section h1, section h2 {
   z-index: 9997;
 }
 
+.form-check-input {
+  width: initial;
+}
+
 .header {
   background-color: #ffffff;
   position: fixed;
@@ -8014,12 +8018,12 @@ section h1, section h2 {
   opacity: 1;
 }
 
-form input:not(#politikaCheckbox), form button, form small, form textarea {
+form input, form button, form small, form textarea {
   display: block;
   width: 100%;
 }
 
-form input:not(#politikaCheckbox) {
+form input {
   font-size: 16px;
   height: initial;
   font-weight: 300;
@@ -9795,6 +9799,32 @@ form button {
   width: auto;
 }
 
+.calc .fieldset-date {
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 100%;
+}
+
+.calc .fieldset-date input {
+  margin: 0 10px;
+}
+
+@media (max-width: 767.98px) {
+  .calc .fieldset-date input {
+    margin: 0;
+    width: 48%;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .calc .fieldset-date input {
+    width: 100%;
+    margin: 0 0 15px;
+  }
+}
+
 .width-50 {
   width: 50%;
 }
@@ -9946,32 +9976,6 @@ form button {
 @media (max-width: 575.98px) {
   .select-date {
     width: 100%;
-  }
-}
-
-.fieldset-date {
-  -webkit-box-pack: justify;
-  -webkit-justify-content: space-between;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  width: 100%;
-}
-
-.fieldset-date input {
-  margin: 0 10px;
-}
-
-@media (max-width: 767.98px) {
-  .fieldset-date input {
-    margin: 0;
-    width: 48%;
-  }
-}
-
-@media (max-width: 575.98px) {
-  .fieldset-date input {
-    width: 100%;
-    margin: 0 0 15px;
   }
 }
 
@@ -10262,7 +10266,7 @@ textarea:read-only {
   }
 }
 
-.modal__calc-left h4 {
+.modal__calc-left h2 {
   font-size: 24px;
   text-align: center;
   margin-top: 0;
@@ -10305,7 +10309,7 @@ textarea:read-only {
   }
 }
 
-.modal__calc-right h4 {
+.modal__calc-right h2 {
   font-size: 24px;
   color: #208fce;
 }

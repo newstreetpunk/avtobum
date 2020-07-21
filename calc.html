@@ -204,7 +204,7 @@
 							<div class="d-flex flex-row flex-wrap">
 								
 								<div class="custom-radio-check">
-									<input type="radio" name="location_in" id="location_in_office" value="В офисе" checked data-place="Самара, Заводское шоссе, 11 , офис 106"  data-price="0">
+									<input type="radio" name="location_in" id="location_in_office" value="В офисе" checked data-place="Самара, Заводское шоссе, 11, офис 106"  data-price="0">
 									<label for="location_in_office">В офисе</label>
 								</div>
 								<!-- /.custom-radio-check -->
@@ -222,7 +222,7 @@
 							</div>
 							<!-- /.flex-row wrap location-block -->
 
-							<textarea name="location-in-text" id="location_in_text" readonly>Самара, Заводское шоссе, 11 , офис 106</textarea>
+							<textarea name="location-in-text" id="location_in_text" readonly>Самара, Заводское шоссе, 11, офис 106</textarea>
 						</div>
 						<!-- /.form-group location-block location-in -->
 
@@ -231,7 +231,7 @@
 							<div class="d-flex flex-row flex-wrap">
 								
 								<div class="custom-radio-check">
-									<input type="radio" name="location_to" id="location_to_office" value="В офисе" checked data-place="Самара, Заводское шоссе, 11 , офис 106"  data-price="0">
+									<input type="radio" name="location_to" id="location_to_office" value="В офисе" checked data-place="Самара, Заводское шоссе, 11, офис 106"  data-price="0">
 									<label for="location_to_office">В офисе</label>
 								</div>
 								<!-- /.custom-radio-check -->
@@ -249,7 +249,7 @@
 							</div>
 							<!-- /.flex-row wrap -->
 
-							<textarea name="location-to-text" id="location_to_text" readonly>Самара, Заводское шоссе, 11 , офис 106</textarea>
+							<textarea name="location-to-text" id="location_to_text" readonly>Самара, Заводское шоссе, 11, офис 106</textarea>
 
 						</div>
 						<!-- /.form-group location location-block location-to -->
@@ -406,18 +406,22 @@
 			<span class="modal__calc-close"></span>
 			<span class="modal__calc-close return-edit">&larr; Вернуться к редактированию</span>
 			<div class="modal__calc-left">
-				<h4>Отправить заявку</h4>
-				<span class="subtitle">Мы обработаем ваш заказ и перезвоним для уточнения информации</span>
 				<div id="calcwrapper">
+				<h2>Отправить заявку</h2>
+				<span class="subtitle">Мы обработаем ваш заказ и перезвоним для уточнения информации</span>
 				<form action="" class="was-validated" id="modal_calc_form">
+					<input type="hidden" name="id" value="4">
+					<input type="hidden" name="url" value="arenda-mashin/">
+					<input type="hidden" name="pagetitle" value="Автопарк">
+					<input type="hidden" name="btnname" value="" class="btnname">
+					<input type="hidden" name="formid" value="basic">
+					<input type="hidden" name="calcorderdata" class="calcorderdata">
 					<div class="form-group mb-2">
-						<!-- <label for="inputName">Имя</label> -->
-						<input type="text" id="inputName" class="form-control  " placeholder="Ваше имя" name="first-name" value="" required="">
+						<input type="text" class="form-control  " placeholder="Ваше имя" name="first-name" value="" required="">
 						
 					</div>
 					<div class="form-group mb-2">
-						<!-- <label for="inputPhone">Телефон</label> -->
-						<input type="text" id="inputPhone" class="form-control  " placeholder="Ваш телефон" name="phone" value="" required="">
+						<input type="text" class="form-control  " placeholder="Ваш телефон" name="phone" value="" required="">
 						
 					</div>
 					<div class="form-check">
@@ -433,7 +437,7 @@
 			</div>
 			<!-- /.modal__calc-left -->
 			<div class="modal__calc-right">
-				<h4>Аренда</h4>
+				<h2>Аренда</h2>
 				<ul>
 					<li>
 						<span class="car-name">Автомобиль:</span>
@@ -449,19 +453,19 @@
 					</li>
 					<li>
 						<span class="location-in">Место доставки авто:</span>
-						<span class="location-in-info">Самара, Заводское шоссе, 11 , офис 106, Заводское шоссе, 11 , офис 106</span>
+						<span class="location-in-info">Самара, Заводское шоссе, 11, офис 106, Заводское шоссе, 11, офис 106</span>
 					</li>
 					<li>
 						<span class="location-to">Место сдачи авто:</span>
-						<span class="location-to-info">Самара, Заводское шоссе, 11 , офис 106</span>
+						<span class="location-to-info">Самара, Заводское шоссе, 11, офис 106</span>
 					</li>
 					<li class="rental-price-wrap">
 						<span class="rental-price">Стоимость проката:</span>
-						<span class="rental-price-info">≈ <span>5250</span> ₽</span>
+						<span class="rental-price-info">≈ <span>0</span> ₽</span>
 					</li>
 					<li>
 						<span class="refund">Возвратный залог:</span>
-						<span class="refund-info">≈ <span>7000</span> ₽</span>
+						<span class="refund-info">≈ <span>0</span> ₽</span>
 					</li>
 				</ul>
 			</div>
@@ -482,17 +486,15 @@
 				<input type="hidden" name="id" value="4">
 				<input type="hidden" name="url" value="arenda-mashin/">
 				<input type="hidden" name="pagetitle" value="Автопарк">
-				<input type="hidden" name="btnname" value="" id="btnname">
+				<input type="hidden" name="btnname" value="" class="btnname">
 				<input type="hidden" name="formid" value="basic">
-				<input type="hidden" name="orderdata" id="calcorderdata">
+				<input type="hidden" name="calcorderdata" id="calcorderdata">
 			  	<div class="form-group mb-2">
-					<!-- <label for="inputName">Имя</label> -->
-					<input type="text" id="inputName" class="form-control  " placeholder="Ваше имя" name="first-name" value="" required="">
+					<input type="text" class="form-control inputName " placeholder="Ваше имя" name="first-name" value="" required="">
 					
 				</div>
 				<div class="form-group mb-2">
-					<!-- <label for="inputPhone">Телефон</label> -->
-					<input type="text" id="inputPhone" class="form-control  " placeholder="Ваш телефон" name="phone" value="" required="">
+					<input type="text" class="form-control inputPhone " placeholder="Ваш телефон" name="phone" value="" required="">
 					
 				</div>
 				<div class="form-check">
@@ -511,7 +513,7 @@
 
 	<script type='text/javascript' src="js/calc_prices.js" defer='defer'></script>
 	<script type='text/javascript' src="js/scripts.min.js" defer='defer'></script>
-	<script src="js/jquery.fancybox.min.js"></script>
+	<script type='text/javascript' src="js/jquery.fancybox.min.js" defer='defer'></script>
 
 </body>
 </html>

@@ -116,12 +116,14 @@
 .t-radio__control .t-radio:checked ~ .t-radio__indicator:after
 	opacity: 1
 
-// .hero form, .modal__calc-form form, .callback-form form
+// .hero form, .modal__calc-form form, .callback-form form, .calc form
+	// input:not(#politikaCheckbox), button, small, textarea
+	// input:not(#politikaCheckbox)
 form
-	input:not(#politikaCheckbox), button, small, textarea
+	input, button, small, textarea
 		display: block
 		width: 100%
-	input:not(#politikaCheckbox)
+	input
 		font-size: 16px
 		height: initial
 		font-weight: 300

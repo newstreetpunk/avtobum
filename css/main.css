@@ -9799,16 +9799,20 @@ form button {
   width: auto;
 }
 
+.calc .select-model {
+  /**/
+}
+
+.calc .dop-uslugi {
+  /**/
+}
+
 .calc .fieldset-date {
-  -webkit-box-pack: justify;
-  -webkit-justify-content: space-between;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
   width: 100%;
 }
 
 .calc .fieldset-date input {
-  margin: 0 10px;
+  margin: initial;
 }
 
 @media (max-width: 767.98px) {
@@ -9835,27 +9839,13 @@ form button {
   }
 }
 
-.form-group {
-  margin-bottom: 30px;
-}
-
-.form-group p {
+.form-group .title {
   margin-bottom: 10px;
   font-weight: 500;
 }
 
-@media (max-width: 767.98px) {
-  .form-group .pretext {
-    display: none;
-  }
-}
-
-.select-model {
-  margin-right: 30px;
-}
-
-.dop-uslugi {
-  margin-bottom: 25px;
+.form-group .pretext {
+  /**/
 }
 
 .location-block textarea {
@@ -9973,10 +9963,8 @@ form button {
   opacity: 0;
 }
 
-@media (max-width: 575.98px) {
-  .select-date {
-    width: 100%;
-  }
+.select-date {
+  /**/
 }
 
 textarea:-moz-read-only {
@@ -10082,6 +10070,10 @@ textarea:read-only {
 .rent_price #price-p {
   font-size: 24px;
   font-weight: 500;
+}
+
+.select2-container {
+  width: 100% !important;
 }
 
 .select2-container--default .select2-selection--single {

@@ -9800,6 +9800,7 @@ form button {
 }
 
 .calc .select-model {
+  min-width: 300px;
   /**/
 }
 

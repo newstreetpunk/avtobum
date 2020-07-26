@@ -129,7 +129,7 @@
 					
 					<div class="d-flex flex-column flex-lg-row model">
 						
-						<div class="form-group select-model pr-lg-5 d-flex flex-column">
+						<div class="form-group select-model mr-lg-5 d-flex flex-column">
 							<p class="title">Выберите автомобиль из списка:</p>
 							<select name="select-model" id="select-model">
 								<option disabled selected value>Выбор автомобиля</option>
@@ -183,12 +183,12 @@
 					<div class="d-flex flex-row date">
 						
 						<div class="form-group select-date d-flex flex-column w-100">
-							<p class="title">Начало и конец аренды:</p>
+							<p class="title">Выберите дату и время начала и конца аренды:</p>
 							<div class="d-flex align-items-center fieldset-date flex-column flex-sm-row">
 								<span class="pretext d-none d-md-block pr-md-3">с</span>
-								<input class="mb-xs-2" type="text" name="timepicker-actions-in" id='timepicker-actions-in' onfocus="blur();">
+								<input class="mb-xs-2" type="text" name="timepicker-actions-in" id='timepicker-actions-in' onfocus="blur();" placeholder="Начало аренды">
 								<span class="pretext d-none d-sm-block p-sm-2">—</span><span class="d-none d-md-block pr-md-3">до</span>
-								<input type="text" name="timepicker-actions-to" id='timepicker-actions-to' onfocus="blur();">
+								<input type="text" name="timepicker-actions-to" id='timepicker-actions-to' onfocus="blur();" placeholder="Конец аренды">
 							</div>
 							<!-- /.flex-row wrap fieldset-date -->
 						</div>
@@ -431,7 +431,7 @@
 						
 					</div>
 					<p class="mt-2 text-center">
-						<button id="submit" type="submit" class="btn btn-primary">Отправить</button>
+						<button id="submitRequest" type="submit" class="submit btn btn-primary">Отправить</button>
 					</p>
 				</form>
 				</div>
@@ -504,7 +504,7 @@
 					
 				</div>
 				<p class="mt-2 text-center">
-					<button id="submit" type="submit" class="btn btn-primary">Отправить</button>
+					<button id="submitCall" type="submit" class="submit btn btn-primary">Отправить</button>
 				</p>
 				
 			</form>

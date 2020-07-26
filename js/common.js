@@ -248,7 +248,7 @@ $(function() {
 		});
 
 		/* Первая сортировка, если есть параметры в URL */
-		function firstSort() {
+		function getUrlParam(what) {
 			if (window.location.hash != '') {
 				var query = document.location.hash.substring(1);
 			} else {
@@ -277,6 +277,9 @@ $(function() {
 				if (pair[0] === 'order' && orders.indexOf(pair[1]) != -1) { 
 					sort.push(pair[1]);
 				}
+				if (pair[0] === what) {
+					return pair[1];
+				}
 			}
 			// console.log(['sort', sort]);
 			if(sort.length == 2)
@@ -284,8 +287,9 @@ $(function() {
 
 			var pathname = window.location.pathname.split("/");
 			// console.log("pathname : " + pathname);
+			return null;
 		}
-		firstSort();
+		getUrlParam();
 
 		/* создать куки */
 		function createCookie(cookieName,cookieValue,daysToExpire)
@@ -473,7 +477,7 @@ $(function() {
 		/* Отправление формы захвата */
 		$(document).on('submit','#frmwrapper form',function(ev){
 			var frm = $('#frmwrapper form');
-			$('#frmwrapper form #submit').prop( "disabled", true );
+			$('#frmwrapper form button[type="submit"]').prop( "disabled", true );
 			/* * /
 			$.get('/form_callme', frm_data, function (data) {
 				 $('#frmwrapper form').remove();
@@ -500,7 +504,7 @@ $(function() {
 		/* Отправление формы калькулятора */
 		$(document).on('submit','#calcwrapper form',function(ev){
 			var frm = $('#calcwrapper form');
-			$('#calcwrapper form #submit').prop( "disabled", true );
+			$('#calcwrapper form button[type="submit"]').prop( "disabled", true );
 			$.ajax({
 				url: '/form_calc',
 				type: 'post',
@@ -523,7 +527,6 @@ $(function() {
 
 		// $('.calcForm select').styler();
 
-	});
 	
 	/* мобильная таблица прайслиста */
 	function fixTable(container) {
@@ -891,11 +894,13 @@ $(function() {
 		minimumResultsForSearch: -1,
 		placeholder: 'Выбор автомобиля'
 	});
-	
-	$('#select-model').on('select2:select', function (evt) {
-		$('.form-footer-submit .btn').show(200);
-	});
 
+	var model = getUrlParam('model');
+	if(model != null) {
+		$('#select-model').val(model);
+		$('#select-model').trigger('change');
+	}
+	
 	/* Select2 for Calc End */
 
 	// DAtaPicker
@@ -910,9 +915,9 @@ $(function() {
 		$endPicker = $('#timepicker-actions-to'),
 		endPicker,
 		$model = $('#select-model');
-	/*
 		startPicker = $startPicker.data('datepicker');
 		endPicker = $endPicker.data('datepicker');
+	/*
 	*/
 	if ($startPicker.length) {
 
@@ -929,9 +934,9 @@ $(function() {
 			startDate: startDate,
 			onSelect: function(fd, d, picker) {
 				// Ничего не делаем если выделение было снято
-				if (!d) return;
+				// if (!d) return;
 
-				picker.date = d;
+				// picker.date = d;
 
 				// console.log([fd, d, picker, startPicker.currentDate]);
 
@@ -941,7 +946,7 @@ $(function() {
 				endPicker.hide();
 			}
 		}).data('datepicker');
-		startPicker.selectDate(startDate);
+		// startPicker.selectDate(startDate);
 	}
 	
 	if ($endPicker.length) {
@@ -954,12 +959,12 @@ $(function() {
 		endPicker = $endPicker.datepicker({
 			timepicker: true,
 			minDate: today,
-			startDate: tomorrow,
+			startDate: startDate,
 			onSelect: function(fd, d, picker) {
 				// Ничего не делаем если выделение было снято
-				if (!d) return;
+				// if (!d) return;
 
-				picker.date = d;
+				// picker.date = d;
 
 				// console.log([fd, d, picker, endPicker.currentDate]);
 
@@ -969,7 +974,7 @@ $(function() {
 				startPicker.hide();
 			}
 		}).data('datepicker');
-		endPicker.selectDate(tomorrow);
+		// endPicker.selectDate(tomorrow);
 	}
 	
 
@@ -1026,10 +1031,12 @@ $(function() {
 
 	// функция калькулятора
 	function calc() {
+		if($model.val() != null && startPicker.lastSelectedDate > 0 && endPicker.lastSelectedDate > 0 && startPicker.lastSelectedDate < endPicker.lastSelectedDate) {
 
-		if($model.val() == null) return;
+		// если необходимые поля выбраны
+		$('.form-footer-submit .btn').show(200);
 
-		var rentTime = Math.abs(startPicker.date - endPicker.date) / 36e5,
+		var rentTime = Math.abs(startPicker.lastSelectedDate - endPicker.lastSelectedDate) / 36e5,
 			countDay = Math.floor(rentTime / 24),
 			koff = rentTime % 24,
 			model = $model.val(),
@@ -1147,8 +1154,8 @@ $(function() {
 		orderData['Срок аренды'] = startPicker.date.toLocaleString() + " — " + endPicker.date.toLocaleString();
 		orderData['Место доставки авто'] = $('#location_in_text').val();
 		orderData['Место сдачи авто'] = $('#location_to_text').val();
-		orderData['Стоимость проката'] = price;
-		orderData['Возвратный залог'] = zalog;
+		orderData['Стоимость проката'] = Math.round(price);
+		orderData['Возвратный залог'] = Math.round(zalog);
 
 		if(orderData['Место доставки авто'].trim() == "") {
 			orderData['Место доставки авто'] = 'Доставка по адресу / ЖД';
@@ -1163,10 +1170,16 @@ $(function() {
 		$('.modal__calc-right .rent-info').text(orderData['Срок аренды']);
 		$('.modal__calc-right .location-in-info').text(orderData['Место доставки авто']);
 		$('.modal__calc-right .location-to-info').text(orderData['Место сдачи авто']);
-		$('.modal__calc-right .rental-price-info span').text(price);
-		$('.modal__calc-right .refund-info span').text(zalog);
-		$('#price-p span').text(price);
-		$('#price-z span').text(zalog);
+		$('.modal__calc-right .rental-price-info span').text(orderData['Стоимость проката']);
+		$('.modal__calc-right .refund-info span').text(orderData['Возвратный залог']);
+		$('#price-p span').text(orderData['Стоимость проката']);
+		$('#price-z span').text(orderData['Возвратный залог']);
+
+
+		} else {
+			$('.form-footer-submit .btn').hide(200);
+			return;
+		}
 	}
 
 	$('.calc #select-model, .calc input[type=checkbox], .calc input[type=radio]').change(function() {
@@ -1206,5 +1219,7 @@ $(function() {
 	}
 
 	/* фильтр конец */
+
+	});
 
 }, jQuery);

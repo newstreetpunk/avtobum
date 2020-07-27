@@ -7733,6 +7733,13 @@ section h1, section h2 {
   width: initial;
 }
 
+#lookingfor {
+  display: block;
+  position: relative;
+  top: -75px;
+  visibility: hidden;
+}
+
 .header {
   background-color: #ffffff;
   position: fixed;
@@ -8647,20 +8654,34 @@ form button {
 
 .button-open_popup {
   text-align: center;
-  margin-top: 2rem;
-  margin-bottom: 2rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
 }
 
 .btn {
   width: 100%;
   min-width: 220px;
   max-width: 300px;
-  height: 40px;
   font-weight: 700;
   text-transform: uppercase;
   color: #fff !important;
   border-radius: 25px;
-  background: #dc5c13;
+  background-color: #dc5c13;
+  padding: 10px;
+  display: block;
+  margin: 1rem auto;
+}
+
+.btn:hover {
+  background-color: #ad480f;
+}
+
+.btn-blue {
+  background-color: #0b91d1;
+}
+
+.btn-blue:hover {
+  background-color: #086fa1;
 }
 
 .feedback-btns {
@@ -9505,8 +9526,8 @@ form button {
   color: #000;
 }
 
-.avtodetail .product .descCar .desc .vehicle-options.pt-2,
-.avtopark .product .descCar .desc .vehicle-options.pt-2 {
+.avtodetail .product .descCar .desc .vehicle-options,
+.avtopark .product .descCar .desc .vehicle-options {
   width: 100%;
   float: none;
   text-align: center;
@@ -9514,11 +9535,11 @@ form button {
       -ms-flex-wrap: wrap;
           flex-wrap: wrap;
   width: 100%;
-  margin-bottom: 25px;
+  margin-bottom: 1rem;
 }
 
-.avtodetail .product .descCar .desc .vehicle-options.pt-2 ul,
-.avtopark .product .descCar .desc .vehicle-options.pt-2 ul {
+.avtodetail .product .descCar .desc .vehicle-options ul,
+.avtopark .product .descCar .desc .vehicle-options ul {
   padding: 0 0 10px !important;
   -webkit-justify-content: space-around;
       -ms-flex-pack: distribute;
@@ -9535,8 +9556,8 @@ form button {
   margin: 0 auto;
 }
 
-.avtodetail .product .descCar .desc .vehicle-options.pt-2 ul li,
-.avtopark .product .descCar .desc .vehicle-options.pt-2 ul li {
+.avtodetail .product .descCar .desc .vehicle-options ul li,
+.avtopark .product .descCar .desc .vehicle-options ul li {
   display: table;
   padding: 0 5px;
   fill: #0b91d1;
@@ -9800,7 +9821,7 @@ form button {
 }
 
 .calc .select-model {
-  min-width: 300px;
+  min-width: 290px;
   /**/
 }
 
@@ -11049,7 +11070,7 @@ form .help-block {
   .footer-callback .social a img:not(.lazyload) {
     height: 50px;
   }
-  .vehicle-options.pt-2 {
+  .vehicle-options {
     min-height: 70px;
   }
   .about.feb14:after {
@@ -11119,13 +11140,13 @@ form .help-block {
 
 /*==========  Using the minimum and maximum breakpoint widths  ==========*/
 @media (min-width: 576px) and (max-width: 767.98px) {
-  .vehicle-options.pt-2 {
+  .vehicle-options {
     min-height: 130px;
   }
 }
 
 @media (min-width: 768px) and (max-width: 991.98px) {
-  .vehicle-options.pt-2 {
+  .vehicle-options {
     min-height: 104px;
   }
   .header__menu ul {

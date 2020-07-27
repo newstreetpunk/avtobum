@@ -220,25 +220,25 @@ $(function() {
 		}
 
 		/* Действие кнопок сортировки автопарка */
-		$('.Sort-Order a').click(function(e) {
+		$('.sort-order a').click(function(e) {
 			e.preventDefault();
 		  
 			var $this = $(this),
 				sort = $this.parent().data('sort'),
 				url = (location.hostname == 'localhost') ? 'arenda-mashin.html' : '/arenda-mashin/';
 		  
-			if ($this.parent().hasClass('Sort-Order_select')) {
-				$this.parent().toggleClass('Sort-Order_up');
+			if ($this.parent().hasClass('sort-order_select')) {
+				$this.parent().toggleClass('sort-order_up');
 			} else {
-				$('.Sort-Order').each(function(){
-					$(this).removeClass('Sort-Order_select')
-					$(this).removeClass('Sort-Order_up')
+				$('.sort-order').each(function(){
+					$(this).removeClass('sort-order_select')
+					$(this).removeClass('sort-order_up')
 				});
-				$this.parent().addClass('Sort-Order_select');
+				$this.parent().addClass('sort-order_select');
 			}
 
 			
-			if($this.parent().hasClass('Sort-Order_up')) {
+			if($this.parent().hasClass('sort-order_up')) {
 				getSorted('.product', sort, 'up');
 				window.history.pushState({}, document.title, url+"?sort="+sort+"&order=up");
 			} else {
@@ -892,6 +892,7 @@ $(function() {
 
 	$('#select-model').select2({
 		minimumResultsForSearch: -1,
+		width: 'resolve',
 		placeholder: 'Выбор автомобиля'
 	});
 

@@ -114,6 +114,8 @@
 	</header>
 	<!-- /HEADER -->
 
+	<a href="javascript:;" id="lookingfor"></a>
+
 	<!-- MAIN -->
 	<main class="lazyload content" data-src-class="lazynow" data-src-before1="url(../img-hny2020/bg-ded-1.png), url(../img-hny2020/background-NG-3.jpg)">
 		<div class="content__block">
@@ -239,6 +241,7 @@
 					}
 					var carName = ['Renault Sandero Stepway', 'KIA Rio', 'Эвакуатор подкатной', 'Пвх лодка Delta 320 мк', 'Peugeot 308', 'KIA Sportage', 'Volvo XC70', 'BMW X3', 'Hyundai SOLARIS', 'Lada Kalina', 'Прицеп', 'Lada Priora', 'Кемпер Bailey Ranger', 'Toyota RAV4', 'Volkswagen Tiguan 4WD', 'Ford Thunderbird', 'ГАЗ 330202', 'Mitsubishi L200 4WD', 'Mitsubishi Pajero 3.0 4WD', 'Hummer Н2 4WD', 'Ford Focus III', 'Hyundai Grand Starex', 'Hyundai Sonata', 'Volkswagen Tiguan', 'Toyota Camry', 'Renault Duster 4WD', 'Fiat Albea', 'Mitsubishi ASX', 'Renault Fluence', 'Mitsubishi Lancer X', 'Mitsubishi Lancer X', 'Renault Fluence', 'Toyota Land Cruiser 100 4WD', 'Daewoo Matiz', 'Lada Largus', 'Renault Fluence', 'Renault Logan ', 'Renault Logan', 'Nissan Almera New', 'Nissan Almera New', 'Renault Sandero', 'Renault Sandero', 'Fiat Albea', 'Hyundai Accent', 'Suzuki Liana 4WD', 'ВАЗ 2114'],
 						brandName = ['Renault', 'KIA', 'Эвакуатор подкатной', 'Пвх лодка', 'Peugeot', 'KIA', 'Volvo', 'BMW', 'Hyundai', 'Lada', 'Прицеп', 'Lada', 'Кемпер', 'Toyota', 'Volkswagen', 'Ford', 'ГАЗ', 'Mitsubishi', 'Mitsubishi', 'Hummer', 'Ford', 'Hyundai', 'Hyundai', 'Volkswagen', 'Toyota', 'Renault', 'Fiat', 'Mitsubishi', 'Renault', 'Mitsubishi', 'Mitsubishi', 'Renault', 'Toyota', 'Daewoo', 'Lada', 'Renault', 'Renault', 'Renault', 'Nissan', 'Nissan', 'Renault', 'Renault', 'Fiat', 'Hyundai', 'Suzuki', 'ВАЗ'],
+						carVal = [136, 90, 144, 177, 203],
 						imgPath = '//avtobum63.ru/assets/images/avtopark/',
 						imgURL = ['renault-sandero-stepway-500px.png', 'kia-rio-500px.png', 'evakuator-500px.png', 'lodka-500px.png', 'peugeot-308-500px.png', 'kia-sportage-500px.png', 'volva-xc70-500px.png', 'bmw-x3-500px.png', 'hyundai-solaris-500px.png', 'lada-kalina-500px.png', 'pricep-atlet-500px.png', 'lada-priora-500px.png', 'bailey-ranger-600-tiny-500px.png', 'toyota-rav4-500px.png', 'volkswagen-tiguan-red-500px.png', 'ford-thunderbird-500px.png', 'gaz-3302-500px.png', 'mitsubishi-l200-500px.png', 'mitsubishi-pajero-500px.png', 'hummer-h2-500px.png', 'ford-focus-3-500px.png', 'hyundai-starex-500px.png', 'hyundai-sonata-500px.png', 'volkswagen-tiguan-white-500px.png', 'toyota-camry-500px.png', 'renault-duster-500px.png', 'fiat-albea-white-500px.png', 'mitsubishi-asx-500px.png', 'renault-fluence-silver-500px.png', 'mitsubishi-lancerX-blue-500px.png', 'mitsubishi-lancerX-bej-500px.png', 'renault-fluence-black-500px.png', 'toyota-land-cruiser-100-500px.png', 'daewoo-matiz-500px.png', 'lada-largus-500px.png', 'renault-fluence-white-500px.png', 'renault-logan-white-500px.png', 'renault-logan-bej-500px.png', 'nissan-almera-black-500px.png', 'nissan-almera-white-500px.png', 'renault-sandero-black-500px.png', 'renault-sandero-500px.png', 'fiat-albea-white-500px.png', 'hyundai-accent-500px.png', 'suzuki-liana-500px.png', 'vaz-2114-500px.png'],
 						carType = ['Седан', 'Универсал', 'Хетчбэк', 'Внедорожник', 'Кабриолет'];
@@ -272,7 +275,7 @@
 						var priceHour = Math.round(Math.random()*100),
 							priceDay = Math.round(Math.random()*1000),
 							rank = Math.round(Math.random()*10),
-							typeNum = Math.round(Math.random()*5);
+							typeNum = Math.floor(Math.random()*5);
 					    document.write('<div class="col-sm-6 col-xl-4 mb-5 product" data-price="'+priceDay+'" data-rank="'+rank+'" data-brand="'+htmlspecialchars(brandName[index])+'" data-type="'+carType[typeNum]+'">\
 					    	<p class="nameCar"><a href="'+link+'">'+currentValue+'</a></p>\
 					    	<div class="photo embed-responsive embed-responsive-16by9">');
@@ -357,6 +360,7 @@
 					                </div>\
 					                <div class="button-open_popup">\
 										<button class="btn bron" data-fancybox="" data-src="#callback-form" data-name="Оставить заявку на '+htmlspecialchars(currentValue)+'" rel="'+htmlspecialchars(currentValue)+'">Оставить заявку</button>\
+										<a class="btn btn-blue" title="Расчитать прокат '+htmlspecialchars(currentValue)+'" data-name="Расчитать прокат '+htmlspecialchars(currentValue)+'" data-class="calc" href="/calc.html?model='+carVal[typeNum]+'">Расчитать прокат</a>\
 									</div>\
 					                <div class="toggle-more"><a class="collapsed" href="javascript:void(0);">Посмотреть подробную информацию</a></div>\
 					                <p class="inner" style="display: none;">\
@@ -365,87 +369,34 @@
 					                </p>\
 					            </div>\
 					        </div>');
-					    document.write('\
-					    	<div class="table-box1 car-section" style="display:none;">\
-					    		<div class="table-scroll">\
-					            <table class="color">\
-					                <tbody>\
-					                    <tr>\
-					                        <th colspan="8">\
-					                            Стоимость аренды '+currentValue+', ₽\
-					                        </th>\
-					                    </tr>\
-					                    <tr>\
-					                        <td class="light-green">За час*</td>\
-					                        <td>1-3 суток</td>\
-					                        <td>4-6 суток</td>\
-					                        <td>7-15 суток</td>\
-					                        <td style="padding: 9px 11px;">16-30 суток</td>\
-					                        <td>от 30 дней</td>\
-					                        <td>Защита при ДТП</td>\
-					                        <td>Залог</td>\
-					                    </tr>\
-					                    <tr>\
-					                        <td class="light-green">320</td>\
-					                        <td>4300</td>\
-					                        <td>4100</td>\
-					                        <td>3900</td>\
-					                        <td>3700</td>\
-					                        <td>3500</td>\
-					                        <td>1000</td>\
-					                        <td>25000</td>\
-					                    </tr>\
-					                </tbody>\
-					            </table>\
-					            </div>\
-					            <div class="car-section__footnote">*почасовая оплата возможна при сроке аренды от 3 до 8 часов</div>\
-					        </div>');
 					    document.write('</div>');
 					    if(++countCar > 11) {
 					    	countCar = 0;
 						    document.write('\
-			<div class="col-12">\
-				<div class="row alert alert-primary align-items-center">\
-					<a href="#" class="col-6 col-md-4 col-lg-3 map">\
-						<h4 class="alert-heading">Там где нужно!</h4>\
-						<div>Доставка в любую<br>часть города</div>\
-					</a>\
-					<div class="col-6 col-md-4 col-lg-3 min">\
-						<h4 class="alert-heading">Быстрый старт!</h4>\
-						<div>Оформление документов<br/>не более 15 минут</div>\
-					</div>\
-					<a href="#" class="col-6 col-md-4 col-lg-3 docs d-none d-md-block">\
-						<h4 class="alert-heading">Ничего лишнего!</h4>\
-						<div>Для оформления два документа</div>\
-					</a>\
-					<div class="col-6 col-md-4 col-lg-3 repair d-none d-lg-block">\
-						<h4 class="alert-heading">Предоставим подменную машину!</h4>\
-						<div>Починим любой автомобиль!</div>\
-					</div>\
-				</div>\
-			</div>\
+								<div class="col-12">\
+									<div class="row alert alert-primary align-items-center">\
+										<a href="#" class="col-6 col-md-4 col-lg-3 map">\
+											<h4 class="alert-heading">Там где нужно!</h4>\
+											<div>Доставка в любую<br>часть города</div>\
+										</a>\
+										<div class="col-6 col-md-4 col-lg-3 min">\
+											<h4 class="alert-heading">Быстрый старт!</h4>\
+											<div>Оформление документов<br/>не более 15 минут</div>\
+										</div>\
+										<a href="#" class="col-6 col-md-4 col-lg-3 docs d-none d-md-block">\
+											<h4 class="alert-heading">Ничего лишнего!</h4>\
+											<div>Для оформления два документа</div>\
+										</a>\
+										<div class="col-6 col-md-4 col-lg-3 repair d-none d-lg-block">\
+											<h4 class="alert-heading">Предоставим подменную машину!</h4>\
+											<div>Починим любой автомобиль!</div>\
+										</div>\
+									</div>\
+								</div>\
 							');
 					    }
 					});
 				</script>
-			</div>
-			<div class="row alert alert-primary align-items-center">
-				<div class="col-6 col-md-4 col-lg-3 map">
-					<h4 class="alert-heading">Там где нужно!</h4>
-					<div>Доставка в любую<br>часть города</div>
-				</div>
-				<div class="col-6 col-md-4 col-lg-3 min">
-					<h4 class="alert-heading">Быстрый старт!</h4>
-					<div>Оформление документов<br/>не более 15 минут</div>
-				</div>
-				<div class="col-6 col-md-4 col-lg-3 docs d-none d-md-block">
-					<h4 class="alert-heading">Ничего лишнего!</h4>
-					<div>Для оформления два документа</div>
-				</div>
-				<div class="col-6 col-md-4 col-lg-3 repair d-none d-lg-block">
-					<h4 class="alert-heading">Предоставим подменную машину!</h4>
-					<div>Починим любой автомобиль!</div>
-				</div>
 			</div>
 			<div align="justify">
 				<p align="left">Столкнувшись с необходимостью взять в аренду машину, многие жители и гости города вынуждены тратить массу времени на поиск проверенной компании и автомобиля, подходящего по всем параметрам. Существенно упростить и ускорить процесс выбора авто есть возможность у клиентов компании "БУМЕРАНГ-АВТО", имеющей репутацию надежного партнера с привлекательными условиями аренды машин.</p>

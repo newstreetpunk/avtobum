@@ -443,7 +443,7 @@ $(function() {
 		$('.question').click(function(){
 			sendGoal('vopros_click','click vopros btn');
 		});
-		$('#callback-form .inputPhone').focusout(function(){
+		$('#callback-form .inputPhone, #callback-form .inputName').focusout(function(){
 			if($(this).val().length >= 5) {
 				switch($('#callback-form form').attr('data-class')) {
 					case "call":
@@ -473,6 +473,14 @@ $(function() {
 				default:
 			}
 		}); 
+		$('a[data-class="calc"]').click(function(){
+			sendGoal('calcform_click','click calc btn');
+		});
+		$('#calcwrapper form .inputPhone, #calcwrapper form .inputName').focusout(function(){
+			if($(this).val().length >= 3) {
+				sendGoal('calcform_nabor','write calc contact');
+			}
+		});
 
 		/* Отправление формы захвата */
 		$(document).on('submit','#frmwrapper form',function(ev){
@@ -503,6 +511,7 @@ $(function() {
 
 		/* Отправление формы калькулятора */
 		$(document).on('submit','#calcwrapper form',function(ev){
+			sendGoal('calcform_good','send calc data');
 			var frm = $('#calcwrapper form');
 			$('#calcwrapper form button[type="submit"]').prop( "disabled", true );
 			$.ajax({
@@ -982,6 +991,8 @@ $(function() {
 	// Собираем данные формы -> открываем второе модальное окно (форму)
 	$('#form-calc').submit(function(){
 
+		sendGoal('calcform_zabron','click zabron calc btn');
+
 		$('.modal__calc-wrap').show();
 
 		//console.log(data);
@@ -1184,10 +1195,12 @@ $(function() {
 	}
 
 	$('.calc #select-model, .calc input[type=checkbox], .calc input[type=radio]').change(function() {
+		sendGoal('calcform_check','change calc data');
 		calc();
 	});
 	$('#location_in_text, #location_to_text').bind('input propertychange', function() {
 		calc();
+		sendGoal('calcform_check','change calc data');
 	});
 	/* калькулятор конец */
 

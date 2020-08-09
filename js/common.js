@@ -1096,16 +1096,16 @@ $(function() {
 			price += pr_week[model] * countDay;
 		}
 
-		if([6,7,20,21,22].includes(startPicker.date.getHours())) {
+		if([6,7,20,21,22].includes(startPicker.lastSelectedDate.getHours())) {
 			price += 500;
 		} 
-		else if([23,0,1,2,3,4,5].includes(startPicker.date.getHours())) {
+		else if([23,0,1,2,3,4,5].includes(startPicker.lastSelectedDate.getHours())) {
 			price += 1000;
 		}
-		if([6,7,20,21,22].includes(endPicker.date.getHours())) {
+		if([6,7,20,21,22].includes(endPicker.lastSelectedDate.getHours())) {
 			price += 500;
 		} 
-		else if([23,0,1,2,3,4,5].includes(endPicker.date.getHours())) {
+		else if([23,0,1,2,3,4,5].includes(endPicker.lastSelectedDate.getHours())) {
 			price += 1000;
 		}
 		
@@ -1163,7 +1163,7 @@ $(function() {
 		if (dop_servs.length) {
 			orderData['Доп услуги'] = dop_servs.join(' / ');
 		}
-		orderData['Срок аренды'] = startPicker.date.toLocaleString() + " — " + endPicker.date.toLocaleString();
+		orderData['Срок аренды'] = startPicker.lastSelectedDate.toLocaleString() + " — " + endPicker.lastSelectedDate.toLocaleString();
 		orderData['Место доставки авто'] = $('#location_in_text').val();
 		orderData['Место сдачи авто'] = $('#location_to_text').val();
 		orderData['Стоимость проката'] = Math.round(price);
@@ -1189,6 +1189,10 @@ $(function() {
 
 
 		} else {
+			$('.modal__calc-right .rental-price-info span').text(0);
+			$('.modal__calc-right .refund-info span').text(0);
+			$('#price-p span').text(0);
+			$('#price-z span').text(0);
 			$('.form-footer-submit .btn').hide(200);
 			return;
 		}

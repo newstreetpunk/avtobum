@@ -244,6 +244,9 @@
 						carVal = [136, 90, 144, 177, 203],
 						imgPath = '//avtobum63.ru/assets/images/avtopark/',
 						imgURL = ['renault-sandero-stepway-500px.png', 'kia-rio-500px.png', 'evakuator-500px.png', 'lodka-500px.png', 'peugeot-308-500px.png', 'kia-sportage-500px.png', 'volva-xc70-500px.png', 'bmw-x3-500px.png', 'hyundai-solaris-500px.png', 'lada-kalina-500px.png', 'pricep-atlet-500px.png', 'lada-priora-500px.png', 'bailey-ranger-600-tiny-500px.png', 'toyota-rav4-500px.png', 'volkswagen-tiguan-red-500px.png', 'ford-thunderbird-500px.png', 'gaz-3302-500px.png', 'mitsubishi-l200-500px.png', 'mitsubishi-pajero-500px.png', 'hummer-h2-500px.png', 'ford-focus-3-500px.png', 'hyundai-starex-500px.png', 'hyundai-sonata-500px.png', 'volkswagen-tiguan-white-500px.png', 'toyota-camry-500px.png', 'renault-duster-500px.png', 'fiat-albea-white-500px.png', 'mitsubishi-asx-500px.png', 'renault-fluence-silver-500px.png', 'mitsubishi-lancerX-blue-500px.png', 'mitsubishi-lancerX-bej-500px.png', 'renault-fluence-black-500px.png', 'toyota-land-cruiser-100-500px.png', 'daewoo-matiz-500px.png', 'lada-largus-500px.png', 'renault-fluence-white-500px.png', 'renault-logan-white-500px.png', 'renault-logan-bej-500px.png', 'nissan-almera-black-500px.png', 'nissan-almera-white-500px.png', 'renault-sandero-black-500px.png', 'renault-sandero-500px.png', 'fiat-albea-white-500px.png', 'hyundai-accent-500px.png', 'suzuki-liana-500px.png', 'vaz-2114-500px.png'],
+						gearbox = [1, 0, 1, 0, 'Неприменимо'],
+						farkop = [1,"","","",""],
+						conditioner = ["нет", "есть", "есть", "есть", "есть"],
 						carType = ['Седан', 'Универсал', 'Хетчбэк', 'Внедорожник', 'Кабриолет'];
 					var link = "bmw-x6.html#lookingfor";
 					var countCar = 0;
@@ -276,7 +279,15 @@
 							priceDay = Math.round(Math.random()*1000),
 							rank = Math.round(Math.random()*10),
 							typeNum = Math.floor(Math.random()*5);
-					    document.write('<div class="col-sm-6 col-xl-4 mb-5 product" data-price="'+priceDay+'" data-rank="'+rank+'" data-brand="'+htmlspecialchars(brandName[index])+'" data-type="'+carType[typeNum]+'">\
+					    document.write('<div class="col-sm-6 col-xl-4 mb-5 product" \
+					    	data-price="'+priceDay+'" \
+					    	data-rank="'+rank+'" \
+					    	data-brand="'+htmlspecialchars(brandName[index])+'" \
+					    	data-type="'+carType[typeNum]+'"\
+					    	data-gearbox="'+gearbox[typeNum]+'"\
+					    	data-farkop="'+farkop[typeNum]+'"\
+					    	data-conditioner="'+conditioner[typeNum]+'"\
+					    	>\
 					    	<p class="nameCar"><a href="'+link+'">'+currentValue+'</a></p>\
 					    	<div class="photo embed-responsive embed-responsive-16by9">');
 
@@ -326,12 +337,19 @@
 				                            <img src="//avtobum63.ru/assets/images/svg/003-user.svg" alt="Количество мест">\
 				                            5\
 				                        </li>');
-					    if(Math.random()>0.5)
+					    if(gearbox[typeNum]===0) {
 	                        document.write('\
 				                        <li title="Коробка передач">\
 				                            <img src="//avtobum63.ru/assets/images/svg/001-manual-transmission.svg" alt="Коробка передач">\
-				                            Механика\
+				                            МТ\
 				                        </li>');
+					    } else if (gearbox[typeNum]===1) {
+	                        document.write('\
+				                        <li title="Коробка передач">\
+				                            <img src="//avtobum63.ru/assets/images/svg/001-manual-transmission.svg" alt="Коробка передач">\
+				                            АТ\
+				                        </li>');
+					    }
 					    if(Math.random()>0.5)
 	                        document.write('\
 				                        <li title="Объем багажника">\
@@ -344,13 +362,13 @@
 				                            <img src="//avtobum63.ru/assets/images/svg/004-fuel.svg" alt="Топливо">\
 				                            Дизельное\
 				                        </li>');
-					    if(Math.random()>0.5)
+					    if(conditioner[typeNum]=="есть")
 	                        document.write('\
 				                        <li title="Кондиционер">\
 				                            <img src="//avtobum63.ru/assets/images/svg/010-ice.svg" alt="Кондиционер">\
 				                            Кондиционер\
 				                        </li>');
-					    if(Math.random()>0.5)
+					    if(farkop[typeNum]===1)
 	                        document.write('\
 				                        <li title="Фаркоп" class="farkop">\
 				                            <img src="//avtobum63.ru/assets/images/svg/011-car-with-trailer.svg" alt="Фаркоп">\
@@ -371,9 +389,9 @@
 					        </div>');
 					    document.write('</div>');
 					    if(++countCar > 11) {
-					    	countCar = 0;
+					    	// countCar = 0;
 						    document.write('\
-								<div class="col-12">\
+								<div class="col-12 mb-3 mt-5 utp">\
 									<div class="row alert alert-primary align-items-center">\
 										<a href="#" class="col-6 col-md-4 col-lg-3 map">\
 											<h4 class="alert-heading">Там где нужно!</h4>\

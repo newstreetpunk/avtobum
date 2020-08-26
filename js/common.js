@@ -834,7 +834,7 @@ $(function() {
 			playPauseVideo(slick,"play");
 		});
 		slideWrapper.on("lazyLoaded", function(event, slick, image, imageSource) {
-			console.log([event, slick, image, imageSource]);
+			// console.log([event, slick, image, imageSource]);
 			image.parent().css('background-image', 'url("' + imageSource + '")'); 
 			image.hide();
 			image.parent().addClass('show');
@@ -1223,13 +1223,84 @@ $(function() {
 		allowClear: true
 	});
 
-
+	/*
 	var $filter_car_brand = $('#sort_filter #select-car-brand'),
 		$filter_body_type = $('#sort_filter #select-body-type'),
 		$filter_checkbox = $('#sort_filter .custom-check input[type=checkbox]:checked');
 
-	$('#sort_filter #select-car-brand, #sort_filter #select-body-type, #sort_filter .custom-check input[type=checkbox]').change(function() {
-		filter_car_list();
+	$('#sort_filter #select-car-brand, #sort_filter #select-body-type, #sort_filter .custom-check input[type=checkbox]').change(function(event) {
+		console.log(1);
+		// filter_car_list();
+	});
+	*/
+	
+	$('#sort_filter').on('change', function() {
+
+		let data = $('#sort_filter').serializeArray();
+
+		$('.product').removeClass("show");
+		$('.product').removeClass("notshow");
+		if(data.length == 0) {
+			$('.product').show();
+			$('.utp').show();
+		} else {
+			let arr = [
+				{ name: "select-car-brand", data: 'brand', value: "" }, 
+				{ name: "select-body-type", data: 'type', value: "" }, 
+				{ name: "gearbox-at", data: 'gearbox', value: "1" }, 
+				{ name: "gearbox-mt", data: 'gearbox', value: "0" }, 
+				{ name: "towbar", data: 'farkop', value: "1" }, 
+				{ name: "conditioner", data: 'conditioner', value: "нет" }
+			];
+
+			$.each(arr, function(index1, prop){
+				
+				$('.product').removeClass(prop);
+
+				let propArr = data.filter(function(elem) {
+					return elem.name === prop.name;
+				});
+
+				$.each(propArr, function(index2, el) {
+
+					// console.log([data, arr, prop, propArr, el]);
+					switch(el.name) {
+						case "select-car-brand":
+							attr = 'data-brand="'+el.value+'"';
+							break;
+						case "select-body-type":
+							attr = 'data-type="'+el.value+'"';
+							break;
+						case "gearbox-at":
+							attr = 'data-gearbox="1"';
+							break;
+						case "gearbox-mt":
+							attr = 'data-gearbox="0"';
+							break;
+						case "towbar":
+							attr = 'data-farkop="1"';
+							break;
+						case "conditioner":
+							attr = 'data-conditioner!="нет"';
+							break;
+						default:
+					}
+					let selector = '.product['+attr+']';
+					console.log([selector, $(selector)]);
+					$(selector).addClass("show");
+					$(selector).addClass(prop.data);
+				});
+				if(propArr.length>0) {
+					console.log(['notshow', $('.product[data-'+prop.data+']:not(.'+prop.data+')')]);
+					$('.product[data-'+prop.data+']:not(.'+prop.data+')').addClass("notshow");
+				}
+			});
+
+			$('.product.show:not(.notshow)').show();
+			$('.product.notshow').hide();
+			$('.product:not(.show)').hide();
+			$('.utp').hide();
+		}
 	});
 
 	function filter_car_list() {

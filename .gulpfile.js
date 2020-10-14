@@ -134,7 +134,7 @@ function avtobum_watch() {
 	watch(projects.avtobum.code.src).on('change', browserSync.reload);
 };
 
-module.exports = parallel(avtobum_styles, avtobum_scripts, avtobum_browsersync, avtobum_watch);
+exports.avtobum = parallel(avtobum_styles, avtobum_scripts, avtobum_browsersync, avtobum_watch);
 
 
 /* avtobum END */

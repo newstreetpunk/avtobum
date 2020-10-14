@@ -1,56 +1,89 @@
-let projects = {
+// VARIABLES & PATHS
+let preprocessor = 'sass', // Preprocessor (sass, scss, less, styl)
+    fileswatch   = 'html,htm,txt,json,md,woff2,php', // List of files extensions for watching & hard reload (comma separated)
+    pageversion  = 'html,htm,php', // List of files extensions for watching change version files (comma separated)
+    imageswatch  = 'jpg,jpeg,png,webp,svg', // List of images extensions for watching & compression (comma separated)
+    online       = true, // If «false» - Browsersync will work offline without internet connection
+    basename     = require('path').basename(__dirname),
+    forProd      = [
+					'/**',
+					' * @author Alexsab.ru',
+					' */',
+					''].join('\n');
+
+const { src, dest, parallel, series, watch, task } = require('gulp'),
+	sass           = require('gulp-sass'),
+	cleancss       = require('gulp-clean-css'),
+	concat         = require('gulp-concat'),
+	browserSync    = require('browser-sync').create(),
+	uglify         = require('gulp-uglify-es').default,
+	autoprefixer   = require('gulp-autoprefixer'),
+	imagemin       = require('gulp-imagemin'),
+	newer          = require('gulp-newer'),
+	rsync          = require('gulp-rsync'),
+	del            = require('del'),
+	connect        = require('gulp-connect-php'),
+	header         = require('gulp-header'),
+	notify         = require('gulp-notify'),
+	rename         = require('gulp-rename'),
+	responsive     = require('gulp-responsive'),
+	pngquant       = require('imagemin-pngquant'),
+	merge          = require('merge-stream'),
+	// version        = require('gulp-version-number'),
+	// revAll         = require('gulp-rev-all'),
+	replace        = require('gulp-replace');
+
+if(typeof projects == 'undefined') 
+	global.projects = {};
+if(typeof port == 'undefined') 
+	global.port = 8100;
 
 
-	avtobum: {
+projects.avtobum = {
 
-		port: ++port,
+	port: ++port,
 
-		base: base.avtobum,
-		dest: base.avtobum,
+	base: basename,
+	dest: basename,
 
-		styles: {
-			src:	base.avtobum + '/' + preprocessor + '/main.*',
-			
-			watch:  [
-				base.avtobum + '/' + preprocessor + '/**/*.'+preprocessor,
-				base.avtobum + '/css/common.css',
-			],
-			dest:   base.avtobum + '/css',
-			output: 'main.css',
-		},
-
-		scripts: {
-			src: [
-				base.avtobum + '/libs/jquery/dist/jquery-3.3.1.min.js',
-				base.avtobum + '/libs/air-datepicker-master/js/datepicker.min.js',
-				base.avtobum + '/libs/select2/js/select2.min.js',
-				'node_modules/slick-carousel/slick/slick.min.js',
-				base.avtobum + '/libs/lazyload/lazyload.js',
-				base.avtobum + '/js/common.js', // Always at the end
-			],
-			dest:       base.avtobum + '/js',
-			output:     'scripts.min.js',
-		},
-
-		code: {
-			src: [
-				base.avtobum  + '/**/*.{' + fileswatch + '}',
-				'!' + base.avtobum + '/base/objs.json'
-			],
-		},
-
-		forProd: [
-			'/**',
-			' * @author https://github.com/newstreetpunk',
-			' * @editor https://github.com/alexsab',
-			' */',
-			''].join('\n'),
+	styles: {
+		src:	basename + '/' + preprocessor + '/main.*',
+		
+		watch:  [
+			basename + '/' + preprocessor + '/**/*',
+			basename + '/css/common.css',
+		],
+		dest:   basename + '/css',
+		output: 'main.css',
 	},
 
+	scripts: {
+		src: [
+			basename + '/libs/jquery/dist/jquery-3.3.1.min.js',
+			basename + '/libs/air-datepicker-master/js/datepicker.min.js',
+			basename + '/libs/select2/js/select2.min.js',
+			'node_modules/slick-carousel/slick/slick.js',
+			basename + '/libs/lazyload/lazyload.js',
+			basename + '/js/common.js', // Always at the end
+		],
+		dest:       basename + '/js',
+		output:     'scripts.min.js',
+	},
+
+	code: {
+		src: [
+			basename  + '/**/*.{' + fileswatch + '}',
+			'!' + basename + '/base/objs.json'
+		],
+	},
+
+	forProd: [
+		'/**',
+		' * @author https://github.com/newstreetpunk',
+		' * @editor https://github.com/alexsab',
+		' */',
+		''].join('\n'),
 }
-
-
-
 
 
 
@@ -101,7 +134,7 @@ function avtobum_watch() {
 	watch(projects.avtobum.code.src).on('change', browserSync.reload);
 };
 
-exports.avtobum = parallel(avtobum_styles, avtobum_scripts, avtobum_browsersync, avtobum_watch);
+module.exports = parallel(avtobum_styles, avtobum_scripts, avtobum_browsersync, avtobum_watch);
 
 
 /* avtobum END */

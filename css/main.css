@@ -9004,10 +9004,14 @@ form button {
 .avtodetail .product .photo .hit-icon,
 .avtodetail .product .photo .skidka-icon,
 .avtodetail .product .photo .spec-icon,
+.avtodetail .product .photo .soon-icon,
+.avtodetail .product .photo .vacation-icon,
 .avtopark .product .photo .akciya-icon,
 .avtopark .product .photo .hit-icon,
 .avtopark .product .photo .skidka-icon,
-.avtopark .product .photo .spec-icon {
+.avtopark .product .photo .spec-icon,
+.avtopark .product .photo .soon-icon,
+.avtopark .product .photo .vacation-icon {
   display: block;
   background-size: contain;
   background-repeat: no-repeat;
@@ -9027,32 +9031,46 @@ form button {
   .avtodetail .product .photo .hit-icon,
   .avtodetail .product .photo .skidka-icon,
   .avtodetail .product .photo .spec-icon,
+  .avtodetail .product .photo .soon-icon,
+  .avtodetail .product .photo .vacation-icon,
   .avtopark .product .photo .akciya-icon,
   .avtopark .product .photo .hit-icon,
   .avtopark .product .photo .skidka-icon,
-  .avtopark .product .photo .spec-icon {
+  .avtopark .product .photo .spec-icon,
+  .avtopark .product .photo .soon-icon,
+  .avtopark .product .photo .vacation-icon {
     right: -14px;
   }
 }
 
 .avtodetail .product .photo .akciya-icon,
 .avtopark .product .photo .akciya-icon {
-  background-image: url(../img/znachki/akciya-onesize.png);
+  background-image: url(../img/znachki/akciya.png);
 }
 
 .avtodetail .product .photo .hit-icon,
 .avtopark .product .photo .hit-icon {
-  background-image: url(../img/znachki/hit-onesize.png);
+  background-image: url(../img/znachki/hit.png);
 }
 
 .avtodetail .product .photo .skidka-icon,
 .avtopark .product .photo .skidka-icon {
-  background-image: url(../img/znachki/skidka-onesize.png);
+  background-image: url(../img/znachki/skidka.png);
 }
 
 .avtodetail .product .photo .spec-icon,
 .avtopark .product .photo .spec-icon {
-  background-image: url(../img/znachki/spec-onesize.png);
+  background-image: url(../img/znachki/spec.png);
+}
+
+.avtodetail .product .photo .soon-icon,
+.avtopark .product .photo .soon-icon {
+  background-image: url(../img/znachki/soon.png);
+}
+
+.avtodetail .product .photo .vacation-icon,
+.avtopark .product .photo .vacation-icon {
+  background-image: url(../img/znachki/vacation.png);
 }
 
 .avtodetail .product .bronInfo,

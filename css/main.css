@@ -8063,7 +8063,7 @@ form button {
 
 .content.hny2020:before {
   content: '';
-  background-image: url(../img-hny2020/bg-ded-2.png), url(../img-hny2020/background-NG-3.jpg);
+  background-image: url(../img/hny2020/bg-ded-2.png), url(../img/hny2020/background-NG-3.jpg);
   background-size: cover, cover;
   background-position: 55vw 40%, center center;
   background-repeat: no-repeat;
@@ -8074,7 +8074,7 @@ form button {
 
 .content.feb14:before {
   content: '';
-  background-image: url(../img-feb14/heart-fon-final-2-ver1.jpg);
+  background-image: url(../img/feb14/heart-fon-final-2-ver1.jpg);
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
@@ -8083,7 +8083,7 @@ form button {
 
 .content.feb23:before {
   content: '';
-  background-image: url(../img-feb23/defender-day-fon.jpg);
+  background-image: url(../img/feb23/defender-day-fon.jpg);
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
@@ -8151,7 +8151,7 @@ form button {
 }
 
 .content.hny2020.load-imgs:before {
-  background-image: url(../img-hny2020/bg-ded-2.png), url(../img-hny2020/background-NG-3.jpg);
+  background-image: url(../img/hny2020/bg-ded-2.png), url(../img/hny2020/background-NG-3.jpg);
   background-position: calc(50% + 90px) 40%, center center;
 }
 
@@ -8162,7 +8162,7 @@ form button {
 }
 
 .content.feb14.load-imgs:before {
-  background-image: url(../img-feb14/heart-fon-final-2-ver1.jpg);
+  background-image: url(../img/feb14/heart-fon-final-2-ver1.jpg);
   background-position: center center;
 }
 
@@ -8733,17 +8733,17 @@ form button {
 }
 
 .footer.hny2020::before {
-  background: url(../img-hny2020/footer_ford-hny2020-t.png) right bottom no-repeat;
+  background: url(../img/hny2020/footer_ford-hny2020-t.png) right bottom no-repeat;
   background-size: contain;
 }
 
 .footer.feb14::before {
-  background: url(../img-feb14/footer_ford-feb14.png) right bottom no-repeat;
+  background: url(../img/feb14/footer_ford-feb14.png) right bottom no-repeat;
   background-size: contain;
 }
 
 .footer.feb23::before {
-  background: url(../img-feb23/silhouette-army.png) right bottom no-repeat;
+  background: url(../img/feb23/silhouette-army.png) right bottom no-repeat;
   background-size: contain;
 }
 

@@ -850,6 +850,7 @@ $(function() {
 
 		//start the slider
 		slideWrapper.slick({
+			rows: 0,
 			// fade:true,
 			autoplaySpeed: 4000,
 			lazyLoad: "progressive",

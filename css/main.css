@@ -8074,7 +8074,7 @@ form button {
 
 .content.feb14:before {
   content: '';
-  background-image: url(../img/feb14/heart-fon-final-2-ver1.jpg);
+  background-image: url(../img/feb14/heart-fon-2021.jpg);
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
@@ -8162,7 +8162,7 @@ form button {
 }
 
 .content.feb14.load-imgs:before {
-  background-image: url(../img/feb14/heart-fon-final-2-ver1.jpg);
+  background-image: url(../img/feb14/heart-fon-2021.jpg);
   background-position: center center;
 }
 
@@ -10173,6 +10173,10 @@ table.price-table tr:nth-child(odd) {
 
 table.price-table.samara tr:nth-child(n + 1) td:nth-child(9) {
   background-color: #ff6c1c63 !important;
+}
+
+table.price-table tr:nth-child(n + 1) td:nth-child(8) {
+  background-color: #007FC763 !important;
 }
 
 .callback-form {

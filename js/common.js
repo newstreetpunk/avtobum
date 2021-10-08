@@ -419,10 +419,13 @@ $(function() {
 		/* передается данных кнопки в форму захвата */
 		$('.callback, .call, .question, .bron').click(function(){
 			var btn_name = $(this).attr('data-name'),
+				btn_title = $(this).attr('data-title'),
 				btn_class = $(this).attr('data-class');
 			$('#callback-form .btnname').val(btn_name);
-
-			$('#callback-form form').attr('data-class', btn_class);
+			if(btn_title)
+				$('#callback-form h2').text(btn_title);
+			else
+				$('#callback-form h2').text('Заказ звонка');
 		});
 
 		/* отослать цель в ГА, Метрику и dataLayer */

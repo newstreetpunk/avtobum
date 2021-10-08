@@ -294,4 +294,25 @@ form
 	.help-block
 		color: red
 
+.pagination
+	margin: 0 auto
+	ul
+		display: flex
+		flex-wrap: wrap
+		li
+			list-style-type: none
+			margin: 0px 10px 20px
+			background-color: #dc5c13
+			padding: 5px 10px
+			border-radius: 10px
+			a
+				color: white
+
+input[tabindex="-1"]
+	opacity: 0
+	position: absolute
+	z-index: -100
+	max-width: 200px
+	height: 0
+
 @import "media" // Always at the end

@@ -8099,6 +8099,17 @@ form button {
   opacity: 0.8;
 }
 
+.content.hb2021:before {
+  content: '';
+  background-image: url(../img/hb2021/number-7-tiny.png), url(../img/hb2021/balloons-1.png), url(../img/hb2021/balloons-2.png), url(../img/hb2021/boomerang-HB-7-banner-main-3-tiny.png);
+  background-size: contain, contain, contain, cover;
+  background-position: 10% bottom, -100px center, calc(100% + 80px) center, center center;
+  background-repeat: no-repeat;
+  -webkit-transition: all 1s ease-in-out 0.5s;
+  -o-transition: all 1s ease-in-out 0.5s;
+  transition: all 1s ease-in-out 0.5s;
+}
+
 .content.load-imgs.may1:before {
   content: '';
   background-image: url(../img/may1/banner_1may-2020-02-t.jpg);
@@ -8586,31 +8597,39 @@ form button {
   opacity: 0.3;
 }
 
-.oddVideo .embed-responsive.embed-responsive-16by9 {
+.oddVideo .embed-responsive.embed-responsive-16by9,
+.odd .embed-responsive.embed-responsive-16by9 {
   -webkit-box-shadow: -20px 20px #00000051;
           box-shadow: -20px 20px #00000051;
 }
 
-.evenVideo .embed-responsive.embed-responsive-16by9 {
+.evenVideo .embed-responsive.embed-responsive-16by9,
+.even .embed-responsive.embed-responsive-16by9 {
   -webkit-box-shadow: 20px 20px #00000051;
           box-shadow: 20px 20px #00000051;
 }
 
 .oddVideo .embed-responsive.embed-responsive-16by9.video,
-.evenVideo .embed-responsive.embed-responsive-16by9.video {
+.evenVideo .embed-responsive.embed-responsive-16by9.video,
+.odd .embed-responsive.embed-responsive-16by9.video,
+.even .embed-responsive.embed-responsive-16by9.video {
   background: #666;
   background-size: cover;
   background-repeat: no-repeat;
 }
 
 .oddVideo .embed-responsive.embed-responsive-16by9.video:before,
-.evenVideo .embed-responsive.embed-responsive-16by9.video:before {
+.evenVideo .embed-responsive.embed-responsive-16by9.video:before,
+.odd .embed-responsive.embed-responsive-16by9.video:before,
+.even .embed-responsive.embed-responsive-16by9.video:before {
   background-size: cover;
   background-repeat: no-repeat;
 }
 
 .oddVideo .embed-responsive.embed-responsive-16by9.video:after,
-.evenVideo .embed-responsive.embed-responsive-16by9.video:after {
+.evenVideo .embed-responsive.embed-responsive-16by9.video:after,
+.odd .embed-responsive.embed-responsive-16by9.video:after,
+.even .embed-responsive.embed-responsive-16by9.video:after {
   content: '';
   display: block;
   background: url(https://avtobum63.ru/assets/templates/app/img/youtube.png);
@@ -10208,6 +10227,38 @@ form .help-block {
   color: red;
 }
 
+.pagination {
+  margin: 0 auto;
+}
+
+.pagination ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.pagination ul li {
+  list-style-type: none;
+  margin: 0px 10px 20px;
+  background-color: #dc5c13;
+  padding: 5px 10px;
+  border-radius: 10px;
+}
+
+.pagination ul li a {
+  color: white;
+}
+
+input[tabindex="-1"] {
+  opacity: 0;
+  position: absolute;
+  z-index: -100;
+  max-width: 200px;
+  height: 0;
+}
+
 /*==========  Desktop First  ==========*/
 @media (max-width: 1591.98px) {
   .header__logo-wrap {
@@ -10639,6 +10690,9 @@ form .help-block {
 @media (min-width: 992px) {
   .content {
     height: 570px;
+  }
+  .content.hb2021:before {
+    background-position: 10% bottom, -140px center, calc(100% + 120px) center, center center;
   }
   .footer-callback .social a img:not(.lazyload) {
     height: 50px;

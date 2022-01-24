@@ -7844,6 +7844,9 @@ body input:not([type=range]):required:valid, body textarea:required:valid {
      -moz-appearance: none;
           appearance: none;
   cursor: pointer;
+  text-align: center;
+  -moz-text-align-last: center;
+       text-align-last: center;
 }
 .select-cust option {
   text-transform: uppercase;
@@ -10641,7 +10644,7 @@ input[tabindex="-1"] {
   }
 }
 @media (max-width: 991.98px) {
-  .select-cust {
+  .header .select-cust {
     max-width: 135px;
   }
 
@@ -11062,7 +11065,7 @@ select:focus {
   }
 
   .content__block button {
-    bottom: -86px;
+    top: 164px;
   }
 
   .about.load-imgs:before {
@@ -11100,7 +11103,7 @@ section.garland {
   }
 
   .header-wrap:after {
-    content: 'Утверждаю                                Директор          ООО"БУМЕРАНГ-АВТО" Ильин М.Г.                                                                                  01.12.2020г.';
+    content: 'Утверждаю                                Директор          ООО"БУМЕРАНГ-АВТО" Попов М.С.                                                                                  01.01.2022г.';
     display: block;
     width: 343px;
     position: absolute;

@@ -10435,10 +10435,10 @@ table.price-table tr td:first-child {
 table.price-table tr:nth-child(odd) {
   background-color: #0000000c;
 }
-table.price-table.samara tr:nth-child(n+1) td:nth-child(9) {
+table.price-table.samara tr:nth-child(n+1) td:nth-child(13) {
   background-color: #ff6c1c63 !important;
 }
-table.price-table tr:nth-child(n+1) td:nth-child(8) {
+table.price-table tr:nth-child(n+1) td:nth-child(9) {
   background-color: #007FC763 !important;
 }
 
@@ -11103,7 +11103,7 @@ section.garland {
   }
 
   .header-wrap:after {
-    content: 'Утверждаю                                Директор          ООО"БУМЕРАНГ-АВТО" Попов М.С.                                                                                  01.01.2022г.';
+    content: 'Утверждаю                                Директор          Бумеранг-Авто       Попов М.С.                                                                                  "___" ________ 20___ г.';
     display: block;
     width: 343px;
     position: absolute;
@@ -11149,11 +11149,11 @@ section.garland {
     height: 10px;
   }
 
-  table.price-table.samara tr:nth-child(n+1) td:nth-child(8) {
+  table.price-table.samara tr:nth-child(n+1) td:nth-child(9) {
     background-color: #0b91d263 !important;
   }
 
-  table.price-table.samara tr:nth-child(n+1) td:nth-child(9) {
+  table.price-table.samara tr:nth-child(n+1) td:nth-child(13) {
     background-color: #ff6c1c63 !important;
   }
 }

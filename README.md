@@ -1,6 +1,6 @@
 # avtobum
 
-[GitHub Pages](https://alexsab.github.io/avtobum/index.html)
+[GitHub Pages](https://newstreetpunk.github.io/avtobum/)
 
 ## Готовые страницы
 - [x] Главная
